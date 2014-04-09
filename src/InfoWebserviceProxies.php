@@ -1,6 +1,5 @@
 <?
 class  CustomerIdentifier  {
-	
 	/**
 		@var long
 	*/
@@ -17,22 +16,22 @@ class  ExpectedStockMovement  {
 	/**
 		@var boolean
 	*/
-	public  $MayBePrefered;  // boolean 
+	public  $MayBePrefered;
 
 	/**
 		@var dateTime
 	*/
-	public  $MovementDate;  // dateTime 
+	public  $MovementDate;
 
 	/**
 		@var string
 	*/
-	public  $ProductNumber;  // string
+	public  $ProductNumber;
 
 	/**
 		@var long
 	*/
-	public  $Quantity;  // long
+	public  $Quantity;
 }
 
 class  GetExpectedStockMovement  {
@@ -40,7 +39,7 @@ class  GetExpectedStockMovement  {
 	/**
 		@var ProductIdentifier
 	*/
-	public  $productIdentifier;  // ProductIdentifier
+	public  $productIdentifier;
 
 }
 
@@ -49,35 +48,34 @@ class  GetExpectedStockMovementResponse  {
 	/**
 		@var ExpectedStockMovement[]
 	*/
-	public  $GetExpectedStockMovementResult;  // ArrayOfExpectedStockMovement
+	public  $GetExpectedStockMovementResult;
 
 }
 
 class  GetUserInformationResponse  {
-
 	/**
 		@var UserInformation[]
 	*/
-	public  $GetUserInformationResult;  // ArrayOfUserInformation
-
+	public  $GetUserInformationResult;
 }
 
-	class  ProductIdentifier  {
-		/**
-			Query Product by ProductId
-			
-			@var long			 			
-		*/
-		public  $ProductId;
+class  ProductIdentifier  {
+
+	/**
+		Query Product by ProductId
 		
-		/**
-			 @var string
-		*/
-		public  $ProductNumber;
-		/**
-			 @var guid
-		*/
-		public  $ProductUniqueId;
+		@var long			 			
+	*/
+	public  $ProductId;
+	
+	/**
+		 @var string
+	*/
+	public  $ProductNumber;
+	/**
+		 @var guid
+	*/
+	public  $ProductUniqueId;
 }
 
 class  UserInformation  
@@ -87,87 +85,87 @@ class  UserInformation
 		
 		@var string
 	*/
-	public  $Email;  // string 
+	public  $Email; 
 
 	/**
 		@short Fax Nummer des Users
 		@var string
 	*/
-	public  $Fax;  // string
+	public  $Fax;
 
 	/**
 		@short Vorname des Users
 		@var string
 	*/
-	public  $FirstName;  // string 
+	public  $FirstName; 
 
 	/**
 		@short Sprache des Users
 		@var string
 	*/
-	public  $Language;  // string 
+	public  $Language; 
 
 	/**
 		@short Nachname des Users
 		
 		@var string
 	*/
-	public  $LastName;  // string 
+	public  $LastName; 
 
 	/**
 		@short Telefonnummer des Users
 		@var string
 	*/
-	public  $Phone;  // string
+	public  $Phone;
 
 	/**
 		@short Frei definierbar
 		
 		@var string
 	*/
-	public  $SelfDefined1;  // string 
+	public  $SelfDefined1; 
 
 	/**
 		@short Frei definierbar
 		
 		@var string
 	*/
-	public  $SelfDefined2;  // string
+	public  $SelfDefined2;
 
 	/**
 		@short Frei definierbar
 		
 		@var string
 	*/
-	public  $SelfDefined3;  // string 
+	public  $SelfDefined3; 
 
 	/**
 		@short Frei definierbar
 		
 		@var string
 	*/
-	public  $SelfDefined4;  // string 
+	public  $SelfDefined4; 
 
 	/**
 		@short Frei definierbar
 		
 		@var string
 	*/
-	public  $SelfDefined5;  // string 
+	public  $SelfDefined5; 
 
 	/**
 		@short Namenskurzel des Users
 		
 		@var string
 	*/
-	public  $ShortName;  // string
+	public  $ShortName;
 
 	/**
 		@short Id des Users
 		
 		@var long
 	*/
-	public  $UserId;  // long
+	public  $UserId;
 }
 
 
@@ -176,56 +174,53 @@ class  GetCustomerPriceList  {
 	/**
 		@var CustomerIdentifier
 	*/
-	public  $identifier;  // CustomerIdentifier
+	public  $identifier;
 }
 
 class  GetProductPriceListResponse  {
-
-
+	
 	/**
 		@var ProductPriceInformation[]
 	*/
-	public  $GetProductPriceListResult;  // ArrayOfProductPriceInformation
-
+	public  $GetProductPriceListResult;
 }
-
 
 class  ProductPriceInformation  { 
 
 	/**
 		@var string
 	*/
-	public  $ArticleNumber;  // string 
+	public  $ArticleNumber;
 
 	/**
 		@var string
 	*/
-	public  $CustomerNumber;  // string
+	public  $CustomerNumber;
 
 	/**
 		@var decimal
 	*/
-	public  $CustomerSpecificSellingPrice;  // decimal 
+	public  $CustomerSpecificSellingPrice;
 
 	/**
 		@var decimal
 	*/
-	public  $Discount;  // decimal
+	public  $Discount;
 
 	/**
 		@var long
 	*/
-	public  $Quantity;  // long
+	public  $Quantity;
 
 	/**
 		@var boolean
 	*/
-	public  $QuantityDependentPrice;  // boolean 
+	public  $QuantityDependentPrice;
 
 	/**
 		@var decimal
 	*/
-	public  $RegularPrice;  // decimal
+	public  $RegularPrice;
 }
 
 class  GetProductPrices  {
@@ -233,13 +228,12 @@ class  GetProductPrices  {
 	/**
 		@var CustomerIdentifier
 	*/
-	public  $customerIdentifier;  // CustomerIdentifier 
+	public  $customerIdentifier;
 
 	/**
 		@var ProductIdentifier
 	*/
-	public  $productIdentifier;  // ProductIdentifier
-
+	public  $productIdentifier;
 }
 
 class  GetProductPricesResponse  {
@@ -247,46 +241,44 @@ class  GetProductPricesResponse  {
 	/**
 		@var ProductPriceInformation[]
 	*/
-	public  $GetProductPricesResult;  // ArrayOfProductPriceInformation
-
+	public  $GetProductPricesResult;
 }
 
 class  ProductPriceInformation  { 
+	/**
+		@var string
+	*/
+	public  $ArticleNumber;
 
 	/**
 		@var string
 	*/
-	public  $ArticleNumber;  // string 
-
-	/**
-		@var string
-	*/
-	public  $CustomerNumber;  // string
+	public  $CustomerNumber;
 
 	/**
 		@var decimal
 	*/
-	public  $CustomerSpecificSellingPrice;  // decimal 
+	public  $CustomerSpecificSellingPrice;
 
 	/**
 		@var decimal
 	*/
-	public  $Discount;  // decimal
+	public  $Discount;
 
 	/**
 		@var long
 	*/
-	public  $Quantity;  // long
+	public  $Quantity;
 
 	/**
 		@var boolean
 	*/
-	public  $QuantityDependentPrice;  // boolean 
+	public  $QuantityDependentPrice;
 
 	/**
 		@var decimal
 	*/
-	public  $RegularPrice;  // decimal
+	public  $RegularPrice;
 }
 
 class  GetCustomerInformation  {
@@ -294,15 +286,16 @@ class  GetCustomerInformation  {
 	/**
 		@var CustomerIdentifier
 	*/
-	public  $identifierV1;  // CustomerIdentifier
+	public  $identifierV1;
 
 }
 
 class  GetCustomerInformationResponse  {
+	
 	/**
 		@var CustomerInformation
 	*/
-	public  $GetCustomerInformationResult;  // CustomerInformation
+	public  $GetCustomerInformationResult;
 }
 
 class  GetCustomerInformationList  {
@@ -310,7 +303,7 @@ class  GetCustomerInformationList  {
 	/**
 		@var dateTime
 	*/
-	public  $startDate;  // dateTime
+	public  $startDate;
 }
 
 class  GetCustomerInformationListResponse  {
@@ -318,7 +311,7 @@ class  GetCustomerInformationListResponse  {
 	/**
 		@var CustomerInformation[]
 	*/
-	public  $GetCustomerInformationListResult;  // ArrayOfCustomerInformation
+	public  $GetCustomerInformationListResult;
 }
 
 
@@ -327,137 +320,137 @@ class  CustomerInformation  {
 	/**
 		@var SimpleAddress[]
 	*/
-	public  $Adresses;  // ArrayOfSimpleAddress 
+	public  $Adresses; 
 	
 	/**
 		@var long
 	*/
-	public  $AgentId;  // long
+	public  $AgentId;
 
 	/**
 		@var ContactDetail[]
 	*/
-	public  $ContactDetails;  // ArrayOfContactDetail
+	public  $ContactDetails;
 	
 	/**
 		@var ContactPersonInformation[]
 	*/
-	public  $ContactPersons;  // ArrayOfContactPersonInformation 
+	public  $ContactPersons;
 
 	/**
 		@var int
 	*/
-	public  $CreditLimitTotal;  // int
+	public  $CreditLimitTotal;
 
 	/**
 		@var decimal
 	*/
-	public  $CreditLimitUsed;  // decimal 
+	public  $CreditLimitUsed;
 	
 	/**
 		@var string
 	*/
-	public  $CurrencyName;  // string 
+	public  $CurrencyName;
 
 	/**
 		@var long
 	*/
-	public  $DebitorNumber;  // long
+	public  $DebitorNumber;
 	
 	/**
 		@var LocalizedItem
 	*/
-	public  $DeliveryTerm;  // LocalizedItem 
+	public  $DeliveryTerm;
 
 	/**
 		@var LocalizedItem
 	*/
-	public  $DispatchType;  // LocalizedItem 
+	public  $DispatchType;
 
 	/**
 		@var string
 	*/
-	public  $EMail;  // string
+	public  $EMail;
 
 	/**
 		@var string
 	*/
-	public  $Fax;  // string 
+	public  $Fax;
 
 	/**
 		@var string
 	*/
-	public  $Homepage;  // string
+	public  $Homepage;
 	
 	/**
 		@var CustomerIdentifier
 	*/
-	public  $IdentifierV1;  // CustomerIdentifier 
+	public  $IdentifierV1;
 	
 	/**
 		@var boolean
 	*/
-	public  $IsActive;  // boolean
+	public  $IsActive;
 
 	/**
 		@var string
 	*/
-	public  $Language;  // string 
+	public  $Language;
 
 	/**
 		@var string
 	*/
-	public  $Name;  // string 
+	public  $Name;
 
 	/**
 		@var string
 	*/
-	public  $NameAffex;  // string 
+	public  $NameAffex;
 
 	/**
 		@var string
 	*/
-	public  $Notice;  // string
+	public  $Notice;
 	
 	/**
 		@var PaymentInformation[]
 	*/
-	public  $PaymentModes;  // ArrayOfPaymentInformation 
+	public  $PaymentModes;
 
 	/**
 		@var string
 	*/
-	public  $Phone;  // string
+	public  $Phone;
 
 	/**
 		@var string
 	*/
-	public  $SalesTaxNumber;  // string 
+	public  $SalesTaxNumber;
 
 	/**
 		@var string
 	*/
-	public  $SelfDefined1;  // string 
+	public  $SelfDefined1;
 
 	/**
 		@var string
 	*/
-	public  $SelfDefined2;  // string 
+	public  $SelfDefined2;
 
 	/**
 		@var string
 	*/
-	public  $SelfDefined3;  // string 
+	public  $SelfDefined3;
 
 	/**
 		@var string
 	*/
-	public  $Skype;  // string
+	public  $Skype;
 
 	/**
 		@var string
 	*/
-	public  $Warning;  // string
+	public  $Warning;
 
 }
 
@@ -467,62 +460,62 @@ class  SimpleAddress  {
 	/**
 		@var string
 	*/
-	public  $AddressType;  // string 
+	public  $AddressType;
 
 	/**
 		@var string
 	*/
-	public  $City;  // string
+	public  $City;
 
 	/**
 		@var string
 	*/
-	public  $CountryName;  // string 
+	public  $CountryName;
 
 	/**
 		@var string
 	*/
-	public  $IsMainAdress;  // boolean 
+	public  $IsMainAdress;
 
 	/**
 		@var string
 	*/
-	public  $Line1;  // string
+	public  $Line1;
 
 	/**
 		@var string
 	*/
-	public  $Line2;  // string 
+	public  $Line2;
 
 	/**
 		@var string
 	*/
-	public  $Line3;  // string 
+	public  $Line3;
 
 	/**
 		@var string
 	*/
-	public  $Name;  // string 
+	public  $Name;
 
 	/**
 		@var string
 	*/
-	public  $NameAffex;  // string 
+	public  $NameAffex;
 
 	/**
 		@var string
 	*/
-	public  $PostCode;  // string 
+	public  $PostCode;
 
 	/**
 		@var string
 	*/
-	public  $Street;  // string
+	public  $Street;
 
 	/**
 		@var string
 	*/
-	public  $StreetNumber;  // string
+	public  $StreetNumber;
 }
 
 
@@ -531,579 +524,576 @@ class  ContactDetail  {
 	/**
 		@var CustomerIdentifier
 	*/
-	public  $IdentifierV1;  // CustomerIdentifier
+	public  $IdentifierV1;
 	
 	/**
 		@var boolean
 	*/
-	public  $IsMain;  // boolean 
+	public  $IsMain;
 	
 	/**
 		@var string
 	*/
-	public  $Type;  // string 
+	public  $Type;
 	
 	/**
 		@var string
 	*/
-	public  $Value;  // string
+	public  $Value;
 }
 
 
 class  ContactPersonInformation  {
-
 	
 	/**
 		@var ShowDescriptionItem[]
 	*/
-	public  $AdditionalMailingSigns;  // ArrayOfShowDescriptionItem 
+	public  $AdditionalMailingSigns;
 	
 	/**
 		@var string
 	*/
-	public  $AlternativeSalutation;  // string
+	public  $AlternativeSalutation;
 		
 	/**
 		@var dateTime
 	*/
-	public  $Birthday;  // dateTime
-
+	public  $Birthday;
 		
 	/**
 		@var ContactDetail[]
 	*/
-	public  $ContactDetails;  // ArrayOfContactDetail 
+	public  $ContactDetails;
 	
 	/**
 		@var string
 	*/
-	public  $FirstName;  // string
+	public  $FirstName;
 		
 	/**
 		@var GenderType
 	*/
-	public  $Gender;  // GenderType
-
+	public  $Gender;
 		
 	/**
 		@var CustomerIdentifier
 	*/
-	public  $IdentifierV1;  // CustomerIdentifier 
+	public  $IdentifierV1;
 	
 	/**
 		@var string
 	*/
-	public  $Initials;  // string
+	public  $Initials;
 		
 	/**
 		@var boolean
 	*/
-	public  $IsMailRecipient;  // boolean 
+	public  $IsMailRecipient;
 		
 	/**
 		@var boolean
 	*/
-	public  $IsMain;  // boolean
+	public  $IsMain;
 	
 	/**
 		@var string
 	*/
-	public  $Language;  // string 
+	public  $Language;
 	
 	/**
 		@var string
 	*/
-	public  $LastName;  // string
-	
-	
+	public  $LastName;
+		
 	/**
 		@var ShowDescriptionItem[]
 	*/
-	public  $MailingSigns;  // ArrayOfShowDescriptionItem 
+	public  $MailingSigns;
 	
 	/**
 		@var string
 	*/
-	public  $NameAffex;  // string
+	public  $NameAffex;
 	
 	/**
 		@var string
 	*/
-	public  $Notice;  // string 
+	public  $Notice;
 	
 	/**
 		@var string
 	*/
-	public  $Salutation;  // string
+	public  $Salutation;
 			
 	/**
 		@var ShowDescriptionItem[]
 	*/
-	public  $SecondaryMailingSigns;  // ArrayOfShowDescriptionItem
+	public  $SecondaryMailingSigns;
 }
 
 
 class  ShowDescriptionItem  {		
+	
 	/**
 		@var string
 	*/
-	public  $Description;  // string 
+	public  $Description;
 		
 	/**
 		@var string
 	*/
-	public  $Show;  // string
+	public  $Show;
 }
 
 
 class  PaymentInformation  {
+	
 	/**
 		@var unsignedByte
 	*/
-	public  $Days;  // unsignedByte 
+	public  $Days;
 		
 	/**
 		@var decimal
 	*/
-	public  $Deposit;  // decimal 
+	public  $Deposit;
 		
 	/**
 		@var string
 	*/
-	public  $Description;  // string 
+	public  $Description;
 		
 	/**
 		@var string
 	*/
-	public  $Show;  // string
+	public  $Show;
 		
 	/**
 		@var unsignedByte
 	*/
-	public  $Skonto;  // unsignedByte
+	public  $Skonto;
 }
-
-
 
 class  GetPossibleAutomaticConditionList  {
 		
 	/**
 		@var TenderIndentImporterData
 	*/
-	public  $importdata;  // TenderIndentImporterData 
+	public  $importdata; 
 			
 	/**
 		@var string[]
 	*/
-	public  $possibleDispatchTypes;  // ArrayOfstring
+	public  $possibleDispatchTypes;
 }
-
 
 class  TenderIndentImporterData  {
 				
 	/**
 		@var guid
 	*/
-	public  $AutomaticDeliveryConditionId;  // guid 
+	public  $AutomaticDeliveryConditionId;
 				
 	/**
 		@var boolean
 	*/
-	public  $AvailabilityCheckEnabled;  // boolean 
+	public  $AvailabilityCheckEnabled;
 			
 	/**
 		@var string
 	*/
-	public  $Categorie;  // string
+	public  $Categorie;
 				
 	/**
 		@var string
 	*/
-	public  $CustomerText;  // string 
+	public  $CustomerText;
 				
 	/**
 		@var long
 	*/
-	public  $DebitorNumber;  // long
+	public  $DebitorNumber;
 				
 	/**
 		@var TenderIndentImporterAddressData
 	*/
-	public  $DeliveryAddress;  // TenderIndentImporterAddressData 
+	public  $DeliveryAddress;
 			
 	/**
 		@var string
 	*/
-	public  $DeliveryTerm;  // string
+	public  $DeliveryTerm;
 			
 	/**
 		@var string
 	*/
-	public  $DispatchType;  // string 
+	public  $DispatchType;
 			
 	/**
 		@var string
 	*/
-	public  $FooterText;  // string 
+	public  $FooterText;
 			
 	/**
 		@var string
 	*/
-	public  $HeaderText;  // string 
+	public  $HeaderText;
 			
 	/**
 		@var string
 	*/
-	public  $ImportType;  // string
+	public  $ImportType;
 			
 	/**
 		@var string
 	*/
-	public  $ImportTypePrefix;  // string 
+	public  $ImportTypePrefix;
 			
 	/**
 		@var string
 	*/
-	public  $ImportTypeSuffix;  // string
-	
+	public  $ImportTypeSuffix;
 				
 	/**
 		@var TenderIndentImporterAddressData
 	*/
-	public  $InvoiceAddress;  // TenderIndentImporterAddressData 
+	public  $InvoiceAddress;
 			
 	/**
 		@var string
 	*/
-	public  $Notice;  // string
+	public  $Notice;
 			
 	/**
 		@var string[]
 	*/
-	public  $PaymentModeList;  // ArrayOfstring
+	public  $PaymentModeList;
 				
 	/**
 		@var TenderIndentImporterPositionData[]
 	*/
-	public  $PositionList;  // ArrayOfTenderIndentImporterPositionData 
+	public  $PositionList;
 				
 	/**
 		@var TenderIndentImporterAddressData
 	*/
-	public  $PostAddress;  // TenderIndentImporterAddressData
+	public  $PostAddress;
 			
 	/**
 		@var string
 	*/
-	public  $StorageLocation;  // string
+	public  $StorageLocation;
 			
 	/**
 		@var string
 	*/
-	public  $Warning;  // string
+	public  $Warning;
 
 }
-
 
 class  TenderIndentImporterAddressData  { 
 			
 	/**
 		@var string
 	*/
-	public  $AlternativeSalutation;  // string 
+	public  $AlternativeSalutation;
 			
 	/**
 		@var string
 	*/
-	public  $City;  // string
+	public  $City;
 			
 	/**
 		@var string
 	*/
-	public  $CompanyName;  // string 
+	public  $CompanyName;
 			
 	/**
 		@var string
 	*/
-	public  $CompanyNameAffex;  // string 
+	public  $CompanyNameAffex;
 			
 	/**
 		@var string
 	*/
-	public  $CountryIsoCode;  // string 
+	public  $CountryIsoCode;
 			
 	/**
 		@var string
 	*/
-	public  $DispatchTip;  // string 
+	public  $DispatchTip;
 			
 	/**
 		@var string
 	*/
-	public  $EMail;  // string
+	public  $EMail;
 			
 	/**
 		@var string
 	*/
-	public  $FaxNumber;  // string 
+	public  $FaxNumber;
 			
 	/**
 		@var string
 	*/
-	public  $FirstName;  // string 
+	public  $FirstName;
 			
 	/**
 		@var GenderType
 	*/
-	public  $Gender;  // GenderType 
+	public  $Gender;
 			
 	/**
 		@var string
 	*/
-	public  $Initial;  // string 
+	public  $Initial;
 			
 	/**
 		@var string
 	*/
-	public  $Language;  // string 
+	public  $Language;
 			
 	/**
 		@var string
 	*/
-	public  $LastName;  // string 
+	public  $LastName;
 			
 	/**
 		@var string
 	*/
-	public  $Line1;  // string 
+	public  $Line1;
 			
 	/**
 		@var string
 	*/
-	public  $Line2;  // string 
+	public  $Line2;
 			
 	/**
 		@var string
 	*/
-	public  $Line3;  // string
+	public  $Line3;
 			
 	/**
 		@var string
 	*/
-	public  $PhoneNumber;  // string 
+	public  $PhoneNumber;
 			
 	/**
 		@var string
 	*/
-	public  $PostCode;  // string 
+	public  $PostCode;
 			
 	/**
 		@var string
 	*/
-	public  $Salutation;  // string 
+	public  $Salutation;
 			
 	/**
 		@var string
 	*/
-	public  $Street;  // string
+	public  $Street;
 			
 	/**
 		@var string
 	*/
-	public  $StreetNumber;  // string
+	public  $StreetNumber;
 			
 	/**
 		@var string
 	*/
-	public  $UstId;  // string
+	public  $UstId;
 
 }
-
 
 class  TenderIndentImporterPositionData  {
 			
 	/**
 		@var TenderIndentImporterBettermentData[]
 	*/
-	public  $BettermentList;  // ArrayOfTenderIndentImporterBettermentData 
+	public  $BettermentList; 
 			
 	/**
 		@var decimal
 	*/
-	public  $BuyingPricePerUnit;  // decimal
+	public  $BuyingPricePerUnit;
 			
 	/**
 		@var TenderIndentImporterRelayData[]
 	*/
-	public  $BuyingRelayList;  // ArrayOfTenderIndentImporterRelayData 
+	public  $BuyingRelayList;
 			
 	/**
 		@var string
 	*/
-	public  $CustomerArticleDeliverynoteText;  // string
+	public  $CustomerArticleDeliverynoteText;
 			
 	/**
 		@var string
 	*/
-	public  $CustomerArticleDescription;  // string 
+	public  $CustomerArticleDescription;
 			
 	/**
 		@var string
 	*/
-	public  $CustomerArticleIndentText;  // string 
+	public  $CustomerArticleIndentText;
 			
 	/**
 		@var string
 	*/
-	public  $CustomerArticleName;  // string
+	public  $CustomerArticleName;
 			
 	/**
 		@var string
 	*/
-	public  $CustomerArticleTenderText;  // string 
+	public  $CustomerArticleTenderText;
 			
 	/**
 		@var string
 	*/
-	public  $CustomerArticleTextIntern;  // string 
+	public  $CustomerArticleTextIntern;
 			
 	/**
 		@var boolean
 	*/
-	public  $DirectDispatch;  // boolean
+	public  $DirectDispatch;
 				
 	/**
 		@var decimal
 	*/
-	public  $Discount;  // decimal
+	public  $Discount;
 				
 	/**
 		@var dateTime
 	*/
-	public  $EarliestDeliveryDate;  // dateTime 
+	public  $EarliestDeliveryDate;
 			
 	/**
 		@var boolean
 	*/
-	public  $IsStockArticle;  // boolean
+	public  $IsStockArticle;
 				
 	/**
 		@var dateTime
 	*/
-	public  $LatestDeliveryDate;  // dateTime 
+	public  $LatestDeliveryDate;
 				
 	/**
 		@var string
 	*/
-	public  $MyArticleNumber;  // string 
+	public  $MyArticleNumber;
 				
 	/**
 		@var boolean
 	*/
-	public  $PrintPosition;  // boolean
+	public  $PrintPosition;
 				
 	/**
 		@var boolean
 	*/
-	public  $PrintPricePerUnit;  // boolean 
+	public  $PrintPricePerUnit;
 				
 	/**
 		@var int
 	*/
-	public  $Quantity;  // int
+	public  $Quantity;
 				
 	/**
 		@var decimal
 	*/
-	public  $SellingPricePerUnit;  // decimal
+	public  $SellingPricePerUnit;
 				
 	/**
 		@var TenderIndentImporterRelayData[]
 	*/
-	public  $SellingRelayList;  // ArrayOfTenderIndentImporterRelayData 
+	public  $SellingRelayList;
 			
 	/**
 		@var string
 	*/
-	public  $SupplierName;  // string
+	public  $SupplierName;
 }
 
 class  GetPossibleAutomaticConditionListResponse  {
 	/**
 		@var GetPossibleAutomaticConditionListResult
 	*/
-	public  $GetPossibleAutomaticConditionListResult;  // GetPossibleAutomaticConditionListResult
+	public  $GetPossibleAutomaticConditionListResult;
 }
-
 
 class  GetPossibleAutomaticConditionListResult  { 
 
 	/**
 		@var long
 	*/
-	public  $CalculatedNumberOfPackages;  // long 
+	public  $CalculatedNumberOfPackages;
 
 	/**
 		@var long
 	*/
-	public  $CalculatedTotalVolume;  // long 
+	public  $CalculatedTotalVolume;
 
 	/**
 		@var long
 	*/
-	public  $CalculatedTotalWeight;  // long
+	public  $CalculatedTotalWeight;
 
 	/**
 		@var AutomaticCondition[]
 	*/
-	public  $PossibleAutomaticConditionList;  // ArrayOfAutomaticCondition
+	public  $PossibleAutomaticConditionList;
 
 	/**
 		@var boolean
 	*/
-	public  $SaleTaxIsCalculated;  // boolean
+	public  $SaleTaxIsCalculated;
 }
 
-
 class  AutomaticCondition  {
+
 	/**
 		@var string
 	*/
-	public  $AutomaticDeliveryConditionDescription;  // string 
+	public  $AutomaticDeliveryConditionDescription;
 
 	/**
 		@var guid
 	*/
-	public  $AutomaticDeliveryConditionId;  // guid
+	public  $AutomaticDeliveryConditionId;
+
 	/**
 		@var string
 	*/
-	public  $DeliveryTermShow;  // string
+	public  $DeliveryTermShow;
+
 	/**
 		@var string
 	*/
-	public  $DispatchTypeDescription;  // string 
+	public  $DispatchTypeDescription;
+
 	/**
 		@var string
 	*/
-	public  $DispatchTypeShow;  // string
+	public  $DispatchTypeShow;
+
 	/**
 		@var string
 	*/
-	public  $ExpenseName;  // string 
+	public  $ExpenseName;
+
 	/**
 		@var string
 	*/
-	public  $ExpenseNumber;  // string 
-	/**
-		@var decimal
-	*/
-	public  $ExpensePrice;  // decimal
+	public  $ExpenseNumber;
 
 	/**
 		@var decimal
 	*/
-	public  $SpecialPriceForPositions;  // decimal
+	public  $ExpensePrice;
+
+	/**
+		@var decimal
+	*/
+	public  $SpecialPriceForPositions;
 
 }
 
@@ -1112,7 +1102,7 @@ class  ImportData  {
 	/**
 		@var TenderIndentImporterData
 	*/
-	public  $importdata;  // TenderIndentImporterData
+	public  $importdata;
 }
 
 class  ImportDataResponse  {
@@ -1120,6 +1110,6 @@ class  ImportDataResponse  {
 	/**
 		@var string[]
 	*/
-	public  $ImportDataResult;  // ArrayOfstring
+	public  $ImportDataResult;
 
 }
