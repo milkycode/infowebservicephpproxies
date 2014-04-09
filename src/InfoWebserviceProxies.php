@@ -1,4 +1,13 @@
 <?
+
+/** @mainpage PHP Proxies for Promotional Office Info Webservice
+<img src="http://www.promidata.com/images/promidata-logo.jpg" alt="Screenshot">
+
+ @author Thomas Langer
+ @date 10.04.2014 - Initial Documentation
+*/
+
+
 class  CustomerIdentifier  {
 	/**
 		@var long
