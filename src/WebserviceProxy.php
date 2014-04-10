@@ -3,8 +3,13 @@ define('__ROOT__', dirname(__FILE__));
 
 require_once 'WebserviceClasses.php';
 
-class My_SoapClient extends SoapClient
+class PromidataSoapClient extends SoapClient
 {
+	/**
+	 * 
+	 * @param mixed $wsdl
+	 * @param array $options
+	 */
 	public function __construct($wsdl, $options){
 		$url = parse_url($wsdl);
 		if($url['port']){
@@ -13,6 +18,10 @@ class My_SoapClient extends SoapClient
 		return parent::__construct($wsdl, $options);
 	}
 
+	/**
+	 * (non-PHPdoc)
+	 * @see SoapClient::__doRequest()
+	 */
 	public function __doRequest($request, $location, $action, $version)
 	{
 		$parts = parse_url($location);
@@ -24,6 +33,11 @@ class My_SoapClient extends SoapClient
 		return $result;
 	}
 
+	/**
+	 * 
+	 * @param array $parts
+	 * @return string
+	 */
 	public function buildLocation($parts = array()) {
 		$location = '';
 		if(isset($parts['scheme'])){
@@ -45,7 +59,12 @@ class My_SoapClient extends SoapClient
 	}
 }
 
-interface IInfoService{
+/**
+ * 
+ * @author Thomas Langer
+ *
+ */
+interface ICustomerInfoService{
 	/**
 	 @brief User Logon
 	 	
@@ -100,6 +119,7 @@ interface IInfoService{
 	 * @return GetUserInformationResponse
 	 */
 	public function GetUserInformation($getUserInformation);
+	
 	/**
 	 * 
 	 * @param[in] GetCustomerPriceList $getCustomerPriceList
@@ -123,69 +143,117 @@ interface IInfoService{
 	
 }
 
-class WebserviceProxy implements IInfoService{
+class CustomerInfoWebserviceProxy implements ICustomerInfoService{
+	
+	/**
+	 * 
+	 * @var PromidataSoapClient
+	 */
+	var $client;
 	
 	public function __construct($url){            
-		$this->client = new My_SoapClient($url, array('exceptions'=>true, 
+		$this->client = new PromidataSoapClient($url, array('exceptions'=>true, 
 		'classmap' => array(
 				'Logon' => 'Logon'
+				
+				, 'ArrayOfanyURI'=>'ArrayOfanyURI'
+				, 'ArrayOfArticleTextItem'=>'ArrayOfArticleTextItem'
+				, 'ArrayOfContactDetail' => 'ArrayOfContactDetail'
+				, 'ArrayOfContactPersonInformation' => 'ArrayOfContactPersonInformation'
+				, 'ArrayOfColorSizeCombination'=>'ArrayOfColorSizeCombination'			
+				, 'ArrayOfCustomerInformation' => 'ArrayOfCustomerInformation'								
+				, 'ArrayOfExpectedStockMovement' => 'ArrayOfExpectedStockMovement'				
+				, 'ArrayOfPaymentInformation' => 'ArrayOfPaymentInformation'
+				, 'ArrayOfProductPriceInformation' => 'ArrayOfProductPriceInformation'
+				, 'ArrayOfShowDescriptionItem'=> 'ArrayOfShowDescriptionItem'
+				, 'ArrayOfSimpleAddress' => 'ArrayOfSimpleAddress'
+				, 'ArrayOfstring' => 'ArrayOfstring'				
+				, 'ArrayOfTranslationItem' => 'ArrayOfTranslationItem'				
+				, 'ArrayOfUserInformation' => 'ArrayOfUserInformation'
+				, 'GetProductInformationRequest' => 'GetProductInformation'
+				, 'GetProductInformationResponse' => 'GetProductInformationResponse'		
+				, 'GetProductPricesRequest' => 'GetProductPrices'				
+				, 'GetProductPricesResult' => 'GetProductPricesResult'
+				, 'GetExpectedStockMovementRequest' => 'GetExpectedStockMovement'
+				, 'GetExpectedStockMovementResponse' => 'GetExpectedStockMovementResponse'
+				, 'GetProductPriceListRequest' => 'GetProductPriceList'
+				, 'GetCustomerInformationRequest' => 'GetCustomerInformation'
+				, 'GetCustomerInformationResponse' => 'GetCustomerInformationResponse'				
+				, 'GetCustomerInformationListResponse' => 'GetCustomerInformationListResponse'
+				, 'GetCustomerInformationListRequest' => 'GetCustomerInformationListRequest'				
+				, 'GetProductPricesResponse' => 'GetProductPricesResponse'
+				, 'GetProductPriceListResponse' => 'GetProductPriceListResponse'
+				, 'GetUserInformationRequest' => 'GetUserInformation'
+				, 'GetUserInformationResponse' => 'GetUserInformationResponse'
+				, 'GetCustomerPriceListRequest' => 'GetCustomerPriceList'
+				, 'GetCustomerPriceListResponse' => 'GetCustomerPriceListResponse'				
+				, 'GetArticleNumberListByArticleGroupRequest' => 'GetArticleNumberListByArticleGroup'
+				, 'GetArticleNumberListByArticleGroupResponse' => 'GetArticleNumberListByArticleGroupResponse'
+				
+				
+				
+				, 'CustomerIdentifier' => 'CustomerIdentifier'				
+				, 'ProductIdentifier' => 'ProductIdentifier'				
+								
+				, 'ArticleTextItem' => 'ArticleTextItem'
+				, 'ColorSizeCombination'=> 'ColorSizeCombination'
 				, 'LogonResponse'=> 'LogonResponse'
 				, 'ProductInformation' => 'ProductInformation'
-				, 'GetProductInformation' => 'GetProductInformation'
-				, 'GetProductInformationResponse' => 'GetProductInformationResponse'		
-				, 'ArticleTextItem' => 'ArticleTextItem'
+				, 'ProductPriceInformation' => 'ProductPriceInformation'				
 				, 'ShowDescriptionItem' => 'ShowDescriptionItem'
-				, 'ColorSizeCombination' => 'ColorSizeCombination'
 				, 'TranslationItem' => 'TranslationItem'
-				, 'ProductPriceInformation' => 'ProductPriceInformation'
-				, 'CustomerIdentifier' => 'CustomerIdentifier'				
-				, 'ProductIdentifier' => 'ProductIdentifier'
-				, 'GetProductPrices' => 'GetProductPrices'				
-				, 'GetProductPricesResponse' => 'GetProductPricesResponse'
-				, 'GetProductPricesResult' => 'GetProductPricesResult'						
-			)));	    
+				, 'ExpectedStockMovement' => 'ExpectedStockMovement'
+				, 'ExpectedStockMovementResponse' => 'ExpectedStockMovementResponse'				
+				, 'CustomerInformation' => 'CustomerInformation'				
+				, 'ContactDetail' => 'ContactDetail'
+				, 'ContactPersonInformation' => 'ContactPersonInformation'
+				, 'LocalizedItem' => 'LocalizedItem'
+				, 'SimpleAddress' => 'SimpleAddress'
+				, 'UserInformation' => 'UserInformation'				
+				
+			)));
 	}
-	
+
 	public function Logon($logon){
 		return $this->client->Logon($logon);
 	}
-	
+
 	public function GetProductInformation($getProductInformation){
 		return $this->client->GetProductInformation($getProductInformation);
 	}
-	
+
 	public function GetProductPrices($getProductPrices){
 		return $this->client->GetProductPrices($getProductPrices);		
 	}
-	
+
 	public function GetExpectedStockMovement($getExpectedStockMovement){
 		return $this->client->GetExpectedStockMovement($getExpectedStockMovement);		
 	}
-	
+
 	public function GetProductPriceList($getProductPriceList){
 		return $this->client->GetProductPriceList($getProductPriceList);
 	}
-	
+
 	public function GetCustomerInformation($getCustomerInformation){
 		return $this->client->GetCustomerInformation($getCustomerInformation);
 	}
-	
+
 	public function GetCustomerInformationList($getCustomerInformationList){
 		return $this->client->GetCustomerInformationList($getCustomerInformationList);
 	}
-	
+
 	public function GetUserInformation($getUserInformation){
 		return $this->client->GetUserInformation($getUserInformation);
 	}
-	
+
 	public function GetCustomerPriceList($getCustomerPriceList){
 		return $this->client->GetCustomerPriceList($getCustomerPriceList);
 	}
-	
+
 	public function GetPossibleAutomaticConditionList($getPossibleAutomaticConditionList){
 		return $this->client->GetPossibleAutomaticConditionList($getPossibleAutomaticConditionList);
 	}
-	
+
 	public function GetArticleNumberListByArticleGroup($getArticleNumberListByArticleGroup){
 		return $this->client->GetArticleNumberListByArticleGroup($getArticleNumberListByArticleGroup);
 	}

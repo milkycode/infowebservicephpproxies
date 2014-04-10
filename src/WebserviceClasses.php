@@ -41,7 +41,55 @@ class LogonResponse
 	public $LogonResult;
 }
 
-class GetProductPrices{
+class LocalizedItem {
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Description;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Show;
+	
+	/**
+	 * 
+	 * @var ArrayOfLocalizationItem
+	 */
+	public $Texts;
+}
+
+class ArrayOfLocalizationItem{
+	/**
+	 * 
+	 * @var LocalizationItem[]
+	 */
+	public $LocalizationItem;	
+} 
+
+class LocalizationItem{
+	
+	/**
+	 * 
+	 * @var string
+	 */	
+	public $Description;
+	
+	/**
+	 * 
+	 * @var string
+	 */	
+	public $Language;
+	
+	/**
+	 * 
+	 * @var string
+	 */	
+	public $Show;
+}
+
+class GetProductPricesRequest{
 	/**
 	 * 
 	 * @var CustomerIdentifier
@@ -67,12 +115,13 @@ class GetProductPrices{
 class GetProductPricesResponse{
 	/**
 	 * 
-	 * @var ProductPriceInformation[]
+	 * @var ArrayOfProductPriceInformation
 	 */
 	public $GetProductPricesResult;
 }
 
-class GetProductInformation{
+class GetProductInformationRequest{
+	
 	/**
 	 * 
 	 * @var string
@@ -83,6 +132,97 @@ class GetProductInformation{
 		$this->ownArticleNumber = $productNumber;
 	}
 }
+
+class GetExpectedStockMovementRequest{
+	/**
+	 * 
+	 * @var ProductIdentifier
+	 */
+	public $productIdentifier;
+
+	/**
+	 * 
+	 * @param ProductIdentifier $productIdentifier
+	 */
+	function __construct($productIdentifier){
+		$this->productIdentifier = $productIdentifier;
+	}
+}
+
+class ExpectedStockMovementResponse{
+	/**
+	 * 
+	 * @var ExpectedStockMovement[]
+	 */
+	public $GetExpectedStockMovementResult;	
+}
+
+class ExpectedStockMovement{
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $MayBePrefered;
+	
+	/**
+	 * 
+	 * @var dateTime
+	 */
+	public $MovementDate;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $ProductNumber;
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $Quantity;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $QuantityUnit;
+}
+
+
+class GetProductPriceListRequest{
+
+	/**
+	 * 
+	 * @var ProductIdentifier
+	 */
+	public $productIdentifier;
+
+	/**
+	 * 
+	 * @param ProductIdentifier $productIdentifier
+	 */
+	function __construct($productIdentifier){
+		$this->productIdentifier = $productIdentifier;
+	}
+}
+
+class ArrayOfProductPriceInformation
+{
+	/**
+	 * 
+	 * @var ProductPriceInformation[]
+	 */
+	public $ProductPriceInformation;
+}
+
+class GetProductPriceListResponse{
+	/**
+	 * 
+	 * @var ArrayOfProductPriceInformation
+	 */
+	public $GetProductPriceListResult;	
+}
+
 
 class GetProductInformationResponse
 {
@@ -95,12 +235,36 @@ class GetProductInformationResponse
 
 class ArticleTextItem
 {
+	/**
+	 * 
+	 * @var string
+	 */
 	public $ArticleLanguageType;
+	/**
+	 * 
+	 * @var string
+	 */
 	public $Language;
+	/**
+	 * 
+	 * @var string
+	 */
 	public $Value;
 }
 
 class ShowDescriptionItem{
+
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Description;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Show;
 }
 
 class TranslationItem{
@@ -163,13 +327,13 @@ class ColorSizeCombination{
 	
 	/**
 	 * 
-	 * @var ProductPriceInformation[]
+	 * @var ArrayOfProductPriceInformation
 	 */
 	public $BuyingRelais;
 	
 	/**
 	 * 
-	 * @var TranslationItem[]
+	 * @var ArrayOfTranslationItem
 	 */
 	public $ColorNames;
 	
@@ -229,31 +393,89 @@ class ColorSizeCombination{
 	
 	/**
 	 * 
-	 * @var ProductPriceInformation[]
+	 * @var ArrayOfProductPriceInformation
 	 */
 	public $SellingRelays;
 	
 	/**
 	 * 
-	 * @var TranslationItem[]
+	 * @var ArrayOfTranslationItem
 	 */
 	public $SizeNames;
 	
+}
+
+class ArrayOfArticleTextItem{
+	/**
+	 * 
+	 * @var ArticleTextItem
+	 */
+	public $ArticleTextItem;
+}
+
+class GetExpectedStockMovementResponse{
+	/**
+	 * 
+	 * @var ArrayOfExpectedStockMovement
+	 */
+	public $GetExpectedStockMovementResult;
+}
+
+class ArrayOfExpectedStockMovement{
+	/**
+	 * 
+	 * @var ExpectedStockMovement[]
+	 */
+	public $ExpectedStockMovement;
+}
+class ArrayOfTranslationItem{
+	/**
+	 * 
+	 * @var TranslationItem[]
+	 */
+	public $TranslationItem;
+}
+class ArrayOfColorSizeCombination{
+	/**
+	 * 
+	 * @var ColorSizeCombination[]
+	 */
+	public $ColorSizeCombination;
+}
+
+class anyURI{
+	/**
+	 * 
+	 * @var string
+	 */
+	public $url;
+}
+class ArrayOfanyURI{
+
+	/**
+	 * 
+	 * @var anyURI[]
+	 */
+	public $anyURI;
 }
 
 class ProductInformation
 {
 	/**
 	 * 
-	 * @var ShowDescriptionItem[]
+	 * @var ArrayOfShowDescriptionItem
 	 */
 	public $ArticleGroups;
 	/**
 	 * 
-	 * @var ShowDescriptionItem[]
+	 * @var ArrayOfShowDescriptionItem
 	 */
 	public $ArticleTexts;
-	public $ArticleType;	
+	public $ArticleType;
+	/**
+	 * 
+	 * @var ArrayOfanyURI
+	 */	
 	public $AllPictureUrls;
 	/**
 	 * 
@@ -418,7 +640,7 @@ class ProductInformation
 	public $BuyingPriceBaseQuantityUnit;
 	/**
 	 * 
-	 * @var ColorSizeCombination[]
+	 * @var ArrayOfColorSizeCombination
 	 */
 	public $ColorSizeCombinations;
 	
@@ -431,7 +653,7 @@ class ProductInformation
 	
 	/**
 	 * 
-	 * @var ShowDescriptionItem[]
+	 * @var ArrayOfShowDescriptionItem
 	 */
 	public $Ideas;
 	
@@ -599,4 +821,1242 @@ class ProductIdentifier {
 	}
 }
 
+class GetCustomerInformationRequest{
+	/**
+	 * 
+	 * @var CustomerIdentifier
+	 */
+	public $identifierV1;
+	
+
+	/**
+	 * 
+	 * @param CustomerIdentifier $customerIdentifier
+	 */
+	function __construct($customerIdentifier){
+		$this->identifierV1 = $customerIdentifier;
+	}
+}
+
+class GetCustomerInformationResponse{
+	/**
+	 * 
+	 * @var CustomerInformation
+	 */
+	public $GetCustomerInformationResult;
+}
+
+class CustomerInformation{
+	/**
+	 * 
+	 * @var ArrayOfSimpleAddress
+	 */
+	public $Adresses;
+	
+	/**
+	 * 
+	 * @var long
+	 */
+	public $AgentId;
+	
+	/**
+	 * 
+	 * @var ArrayOfContactDetail
+	 */
+	public $ContactDetails;
+
+	/**
+	 * 
+	 * @var ArrayOfContactPersonInformation
+	 */
+	public $ContactPersons;
+	
+	/**
+	 * 
+	 * @var int
+	 */
+	public $CreditLimitTotal;
+	
+
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $CreditLimitUsed;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CurrencyName;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $DebitorNumber;
+
+	/**
+	 * 
+	 * @var LocalizedItem
+	 */
+	public $DeliveryTerm;
+	
+	/**
+	 *
+	 * @var LocalizedItem
+	 */
+	public $DispatchType;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $EMail;	
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Fax;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Homepage;
+	
+	/**
+	 * 
+	 * @var CustomerIdentifier
+	 */
+	public $IdentifierV1;
+	
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $IsActive;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Language;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Name;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $NameAffex;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Notice;
+	
+	/**
+	 * 
+	 * @var ArrayOfPaymentInformation
+	 */
+	public $PaymentModes;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Phone;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SalesTaxNumber;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SelfDefined1;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SelfDefined2;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SelfDefined3;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Skype;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Warning;	
+}
+
+class ArrayOfContactPersonInformation{
+	/**
+	 * 
+	 * @var ContactPersonInformation[]
+	 */
+	public $ContactPersonInformation;
+}
+
+class ContactPersonInformation{
+	/** 
+	 * 
+	 * @var ArrayOfShowDescriptionItem
+	 */
+	public $AdditionalMailingSigns;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $AlternativeSalutation;
+	
+	/**
+	 * 
+	 * @var DateTime
+	 */
+	public $Birthday;
+	/**
+	 * 
+	 * @var ArrayOfContactDetail
+	 */
+	public $ContactDetails;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $FirstName;
+	
+	/**
+	 * 
+	 * @var Gender
+	 */
+	public $Gender;
+	
+	/**
+	 * 
+	 * @var CustomerIdentifier
+	 */
+	public $IdentifierV1;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Initials;
+	
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $IsMailRecipient;
+
+	/**
+	 *
+	 * @var boolean
+	 */	
+	public $IsMain;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Language;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $LastName;
+	
+	/**
+	 * 
+	 * @var ArrayOfShowDescriptionItem
+	 */
+	public $MailingSigns;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $NameAffex;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Notice;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Salutation;
+	
+	/**
+	 * 
+	 * @var ArrayOfShowDescriptionItem
+	 */
+	public $SecondaryMailingSigns;	
+}
+
+class ArrayOfShowDescriptionItem{
+	/**
+	 * 
+	 * @var ShowDescriptionItem[]
+	 */
+	public $ShowDescriptionItem;
+}
+
+
+class ArrayOfPaymentInformation{
+	/**
+	 * 
+	 * @var PaymentInformation[]
+	 */
+	public $PaymentInformation;	
+}
+
+class PaymentInformation{
+
+	/**
+	 * 
+	 * @var unsignedByte
+	 */
+	public $Days;
+	
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $Deposit;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Description;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Show;
+	
+	/**
+	 * 
+	 * @var unsignedByte
+	 */
+	public $Skonto;
+}
+
+class ArrayOfContactDetail{
+	/**
+	 * 
+	 * @var ContactDetail[]
+	 */
+	public $ContactDetail;
+}
+
+class ContactDetail{
+
+	/**
+	 * 
+	 * @var CustomerIdentifier
+	 */
+	public $IdentifierV1;
+	
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $IsMain;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Type;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Value;	
+}
+
+class ArrayOfSimpleAddress{
+	/**
+	 * 
+	 * @var SimpleAddress[]
+	 */
+	public $SimpleAddress;
+}
+
+class SimpleAddress{
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $AddressType;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $City;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CountryName;
+	
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $IsMainAdress;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Line1;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Line2;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Line3;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Name;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $NameAffex;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $PostCode;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Street;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $StreetNumber;
+}
+
+
+
+class GetCustomerInformationListRequest
+{
+	/**
+	 * 
+	 * @var dateTime
+	 */
+	public $startDate;
+	
+	/**
+	 * 
+	 * @param dateTime $startDate
+	 */
+	function __construct($startDate){
+		$this->startDate = $startDate;
+	}
+}
+
+class GetCustomerInformationListResponse{
+	/**
+	 * 
+	 * @var ArrayOfCustomerInformation
+	 */
+	public $GetCustomerInformationListResult;
+}
+
+class ArrayOfCustomerInformation{
+	
+	/**
+	 * 
+	 * @var CustomerInformation[]
+	 */
+	public $CustomerInformation;
+}
+
+class GetUserInformationRequest{
+	
+}
+
+class GetUserInformationResponse{
+	/**
+	 * 
+	 * @var ArrayOfUserInformation
+	 */
+	public $GetUserInformationResult;	
+}
+
+class ArrayOfUserInformation{
+	/**
+	 * 
+	 * @var UserInformation[]
+	 */
+	public $UserInformation;
+}
+
+class UserInformation{
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Email;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Fax;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $FirstName;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Language;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $LastName;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Phone;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SelfDefined1;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SelfDefined2;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SelfDefined3;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SelfDefined4;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SelfDefined5;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $ShortName;
+	/**
+	 * 
+	 * @var long
+	 */
+	public $UserId;
+	
+}
+
+class GetCustomerPriceListRequest{
+	/**
+	 * 
+	 * @var CustomerIdentifier
+	 */
+	public $identifier;	
+	
+	/**
+	 * 
+	 * @param CustomerIdentifier $customerIdentifier
+	 */
+	function __construct($customerIdentifier){
+		$this->identifier = $customerIdentifier;
+	}
+}
+
+class GetCustomerPriceListResponse{
+	/**
+	 * 
+	 * @var ArrayOfProductPriceInformation
+	 */
+	public $GetCustomerPriceListResult;
+}
+
+class GetPossibleAutomaticConditionListRequest{
+	/**
+	 * 
+	 * @var TenderIndentImporterData
+	 */
+	public $importdata;
+	/**
+	 * 
+	 * @var ArrayOfstring
+	 */
+	public $possibleDispatchTypes;
+	
+	/**
+	 * 
+	 * @param TenderIndentImporterData $importData
+	 * @param ArrayOfstring $possibleDispatchTypes
+	 */
+	function __construct($importData, $possibleDispatchTypes){
+		$this->importdata = $importData;
+		$this->possibleDispatchTypes = $possibleDispatchTypes;
+	}
+}
+
+class GetPossibleAutomaticConditionListResponse{
+	/**
+	 * 
+	 * @var GetPossibleAutomaticConditionListResult
+	 */
+	public $GetPossibleAutomaticConditionListResult;
+}
+
+class GetPossibleAutomaticConditionListResult{
+	/**
+	 * 
+	 * @var long
+	 */
+	public $CalculatedNumberOfPackages;
+	/**
+	 * 
+	 * @var long
+	 */
+	public $CalculatedTotalVolume;
+	/**
+	 * 
+	 * @var long
+	 */
+	public $CalculatedTotalWeight;
+	/**
+	 * 
+	 * @var ArrayOfAutomaticCondition
+	 */
+	public $PossibleAutomaticConditionList;
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $SaleTaxIsCalculated;	
+}
+
+class ArrayOfAutomaticCondition{
+	/**
+	 * 
+	 * @var AutomaticCondition[]
+	 */
+	public $AutomaticCondition;
+}
+
+class AutomaticCondition{
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $AutomaticDeliveryConditionDescription;
+	/**
+	 * 
+	 * @var Guid
+	 */
+	public $AutomaticDeliveryConditionId;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $DeliveryTermShow;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $DispatchTypeDescription;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $DispatchTypeShow;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $ExpenseName;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $ExpenseNumber;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $ExpensePrice;
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $SpecialPriceForPositions;
+	
+}
+class TenderIndentImporterData{
+	/**
+	 * 
+	 * @var Guid
+	 */
+	public $AutomaticDeliveryConditionId;
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $AvailabilityCheckEnabled;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Categorie;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerText;
+	/**
+	 * 
+	 * @var long
+	 */
+	public $DebitorNumber;
+	/**
+	 * 
+	 * @var TenderIndentImporterAddressData
+	 */
+	public $DeliveryAddress;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $DeliveryTerm;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $DispatchType;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $FooterText;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $HeaderText;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $ImportType;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $ImportTypePrefix;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $ImportTypeSuffix;	
+	/**
+	 * 
+	 * @var TenderIndentImporterAddressData
+	 */
+	public $InvoiceAddress;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Notice;	
+	/**
+	 * 
+	 * @var ArrayOfstring
+	 */
+	public $PaymentModeList;	
+	/**
+	 * 
+	 * @var ArrayOfTenderIndentImporterPositionData
+	 */
+	public $PositionList;
+	/**
+	 * 
+	 * @var TenderIndentImporterAddressData
+	 */
+	public $PostAddress;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $StorageLocation;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Warning;	
+}
+
+class TenderIndentImporterAddressData{
+	/**
+	 * 
+	 * @var string
+	 */
+	public $AlternativeSalutation ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $City ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CompanyName ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CompanyNameAffex ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CountryIsoCode ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $DispatchTip ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $EMail ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $FaxNumber ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $FirstName ;
+	/**
+	 * 
+	 * @var GenderType
+	 */
+	public $Gender ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Initial ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Language ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $LastName ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Line1 ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Line2 ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Line3 ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $PhoneNumber ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $PostCode ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Salutation ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $Street ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $StreetNumber ;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $UstId ;	
+}
+
+class ArrayOfTenderIndentImporterPositionData{
+	/**
+	 * 
+	 * @var $TenderIndentImporterPositionData[]
+	 */
+	public $TenderIndentImporterPositionData;
+}
+
+class TenderIndentImporterPositionData{
+	/**
+	 * 
+	 * @var ArrayOfTenderIndentImporterBettermentData
+	 */
+	public $BettermentList;
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $BuyingPricePerUnit;
+	/**
+	 * 
+	 * @var ArrayOfTenderIndentImporterRelayData
+	 */
+	public $BuyingRelayList;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleDeliverynoteText;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleDescription;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleIndentText;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleName;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleTenderText;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleTextIntern;
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $DirectDispatch;
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $Discount;
+	/**
+	 * 
+	 * @var DateTime
+	 */
+	public $EarliestDeliveryDate;
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $IsStockArticle;
+	/**
+	 * 
+	 * @var DateTime
+	 */
+	public $LatestDeliveryDate;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $MyArticleNumber;
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $PrintPosition;
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $PrintPricePerUnit;
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $Quantity;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $QuantityUnit;
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $SellingPricePerUnit;
+	/**
+	 * 
+	 * @var ArrayOfTenderIndentImporterRelayData
+	 */
+	public $SellingRelayList;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SupplierName;	
+}
+
+class ArrayOfstring{
+	/**
+	 * 
+	 * @var string[]
+	 */
+	public $string;
+}
+
+class ArrayOfTenderIndentImporterBettermentData{
+	/**
+	 * 
+	 * @var TenderIndentImporterBettermentData[]
+	 */
+	public $TenderIndentImporterBettermentData;
+}
+class TenderIndentImporterBettermentData{
+	
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $BuyingPricePerUnit;
+	/**
+	 * 
+	 * @var ArrayOfTenderIndentImporterRelayData
+	 */
+	public $BuyingRelayList;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleDeliverynoteText;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleDescription;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleIndentText;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleName;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleTenderText;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $CustomerArticleTextIntern;
+	
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $DirectDispatch;
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $Discount;
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $MyArticleNumber;
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $PrintPosition;
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $PrintPricePerUnit;
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $SellingPricePerUnit;
+	/**
+	 * 
+	 * @var ArrayOfTenderIndentImporterRelayData
+	 */
+	public $SellingRelayList;
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $SetupCostBuyingPrice;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SetupCostDescription;
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $SetupCostSellingPrice;
+	/**
+	 * 
+	 * @var string
+	 */
+	public $SupplierName;
+	
+}
+class ArrayOfTenderIndentImporterRelayData{
+	/**
+	 * 
+	 * @var TenderIndentImporterRelayData[]
+	 */
+	public $TenderIndentImporterRelayData;
+}
+
+class TenderIndentImporterRelayData{
+	/**
+	 * 
+	 * @var boolean
+	 */
+	public $IsCompletePrice;
+	
+	/**
+	 * 
+	 * @var int
+	 */
+	public $Quantity;
+	
+	/**
+	 * 
+	 * @var decimal
+	 */
+	public $SellingPricePerUnit;
+}
+
+class GetArticleNumberListByArticleGroupRequest
+{
+	
+	/**
+	 * 
+	 * @var string
+	 */
+	public $articleGroupName;
+	
+	/**
+	 * 
+	 * @param string $productGroupName
+	 */
+	function __construct($productGroupName){
+		$this->articleGroupName = $productGroupName;
+	}
+}
+
+class GetArticleNumberListByArticleGroupResponse{
+	/**
+	 * 
+	 * @var ArrayOfstring
+	 */
+	public $GetArticleNumberListByArticleGroupResult;
+}
 ?>

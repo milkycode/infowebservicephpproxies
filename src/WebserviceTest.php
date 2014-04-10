@@ -2,19 +2,46 @@
 	require_once('WebserviceProxy.php');
 	$url = "https://93.95.252.4:8181/PromotionalOffice/Customer/Services/Basic/ClientBackendService.svc?wsdl";
     $log = new Logon("PO Test 2_5", "Support", "EB20RK25DR16!");
-	$proxy = new WebserviceProxy($url);
-    $result = $proxy->Logon($log);
-    $result = $proxy->GetProductInformation(new GetProductInformation("01-1001"));
-    $result = $proxy->GetProductPrices(new GetProductPrices(new CustomerIdentifier(9, null), new ProductIdentifier(null,"01-1001",null)));
-    print_r($result);
+	$proxy = new CustomerInfoWebserviceProxy($url);		
+	$productIdentifier = new ProductIdentifier(null,"01-1001",null);
+	$customerIdentifier = new CustomerIdentifier(9, null);	
+	$result = $proxy->Logon($log);
     /*
-    $proxy->GetExpectedStockMovement();
-    $proxy->GetProductPriceList();
-    $proxy->GetCustomerInformation();
-    $proxy->GetCustomerInformationList();
-    $proxy->GetUserInformation();
-    $proxy->GetCustomerPriceList();
-    $proxy->GetPossibleAutomaticConditionList();
-    $proxy->GetArticleNumberListByArticleGroup();
+
+    */
+	$result = $proxy->GetProductInformation(new GetProductInformationRequest("01-1001"));       
+	print_r($result);
+
+	$result = $proxy->GetProductPrices(new GetProductPricesRequest($customerIdentifier, $productIdentifier ));
+    print_r($result);
+    
+    $result = $proxy->GetExpectedStockMovement(new GetExpectedStockMovementRequest($productIdentifier));
+    print_r($result);
+    
+    $result = $proxy->GetProductPriceList(new GetProductPriceListRequest($productIdentifier));    
+    print_r($result);
+    
+    $result = $proxy->GetCustomerInformation(new GetCustomerInformationRequest($customerIdentifier));
+    print_r($result);
+    
+    $result = $proxy->GetCustomerInformationList(new GetCustomerInformationListRequest(date("c", strtotime('-10 month'))));      
+    print_r($result);
+    
+    $result = $proxy->GetUserInformation(new GetUserInformationRequest());
+    print_r($result);
+    
+    $result = $proxy->GetCustomerPriceList(new GetCustomerPriceListRequest($customerIdentifier));
+    print_r($result);
+    
+    //$result = $proxy->GetPossibleAutomaticConditionList(new GetPossibleAutomaticConditionList(new TenderIndentImporterData()));
+	//print_r($result);
+	
+    $result = $proxy->GetArticleNumberListByArticleGroup(new GetArticleNumberListByArticleGroupRequest("Mug (Desk)"));
+    print_r($result);   
+    /*    
+    
+    
+    
+    
       */      
 ?>
