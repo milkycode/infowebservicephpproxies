@@ -1,15 +1,26 @@
 <?
 
 /** @mainpage PHP Proxies for Promotional Office Info Webservice
+	@section intro_sec Introduction
+	
 <img src="http://www.promidata.com/images/promidata-logo.jpg" alt="Screenshot">
-
+@subsection authentication Authentication
+@code{.php}
+	'header'  =>  sprintf("Authorization:  Basic  %s\r\n",  base64_encode('$CompanyName.\.$UserName:$Password')),
+@endcode
  @author Thomas Langer
  @date 10.04.2014 - Initial Documentation
 */
 
-
+/**
+	@class CustomerIdentifier
+	@brief Used to identify a customer
+	
+	Used by some methods to identify a customer. It is not allowed to set more than one property at the same time. 
+*/
 class  CustomerIdentifier  {
 	/**
+		@deprecated 
 		@var long
 	*/
 	public $CustomerId;
@@ -20,29 +31,39 @@ class  CustomerIdentifier  {
 	public  $CustomerNumber;
 }
 
+/**	
+*/
 class  ExpectedStockMovement  {
 
 	/**
+		@brief	If the goods can be brought forward?
 		@var boolean
 	*/
 	public  $MayBePrefered;
 
 	/**
-		@var dateTime
+		@brief Inventory available for
+		@var dateTime		
 	*/
 	public  $MovementDate;
 
 	/**
+		@brief ProductNumber
 		@var string
 	*/
 	public  $ProductNumber;
 
 	/**
+		@brief Quantity Available for $MovementDate
 		@var long
 	*/
 	public  $Quantity;
 }
 
+/**
+	@brief Get the anticipated stock movements for a product
+	@returns GetExpectedStockMovementResponse
+*/
 class  GetExpectedStockMovement  {
 
 	/**
