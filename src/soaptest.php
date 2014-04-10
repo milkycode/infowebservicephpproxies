@@ -9,8 +9,33 @@
 			@param[in] Logon $logon 
 		*/
 		public function Logon($logon);
+		
+		/**
+			@returns GetProductInformationResponse
+			@param[in] GetProductInformation $getProductInformation
+		*/
+		public function GetProductInformation($getProductInformation);
     }
 
+	class ProductInformation{
+	    public $ArticleType;
+	    public $IsActive;
+	}
+	
+	class GetProductInformation{
+		public $ownArticleNumber;
+	    public function __construct($ownArticleNumber){
+		$this->ownArticleNumber = $ownArticleNumber;
+	    }
+	}
+	
+	class GetProductInformationResponse{
+		/**
+			@var ProductInformation
+		*/
+		public $GetProductInformationResult;
+	}
+	
     class Logon{
 		/**
 			@brief Company Name
@@ -54,12 +79,6 @@
 	public $productIdentifier;
     }
 
-    $url = "https://93.95.252.4:8181/PromotionalOffice/Customer/Services/Basic/ClientBackendService.svc?wsdl";
-//    $client = new My_SoapClient($url, array('exceptions'=>true));
-    $log = new Logon("PO Test", "Support", "EB20RK25DR16!");
-//    $result = $client->Logon($log);
-	$proxy = new WebserviceProxy($url);
-    $result = $proxy->Logon($log);
-    echo $result->LogonResult;
+    
 //    print_r($result);
 ?>

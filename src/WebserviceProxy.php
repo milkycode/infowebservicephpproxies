@@ -1,5 +1,5 @@
 <?php
-define('__ROOT__', dirname(dirname(__FILE__)));
+define('__ROOT__', dirname(__FILE__));
 require_once(__ROOT__.'/soaptest.php');
 
 class WebserviceProxy implements IInfoService{
@@ -9,6 +9,10 @@ class WebserviceProxy implements IInfoService{
 	
 	public function Logon($logon){
 		return $this->client->Logon($logon);
+	}
+	
+	public function GetProductInformation($getProductInformation){
+		return $this->client->GetProductInformation($getProductInformation);
 	}
 }
 	
@@ -20,7 +24,14 @@ class My_SoapClient extends SoapClient
 		$this->_port = $url['port'];
 		}
 		$options = array($options, 
-		'classmap' => array('Logon' => 'Logon', 'LogonResponse'=> 'LogonResponse'));
+		'classmap' => array(
+			'Logon' => 'Logon'
+			, 'LogonResponse'=> 'LogonResponse'
+			, 'ProductInformation' => 'ProductInformation'
+			, 'GetProductInformation' => 'GetProductInformation'
+			, 'GetProductInformationResponse' => 'GetProductInformationResponse'
+			
+			));
 		return parent::__construct($wsdl, $options);
 	}
 
