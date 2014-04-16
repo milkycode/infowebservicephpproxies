@@ -66,8 +66,7 @@ class PromidataSoapClient extends SoapClient
  */
 interface ICustomerInfoService{
 	/**
-	 @brief User Logon
-	 	
+	 @brief Authenticate with your Promotional Office Login Data.	 
 	 @detail Needs to be called at first access
 	 @returns LogonResponse
 	 @param[in] Logon $logon
@@ -75,22 +74,23 @@ interface ICustomerInfoService{
 	public function Logon($logon);
 
 	/**
+	@brief Retrieves a ProductInformation
 	@returns GetProductInformationResponse
 	@param[in] GetProductInformation $getProductInformation
 	*/
 	public function GetProductInformation($getProductInformation);	
 	
 	/**
-	 * 
+	 * @brief Retrieves the product prices	 	
 	 * @param[in] GetProductPrices $getProductPrices
 	 * @return GetProductPricesResponse
 	 */
 	public function GetProductPrices($getProductPrices);	
 	
 	/**
-	 * 
-	 * @param[in] GetExpectedStockMovement $getExpectedStockMovement
-	 * @return GetExpectedStockMovementResponse
+	 @brief Returns the expected Stock Movement
+	 @param[in] GetExpectedStockMovement $getExpectedStockMovement
+	 @return GetExpectedStockMovementResponse
 	 */
 	public function GetExpectedStockMovement($getExpectedStockMovement);
 	
@@ -101,7 +101,7 @@ interface ICustomerInfoService{
 	 */
 	public function GetProductPriceList($getProductPriceList);
 	/**
-	 * 
+	 @brief Returns the information about a customer
 	 * @param[in] GetCustomerInformation $getCustomerInformation
 	 * @return GetCustomerInformationResponse
 	 */
@@ -114,28 +114,28 @@ interface ICustomerInfoService{
 	public function GetCustomerInformationList($getCustomerInformationList);
 	
 	/**
-	 * 
+	 * @brief Retrieves a list of user informations
 	 * @param[in] GetUserInformation $getUserInformation
 	 * @return GetUserInformationResponse
 	 */
 	public function GetUserInformation($getUserInformation);
 	
 	/**
-	 * 
+	 * @Retrieves a customer price list
 	 * @param[in] GetCustomerPriceList $getCustomerPriceList
 	 * @return GetCustomerPriceListResponse
 	 */
 	public function GetCustomerPriceList($getCustomerPriceList);
 	
 	/**
-	 * 
+	 * @
 	 * @param[in] GetPossibleAutomaticConditionList $getPossibleAutomaticConditionList
 	 * @return GetPossibleAutomaticConditionListResponse
 	 */
 	public function GetPossibleAutomaticConditionList($getPossibleAutomaticConditionList);
 	
 	/**
-	 * 
+	 * @brief Returns a list of article numbers from articles inside a product group
 	 * @param[in] GetArticleNumberListByArticleGroup $getArticleNumberListByArticleGroup
 	 * @return GetArticleNumberListByArticleGroupResponse
 	 */
@@ -143,6 +143,14 @@ interface ICustomerInfoService{
 	
 }
 
+/**
+ * \brief Proxy class for the Promotional Office Info Service
+ 
+ * Use this proxy class to get access to the Promotional Office Info Webservice.
+ *  
+ * @author Thomas Langer
+ *
+ */
 class CustomerInfoWebserviceProxy implements ICustomerInfoService{
 	
 	/**
