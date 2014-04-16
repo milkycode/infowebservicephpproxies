@@ -69,77 +69,77 @@ interface ICustomerInfoService{
 	 @brief Authenticate with your Promotional Office Login Data.	 
 	 @detail Needs to be called at first access
 	 @returns LogonResponse
-	 @param[in] Logon $logon
+	 @param[in] LogonRequest $logonRequest
 		*/
-	public function Logon($logon);
+	public function Logon($logonRequest);
 
 	/**
 	@brief Retrieves a ProductInformation
 	@returns GetProductInformationResponse
-	@param[in] GetProductInformation $getProductInformation
+	@param[in] GetProductInformationRequest $getProductInformationRequest
 	*/
-	public function GetProductInformation($getProductInformation);	
+	public function GetProductInformation($getProductInformationRequest);	
 	
 	/**
 	 * @brief Retrieves the product prices	 	
-	 * @param[in] GetProductPrices $getProductPrices
+	 * @param[in] GetProductPricesRequest $getProductPricesRequest
 	 * @return GetProductPricesResponse
 	 */
-	public function GetProductPrices($getProductPrices);	
+	public function GetProductPrices($getProductPricesRequest);	
 	
 	/**
 	 @brief Returns the expected Stock Movement
-	 @param[in] GetExpectedStockMovement $getExpectedStockMovement
+	 @param[in] GetExpectedStockMovementRequest $getExpectedStockMovementRequest
 	 @return GetExpectedStockMovementResponse
 	 */
-	public function GetExpectedStockMovement($getExpectedStockMovement);
+	public function GetExpectedStockMovement($getExpectedStockMovementRequest);
 	
 	/**
 	 * 
-	 * @param[in] GetProductPriceList $getProductPriceList
+	 * @param[in] GetProductPriceListRequest $getProductPriceListRequest
 	 * @return GetProductPricesResponse
 	 */
-	public function GetProductPriceList($getProductPriceList);
+	public function GetProductPriceList($getProductPriceListRequest);
 	/**
 	 @brief Returns the information about a customer
-	 * @param[in] GetCustomerInformation $getCustomerInformation
+	 * @param[in] GetCustomerInformationRequest $getCustomerInformationRequest
 	 * @return GetCustomerInformationResponse
 	 */
-	public function GetCustomerInformation($getCustomerInformation);
+	public function GetCustomerInformation($getCustomerInformationRequest);
 	/**
 	 * 
-	 * @param[in] GetCustomerInformationList $getCustomerInformationList
+	 * @param[in] GetCustomerInformationListRequest $getCustomerInformationListRequest
 	 * return GetCustomerInformationListResponse
 	 */
-	public function GetCustomerInformationList($getCustomerInformationList);
+	public function GetCustomerInformationList($getCustomerInformationListRequest);
 	
 	/**
 	 * @brief Retrieves a list of user informations
-	 * @param[in] GetUserInformation $getUserInformation
+	 * @param[in] GetUserInformationRequest $getUserInformationRequest
 	 * @return GetUserInformationResponse
 	 */
-	public function GetUserInformation($getUserInformation);
+	public function GetUserInformation($getUserInformationRequest);
 	
 	/**
 	 * @Retrieves a customer price list
-	 * @param[in] GetCustomerPriceList $getCustomerPriceList
+	 * @param[in] GetCustomerPriceListRequest $getCustomerPriceListRequest
 	 * @return GetCustomerPriceListResponse
 	 */
-	public function GetCustomerPriceList($getCustomerPriceList);
+	public function GetCustomerPriceList($getCustomerPriceListRequest);
 	
 	/**
 	 * @
-	 * @param[in] GetPossibleAutomaticConditionList $getPossibleAutomaticConditionList
+	 * @param[in] GetPossibleAutomaticConditionListRequest $getPossibleAutomaticConditionListRequest
 	 * @return GetPossibleAutomaticConditionListResponse
 	 */
-	public function GetPossibleAutomaticConditionList($getPossibleAutomaticConditionList);
+	public function GetPossibleAutomaticConditionList($getPossibleAutomaticConditionListRequest);
 	
 	/**
 	 * @brief Returns a list of article numbers from articles inside a product group
-	 * @param[in] GetArticleNumberListByArticleGroup $getArticleNumberListByArticleGroup
+	 * @param[in] GetArticleNumberListByArticleGroupRequest $getArticleNumberListByArticleGroupRequest
 	 * @return GetArticleNumberListByArticleGroupResponse
 	 */
-	public function GetArticleNumberListByArticleGroup($getArticleNumberListByArticleGroup);
+	public function GetArticleNumberListByArticleGroup($getArticleNumberListByArticleGroupRequest);
 	
 }
 
@@ -162,8 +162,7 @@ class CustomerInfoWebserviceProxy implements ICustomerInfoService{
 	public function __construct($url){            
 		$this->client = new PromidataSoapClient($url, array('exceptions'=>true, 
 		'classmap' => array(
-				'Logon' => 'Logon'
-				
+				'LogonRequest' => 'Logon'
 				, 'ArrayOfanyURI'=>'ArrayOfanyURI'
 				, 'ArrayOfArticleTextItem'=>'ArrayOfArticleTextItem'
 				, 'ArrayOfContactDetail' => 'ArrayOfContactDetail'
@@ -222,48 +221,48 @@ class CustomerInfoWebserviceProxy implements ICustomerInfoService{
 			)));
 	}
 
-	public function Logon($logon){
-		return $this->client->Logon($logon);
+	public function Logon($logonRequest){
+		return $this->client->Logon($logonRequest);
 	}
 
-	public function GetProductInformation($getProductInformation){
-		return $this->client->GetProductInformation($getProductInformation);
+	public function GetProductInformation($getProductInformationRequest){
+		return $this->client->GetProductInformation($getProductInformationRequest);
 	}
 
-	public function GetProductPrices($getProductPrices){
-		return $this->client->GetProductPrices($getProductPrices);		
+	public function GetProductPrices($getProductPricesRequest){
+		return $this->client->GetProductPrices($getProductPricesRequest);		
 	}
 
-	public function GetExpectedStockMovement($getExpectedStockMovement){
-		return $this->client->GetExpectedStockMovement($getExpectedStockMovement);		
+	public function GetExpectedStockMovement($getExpectedStockMovementRequest){
+		return $this->client->GetExpectedStockMovement($getExpectedStockMovementRequest);		
 	}
 
-	public function GetProductPriceList($getProductPriceList){
-		return $this->client->GetProductPriceList($getProductPriceList);
+	public function GetProductPriceList($getProductPriceListRequest){
+		return $this->client->GetProductPriceList($getProductPriceListRequest);
 	}
 
-	public function GetCustomerInformation($getCustomerInformation){
-		return $this->client->GetCustomerInformation($getCustomerInformation);
+	public function GetCustomerInformation($getCustomerInformationRequest){
+		return $this->client->GetCustomerInformation($getCustomerInformationRequest);
 	}
 
-	public function GetCustomerInformationList($getCustomerInformationList){
-		return $this->client->GetCustomerInformationList($getCustomerInformationList);
+	public function GetCustomerInformationList($getCustomerInformationListRequest){
+		return $this->client->GetCustomerInformationList($getCustomerInformationListRequest);
 	}
 
-	public function GetUserInformation($getUserInformation){
-		return $this->client->GetUserInformation($getUserInformation);
+	public function GetUserInformation($getUserInformationRequest){
+		return $this->client->GetUserInformation($getUserInformationRequest);
 	}
 
-	public function GetCustomerPriceList($getCustomerPriceList){
-		return $this->client->GetCustomerPriceList($getCustomerPriceList);
+	public function GetCustomerPriceList($getCustomerPriceListRequest){
+		return $this->client->GetCustomerPriceList($getCustomerPriceListRequest);
 	}
 
-	public function GetPossibleAutomaticConditionList($getPossibleAutomaticConditionList){
-		return $this->client->GetPossibleAutomaticConditionList($getPossibleAutomaticConditionList);
+	public function GetPossibleAutomaticConditionList($getPossibleAutomaticConditionListRequest){
+		return $this->client->GetPossibleAutomaticConditionList($getPossibleAutomaticConditionListRequest);
 	}
 
-	public function GetArticleNumberListByArticleGroup($getArticleNumberListByArticleGroup){
-		return $this->client->GetArticleNumberListByArticleGroup($getArticleNumberListByArticleGroup);
+	public function GetArticleNumberListByArticleGroup($getArticleNumberListByArticleGroupRequest){
+		return $this->client->GetArticleNumberListByArticleGroup($getArticleNumberListByArticleGroupRequest);
 	}
 }
 	

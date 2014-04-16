@@ -983,7 +983,7 @@ class LocalizedItem {
 	public $Texts;
 }
 
-class Logon{
+class LogonRequest{
 	/**
 	 @brief Company Name
 	 @var string

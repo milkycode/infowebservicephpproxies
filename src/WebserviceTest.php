@@ -1,7 +1,7 @@
 <?php
 	require_once('WebserviceProxy.php');
 	$url = "https://93.95.252.4:8181/PromotionalOffice/Customer/Services/Basic/ClientBackendService.svc?wsdl";
-    $log = new Logon("PO Test 2_5", "Support", "EB20RK25DR16!");
+    $log = new LogonRequest("PO Test 2_5", "Support", "EB20RK25DR16!");
 	$proxy = new CustomerInfoWebserviceProxy($url);		
 	$productIdentifier = new ProductIdentifier(null,"01-1001",null);
 	$customerIdentifier = new CustomerIdentifier(9, null);	
