@@ -74,68 +74,69 @@ interface ICustomerInfoService{
 	public function Logon($logonRequest);
 
 	/**
-	@brief Retrieves a ProductInformation
+	@brief Retrieves a ProductInformation.
 	@returns GetProductInformationResponse
 	@param[in] GetProductInformationRequest $getProductInformationRequest
 	*/
 	public function GetProductInformation($getProductInformationRequest);	
 	
 	/**
-	 * @brief Retrieves the product prices	 	
+	 * @brief Returns the price relays of a product for a specific customer.
+	 * It takes care on special prices for the given customer 	
 	 * @param[in] GetProductPricesRequest $getProductPricesRequest
 	 * @return GetProductPricesResponse
 	 */
 	public function GetProductPrices($getProductPricesRequest);	
 	
 	/**
-	 @brief Returns the expected Stock Movement
+	 @brief Returns the expected stock movements of a specific product.
 	 @param[in] GetExpectedStockMovementRequest $getExpectedStockMovementRequest
 	 @return GetExpectedStockMovementResponse
 	 */
 	public function GetExpectedStockMovement($getExpectedStockMovementRequest);
 	
 	/**
-	 * 
+	 * @brief Returns the price relays of a product.
 	 * @param[in] GetProductPriceListRequest $getProductPriceListRequest
 	 * @return GetProductPricesResponse
 	 */
 	public function GetProductPriceList($getProductPriceListRequest);
 	/**
-	 @brief Returns the information about a customer
+	 @brief Returns information about a customer
 	 * @param[in] GetCustomerInformationRequest $getCustomerInformationRequest
 	 * @return GetCustomerInformationResponse
 	 */
 	public function GetCustomerInformation($getCustomerInformationRequest);
 	/**
-	 * 
+	 * @brief Returns a list of customer informations of customers which has changed since given datetime.
 	 * @param[in] GetCustomerInformationListRequest $getCustomerInformationListRequest
 	 * return GetCustomerInformationListResponse
 	 */
 	public function GetCustomerInformationList($getCustomerInformationListRequest);
 	
 	/**
-	 * @brief Retrieves a list of user informations
+	 * @brief Returns a list of user informations
 	 * @param[in] GetUserInformationRequest $getUserInformationRequest
 	 * @return GetUserInformationResponse
 	 */
 	public function GetUserInformation($getUserInformationRequest);
 	
 	/**
-	 * @Retrieves a customer price list
+	 * @brief Returns a price information list for a Customer
 	 * @param[in] GetCustomerPriceListRequest $getCustomerPriceListRequest
 	 * @return GetCustomerPriceListResponse
 	 */
 	public function GetCustomerPriceList($getCustomerPriceListRequest);
 	
 	/**
-	 * @
+	 * @brief Returns a list of possible automatic conditions for the given constellation 
 	 * @param[in] GetPossibleAutomaticConditionListRequest $getPossibleAutomaticConditionListRequest
 	 * @return GetPossibleAutomaticConditionListResponse
 	 */
 	public function GetPossibleAutomaticConditionList($getPossibleAutomaticConditionListRequest);
 	
 	/**
-	 * @brief Returns a list of article numbers from articles inside a product group
+	 * @brief Returns a list of articlenumbers of products inside a specified product group
 	 * @param[in] GetArticleNumberListByArticleGroupRequest $getArticleNumberListByArticleGroupRequest
 	 * @return GetArticleNumberListByArticleGroupResponse
 	 */
