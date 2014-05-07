@@ -166,18 +166,18 @@ class ArrayOfUserInformation{
 class ArticleTextItem
 {
 	/**
-	 *
-	 * @var string
+	 * @brief The type of the text. Possible values are ArticleName, ArticleDescription, SupplierText, InternText, TenderPositionText, IndentConfirmationText, PackingListInvoiceText, WebshopDescription
+	 * @var string 
 	 */
 	public $ArticleLanguageType;
 	/**
-	 *
-	 * @var string
+	 * @brief The language of the item. e.g. 'de' or 'nl'
+	 * @var string 
 	 */
 	public $Language;
 	/**
-	 *
-	 * @var string
+	 * @brief The text from the product in the specified language
+	 * @var string 
 	 */
 	public $Value;
 }
@@ -452,14 +452,14 @@ class CustomerIdentifier{
 	public $CustomerId;
 	/**
 	 *
-	 * @var string
+	 * @var string The debitornumber of the customer
 	 */
 	public $CustomerNumber;
 
 	/**
 	 *
 	 * @param long $customerId
-	 * @param string $customerNumber
+	 * @param string $customerNumber The debitornumber of the customer
 	 */
 	function __construct($customerId, $customerNumber){
 		$this->CustomerId = $customerId;
@@ -675,13 +675,13 @@ class GetArticleNumberListByArticleGroupRequest
 
 	/**
 	 *
-	 * @var string
+	 * @var string The show value of the product group
 	 */
 	public $articleGroupName;
 
 	/**
 	 *
-	 * @param string $productGroupName
+	 * @param string $productGroupName The show value of the product group
 	 */
 	function __construct($productGroupName){
 		$this->articleGroupName = $productGroupName;
