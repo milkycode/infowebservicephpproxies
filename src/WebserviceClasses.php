@@ -149,7 +149,7 @@ class ArrayOfTenderIndentImporterRelayData{
 
 class ArrayOfTranslationItem{
 	/**
-	 *
+	 * 
 	 * @var TranslationItem[]
 	 */
 	public $TranslationItem;
@@ -163,6 +163,10 @@ class ArrayOfUserInformation{
 	public $UserInformation;
 }
 
+/**
+ * \brief Class to represent a procuct text in a specified language
+ * @author Achim Kuntz
+ */
 class ArticleTextItem
 {
 	/**
@@ -182,277 +186,311 @@ class ArticleTextItem
 	public $Value;
 }
 
+/**
+ * \brief Class to represent a automatic deliverx condition
+ * 
+ * This condition can be set up in Promotional Office to automaticaly assign different values in a indent.
+ * e.G.: Add a expense product to a indent with less than one pakage
+ * @author Achim Kuntz
+ */
 class AutomaticCondition{
 
 	/**
-	 *
+	 * @brief The Description of the AutomaticCondition
 	 * @var string
 	 */
 	public $AutomaticDeliveryConditionDescription;
 	/**
-	 *
+	 * @brief A Guid to identify the AutomaticCondition
 	 * @var Guid
 	 */
 	public $AutomaticDeliveryConditionId;
 	/**
-	 *
+	 * @brief The show value of the deliveryterm needet for this AutomaticCondition 
+	 * Null if no deliveryterm is needed to select this AutomaticCondition
 	 * @var string
 	 */
 	public $DeliveryTermShow;
 	/**
-	 *
+	 * @brief The description value of the dispatch type used in this AutomaticCondition
 	 * @var string
 	 */
 	public $DispatchTypeDescription;
 	/**
-	 *
+	 * @brief The show value of the dispatch type selected by this AutomaticCondition
+	 * Null if no dispatch type will be selected by this AutomaticCondition
 	 * @var string
 	 */
 	public $DispatchTypeShow;
 	/**
-	 *
+	 * @brief The name of the expense product added by this AutomaticCondition
+	 * Null if no expense product will be added by this AutomaticCondition
 	 * @var string
 	 */
 	public $ExpenseName;
 	/**
-	 *
+	 * @brief The purchase order number of the expense product added by this AutomaticCondition
+	 * Null if no expense product will be added by this AutomaticCondition
 	 * @var string
 	 */
 	public $ExpenseNumber;
 	/**
-	 *
+	 * @brief The price per unit of the expense product added by this AutomaticCondition
+	 * Null if no expense product will be added by this AutomaticCondition
 	 * @var string
 	 */
 	public $ExpensePrice;
 	/**
-	 *
+	 * @brief The special price per unit assignedd to all products by this AutomaticCondition
+	 * Null if no price is set
 	 * @var decimal
 	 */
 	public $SpecialPriceForPositions;
 
 }
 
+/**
+ * \brief Class to represent a color size combination of a product
+ * 
+ * @author Achim Kuntz
+ */
 class ColorSizeCombination{
 
 
 	/**
-	 *
+	 * @brief The available buying relays for this ColorSizeCombination 
 	 * @var ArrayOfProductPriceInformation
 	 */
 	public $BuyingRelais;
 
 	/**
-	 *
+	 * @brief The available translations for the color name
 	 * @var ArrayOfTranslationItem
 	 */
 	public $ColorNames;
 
 	/**
-	 *
+	 * @brief The current stock price
 	 * @var decimal
 	 */
 	public $CurrentStockPrice;
 
 	/**
-	 *
+	 * @brief The default purchasing costs
 	 * @var decimal
 	 */
 	public $DefaultPurchasingCosts;
 
 	/**
-	 *
+	 * @brief The EAN code for this ColorSizeCombination of the product
 	 * @var string
 	 */
 	public $EanCode;
 
 	/**
-	 *
+	 * @brief A free text field
 	 * @var string
 	 */
 	public $FreeText1;
 
 	/**
-	 *
+	 * @brief A free text field
 	 * @var string
 	 */
 	public $FreeText2;
 
 	/**
-	 *
+	 * @brief A free text field
 	 * @var string
 	 */
 	public $FreeText3;
 
 	/**
-	 *
+	 * @brief The notice for this ColorSizeCombination
 	 * @var string
 	 */
 	public $Notice;
 
 	/**
-	 *
+	 * @brief The additional purchase order number for this ColorSizeCombination appendet to the product order number when ordering the product
 	 * @var string
 	 */
 	public $OrderNumberAddition;
 
 	/**
-	 *
+	 * @brief The additional own product number for this ColorSizeCombination appendet to the product own product number when ordering the product
 	 * @var string
 	 */
 	public $OwnArticleNumberAddition;
 
 	/**
-	 *
+	 * @brief The available selling relays for this ColorSizeCombination
 	 * @var ArrayOfProductPriceInformation
 	 */
 	public $SellingRelays;
 
 	/**
-	 *
+	 * @brief The available translations for the size name
 	 * @var ArrayOfTranslationItem
 	 */
 	public $SizeNames;
 
 }
 
+/**
+ * \brief Class to represent a contact detail of a customer or contact person
+ * 
+ * @author Achim Kuntz
+ */
 class ContactDetail{
 
 	/**
-	 *
+	 * @brief unused
 	 * @var CustomerIdentifier
 	 */
 	public $IdentifierV1;
 
 	/**
-	 *
+	 * @brief unused
 	 * @var boolean
 	 */
 	public $IsMain;
 	/**
-	 *
+	 * @brief The type of the ContactDetail.
+	 * Possible values: Phone,Fax,Mobil,Skype,EMail,Homepage
 	 * @var string
 	 */
 	public $Type;
 
 	/**
-	 *
+	 * @brief The value of the ContactDetail
 	 * @var string
 	 */
 	public $Value;
 }
 
+/**
+ * \brief Class to represent contact person of a customer
+ * 
+ * @author Achim Kuntz
+ */
 class ContactPersonInformation{
 	/**
-	 *
+	 * @brief The additional mailing signs assigned to the contact person 
 	 * @var ArrayOfShowDescriptionItem
 	 */
 	public $AdditionalMailingSigns;
 
 	/**
-	 *
+	 * @brief The alternative salutation
 	 * @var string
 	 */
 	public $AlternativeSalutation;
 
 	/**
-	 *
+	 * @brief The day of birth
 	 * @var DateTime
 	 */
 	public $Birthday;
 	/**
-	 *
+	 * @brief The ContactDetail's of the contact persons
 	 * @var ArrayOfContactDetail
 	 */
 	public $ContactDetails;
 
 	/**
-	 *
+	 * @brief The first name
 	 * @var string
 	 */
 	public $FirstName;
 
 	/**
-	 *
+	 * @brief The gender. Possible values: Male, Female
 	 * @var Gender
 	 */
 	public $Gender;
 
 	/**
-	 *
+	 * @brief unused
 	 * @var CustomerIdentifier
 	 */
 	public $IdentifierV1;
 
 	/**
-	 *
+	 * @brief The initials
 	 * @var string
 	 */
 	public $Initials;
 
 	/**
-	 *
+	 * @brief True if the contact person can receive mails via the mail system
 	 * @var boolean
 	 */
 	public $IsMailRecipient;
 
 	/**
-	 *
+	 * @brief True if this is the main contact person
 	 * @var boolean
 	 */
 	public $IsMain;
 
 	/**
-	 *
+	 * @brief The language in system code like 'de' or 'nl'
 	 * @var string
 	 */
 	public $Language;
 
 	/**
-	 *
+	 * @brief The last name
 	 * @var string
 	 */
 	public $LastName;
 
 	/**
-	 *
+	 * @brief The mailing signs assigned to the contact person 
 	 * @var ArrayOfShowDescriptionItem
 	 */
 	public $MailingSigns;
 
 	/**
-	 *
+	 * @brief The additional name
 	 * @var string
 	 */
 	public $NameAffex;
 
 	/**
-	 *
+	 * @brief The notice
 	 * @var string
 	 */
 	public $Notice;
 
 	/**
-	 *
+	 * @brief The salutaion
 	 * @var string
 	 */
 	public $Salutation;
 
 	/**
-	 *
+	 * @brief The secondary mailing signs assigned to the contact person
 	 * @var ArrayOfShowDescriptionItem
 	 */
 	public $SecondaryMailingSigns;
 }
 
+/**
+ * \brief Class to identify a customer
+ * 
+ * @author Achim Kuntz
+ */
 class CustomerIdentifier{
 	/**
-	 *
+	 * @brief internal use only
 	 * @var long
 	 */
 	public $CustomerId;
 	/**
-	 *
-	 * @var string The debitornumber of the customer
+	 * @brief The debitornumber of the customer
+	 * @var string
 	 */
 	public $CustomerNumber;
 
@@ -467,196 +505,207 @@ class CustomerIdentifier{
 	}
 }
 
+/**
+ * \brief Class to represent a customer
+ * 
+ * @author Achim Kuntz
+ */
 class CustomerInformation{
 	/**
-	 *
+	 * @brief A list of SimpleAddress's from the customer 
 	 * @var ArrayOfSimpleAddress
 	 */
 	public $Adresses;
 
 	/**
-	 *
+	 * @brief The identifier of the agent responsible for this customer
 	 * @var long
 	 */
 	public $AgentId;
 
 	/**
-	 *
+	 * @brief The ContactDetail's of the customer 
 	 * @var ArrayOfContactDetail
 	 */
 	public $ContactDetails;
 
 	/**
-	 *
+	 * @brief The contact persons of the customer
 	 * @var ArrayOfContactPersonInformation
 	 */
 	public $ContactPersons;
 
 	/**
-	 *
+	 * @brief The credit limit the customer can use.
+	 * 0 if not set
 	 * @var int
 	 */
 	public $CreditLimitTotal;
 
 
 	/**
-	 *
+	 * @brief The used amount of the credit limit
 	 * @var decimal
 	 */
 	public $CreditLimitUsed;
 
 	/**
-	 *
+	 * @brief The name of the currency the customer use
 	 * @var string
 	 */
 	public $CurrencyName;
 	/**
-	 *
+	 * @brief The debitor number
 	 * @var string
 	 */
 	public $DebitorNumber;
 
 	/**
-	 *
+	 * @brief The delivery term
 	 * @var LocalizedItem
 	 */
 	public $DeliveryTerm;
 
 	/**
-	 *
+	 * @brief The dispatch type
 	 * @var LocalizedItem
 	 */
 	public $DispatchType;
 
 	/**
-	 *
+	 * @brief unused
 	 * @var string
 	 */
 	public $EMail;
 
 	/**
-	 *
+	 * @brief unused
 	 * @var string
 	 */
 	public $Fax;
 
 	/**
-	 *
+	 * @brief unused
 	 * @var string
 	 */
 	public $Homepage;
 
 	/**
-	 *
+	 * @brief The identifier of the customer 
 	 * @var CustomerIdentifier
 	 */
 	public $IdentifierV1;
 
 	/**
-	 *
+	 * @brief True if the customer is active
 	 * @var boolean
 	 */
 	public $IsActive;
 
 	/**
-	 *
+	 * @brief The languag of the customer in system code. e.G. 'de' or 'nl'
 	 * @var string
 	 */
 	public $Language;
 
 	/**
-	 *
+	 * @brief The name
 	 * @var string
 	 */
 	public $Name;
 
 	/**
-	 *
+	 * @brief The name affex
 	 * @var string
 	 */
 	public $NameAffex;
 
 	/**
-	 *
+	 * @brief The notice
 	 * @var string
 	 */
 	public $Notice;
 
 	/**
-	 *
+	 * @brief The PaymentInformation's for the customer
 	 * @var ArrayOfPaymentInformation
 	 */
 	public $PaymentModes;
 
 	/**
-	 *
+	 * @brief unused
 	 * @var string
 	 */
 	public $Phone;
 
 	/**
-	 *
+	 * @brief The sales tax number
 	 * @var string
 	 */
 	public $SalesTaxNumber;
 
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined1;
 
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined2;
 
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined3;
 
 	/**
-	 *
+	 * @brief unused
 	 * @var string
 	 */
 	public $Skype;
 
 	/**
-	 *
+	 * @brief The warning
 	 * @var string
 	 */
 	public $Warning;
 }
 
+/**
+ * \brief Class to represent a stock movement
+ * 
+ * @author Achim Kuntz
+ */
 class ExpectedStockMovement{
 	/**
-	 *
+	 * @brief True if the delivery can be made earlier
 	 * @var boolean
 	 */
 	public $MayBePrefered;
 
 	/**
-	 *
+	 * @brief The date of the stock movement. 
 	 * @var dateTime
 	 */
 	public $MovementDate;
 
 	/**
-	 *
+	 * @brief the number of the product
 	 * @var string
 	 */
 	public $ProductNumber;
 	/**
-	 *
+	 * @brief The quantity available on after the movement
 	 * @var decimal
 	 */
 	public $Quantity;
 
 	/**
-	 *
+	 * @brief The unit of the quantity
 	 * @var string
 	 */
 	public $QuantityUnit;
@@ -674,8 +723,8 @@ class GetArticleNumberListByArticleGroupRequest
 {
 
 	/**
-	 *
-	 * @var string The show value of the product group
+	 * @brief The show value of the product group
+	 * @var string 
 	 */
 	public $articleGroupName;
 
