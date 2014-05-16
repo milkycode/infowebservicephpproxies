@@ -435,7 +435,7 @@ class ContactPersonInformation{
 	public $IsMain;
 
 	/**
-	 * @brief The language in system code like 'de' or 'nl'
+	 * @brief The language of the item. e.g. 'de' or 'nl'
 	 * @var string
 	 */
 	public $Language;
@@ -603,7 +603,7 @@ class CustomerInformation{
 	public $IsActive;
 
 	/**
-	 * @brief The languag of the customer in system code. e.G. 'de' or 'nl'
+	 * @brief The language of the item. e.g. 'de' or 'nl'
 	 * @var string
 	 */
 	public $Language;
@@ -1001,7 +1001,7 @@ class LocalizationItem{
 	public $Description;
 
 	/**
-	 *
+	 * @brief The language of the item. e.g. 'de' or 'nl'
 	 * @var string
 	 */
 	public $Language;
@@ -1633,7 +1633,7 @@ class TenderIndentImporterAddressData{
 	 */
 	public $Initial ;
 	/**
-	 *
+	 * @brief The language of the item. e.g. 'de' or 'nl'
 	 * @var string
 	 */
 	public $Language ;
@@ -1689,339 +1689,359 @@ class TenderIndentImporterAddressData{
 	public $UstId ;
 }
 
+/**
+ * \brief Class for a betterment on a product 
+ * 
+ * @author Achim Kuntz
+ */
 class TenderIndentImporterBettermentData{
 
 	/**
-	 *
+	 * @brief The buying price per unit. (Optional. Ignored, when value is null.) 
 	 * @var decimal
 	 */
 	public $BuyingPricePerUnit;
 	/**
-	 *
+	 * @brief The article deliverynote text. (Optional. Ignored, when value is null.) 
 	 * @var ArrayOfTenderIndentImporterRelayData
 	 */
 	public $BuyingRelayList;
 	/**
-	 *
+	 * @brief A List of buying relays. (Optional. Ignored, when list is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleDeliverynoteText;
 	/**
-	 *
+	 * @brief The article description. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleDescription;
 	/**
-	 *
+	 * @brief The article indent text. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleIndentText;
 	/**
-	 *
+	 * @brief The name of the article. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleName;
 	/**
-	 *
+	 * @brief The article tender text. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleTenderText;
 	/**
-	 *
+	 * @brief The article text intern. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleTextIntern;
 
 	/**
-	 *
+	 * @brief direct dispatch option. (Optional. Ignored, when value is null.) 
 	 * @var boolean
 	 */
 	public $DirectDispatch;
 	/**
-	 *
+	 * @brief The discount in percent. (Optional. Ignored, when value is null.) 
 	 * @var decimal
 	 */
 	public $Discount;
 
 	/**
-	 *
+	 * @brief The full own Articlenumber with color size specific addinal number of the Article. The number musst be foud in the activ article list from Promotional Office for a successful import. 
 	 * @var string
 	 */
 	public $MyArticleNumber;
 	/**
-	 *
+	 * @brief The print position option. Selling price will be zero, if set to true. (Optional. Ignored, when value is null.) 
 	 * @var boolean
 	 */
 	public $PrintPosition;
 	/**
-	 *
+	 * @brief Print price per unit option. (Optional. Ignored, when value is null.) 
 	 * @var boolean
 	 */
 	public $PrintPricePerUnit;
 	/**
-	 *
+	 * @brief The selling price per unit. (Optional. Ignored, when value is null.) 
 	 * @var decimal
 	 */
 	public $SellingPricePerUnit;
 	/**
-	 *
+	 * @brief A List of selling relays. (Optional. Ignored, when list is null.) 
 	 * @var ArrayOfTenderIndentImporterRelayData
 	 */
 	public $SellingRelayList;
 	/**
-	 *
+	 * @brief The setup cost buying price. (Optional. Ignored, when value is null.) 
 	 * @var decimal
 	 */
 	public $SetupCostBuyingPrice;
 	/**
-	 *
+	 * @brief The setup cost description. (Optional. Ignored, when value is null.)
 	 * @var string
 	 */
 	public $SetupCostDescription;
 	/**
-	 *
+	 * @brief The setup cost selling price. (Optional. Ignored, when value is null.)
 	 * @var decimal
 	 */
 	public $SetupCostSellingPrice;
 	/**
-	 *
+	 * @brief The name of the alternative supplier. (Optional. Ignored, when value is null.)
 	 * @var string
 	 */
 	public $SupplierName;
 
 }
 
+/**
+ * \brief Main import data object 
+ * 
+ * @author Achim Kuntz
+ */
 class TenderIndentImporterData{
 	/**
-	 * 
+	 * @brief 
 	 * @var Guid
 	 */
 	public $AutomaticDeliveryConditionId;
 	/**
-	 * 
+	 * @brief True when the availability of products should be checked. Creation is not possible when products are not free available on stock
 	 * @var boolean
 	 */
 	public $AvailabilityCheckEnabled;
 	/**
-	 * 
+	 * @brief When the inserted string matches the short name of a Categorie in Promotional Office, this Categorie will be used for the created element. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $Categorie;
 	/**
-	 * 
+	 * @brief The customer text. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerText;
 	/**
-	 * 
+	 * @brief The DebitorNumber of the Customer to use for creating the created element. The Customer must be available and activ in Promotional Office to proceed with the import.
 	 * @var long
 	 */
 	public $DebitorNumber;
 	/**
-	 * 
+	 * @brief The changed delivery address. (Optional. Root customer address is used, when value is null.)
 	 * @var TenderIndentImporterAddressData
 	 */
 	public $DeliveryAddress;
 	/**
-	 * 
+	 * @brief When the inserted string matches the short name of a DeliveryTerm in Promotional Office, this DeliveryTerm will be used for the created element. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $DeliveryTerm;
 	/**
-	 * 
+	 * @brief Optional. Ignored, when value is null. When the inserted string matches the short name of a DispatchType in Promotional Office, this DispatchType will be used for the created element. 
 	 * @var string
 	 */
 	public $DispatchType;
 	/**
-	 * 
+	 * @brief The footer text. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $FooterText;
 	/**
-	 * 
+	 * @brief The header text. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $HeaderText;
 	/**
-	 * 
+	 * @brief Defines the type of element, the Importer should create. 
 	 * @var string
 	 */
 	public $ImportType;
 	/**
-	 * 
+	 * @brief The prefix for the created element. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $ImportTypePrefix;
 	/**
-	 * 
+	 * @brief The suffix for the created element. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $ImportTypeSuffix;	
 	/**
-	 * 
+	 * @brief The changed invoice address. (Optional. Root customer address is used, when value is null.)
 	 * @var TenderIndentImporterAddressData
 	 */
 	public $InvoiceAddress;
 	/**
-	 * 
+	 * @brief The notice
 	 * @var string
 	 */
 	public $Notice;	
 	/**
-	 * 
+	 * @brief A List of strings. For each item holds the following rule: When the inserted string matches the short name of a PaymentMode in Promotional Office, this PaymentMode will be used for the created element. (Optional. Ignored, when list is null.) 
 	 * @var ArrayOfstring
 	 */
 	public $PaymentModeList;	
 	/**
-	 * 
+	 * @brief The list of Positions to use in the creadet element. Had to contain at least one element. 
 	 * @var ArrayOfTenderIndentImporterPositionData
 	 */
 	public $PositionList;
 	/**
-	 * 
+	 * @brief The changed post address. (Optional. Root customer address is used, when value is null.)
 	 * @var TenderIndentImporterAddressData
 	 */
 	public $PostAddress;
 	/**
-	 * 
+	 * @brief When the inserted string matches the name of a StorageLocation in Promotional Office, this StorageLocation will be used for the created element. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $StorageLocation;
 	/**
-	 * 
+	 * @brief The warning
 	 * @var string
 	 */
 	public $Warning;	
 }
 
+/**
+ * \brief Class for a articleposition
+ * 
+ * @author Achim Kuntz
+ */
 class TenderIndentImporterPositionData{
 	/**
-	 * 
+	 * @brief A list of betterments on the article (Optional. Ignored, when list is null.) 
 	 * @var ArrayOfTenderIndentImporterBettermentData
 	 */
 	public $BettermentList;
 	/**
-	 * 
+	 * @brief The buying price per unit. (Optional. Ignored, when value is null.) 
 	 * @var decimal
 	 */
 	public $BuyingPricePerUnit;
 	/**
-	 * 
+	 * @brief A List of buying relays. (Optional. Ignored, when list is null.) 
 	 * @var ArrayOfTenderIndentImporterRelayData
 	 */
 	public $BuyingRelayList;
 	/**
-	 * 
+	 * @brief The article deliverynote text. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleDeliverynoteText;
 	/**
-	 * 
+	 * @brief The article description. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleDescription;
 	/**
-	 * 
+	 * @brief The article indent text. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleIndentText;
 	/**
-	 * 
+	 * @brief The name of the article. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleName;
 	/**
-	 * 
+	 * @brief The article tender text. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleTenderText;
 	/**
-	 * 
+	 * @brief The article text intern. (Optional. Ignored, when value is null.) 
 	 * @var string
 	 */
 	public $CustomerArticleTextIntern;
 	/**
-	 * 
+	 * @brief The direct dispatch option. (Optional. Ignored, when value is null.) 
 	 * @var boolean
 	 */
 	public $DirectDispatch;
 	/**
-	 * 
+	 * @brief The discount in percent. (Optional. Ignored, when value is null.) 
 	 * @var decimal
 	 */
 	public $Discount;
 	/**
-	 * 
+	 * @brief The earliest delivery date. (Optional. Ignored, when value is null.) 
 	 * @var DateTime
 	 */
 	public $EarliestDeliveryDate;
 	/**
-	 * 
+	 * @brief The is stock article option. (Optional. Ignored, when value is null.)
 	 * @var boolean
 	 */
 	public $IsStockArticle;
 	/**
-	 * 
+	 * @brief The latest delivery date. (Optional. Ignored, when value is null.) 
 	 * @var DateTime
 	 */
 	public $LatestDeliveryDate;
 	/**
-	 * 
+	 * @brief The full own Articlenumber with color size specific addinal number of the Article. The number musst be foud in the activ article list from Promotional Office for a successful import. 
 	 * @var string
 	 */
 	public $MyArticleNumber;
 	/**
-	 * 
+	 * @brief The print position option. Selling price will be zero, if set to true. (Optional. Ignored, when value is null.) 
 	 * @var boolean
 	 */
 	public $PrintPosition;
 	/**
-	 * 
+	 * @brief The print price per unit option. (Optional. Ignored, when value is null.) 
 	 * @var boolean
 	 */
 	public $PrintPricePerUnit;
 	/**
-	 * 
+	 * @brief The quantity. 
 	 * @var decimal
 	 */
 	public $Quantity;
 	/**
-	 * 
+	 * @brief The unit of the quantity
 	 * @var string
 	 */
 	public $QuantityUnit;
 	/**
-	 * 
+	 * @brief The selling price per unit. (Optional. Ignored, when value is null.) 
 	 * @var decimal
 	 */
 	public $SellingPricePerUnit;
 	/**
-	 * 
+	 * @brief A List of selling relays. (Optional. Ignored, when list is null.) 
 	 * @var ArrayOfTenderIndentImporterRelayData
 	 */
 	public $SellingRelayList;
 	/**
-	 * 
+	 * @brief The name of the alternative supplier. (Optional. Ignored, when value is null.)
 	 * @var string
 	 */
 	public $SupplierName;	
 }
 
+/**
+ * \brief Class for an relay used for positions and betterments 
+ * 
+ * @author Achim Kuntz
+ */
 class TenderIndentImporterRelayData{
 	/**
-	 * 
+	 * @brief The complete price option of the relay
 	 * @var boolean
 	 */
 	public $IsCompletePrice;
 	
 	/**
-	 * 
+	 * @brief The quantity. 
 	 * @var int
 	 */
 	public $Quantity;
 	
 	/**
-	 * 
+	 * @brief The selling price per unit
 	 * @var decimal
 	 */
 	public $SellingPricePerUnit;
@@ -2030,7 +2050,7 @@ class TenderIndentImporterRelayData{
 class TranslationItem{
 
 	/**
-	 *
+	 * @brief The language of the item. e.g. 'de' or 'nl'
 	 * @var string
 	 */
 	public $Language;
@@ -2058,7 +2078,7 @@ class UserInformation{
 	 */
 	public $FirstName;
 	/**
-	 *
+	 * @brief The language of the item. e.g. 'de' or 'nl'
 	 * @var string
 	 */
 	public $Language;
