@@ -772,7 +772,7 @@ class GetCustomerInformationListResponse{
 
 class GetCustomerInformationRequest{
 	/**
-	 *
+	 * @brief The identifier for the customer
 	 * @var CustomerIdentifier
 	 */
 	public $identifierV1;
@@ -780,7 +780,7 @@ class GetCustomerInformationRequest{
 
 	/**
 	 *
-	 * @param CustomerIdentifier $customerIdentifier
+	 * @param CustomerIdentifier $customerIdentifier The identifier for the customer
 	 */
 	function __construct($customerIdentifier){
 		$this->identifierV1 = $customerIdentifier;
@@ -797,14 +797,14 @@ class GetCustomerInformationResponse{
 
 class GetCustomerPriceListRequest{
 	/**
-	 *
-	 * @var CustomerIdentifier
+	 * @brief The identifier for the customer
+	 * @var CustomerIdentifier The identifier for the customer
 	 */
 	public $identifier;
 
 	/**
 	 *
-	 * @param CustomerIdentifier $customerIdentifier
+	 * @param CustomerIdentifier $customerIdentifier The identifier for the customer
 	 */
 	function __construct($customerIdentifier){
 		$this->identifier = $customerIdentifier;
@@ -821,14 +821,14 @@ class GetCustomerPriceListResponse{
 
 class GetExpectedStockMovementRequest{
 	/**
-	 *
+	 * @brief The identifier for the product
 	 * @var ProductIdentifier
 	 */
 	public $productIdentifier;
 
 	/**
 	 *
-	 * @param ProductIdentifier $productIdentifier
+	 * @param ProductIdentifier $productIdentifier The identifier for the product
 	 */
 	function __construct($productIdentifier){
 		$this->productIdentifier = $productIdentifier;
@@ -845,20 +845,20 @@ class GetExpectedStockMovementResponse{
 
 class GetPossibleAutomaticConditionListRequest{
 	/**
-	 *
+	 * @brief The TenderIndentImporterData for with the possible AutomaticCondition's should be requested
 	 * @var TenderIndentImporterData
 	 */
 	public $importdata;
 	/**
-	 *
+	 * @brief The Short names of the dispatch types the AutoamticConditions should be filtered
 	 * @var ArrayOfstring
 	 */
 	public $possibleDispatchTypes;
 
 	/**
 	 *
-	 * @param TenderIndentImporterData $importData
-	 * @param ArrayOfstring $possibleDispatchTypes
+	 * @param TenderIndentImporterData $importData The TenderIndentImporterData for with the possible AutomaticCondition's should be requested
+	 * @param ArrayOfstring $possibleDispatchTypes The Short names of the dispatch types the AutoamticConditions should be filtered
 	 */
 	function __construct($importData, $possibleDispatchTypes){
 		$this->importdata = $importData;
@@ -876,27 +876,27 @@ class GetPossibleAutomaticConditionListResponse{
 
 class GetPossibleAutomaticConditionListResult{
 	/**
-	 *
+	 * @brief The calucated number of packages needed
 	 * @var long
 	 */
 	public $CalculatedNumberOfPackages;
 	/**
-	 *
+	 * @brief The calculated volume for all products
 	 * @var long
 	 */
 	public $CalculatedTotalVolume;
 	/**
-	 *
+	 * @brief The calculated weight for all products
 	 * @var long
 	 */
 	public $CalculatedTotalWeight;
 	/**
-	 *
+	 * @brief List of possible AutomaticCondition's
 	 * @var ArrayOfAutomaticCondition
 	 */
 	public $PossibleAutomaticConditionList;
 	/**
-	 *
+	 * @brief True if tax is calculated
 	 * @var boolean
 	 */
 	public $SaleTaxIsCalculated;
@@ -905,11 +905,15 @@ class GetPossibleAutomaticConditionListResult{
 class GetProductInformationRequest{
 
 	/**
-	 *
+	 * @brief The full own Articlenumber with color size specific addinal number of the Article. The number musst be foud in the activ article list from Promotional Office for a successful import. 
 	 * @var string
 	 */
 	public $ownArticleNumber;
 
+	/**
+	 *
+	 * @param string $productNumber The full own Articlenumber with color size specific addinal number of the Article. The number musst be foud in the activ article list from Promotional Office for a successful import.
+	 */
 	function __construct($productNumber){
 		$this->ownArticleNumber = $productNumber;
 	}
@@ -927,14 +931,14 @@ class GetProductInformationResponse
 class GetProductPriceListRequest{
 
 	/**
-	 *
+	 * @brief The identifier for the product
 	 * @var ProductIdentifier
 	 */
 	public $productIdentifier;
 
 	/**
 	 *
-	 * @param ProductIdentifier $productIdentifier
+	 * @param ProductIdentifier $productIdentifier The identifier for the product
 	 */
 	function __construct($productIdentifier){
 		$this->productIdentifier = $productIdentifier;
@@ -951,20 +955,20 @@ class GetProductPriceListResponse{
 
 class GetProductPricesRequest{
 	/**
-	 *
+	 * @brief The identifier for the customer
 	 * @var CustomerIdentifier
 	 */
 	public $customerIdentifier;
 	/**
-	 *
+	 * @brief The identifier for the product
 	 * @var ProductIdentifier
 	 */
 	public $productIdentifier;
 
 	/**
 	 *
-	 * @param CustomerIdentifier $customerIdentifier
-	 * @param ProductIdentifier $productIdentifier
+	 * @param CustomerIdentifier $customerIdentifier The identifier for the customer
+	 * @param ProductIdentifier $productIdentifier The identifier for the product
 	 */
 	function __construct($customerIdentifier, $productIdentifier){
 		$this->customerIdentifier = $customerIdentifier;
@@ -992,10 +996,15 @@ class GetUserInformationResponse{
 	public $GetUserInformationResult;
 }
 
+/**
+ * \brief Class for item with a short name and a description in a defined languages
+ * 
+ * @author Achim Kuntz
+ */
 class LocalizationItem{
 
 	/**
-	 *
+	 * @brief The description for the item
 	 * @var string
 	 */
 	public $Description;
@@ -1007,26 +1016,31 @@ class LocalizationItem{
 	public $Language;
 
 	/**
-	 *
+	 * @brief The short name for the item
 	 * @var string
 	 */
 	public $Show;
 }
 
+/**
+ * \brief Class for item with a generall short name and a generall description and the same as list in different languages
+ * 
+ * @author Achim Kuntz
+ */
 class LocalizedItem {
 	/**
-	 *
+	 * @brief The description for the item in generall language
 	 * @var string
 	 */
 	public $Description;
 	/**
-	 *
+	 * @brief The short name for the item in generall language
 	 * @var string
 	 */
 	public $Show;
 
 	/**
-	 *
+	 *@brief The List of translations in other languages
 	 * @var ArrayOfLocalizationItem
 	 */
 	public $Texts;
@@ -1053,9 +1067,9 @@ class LogonRequest{
 
 	/**
 	@return Logon
-	@param[in] string $companyName
-	@param[in] string $userName
-	@param[in] string $password
+	@param[in] string $companyName Company Name
+	@param[in] string $userName Username
+	@param[in] string $password Passwort
 	*/
 	function __construct($companyName, $userName, $password){
 		$this->companyName = $companyName;
@@ -1073,64 +1087,74 @@ class LogonResponse
 	public $LogonResult;
 }
 
+/**
+ * \brief Class for payment information
+ * 
+ * @author Achim Kuntz
+ */
 class PaymentInformation{
 
 	/**
-	 *
+	 * @brief The days of the PaymentInformation
 	 * @var unsignedByte
 	 */
 	public $Days;
 
 	/**
-	 *
+	 * @brief The deposit of the PaymentInformation
 	 * @var decimal
 	 */
 	public $Deposit;
 
 	/**
-	 *
+	 * @brief The description of the PaymentInformation
 	 * @var string
 	 */
 	public $Description;
 
 	/**
-	 *
+	 * @brief short name of the PaymentInformation
 	 * @var string
 	 */
 	public $Show;
 
 	/**
-	 *
+	 * @brief The skonto value of the PaymentInformation. if 0 then it is net
 	 * @var unsignedByte
 	 */
 	public $Skonto;
 }
 
+/**
+ * \brief Class to identify a product
+ * 
+ * @author Achim Kuntz
+ */
 class ProductIdentifier {
 
 	/**
-	 *
+	 * @brief unused
 	 * @var long
 	 */
 	public $ProductId;
 
 	/**
-	 *
+	 * @brief The full own Articlenumber with color size specific addinal number of the Article. The number musst be found in the activ article list from Promotional Office for a successful use. 
 	 * @var string
 	 */
 	public $ProductNumber;
 
 	/**
-	 *
+	 * @brief unused
 	 * @var guid
 	 */
 	public $ProductUniqueId;
 
 	/**
 	 *
-	 * @param long $productId
-	 * @param string $productNumber
-	 * @param guid $productUniqueId
+	 * @param long $productId unused
+	 * @param string $productNumber The full own Articlenumber with color size specific addinal number of the Article. The number musst be found in the activ article list from Promotional Office for a successful use.
+	 * @param guid $productUniqueId unused
 	 */
 	function __construct($productId, $productNumber, $productUniqueId){
 		$this->ProductId = $productId;
@@ -1139,496 +1163,529 @@ class ProductIdentifier {
 	}
 }
 
+/**
+ * \brief Class with product information
+ * 
+ * @author Achim Kuntz
+ */
 class ProductInformation
 {
 	/**
-	 *
+	 * @brief List of article groups assigned to the product 
 	 * @var ArrayOfShowDescriptionItem
 	 */
 	public $ArticleGroups;
 	/**
-	 *
-	 * @var ArrayOfShowDescriptionItem
+	 * @brief All product texts in all languages
+	 * @var ArrayOfArticleTextItem
 	 */
 	public $ArticleTexts;
+	/**
+	 * @brief The type of the product
+	 * @var string
+	 */
 	public $ArticleType;
 	/**
-	 *
+	 * @brief List of URI's to all pictures of the product 
 	 * @var ArrayOfanyURI
 	 */
 	public $AllPictureUrls;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField01;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField02;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField03;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField04;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField05;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField06;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField07;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField08;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField09;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField10;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField11;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField12;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField13;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField14;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField15;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField16;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField17;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField18;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField19;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField20;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField21;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField22;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField23;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField24;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField25;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField26;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField27;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField28;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField29;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $ArticleUserDefindedField30;
 
 	/**
-	 *
+	 * @brief The base quantity for the buying price
 	 * @var decimal
 	 */
 	public $BuyingPriceBaseQuantity;
 	/**
-	 *
+	 * @brief The unit of the base quantity for the buying price
 	 * @var string
 	 */
 	public $BuyingPriceBaseQuantityUnit;
 	/**
-	 *
+	 * @brief List of possible color size combinations of the product
 	 * @var ArrayOfColorSizeCombination
 	 */
 	public $ColorSizeCombinations;
 
 	/**
-	 *
+	 * @brief The creation time of the product
 	 * @var DateTime
 	 */
 
 	public $DateInsert;
 
 	/**
-	 *
+	 * @brief List of ideas assigned to the product
 	 * @var ArrayOfShowDescriptionItem
 	 */
 	public $Ideas;
 
 	/**
-	 *
+	 * @brief The identifier for the product
 	 * @var ProductIdentifier
 	 */
 	public $IdentifierV1;
 
 	/**
-	 *
+	 * @brief True if the prosuct is active
 	 * @var booelean
 	 */
 	public $IsActive;
 
 	/**
-	 *
+	 * @brief The date of the last product change
 	 * @var DateTime
 	 */
 	public $LastChanged;
 	/**
-	 *
+	 * @brief The notice
 	 * @var string
 	 */
 	public $Notice;
 	/**
-	 *
+	 * @brief The purchase order number
 	 * @var string
 	 */
 	public $OrderNumber;
 
 	/**
-	 *
+	 * @brief The own product number
 	 * @var string
 	 */
 	public $OwnArticleNumber;
+	/**
+	 * @brief The url of the main product picture
+	 * @var string
+	 */
 	public $PictureUrl;
 	/**
-	 *
+	 * @brief The base quantity for stock orders
 	 * @var decimal
 	 */
 	public $PurchaseOrderBaseQuantity;
 	/**
-	 *
+	 * @brief The unit of the base quantity for stock orders
 	 * @var string
 	 */
 	public $PurchaseOrderBaseQuantityUnit;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined1;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined2;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined3;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined4;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined5;
 	/**
-	 *
+	 * @brief The base quantity for the selling price
 	 * @var decimal
 	 */
 	public $SellingPriceBaseQuantity;
 	/**
-	 *
+	 * @brief The unit of the base quantity for the selling price
 	 * @var string
 	 */
 	public $SellingPriceBaseQuantityUnit;
 	/**
-	 *
+	 * @brief The currency name from the main supplier
 	 * @var string
 	 */
 	public $SupplierCurrencyShow;
 	/**
-	 *
+	 * @brief The name of the main supplier
 	 * @var string
 	 */
 	public $SupplierName;
 	/**
-	 *
+	 * @brief The Warning
 	 * @var string
 	 */
 	public $Warning;
 
 	/**
-	 *
+	 * @brief The short name of the assigned weight
 	 * @var string
 	 */
 	public $WeightShow;
 
 	/**
-	 *
+	 * @brief The value of the assigned weight
 	 * @var decimal
 	 */
 	public $WeightValue;
 }
 
+/**
+ * \brief Class with product price information
+ * 
+ * @author Achim Kuntz
+ */
 class ProductPriceInformation{
 
 	/**
-	 *
+	 * @brief The complete own product number incl. the color size additional product number
 	 * @var string
 	 */
 	public $ArticleNumber;
 	/**
-	 *
+	 * @brief The customer number
 	 * @var string
 	 */
 	public $CustomerNumber;
 
 	/**
-	 *
+	 * @brief The customer specific selling price
 	 * @var decimal
 	 */
 	public $CustomerSpecificSellingPrice;
 	/**
-	 *
+	 * @brief The customer specific discount
 	 * @var decimal
 	 */
 	public $Discount;
 	/**
-	 *
+	 * @brief The quantity belongs to the price
 	 * @var long
 	 */
 	public $Quantity;
 	/**
-	 *
+	 * @brief True if the price depend on the quantity
 	 * @var boolean
 	 */
 	public $QuantityDependentPrice;
 
 	/**
-	 *
+	 * @brief The regular price for this product
 	 * @var decimal
 	 */
 	public $RegularPrice;
 }
 
+/**
+ * \brief Class for items with a short name and a description
+ * 
+ * @author Achim Kuntz
+ */
 class ShowDescriptionItem{
 
 	/**
-	 *
+	 * @brief The description of the item
 	 * @var string
 	 */
 	public $Description;
 
 	/**
-	 *
+	 * @brief The short name of the item
 	 * @var string
 	 */
 	public $Show;
 }
 
+/**
+ * \brief Class for simple address
+ * 
+ * @author Achim Kuntz
+ */
 class SimpleAddress{
 
 	/**
-	 *
+	 * @brief The type of the adsress. Possible values are PostAddress,VisitAddress,DispatchAddress,InvoiceAddress,OtherAddress
 	 * @var string
 	 */
 	public $AddressType;
 
 	/**
-	 *
+	 * @brief The city
 	 * @var string
 	 */
 	public $City;
 
 	/**
-	 *
+	 * @brief The name of the country
 	 * @var string
 	 */
 	public $CountryName;
 
 	/**
-	 *
+	 * @brief True if this is the main address of this addresstype
 	 * @var boolean
 	 */
 	public $IsMainAdress;
 
 	/**
-	 *
+	 * @brief The first line for the address
 	 * @var string
 	 */
 	public $Line1;
 
 	/**
-	 *
+	 * @brief The second line for the address
 	 * @var string
 	 */
 	public $Line2;
 
 	/**
-	 *
+	 * @brief The third line for the address
 	 * @var string
 	 */
 	public $Line3;
 
 	/**
-	 *
+	 * @brief The company name
 	 * @var string
 	 */
 	public $Name;
 
 	/**
-	 *
+	 * @brief The additional company name
 	 * @var string
 	 */
 	public $NameAffex;
 
 	/**
-	 *
+	 * @brief The postal code
 	 * @var string
 	 */
 	public $PostCode;
 
 	/**
-	 *
+	 * @brief The street
 	 * @var string
 	 */
 	public $Street;
 
 	/**
-	 *
+	 * @brief The street number
 	 * @var string
 	 */
 	public $StreetNumber;
 }
 
+/**
+ * \brief Class for address in the tender/indent importer
+ * 
+ * @author Achim Kuntz
+ */
 class TenderIndentImporterAddressData{
 	/**
-	 *
+	 * @brief The alternative salutation
 	 * @var string
 	 */
 	public $AlternativeSalutation ;
 	/**
-	 *
+	 * @brief The city
 	 * @var string
 	 */
 	public $City ;
 	/**
-	 *
+	 * @brief The company name
 	 * @var string
 	 */
 	public $CompanyName ;
 	/**
-	 *
+	 * @brief The additional company name
 	 * @var string
 	 */
 	public $CompanyNameAffex ;
 	/**
-	 *
+	 * @brief The iso code of the country
 	 * @var string
 	 */
 	public $CountryIsoCode ;
 	/**
-	 *
+	 * @brief The dispatch tip. Only on dispatch addresses
 	 * @var string
 	 */
 	public $DispatchTip ;
 	/**
-	 *
+	 * @brief The mail address
 	 * @var string
 	 */
 	public $EMail ;
 	/**
-	 *
+	 * @brief The fax number
 	 * @var string
 	 */
 	public $FaxNumber ;
 	/**
-	 *
+	 * @brief The first name
 	 * @var string
 	 */
 	public $FirstName ;
 	/**
-	 *
+	 * @brief The gender type. Possible values are Male or Female
 	 * @var GenderType
 	 */
 	public $Gender ;
 	/**
-	 *
+	 * @brief The initials
 	 * @var string
 	 */
 	public $Initial ;
@@ -1638,52 +1695,52 @@ class TenderIndentImporterAddressData{
 	 */
 	public $Language ;
 	/**
-	 *
+	 * @brief The last name
 	 * @var string
 	 */
 	public $LastName ;
 	/**
-	 *
+	 * @brief The first line for the address
 	 * @var string
 	 */
 	public $Line1 ;
 	/**
-	 *
+	 * @brief The second line for the address
 	 * @var string
 	 */
 	public $Line2 ;
 	/**
-	 *
+	 * @brief The third line for the address
 	 * @var string
 	 */
 	public $Line3 ;
 	/**
-	 *
+	 * @brief The phone number
 	 * @var string
 	 */
 	public $PhoneNumber ;
 	/**
-	 *
+	 * @brief The postal code
 	 * @var string
 	 */
 	public $PostCode ;
 	/**
-	 *
+	 * @brief The salutation
 	 * @var string
 	 */
 	public $Salutation ;
 	/**
-	 *
+	 * @brief The street
 	 * @var string
 	 */
 	public $Street ;
 	/**
-	 *
+	 * @brief The street number
 	 * @var string
 	 */
 	public $StreetNumber ;
 	/**
-	 *
+	 * @brief The ustId. Only on invoice adresses
 	 * @var string
 	 */
 	public $UstId ;
@@ -2047,6 +2104,11 @@ class TenderIndentImporterRelayData{
 	public $SellingPricePerUnit;
 }
 
+/**
+ * \brief Class for items with a language and a value
+ * 
+ * @author Achim Kuntz
+ */
 class TranslationItem{
 
 	/**
@@ -2055,7 +2117,7 @@ class TranslationItem{
 	 */
 	public $Language;
 	/**
-	 *
+	 * @brief The value of the item
 	 * @var string
 	 */
 	public $Value;
@@ -2063,17 +2125,17 @@ class TranslationItem{
 
 class UserInformation{
 	/**
-	 *
+	 * @brief The mail address
 	 * @var string
 	 */
 	public $Email;
 	/**
-	 *
+	 * @brief The fax number
 	 * @var string
 	 */
 	public $Fax;
 	/**
-	 *
+	 * @brief The first name
 	 * @var string
 	 */
 	public $FirstName;
@@ -2083,47 +2145,47 @@ class UserInformation{
 	 */
 	public $Language;
 	/**
-	 *
+	 * @brief The last name
 	 * @var string
 	 */
 	public $LastName;
 	/**
-	 *
+	 * @brief The phone number
 	 * @var string
 	 */
 	public $Phone;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined1;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined2;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined3;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined4;
 	/**
-	 *
+	 * @brief A free field
 	 * @var string
 	 */
 	public $SelfDefined5;
 	/**
-	 *
+	 * @brief The short name
 	 * @var string
 	 */
 	public $ShortName;
 	/**
-	 *
+	 * @brief The user identifier
 	 * @var long
 	 */
 	public $UserId;
