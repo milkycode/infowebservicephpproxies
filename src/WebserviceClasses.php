@@ -411,7 +411,7 @@ class ContactPersonInformation{
 	public $Gender;
 
 	/**
-	 * @brief unused
+	 * @brief The identifier of the customer
 	 * @var CustomerIdentifier
 	 */
 	public $IdentifierV1;
@@ -573,19 +573,19 @@ class CustomerInformation{
 	public $DispatchType;
 
 	/**
-	 * @brief unused
+	 * @brief The main mail address of the customer
 	 * @var string
 	 */
 	public $EMail;
 
 	/**
-	 * @brief unused
+	 * @brief The main fax number of the customer
 	 * @var string
 	 */
 	public $Fax;
 
 	/**
-	 * @brief unused
+	 * @brief The main website url of the customer
 	 * @var string
 	 */
 	public $Homepage;
@@ -633,7 +633,7 @@ class CustomerInformation{
 	public $PaymentModes;
 
 	/**
-	 * @brief unused
+	 * @brief The main phone number of the customer
 	 * @var string
 	 */
 	public $Phone;
@@ -663,7 +663,7 @@ class CustomerInformation{
 	public $SelfDefined3;
 
 	/**
-	 * @brief unused
+	 * @brief The main skype name of the customer
 	 * @var string
 	 */
 	public $Skype;
@@ -1133,7 +1133,7 @@ class PaymentInformation{
 class ProductIdentifier {
 
 	/**
-	 * @brief unused
+	 * @brief for internal use
 	 * @var long
 	 */
 	public $ProductId;
@@ -1152,7 +1152,7 @@ class ProductIdentifier {
 
 	/**
 	 *
-	 * @param long $productId unused
+	 * @param long $productId for internal use
 	 * @param string $productNumber The full own Articlenumber with color size specific addinal number of the Article. The number musst be found in the activ article list from Promotional Office for a successful use.
 	 * @param guid $productUniqueId unused
 	 */
