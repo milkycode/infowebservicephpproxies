@@ -74,6 +74,14 @@ class ArrayOfExpectedStockMovement{
 	public $ExpectedStockMovement;
 }
 
+class ArrayOfImportInformation{
+	/**
+	 *
+	 * @var ImportInformation[]
+	 */
+	public $ImportInformation;
+}
+
 class ArrayOfLocalizationItem{
 	/**
 	 *
@@ -597,6 +605,12 @@ class CustomerInformation{
 	public $IdentifierV1;
 
 	/**
+	 * @brief The import informations where the customer is imported from
+	 * @var ArrayOfImportInformation
+	 */
+	public $ImportInformations;
+
+	/**
 	 * @brief True if the customer is active
 	 * @var boolean
 	 */
@@ -997,6 +1011,25 @@ class GetUserInformationResponse{
 }
 
 /**
+ * \brief Class for the information of the import
+ * 
+ * @author Achim Kuntz
+ */
+class ImportInformation{
+	/**
+	 * @brief The identifier for the external system
+	 * @var string
+	 */
+	public $ImportSource;
+	
+	/**
+	 * @brief The if of the external system
+	 * @var string
+	 */
+	public $ExternId;
+}
+
+/**
  * \brief Class for item with a short name and a description in a defined languages
  * 
  * @author Achim Kuntz
@@ -1375,6 +1408,12 @@ class ProductInformation
 	 * @var ProductIdentifier
 	 */
 	public $IdentifierV1;
+
+	/**
+	 * @brief The import informations where the article is imported from
+	 * @var ArrayOfImportInformation
+	 */
+	public $ImportInformations;
 
 	/**
 	 * @brief True if the prosuct is active
