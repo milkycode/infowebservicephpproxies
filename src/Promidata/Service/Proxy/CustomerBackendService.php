@@ -104,6 +104,10 @@ class Promidata_Service_Proxy_CustomerBackendService
                     throw new Promidata_Service_Exception_Articlenotfound('Article not found', $e->getCode(), $e);
                     break;
 
+                case 'ArticleGroupNotFound':
+                    throw new Promidata_Service_Exception_Articlegroupnotfound('Article group not found', $e->getCode(), $e);;
+                    break;
+
                 case 'DataPortal.Fetch fehlgeschlagen (Login_Company_0_not_found)':
                 case 'DataPortal.Fetch fehlgeschlagen (Invalid credentials)':
                     throw new Promidata_Service_Exception_Authentication('Authentication failed', $e->getCode(), $e);
