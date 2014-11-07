@@ -40,6 +40,7 @@ class Promidata_Service_Proxy_CustomerBackendService
         'TenderIndentImporterRelayData' => 'Promidata_Service_DTO_TenderIndentImporterRelayData',
         'TranslationItem' => 'Promidata_Service_DTO_TranslationItem',
         'UserInformation' => 'Promidata_Service_DTO_UserInformation',
+        'CustomerSearchParameter' => 'Promidata_Service_DTO_CustomerSearchParameter',
 
         // Enum
 
@@ -118,6 +119,7 @@ class Promidata_Service_Proxy_CustomerBackendService
                     break;
 
                 default:
+					var_dump($e);
                     throw new Promidata_Service_Exception_Unknown('Unknown error', $e->getCode(), $e);
                     break;
             }
@@ -177,6 +179,11 @@ class Promidata_Service_Proxy_CustomerBackendService
     public function GetArticleNumberListByArticleGroup(Promidata_Service_Request_GetArticleNumberListByArticleGroup $parameters)
     {
         return $this->__soapCall('GetArticleNumberListByArticleGroup', array($parameters));
+    }
+
+    public function SearchCustomer(Promidata_Service_Request_SearchCustomer $parameters)
+    {
+        return $this->__soapCall('SearchCustomer', array($parameters));
     }
 
 }
