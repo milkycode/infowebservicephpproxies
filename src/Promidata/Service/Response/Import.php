@@ -1,6 +1,6 @@
 <?php
 
-class Promidata_Service_Reponse_Import
+class Promidata_Service_Response_Import
 {
 
     /**

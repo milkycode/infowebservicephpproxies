@@ -1,6 +1,6 @@
 <?php
 
-class Promidata_Service_Reponse_Update
+class Promidata_Service_Response_Update
 {
 
     /**

@@ -39,6 +39,12 @@ class Promidata_Service_DTO_PaymentInformation
     public $Skonto = null;
 
     /**
+     * @var Promidata_Service_DTO_LocalizationItem[] $Texts
+     * @access public
+     */
+    public $Texts = null;
+
+    /**
      *
      * @param int $Days
      * @param float $Deposit

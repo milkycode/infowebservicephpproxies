@@ -95,13 +95,20 @@ class Promidata_Service_DTO_UserInformation
     public $UserId = null;
 
     /**
-     *
-     * @param int $UserId
+     * @var guid $UserIdentifier
      * @access public
      */
-    public function __construct($UserId)
+    public $UserIdentifier = null;
+
+    /**
+     * @param int $UserId
+     * @param guid $UserIdentifier
+     * @access public
+     */
+    public function __construct($UserId, $UserIdentifier)
     {
         $this->UserId = $UserId;
+        $this->UserIdentifier = $UserIdentifier;
     }
 
 }

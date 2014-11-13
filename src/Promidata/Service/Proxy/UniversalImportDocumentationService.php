@@ -21,9 +21,9 @@ class Promidata_Service_Proxy_UniversalImportDocumentationService
         'ImporterDefinition' => 'Promidata_Service_DTO_ImporterDefinition',
         'CompositeImportFieldInfo' => 'Promidata_Service_DTO_CompositeImportFieldInfo',
 
-        // Reponse
-        'GetImporterResponse' => 'Promidata_Service_Reponse_GetImporter',
-        'GetImporterDetailResponse' => 'Promidata_Service_Reponse_GetImporterDetail',
+        // Response
+        'GetImporterResponse' => 'Promidata_Service_Response_GetImporter',
+        'GetImporterDetailResponse' => 'Promidata_Service_Response_GetImporterDetail',
 
         // Request
         'GetImporter' => 'Promidata_Service_Request_GetImporter',

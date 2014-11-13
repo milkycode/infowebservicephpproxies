@@ -13,15 +13,12 @@ try {
             'EB20RK25DR16!'
         )
     );
-	
-	// Get all information about a product
-	//$response = $proxy->GetProductInformation(new Promidata_Service_Request_GetProductInformation('128-100603'));
-		
-	// search for a customer
-	//$data = array( 'importdata' => array( 'CustomerSearchParameter' => array( 'SearchKey' => 'CompanyName', 'SearchValue' => new SoapVar('KSI', XSD_ANYTYPE, 'string', 'http://www.w3.org/2001/XMLSchema', 'Value'))));
-	$response = $proxy->SearchCustomer(new Promidata_Service_Request_SearchCustomer('CompanyName', 'KSI'));
 
-    //public function SearchCustomer(Promidata_Service_Request_SearchCustomer $searchCustomerRequest);
+    $response = $proxy->GetProductPrices(new Promidata_Service_Request_GetProductPrices(
+        new Promidata_Service_DTO_CustomerIdentifier(123),
+        new Promidata_Service_DTO_ProductIdentifier('product1')
+    ));
+
     var_dump($response);
 
 } catch (Exception $e) {

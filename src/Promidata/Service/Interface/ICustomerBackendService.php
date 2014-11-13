@@ -7,7 +7,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @detail Needs to be called at first access
      *
      * @param Promidata_Service_Request_Logon $logonRequest
-     * @return Promidata_Service_Reponse_Logon
+     * @return Promidata_Service_Response_Logon
      */
     public function Logon(Promidata_Service_Request_Logon $logonRequest);
 
@@ -15,7 +15,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @brief Retrieves a Promidata_Service_Request_GetProductInformation.
      *
      * @param Promidata_Service_Request_GetProductInformation $getProductInformationRequest
-     * @return Promidata_Service_Reponse_ProductInformation
+     * @return Promidata_Service_Response_GetProductInformation
      */
     public function GetProductInformation(Promidata_Service_Request_GetProductInformation $getProductInformationRequest);
 
@@ -24,7 +24,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * It takes care on special prices for the given customer
      *
      * @param Promidata_Service_Request_GetProductPrices $getProductPricesRequest
-     * @return Promidata_Service_Reponse_GetProductPrices
+     * @return Promidata_Service_Response_GetProductPrices
      */
     public function GetProductPrices(Promidata_Service_Request_GetProductPrices $getProductPricesRequest);
 
@@ -32,7 +32,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @brief Returns the expected stock movements of a specific product.
      *
      * @param Promidata_Service_Request_GetExpectedStockMovement $getExpectedStockMovementRequest
-     * @return Promidata_Service_Reponse_ExpectedStockMovement
+     * @return Promidata_Service_Response_GetExpectedStockMovement
      */
     public function GetExpectedStockMovement(Promidata_Service_Request_GetExpectedStockMovement $getExpectedStockMovementRequest);
 
@@ -40,7 +40,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @brief Returns the price relays of a product.
      *
      * @param Promidata_Service_Request_GetProductPriceList $getProductPriceListRequest
-     * @return Promidata_Service_Reponse_GetProductPriceList
+     * @return Promidata_Service_Response_GetProductPriceList
      */
     public function GetProductPriceList(Promidata_Service_Request_GetProductPriceList $getProductPriceListRequest);
 
@@ -48,7 +48,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @brief Returns information about a customer
      * 
      * @param Promidata_Service_Request_GetCustomerInformation $getCustomerInformationRequest
-     * @return Promidata_Service_Reponse_GetCustomerInformation
+     * @return Promidata_Service_Response_GetCustomerInformation
      */
     public function GetCustomerInformation(Promidata_Service_Request_GetCustomerInformation $getCustomerInformationRequest);
 
@@ -56,7 +56,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @brief Returns a list of customer informations of customers which has changed since given datetime.
      * 
      * @param Promidata_Service_Request_GetCustomerInformationList $getCustomerInformationListRequest
-     * return Promidata_Service_Reponse_CustomerInformationList
+     * return Promidata_Service_Response_CustomerInformationList
      */
     public function GetCustomerInformationList(Promidata_Service_Request_GetCustomerInformationList $getCustomerInformationListRequest);
 
@@ -64,7 +64,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @brief Returns a list of user informations
      * 
      * @param Promidata_Service_Request_GetUserInformation $getUserInformationRequest
-     * @return Promidata_Service_Reponse_UserInformation
+     * @return Promidata_Service_Response_GetUserInformation
      */
     public function GetUserInformation(Promidata_Service_Request_GetUserInformation $getUserInformationRequest);
 
@@ -72,7 +72,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @brief Returns a price information list for a Customer
      * 
      * @param Promidata_Service_Request_GetCustomerPriceList $getCustomerPriceListRequest
-     * @return Promidata_Service_Reponse_GetProductPriceList
+     * @return Promidata_Service_Response_GetProductPriceList
      */
     public function GetCustomerPriceList(Promidata_Service_Request_GetCustomerPriceList $getCustomerPriceListRequest);
 
@@ -80,7 +80,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @brief Returns a list of possible automatic conditions for the given constellation
      * 
      * @param Promidata_Service_Request_GetPossibleAutomaticConditionList $getPossibleAutomaticConditionListRequest
-     * @return Promidata_Service_Reponse_AutomaticConditionList
+     * @return Promidata_Service_Response_GetPossibleAutomaticConditionList
      */
     public function GetPossibleAutomaticConditionList(Promidata_Service_Request_GetPossibleAutomaticConditionList $getPossibleAutomaticConditionListRequest);
 
@@ -88,15 +88,63 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @brief Returns a list of articlenumbers of products inside a specified product group
      * 
      * @param Promidata_Service_Request_GetArticleNumberListByArticleGroup $getArticleNumberListByArticleGroupRequest
-     * @return Promidata_Service_Reponse_GetArticleNumberListByArticleGroup
+     * @return Promidata_Service_Response_GetArticleNumberListByArticleGroup
      */
     public function GetArticleNumberListByArticleGroup(Promidata_Service_Request_GetArticleNumberListByArticleGroup $getArticleNumberListByArticleGroupRequest);
 
     /**
-     * @brief Returns a list of customers found by the search parameter
-     * 
-     * @param Promidata_Service_Request_SearchCustomer $searchCustomerRequest
-     * @return Promidata_Service_Reponse_SearchCustomer
+     * @param Promidata_Service_Request_SearchCustomer $parameters
+     * @access public
+     * @return Promidata_Service_Response_SearchCustomer
      */
-    public function SearchCustomer(Promidata_Service_Request_SearchCustomer $searchCustomerRequest);
+    public function SearchCustomer(Promidata_Service_Request_SearchCustomer $parameters);
+
+    /**
+     * @param Promidata_Service_Request_SearchProduct $parameters
+     * @access public
+     * @return Promidata_Service_Response_SearchProduct
+     */
+    public function SearchProduct(Promidata_Service_Request_SearchProduct $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetShowDescriptionList $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetShowDescriptionList
+     */
+    public function GetShowDescriptionList(Promidata_Service_Request_GetShowDescriptionList $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetCurrencyList $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetCurrencyList
+     */
+    public function GetCurrencyList(Promidata_Service_Request_GetCurrencyList $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetPaymentInformationList $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetPaymentInformationList
+     */
+    public function GetPaymentInformationList(Promidata_Service_Request_GetPaymentInformationList $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetDispatchTypeList $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetDispatchTypeList
+     */
+    public function GetDispatchTypeList(Promidata_Service_Request_GetDispatchTypeList $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetDeliveryTermList $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetDeliveryTermList
+     */
+    public function GetDeliveryTermList(Promidata_Service_Request_GetDeliveryTermList $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetCollectiveInvoiceList $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetCollectiveInvoiceList
+     */
+    public function GetCollectiveInvoiceList(Promidata_Service_Request_GetCollectiveInvoiceList $parameters);
 }

@@ -41,22 +41,34 @@ class Promidata_Service_Proxy_CustomerBackendService
         'TranslationItem' => 'Promidata_Service_DTO_TranslationItem',
         'UserInformation' => 'Promidata_Service_DTO_UserInformation',
         'CustomerSearchParameter' => 'Promidata_Service_DTO_CustomerSearchParameter',
+        'ProductSearchParameter' => 'Promidata_Service_DTO_ProductSearchParameter',
+        'CustomerSearchResult' => 'Promidata_Service_DTO_CustomerSearchResult',
+        'ProductSearchResult' => 'Promidata_Service_DTO_ProductSearchResult',
+        'CurrencyItem' => 'Promidata_Service_DTO_CurrencyItem',
 
         // Enum
 
 
         // Response
-        'GetArticleNumberListByArticleGroupResponse' => 'Promidata_Service_Reponse_GetArticleNumberListByArticleGroup',
-        'GetCustomerInformationResponse' => 'Promidata_Service_Reponse_GetCustomerInformation',
-        'GetCustomerInformationListResponse' => 'Promidata_Service_Reponse_GetCustomerInformationList',
-        'GetCustomerPriceListResponse' => 'Promidata_Service_Reponse_GetCustomerPriceList',
-        'GetExpectedStockMovementResponse' => 'Promidata_Service_Reponse_GetExpectedStockMovement',
-        'GetPossibleAutomaticConditionListReponse' => 'Promidata_Service_Reponse_GetPossibleAutomaticConditionList',
-        'GetProductInformationResponse' => 'Promidata_Service_Reponse_GetProductInformation',
-        'GetProductPriceListResponse' => 'Promidata_Service_Reponse_GetProductPriceList',
-        'GetProductPricesResponse' => 'Promidata_Service_Reponse_GetProductPrices',
-        'GetUserInformationResponse' => 'Promidata_Service_Reponse_GetUserInformation',
-        'LogonResponse' => 'Promidata_Service_Reponse_Logon',
+        'GetArticleNumberListByArticleGroupResponse' => 'Promidata_Service_Response_GetArticleNumberListByArticleGroup',
+        'GetCustomerInformationResponse' => 'Promidata_Service_Response_GetCustomerInformation',
+        'GetCustomerInformationListResponse' => 'Promidata_Service_Response_GetCustomerInformationList',
+        'GetCustomerPriceListResponse' => 'Promidata_Service_Response_GetCustomerPriceList',
+        'GetExpectedStockMovementResponse' => 'Promidata_Service_Response_GetExpectedStockMovement',
+        'GetPossibleAutomaticConditionListReponse' => 'Promidata_Service_Response_GetPossibleAutomaticConditionList',
+        'GetProductInformationResponse' => 'Promidata_Service_Response_GetProductInformation',
+        'GetProductPriceListResponse' => 'Promidata_Service_Response_GetProductPriceList',
+        'GetProductPricesResponse' => 'Promidata_Service_Response_GetProductPrices',
+        'GetUserInformationResponse' => 'Promidata_Service_Response_GetUserInformation',
+        'LogonResponse' => 'Promidata_Service_Response_Logon',
+        'SearchCustomerResponse' => 'Promidata_Service_Response_SearchCustomer',
+        'SearchProductResponse' => 'Promidata_Service_Response_SearchProduct',
+        'GetShowDescriptionListResponse' => 'Promidata_Service_Response_GetShowDescriptionList',
+        'GetCurrencyListResponse' => 'Promidata_Service_Response_GetCurrencyList',
+        'GetPaymentInformationListResponse' => 'Promidata_Service_Response_GetPaymentInformationList',
+        'GetDispatchTypeListResponse' => 'Promidata_Service_Response_GetDispatchTypeList',
+        'GetDeliveryTermListResponse' => 'Promidata_Service_Response_GetDeliveryTermList',
+        'GetCollectiveInvoiceListResponse' => 'Promidata_Service_Response_GetCollectiveInvoiceList',
 
         // Request
         'GetArticleNumberListByArticleGroup' => 'Promidata_Service_Request_GetArticleNumberListByArticleGroup',
@@ -69,7 +81,15 @@ class Promidata_Service_Proxy_CustomerBackendService
         'GetProductPriceList' => 'Promidata_Service_Request_GetProductPriceList',
         'GetProductPrices' => 'Promidata_Service_Request_GetProductPrices',
         'GetUserInformation' => 'Promidata_Service_Request_GetUserInformation',
-        'Logon' => 'Promidata_Service_Request_Logon'
+        'Logon' => 'Promidata_Service_Request_Logon',
+        'SearchCustomer' => 'Promidata_Service_Request_SearchCustomer',
+        'SearchProduct' => 'Promidata_Service_Request_SearchProduct',
+        'GetShowDescriptionList' => 'Promidata_Service_Request_GetShowDescriptionList',
+        'GetCurrencyList' => 'Promidata_Service_Request_GetCurrencyList',
+        'GetPaymentInformationList' => 'Promidata_Service_Request_GetPaymentInformationList',
+        'GetDispatchTypeList' => 'Promidata_Service_Request_GetDispatchTypeList',
+        'GetDeliveryTermList' => 'Promidata_Service_Request_GetDeliveryTermList',
+        'GetCollectiveInvoiceList' => 'Promidata_Service_Request_GetCollectiveInvoiceList'
     );
 
     /**
@@ -119,7 +139,6 @@ class Promidata_Service_Proxy_CustomerBackendService
                     break;
 
                 default:
-					var_dump($e);
                     throw new Promidata_Service_Exception_Unknown('Unknown error', $e->getCode(), $e);
                     break;
             }
@@ -186,4 +205,38 @@ class Promidata_Service_Proxy_CustomerBackendService
         return $this->__soapCall('SearchCustomer', array($parameters));
     }
 
+    public function SearchProduct(Promidata_Service_Request_SearchProduct $parameters)
+    {
+        return $this->__soapCall('SearchProduct', array($parameters));
+    }
+
+    public function GetShowDescriptionList(Promidata_Service_Request_GetShowDescriptionList $parameters)
+    {
+        return $this->__soapCall('GetShowDescriptionList', array($parameters));
+    }
+
+    public function GetCurrencyList(Promidata_Service_Request_GetCurrencyList $parameters)
+    {
+        return $this->__soapCall('GetCurrencyList', array($parameters));
+    }
+
+    public function GetPaymentInformationList(Promidata_Service_Request_GetPaymentInformationList $parameters)
+    {
+        return $this->__soapCall('GetPaymentInformationList', array($parameters));
+    }
+
+    public function GetDispatchTypeList(Promidata_Service_Request_GetDispatchTypeList $parameters)
+    {
+        return $this->__soapCall('GetDispatchTypeList', array($parameters));
+    }
+
+    public function GetDeliveryTermList(Promidata_Service_Request_GetDeliveryTermList $parameters)
+    {
+        return $this->__soapCall('GetDeliveryTermList', array($parameters));
+    }
+
+    public function GetCollectiveInvoiceList(Promidata_Service_Request_GetCollectiveInvoiceList $parameters)
+    {
+        return $this->__soapCall('GetCollectiveInvoiceList', array($parameters));
+    }
 }

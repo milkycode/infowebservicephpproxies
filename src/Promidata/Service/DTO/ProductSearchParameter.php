@@ -1,6 +1,6 @@
 <?php
 
-class Promidata_Service_DTO_CustomerSearchParameter
+class Promidata_Service_DTO_ProductSearchParameter
 {
 
     /**

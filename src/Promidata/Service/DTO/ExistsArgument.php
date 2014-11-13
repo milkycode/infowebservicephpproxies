@@ -4,30 +4,19 @@ class Promidata_Service_DTO_ExistsArgument extends Promidata_Service_DTO_ImportD
 {
 
     /**
-     *
-     * @var string $ExternalId
+     * @var Promidata_Service_DTO_DataSelector $Selector
      * @access public
      */
-    public $ExternalId = null;
+    public $Selector = null;
 
     /**
-     *
-     * @var string $ImportSource
-     * @access public
-     */
-    public $ImportSource = null;
-
-    /**
-     *
      * @param guid $ImporterIdentifier
+     * @param guid $DatabaseIdentifier
      * @access public
      */
-    public function __construct($ImporterIdentifier, $ImportSource = null, $ExternalId = null)
+    public function __construct($ImporterIdentifier, $DatabaseIdentifier)
     {
-        parent::__construct($ImporterIdentifier);
-
-        $this->ImportSource = $ImportSource;
-        $this->ExternalId = $ExternalId;
+        parent::__construct($ImporterIdentifier, $DatabaseIdentifier);
     }
 
 }

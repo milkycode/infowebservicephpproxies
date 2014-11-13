@@ -11,11 +11,29 @@ class Promidata_Service_DTO_CustomerIdentifier
     public $CustomerId = null;
 
     /**
+     * @var guid $CustomerIdentifier
+     * @access public
+     */
+    public $CustomerIdentifier = null;
+
+    /**
      *
      * @var string $CustomerNumber
      * @access public
      */
     public $CustomerNumber = null;
+
+    /**
+     * @var string $ExternId
+     * @access public
+     */
+    public $ExternId = null;
+
+    /**
+     * @var string $ImportSource
+     * @access public
+     */
+    public $ImportSource = null;
 
     /**
      *

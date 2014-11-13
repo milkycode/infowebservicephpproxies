@@ -28,6 +28,8 @@ class Promidata_Service_Proxy_CustomerImportService
         'ImportFieldDataCollection' => 'Promidata_Service_DTO_ImportFieldDataCollection',
         'ImportResult' => 'Promidata_Service_DTO_ImportResult',
         'KeyValuePairOfstringstring' => 'Promidata_Service_DTO_KeyValuePairOfstringstring',
+        'KeyValueOfstringanyType' => 'Promidata_Service_DTO_KeyValueOfstringanyType',
+        'DataSelector' => 'Promidata_Service_DTO_DataSelector',
 
         // Exception
         'CommunicationException' => 'Promidata_Service_Exception_Communication',
@@ -36,9 +38,9 @@ class Promidata_Service_Proxy_CustomerImportService
         'FaultException' => 'Promidata_Service_Exception_Fault',
 
         // Response
-        'ExistsResponse' => 'Promidata_Service_Reponse_Exists',
-        'ImportResponse' => 'Promidata_Service_Reponse_Import',
-        'UpdateResponse' => 'Promidata_Service_Reponse_Update',
+        'ExistsResponse' => 'Promidata_Service_Response_Exists',
+        'ImportResponse' => 'Promidata_Service_Response_Import',
+        'UpdateResponse' => 'Promidata_Service_Response_Update',
 
         // Request
         'Exists' => 'Promidata_Service_Request_Exists',

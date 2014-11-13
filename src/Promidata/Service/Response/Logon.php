@@ -1,6 +1,6 @@
 <?php
 
-class Promidata_Service_Reponse_Logon
+class Promidata_Service_Response_Logon
 {
 
     /**

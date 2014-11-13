@@ -17,6 +17,24 @@ class Promidata_Service_DTO_ImportFieldDataCollection
         }
     }
 
+    public function Remove($FieldIdentifier = null)
+    {
+        if (!empty($FieldIdentifier)) {
+            $removeKey = null;
+            foreach($this->ImportFieldDataItem as $key => $ImportFieldDataItem) {
+                if ($ImportFieldDataItem->FieldIdentifier == $FieldIdentifier) {
+                    $removeKey = $key;
+                }
+            }
+
+            if (!is_null($removeKey)) {
+                unset($this->ImportFieldDataItem[$removeKey]);
+                // Reorder keys
+                $this->ImportFieldDataItem = array_values($this->ImportFieldDataItem);
+            }
+        }
+    }
+
     /**
      *
      * @access public

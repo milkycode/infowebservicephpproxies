@@ -1,6 +1,6 @@
 <?php
 
-class Promidata_Service_Reponse_GetCustomerPriceList
+class Promidata_Service_Response_GetCustomerPriceList
 {
 
     /**

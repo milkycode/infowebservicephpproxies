@@ -12,7 +12,9 @@ class Promidata_Service_DTO_AdditionalDataCollection
 
     public function Add($AdditionalDataKey = null, $Value = null)
     {
-        $this->AdditionalDataItem[] = new Promidata_Service_DTO_AdditionalData($AdditionalDataKey, $Value);
+        if (!is_null($Value)) {
+            $this->AdditionalDataItem[] = new Promidata_Service_DTO_AdditionalData($AdditionalDataKey, $Value);
+        }
     }
 
     /**

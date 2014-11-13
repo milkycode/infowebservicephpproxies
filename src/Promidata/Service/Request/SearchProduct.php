@@ -1,16 +1,16 @@
 <?php
 
-class Promidata_Service_Request_SearchCustomer
+class Promidata_Service_Request_SearchProduct
 {
 
     /**
-     * @var Promidata_Service_DTO_CustomerSearchParameter[] $importdata
+     * @var Promidata_Service_DTO_ProductSearchParameter[] $importdata
      * @access public
      */
     public $importdata = null;
 
     /**
-     * @param Promidata_Service_DTO_CustomerSearchParameter[] $importdata
+     * @param Promidata_Service_DTO_ProductSearchParameter[] $importdata
      * @access public
      */
     public function __construct($importdata)
