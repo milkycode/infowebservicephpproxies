@@ -91,4 +91,12 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @return Promidata_Service_Reponse_GetArticleNumberListByArticleGroup
      */
     public function GetArticleNumberListByArticleGroup(Promidata_Service_Request_GetArticleNumberListByArticleGroup $getArticleNumberListByArticleGroupRequest);
+
+    /**
+     * @brief Returns a list of customers found by the search parameter
+     * 
+     * @param Promidata_Service_Request_SearchCustomer $searchCustomerRequest
+     * @return Promidata_Service_Reponse_SearchCustomer
+     */
+    public function SearchCustomer(Promidata_Service_Request_SearchCustomer $searchCustomerRequest);
 }
