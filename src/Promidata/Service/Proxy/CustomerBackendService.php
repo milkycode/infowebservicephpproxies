@@ -137,10 +137,6 @@ class Promidata_Service_Proxy_CustomerBackendService
                 case 'CustomerNotFound':
                     throw new Promidata_Service_Exception_Customernotfound('Customer not found', $e->getCode(), $e);
                     break;
-
-                default:
-                    throw new Promidata_Service_Exception_Unknown('Unknown error', $e->getCode(), $e);
-                    break;
             }
         }
     }
