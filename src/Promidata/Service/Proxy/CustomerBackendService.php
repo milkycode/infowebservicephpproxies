@@ -119,6 +119,11 @@ class Promidata_Service_Proxy_CustomerBackendService
 
             // Custom error handling
 
+            $output = array();
+            if (preg_match("/DataPortal.Fetch fehlgeschlagen \(User ([a-zA-Z1-9-_ ]{1,}) does not exist.\)/", $e->getMessage(), $output) && count($output)) {
+                throw new Promidata_Service_Exception_Authentication('Authentication failed: User not found', $e->getCode(), $e);
+            }
+
             switch ($e->getMessage()) {
 
                 case 'ArticleWithNumberNotFound':

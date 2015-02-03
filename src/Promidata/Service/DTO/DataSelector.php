@@ -18,9 +18,13 @@ class Promidata_Service_DTO_DataSelector
     /**
      * @access public
      */
-    public function __construct()
+    public function __construct($SelectorType)
     {
-    
+        $this->SelectorType = $SelectorType;
     }
 
+    public function add($Key, $Value)
+    {
+        $this->SelectorValues[] = new Promidata_Service_DTO_KeyValueOfstringanyType($Key, $Value);
+    }
 }

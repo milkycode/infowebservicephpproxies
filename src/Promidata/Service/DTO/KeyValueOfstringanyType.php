@@ -23,7 +23,7 @@ class Promidata_Service_DTO_KeyValueOfstringanyType
     public function __construct($Key, $Value)
     {
       $this->Key = $Key;
-      $this->Value = $Value;
+      $this->Value = new SoapVar($Value, XSD_ANYTYPE, 'string', 'http://www.w3.org/2001/XMLSchema', 'Value');
     }
 
 }
