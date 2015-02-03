@@ -72,6 +72,13 @@ include_once('GetDeliveryTermList.php');
 include_once('GetDeliveryTermListResponse.php');
 include_once('GetCollectiveInvoiceList.php');
 include_once('GetCollectiveInvoiceListResponse.php');
+include_once('GetIndentInformation.php');
+include_once('GetIndentInformationParameter.php');
+include_once('GetIndentInformationResponse.php');
+include_once('IndentInformationItem.php');
+include_once('IndentInformationEventItem.php');
+include_once('IndentInformationPositionItem.php');
+include_once('IndentInformationBettermentItem.php');
 
 class CustomerBackendService extends \SoapClient
 {
@@ -148,7 +155,14 @@ class CustomerBackendService extends \SoapClient
       'GetDeliveryTermList' => '\GetDeliveryTermList',
       'GetDeliveryTermListResponse' => '\GetDeliveryTermListResponse',
       'GetCollectiveInvoiceList' => '\GetCollectiveInvoiceList',
-      'GetCollectiveInvoiceListResponse' => '\GetCollectiveInvoiceListResponse');
+      'GetCollectiveInvoiceListResponse' => '\GetCollectiveInvoiceListResponse',
+      'GetIndentInformation' => '\GetIndentInformation',
+      'GetIndentInformationParameter' => '\GetIndentInformationParameter',
+      'GetIndentInformationResponse' => '\GetIndentInformationResponse',
+      'IndentInformationItem' => '\IndentInformationItem',
+      'IndentInformationEventItem' => '\IndentInformationEventItem',
+      'IndentInformationPositionItem' => '\IndentInformationPositionItem',
+      'IndentInformationBettermentItem' => '\IndentInformationBettermentItem');
 
     /**
      * @param array $options A array of config values
@@ -354,6 +368,16 @@ class CustomerBackendService extends \SoapClient
     public function GetCollectiveInvoiceList(GetCollectiveInvoiceList $parameters)
     {
       return $this->__soapCall('GetCollectiveInvoiceList', array($parameters));
+    }
+
+    /**
+     * @param GetIndentInformation $parameters
+     * @access public
+     * @return GetIndentInformationResponse
+     */
+    public function GetIndentInformation(GetIndentInformation $parameters)
+    {
+      return $this->__soapCall('GetIndentInformation', array($parameters));
     }
 
 }

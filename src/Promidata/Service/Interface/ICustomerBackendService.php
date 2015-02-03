@@ -147,4 +147,11 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @return Promidata_Service_Response_GetCollectiveInvoiceList
      */
     public function GetCollectiveInvoiceList(Promidata_Service_Request_GetCollectiveInvoiceList $parameters);
+
+    /**
+     * @param GetIndentInformation $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetIndentInformation
+     */
+    public function GetIndentInformation(Promidata_Service_Request_GetIndentInformation $parameters);
 }

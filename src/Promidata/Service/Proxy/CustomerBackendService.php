@@ -45,6 +45,11 @@ class Promidata_Service_Proxy_CustomerBackendService
         'CustomerSearchResult' => 'Promidata_Service_DTO_CustomerSearchResult',
         'ProductSearchResult' => 'Promidata_Service_DTO_ProductSearchResult',
         'CurrencyItem' => 'Promidata_Service_DTO_CurrencyItem',
+        'GetIndentInformationParameter' => 'Promidata_Service_DTO_GetIndentInformationParameter',
+        'IndentInformationItem' => 'Promidata_Service_DTO_IndentInformationItem',
+        'IndentInformationEventItem' => 'Promidata_Service_DTO_IndentInformationEventItem',
+        'IndentInformationPositionItem' => 'Promidata_Service_DTO_IndentInformationPositionItem',
+        'IndentInformationBettermentItem' => 'Promidata_Service_DTO_IndentInformationBettermentItem',
 
         // Enum
 
@@ -69,6 +74,7 @@ class Promidata_Service_Proxy_CustomerBackendService
         'GetDispatchTypeListResponse' => 'Promidata_Service_Response_GetDispatchTypeList',
         'GetDeliveryTermListResponse' => 'Promidata_Service_Response_GetDeliveryTermList',
         'GetCollectiveInvoiceListResponse' => 'Promidata_Service_Response_GetCollectiveInvoiceList',
+        'GetIndentInformationResponse' => 'Promidata_Service_Response_GetIndentInformation',
 
         // Request
         'GetArticleNumberListByArticleGroup' => 'Promidata_Service_Request_GetArticleNumberListByArticleGroup',
@@ -89,7 +95,8 @@ class Promidata_Service_Proxy_CustomerBackendService
         'GetPaymentInformationList' => 'Promidata_Service_Request_GetPaymentInformationList',
         'GetDispatchTypeList' => 'Promidata_Service_Request_GetDispatchTypeList',
         'GetDeliveryTermList' => 'Promidata_Service_Request_GetDeliveryTermList',
-        'GetCollectiveInvoiceList' => 'Promidata_Service_Request_GetCollectiveInvoiceList'
+        'GetCollectiveInvoiceList' => 'Promidata_Service_Request_GetCollectiveInvoiceList',
+        'GetIndentInformation' => 'Promidata_Service_Request_GetIndentInformation',
     );
 
     /**
@@ -239,5 +246,10 @@ class Promidata_Service_Proxy_CustomerBackendService
     public function GetCollectiveInvoiceList(Promidata_Service_Request_GetCollectiveInvoiceList $parameters)
     {
         return $this->__soapCall('GetCollectiveInvoiceList', array($parameters));
+    }
+
+    public function GetIndentInformation(Promidata_Service_Request_GetIndentInformation $parameters)
+    {
+        return $this->__soapCall('GetIndentInformation', array($parameters));
     }
 }
