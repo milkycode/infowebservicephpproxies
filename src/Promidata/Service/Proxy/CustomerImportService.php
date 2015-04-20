@@ -55,7 +55,7 @@ class Promidata_Service_Proxy_CustomerImportService
      * @access public
      */
     public function __construct(
-        $wsdl = 'http://promotionaloffice.cloudapp.net:8080/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?wsdl',
+        $baseUrl = 'promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc',
         array $options = array()
     ) {
         foreach (self::$classmap as $key => $value) {
@@ -64,7 +64,27 @@ class Promidata_Service_Proxy_CustomerImportService
             }
         }
 
+		$wsdl = "http://$baseUrl?wsdl";
         parent::__construct($wsdl, $options);
+		$basic_endpoint = "https://$baseUrl/basic";
+		$this->__setLocation($basic_endpoint);
+    }
+	
+    public function Logon($companyName, $userName, $password)
+    {
+		// workaround für logindaten
+		$securityNamespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";
+		$headerContent = "<o:Security xmlns:o=\"$securityNamespace\">
+				<o:UsernameToken>
+				<o:Username>$companyName\\$userName</o:Username>
+				<o:Password>$password</o:Password>
+				</o:UsernameToken>
+			</o:Security>";
+		$headerVar = new SoapVar($headerContent, XSD_ANYXML, null, null, null);
+		$headers = array(
+			new SoapHeader($securityNamespace, 'o:Security', $headerVar)
+		);
+		$this->__setSoapHeaders($headers);
     }
 
     public function __soapCall ($function_name, array $arguments, array $options = null, $input_headers = null, array &$output_headers = null)
@@ -81,7 +101,8 @@ class Promidata_Service_Proxy_CustomerImportService
                     throw new Promidata_Service_Exception_Importsourcenotfound('Import source not found', $e->getCode(), $e);
 
                 default:
-                    throw new Promidata_Service_Exception_Unknown('Unknown error', $e->getCode(), $e);
+                    var_dump($e);
+                    //throw new Promidata_Service_Exception_Unknown('Unknown error', $e->getCode(), $e);
                     break;
             }
         }
