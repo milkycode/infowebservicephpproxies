@@ -305,6 +305,18 @@ class Promidata_Service_DTO_ProductInformation
     public $LastChanged = null;
 
     /**
+     * @var float $MinimumPurchaseOrderQuantity
+     * @access public
+     */
+    public $MinimumPurchaseOrderQuantity = null;
+
+    /**
+     * @var string $MinimumPurchaseOrderQuantityUnit
+     * @access public
+     */
+    public $MinimumPurchaseOrderQuantityUnit = null;
+
+    /**
      *
      * @var string $Notice
      * @access public
@@ -437,6 +449,7 @@ class Promidata_Service_DTO_ProductInformation
      * @param dateTime $DateInsert
      * @param boolean $IsActive
      * @param dateTime $LastChanged
+     * @param float $MinimumPurchaseOrderQuantity
      * @param float $PurchaseOrderBaseQuantity
      * @param float $SellingPriceBaseQuantity
      * @param float $WeightValue
@@ -448,6 +461,7 @@ class Promidata_Service_DTO_ProductInformation
         $DateInsert,
         $IsActive,
         $LastChanged,
+        $MinimumPurchaseOrderQuantity,
         $PurchaseOrderBaseQuantity,
         $SellingPriceBaseQuantity,
         $WeightValue
@@ -457,6 +471,7 @@ class Promidata_Service_DTO_ProductInformation
         $this->DateInsert = $DateInsert;
         $this->IsActive = $IsActive;
         $this->LastChanged = $LastChanged;
+        $this->MinimumPurchaseOrderQuantity = $MinimumPurchaseOrderQuantity;
         $this->PurchaseOrderBaseQuantity = $PurchaseOrderBaseQuantity;
         $this->SellingPriceBaseQuantity = $SellingPriceBaseQuantity;
         $this->WeightValue = $WeightValue;

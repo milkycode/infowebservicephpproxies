@@ -19,7 +19,7 @@ class Promidata_Service_DTO_CustomerSearchParameter
      * @param $SearchKey
      * @param $SearchValue
      */
-    public function __construct($SearchKey, $SearchValue)
+    public function __construct($SearchKey = null, $SearchValue = null)
     {
         $this->SearchKey = $SearchKey;
         $this->SearchValue = new SoapVar($SearchValue, XSD_ANYTYPE, 'string', 'http://www.w3.org/2001/XMLSchema', 'Value');

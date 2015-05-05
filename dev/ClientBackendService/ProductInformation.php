@@ -274,6 +274,18 @@ class ProductInformation
     public $LastChanged = null;
 
     /**
+     * @var float $MinimumPurchaseOrderQuantity
+     * @access public
+     */
+    public $MinimumPurchaseOrderQuantity = null;
+
+    /**
+     * @var string $MinimumPurchaseOrderQuantityUnit
+     * @access public
+     */
+    public $MinimumPurchaseOrderQuantityUnit = null;
+
+    /**
      * @var string $Notice
      * @access public
      */
@@ -388,12 +400,13 @@ class ProductInformation
      * @param boolean $IsActive
      * @param boolean $IsStockArticle
      * @param dateTime $LastChanged
+     * @param float $MinimumPurchaseOrderQuantity
      * @param float $PurchaseOrderBaseQuantity
      * @param float $SellingPriceBaseQuantity
      * @param float $WeightValue
      * @access public
      */
-    public function __construct($ArticleType, $BuyingPriceBaseQuantity, $DateInsert, $IsActive, $IsStockArticle, $LastChanged, $PurchaseOrderBaseQuantity, $SellingPriceBaseQuantity, $WeightValue)
+    public function __construct($ArticleType, $BuyingPriceBaseQuantity, $DateInsert, $IsActive, $IsStockArticle, $LastChanged, $MinimumPurchaseOrderQuantity, $PurchaseOrderBaseQuantity, $SellingPriceBaseQuantity, $WeightValue)
     {
       $this->ArticleType = $ArticleType;
       $this->BuyingPriceBaseQuantity = $BuyingPriceBaseQuantity;
@@ -401,6 +414,7 @@ class ProductInformation
       $this->IsActive = $IsActive;
       $this->IsStockArticle = $IsStockArticle;
       $this->LastChanged = $LastChanged;
+      $this->MinimumPurchaseOrderQuantity = $MinimumPurchaseOrderQuantity;
       $this->PurchaseOrderBaseQuantity = $PurchaseOrderBaseQuantity;
       $this->SellingPriceBaseQuantity = $SellingPriceBaseQuantity;
       $this->WeightValue = $WeightValue;

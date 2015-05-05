@@ -1,4 +1,4 @@
-# InfoWebservicePhpProxies Documentation
+# PromotionalOffice WebservicePhpProxies Documentation
 
 ...
 
@@ -13,6 +13,7 @@ Requirements:
 - new webservice reference
 
 The basic references have been generated with [wsdl2phpgenerator](https://github.com/wsdl2phpgenerator/wsdl2phpgenerator)
+The phar file is available here: https://github.com/wsdl2phpgenerator/wsdl2phpgenerator-cli
 
 **1. Switch to the dev directory**
 

@@ -7,6 +7,7 @@ include_once('ArticleLanguageTypeEnum.php');
 include_once('ArticleTypeEnum.php');
 include_once('ColorSizeCombination.php');
 include_once('TranslationItem.php');
+include_once('ProductConfigurationItem.php');
 include_once('GenderType.php');
 include_once('TenderIndentImporterData.php');
 include_once('TenderIndentImporterAddressData.php');
@@ -55,6 +56,10 @@ include_once('SearchCustomer.php');
 include_once('CustomerSearchParameter.php');
 include_once('SearchCustomerResponse.php');
 include_once('CustomerSearchResult.php');
+include_once('SearchSupplier.php');
+include_once('SupplierSearchParameter.php');
+include_once('SearchSupplierResponse.php');
+include_once('SupplierSearchResult.php');
 include_once('SearchProduct.php');
 include_once('ProductSearchParameter.php');
 include_once('SearchProductResponse.php');
@@ -79,6 +84,10 @@ include_once('IndentInformationItem.php');
 include_once('IndentInformationEventItem.php');
 include_once('IndentInformationPositionItem.php');
 include_once('IndentInformationBettermentItem.php');
+include_once('GetProductConfiguration.php');
+include_once('GetProductConfigurationParameter.php');
+include_once('GetProductConfigurationResponse.php');
+include_once('ProductConfiguration.php');
 
 class CustomerBackendService extends \SoapClient
 {
@@ -93,6 +102,7 @@ class CustomerBackendService extends \SoapClient
       'ArticleTextItem' => '\ArticleTextItem',
       'ColorSizeCombination' => '\ColorSizeCombination',
       'TranslationItem' => '\TranslationItem',
+      'ProductConfigurationItem' => '\ProductConfigurationItem',
       'TenderIndentImporterData' => '\TenderIndentImporterData',
       'TenderIndentImporterAddressData' => '\TenderIndentImporterAddressData',
       'TenderIndentImporterPositionData' => '\TenderIndentImporterPositionData',
@@ -139,6 +149,10 @@ class CustomerBackendService extends \SoapClient
       'CustomerSearchParameter' => '\CustomerSearchParameter',
       'SearchCustomerResponse' => '\SearchCustomerResponse',
       'CustomerSearchResult' => '\CustomerSearchResult',
+      'SearchSupplier' => '\SearchSupplier',
+      'SupplierSearchParameter' => '\SupplierSearchParameter',
+      'SearchSupplierResponse' => '\SearchSupplierResponse',
+      'SupplierSearchResult' => '\SupplierSearchResult',
       'SearchProduct' => '\SearchProduct',
       'ProductSearchParameter' => '\ProductSearchParameter',
       'SearchProductResponse' => '\SearchProductResponse',
@@ -162,14 +176,18 @@ class CustomerBackendService extends \SoapClient
       'IndentInformationItem' => '\IndentInformationItem',
       'IndentInformationEventItem' => '\IndentInformationEventItem',
       'IndentInformationPositionItem' => '\IndentInformationPositionItem',
-      'IndentInformationBettermentItem' => '\IndentInformationBettermentItem');
+      'IndentInformationBettermentItem' => '\IndentInformationBettermentItem',
+      'GetProductConfiguration' => '\GetProductConfiguration',
+      'GetProductConfigurationParameter' => '\GetProductConfigurationParameter',
+      'GetProductConfigurationResponse' => '\GetProductConfigurationResponse',
+      'ProductConfiguration' => '\ProductConfiguration');
 
     /**
      * @param array $options A array of config values
      * @param string $wsdl The wsdl file to use
      * @access public
      */
-    public function __construct(array $options = array(), $wsdl = 'https://80.70.177.47/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
+    public function __construct(array $options = array(), $wsdl = 'https://promotionaloffice.cloudapp.net/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
     {
       foreach (self::$classmap as $key => $value) {
         if (!isset($options['classmap'][$key])) {
@@ -301,6 +319,16 @@ class CustomerBackendService extends \SoapClient
     }
 
     /**
+     * @param SearchSupplier $parameters
+     * @access public
+     * @return SearchSupplierResponse
+     */
+    public function SearchSupplier(SearchSupplier $parameters)
+    {
+      return $this->__soapCall('SearchSupplier', array($parameters));
+    }
+
+    /**
      * @param SearchProduct $parameters
      * @access public
      * @return SearchProductResponse
@@ -378,6 +406,16 @@ class CustomerBackendService extends \SoapClient
     public function GetIndentInformation(GetIndentInformation $parameters)
     {
       return $this->__soapCall('GetIndentInformation', array($parameters));
+    }
+
+    /**
+     * @param GetProductConfiguration $parameters
+     * @access public
+     * @return GetProductConfigurationResponse
+     */
+    public function GetProductConfiguration(GetProductConfiguration $parameters)
+    {
+      return $this->__soapCall('GetProductConfiguration', array($parameters));
     }
 
 }

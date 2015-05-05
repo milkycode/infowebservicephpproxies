@@ -63,7 +63,7 @@ class CustomerImportService extends \SoapClient
      * @param string $wsdl The wsdl file to use
      * @access public
      */
-    public function __construct(array $options = array(), $wsdl = 'http://80.70.177.47/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?wsdl')
+    public function __construct(array $options = array(), $wsdl = 'http://promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?wsdl')
     {
       foreach (self::$classmap as $key => $value) {
         if (!isset($options['classmap'][$key])) {

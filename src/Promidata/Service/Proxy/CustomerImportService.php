@@ -1,15 +1,31 @@
 <?php
-
 /**
- *
+ * Proxy for Promidata PromotionalOffice CustomerImportService/CustomerImportService.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
  */
-class Promidata_Service_Proxy_CustomerImportService
-    extends SoapClient
-    implements Promidata_Service_Interface_ICustomerImportService
+class Promidata_Service_Proxy_CustomerImportService extends SoapClient implements Promidata_Service_Interface_ICustomerImportService
 {
+    /**
+     * Importer Identification Names.
+     */
+    const ArticleColorSizeImporter = 'EF598DFE-EF5B-4229-B9C9-A5EAE6962DB';
+    const ArticleImporter = '9BCB107F-6355-499D-8227-42D68346B67F';
+    const CustomerImporter = '74690240-6535-4189-989F-7421BD8226AA';
+    const SpecialPriceImporter = 'C0302C42-5020-4C96-AB0E-8B5A03BF7C74';
+    const SupplierImporter = 'D987F41A-77FC-414A-8211-AFAD811DC03F';
+    const IndentImporter = '60C59560-E15D-4ECF-A7E7-86E18F8347C6'; // Order
+    const TenderImporter = '6A80A184-5D49-49D5-B184-E462A3B2ADBA'; // Offer
 
     /**
-     *
+     * Database Identifier (is not used, but must be valid).
+     */
+    const DatabaseIdentifier = '4A1B38CB-FFC7-499F-8F22-09565D84C6FF';
+
+    /**
+     * Classmap.
      * @var array $classmap The defined classes
      * @access private
      */
@@ -37,47 +53,67 @@ class Promidata_Service_Proxy_CustomerImportService
         'SystemException' => 'Promidata_Service_Exception_System',
         'FaultException' => 'Promidata_Service_Exception_Fault',
 
-        // Response
-        'ExistsResponse' => 'Promidata_Service_Response_Exists',
-        'ImportResponse' => 'Promidata_Service_Response_Import',
-        'UpdateResponse' => 'Promidata_Service_Response_Update',
-
         // Request
         'Exists' => 'Promidata_Service_Request_Exists',
         'Import' => 'Promidata_Service_Request_Import',
-        'Update' => 'Promidata_Service_Request_Update'
+        'Update' => 'Promidata_Service_Request_Update',
+
+        // Response
+        'ExistsResponse' => 'Promidata_Service_Response_Exists',
+        'ImportResponse' => 'Promidata_Service_Response_Import',
+        'UpdateResponse' => 'Promidata_Service_Response_Update'
     );
 
     /**
-     *
+     * Constructor.
      * @param array $options A array of config values
      * @param string $wsdl The wsdl file to use
+     * @param array $options
      * @access public
      */
     public function __construct(
-        $baseUrl = 'promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc',
+        $wsdl = 'http://promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?wsdl',
         array $options = array()
     ) {
+        $options['stream_context'] = stream_context_create(array(
+            'http' => array(
+                'user_agent' => 'PHPSoapClient'
+            ),
+            'https' => array(
+                'curl_verify_ssl_peer' => false,
+                'curl_verify_ssl_host' => false
+            ),
+            'ssl' => array(
+                'verify_peer' => false,
+                'allow_self_signed' => true
+            )
+        ));
+        $options['cache_wsdl'] = WSDL_CACHE_MEMORY;
+        $options['compression'] = SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP;
+//        $options['trace'] = true;
+//        $options['exceptions'] = true;
+
         foreach (self::$classmap as $key => $value) {
             if (!isset($options['classmap'][$key])) {
                 $options['classmap'][$key] = $value;
             }
         }
 
-		$wsdl = "http://$baseUrl?wsdl";
         parent::__construct($wsdl, $options);
-		$basic_endpoint = "https://$baseUrl/basic";
+
+        // Set new endpoint location because of php authentication problems on soap 1.2 (php only supports basic with soap).
+		$basic_endpoint = str_replace(array('http:', '?wsdl'), array('https:', ''), $wsdl . '/basic');
 		$this->__setLocation($basic_endpoint);
     }
-	
-    public function Logon($companyName, $userName, $password)
+
+    public function Logon(Promidata_Service_Request_Logon $user)
     {
-		// workaround für logindaten
+		// Workaround for login (because of basic authentication).
 		$securityNamespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";
 		$headerContent = "<o:Security xmlns:o=\"$securityNamespace\">
 				<o:UsernameToken>
-				<o:Username>$companyName\\$userName</o:Username>
-				<o:Password>$password</o:Password>
+				<o:Username>$user->companyName\\$user->userName</o:Username>
+				<o:Password>$user->password</o:Password>
 				</o:UsernameToken>
 			</o:Security>";
 		$headerVar = new SoapVar($headerContent, XSD_ANYXML, null, null, null);
@@ -87,7 +123,7 @@ class Promidata_Service_Proxy_CustomerImportService
 		$this->__setSoapHeaders($headers);
     }
 
-    public function __soapCall ($function_name, array $arguments, array $options = null, $input_headers = null, array &$output_headers = null)
+    public function __soapCall($function_name, $arguments, $options = null, $input_headers = null, &$output_headers = null)
     {
         try {
             return parent::__soapCall($function_name, $arguments, $options, $input_headers, $output_headers);
