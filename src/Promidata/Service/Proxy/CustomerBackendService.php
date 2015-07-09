@@ -117,6 +117,7 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
         array $options = array()
     )
     {
+        // Create stream_context to accept unsigned certificates in PHP >= 5.6.
         $options['stream_context'] = stream_context_create(array(
             'http' => array(
                 'user_agent' => 'PHPSoapClient'
@@ -127,6 +128,7 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
             ),
             'ssl' => array(
                 'verify_peer' => false,
+                'verify_peer_name' => false,
                 'allow_self_signed' => true
             )
         ));
@@ -149,11 +151,10 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
         try {
             return parent::__soapCall($function_name, $arguments, $options, $input_headers, $output_headers);
         } catch (SoapFault $e) {
-
             // Custom error handling
 
             $output = array();
-            if (preg_match("/DataPortal.Fetch fehlgeschlagen \(User ([a-zA-Z1-9-_ ]{1,}) does not exist.\)/", $e->getMessage(), $output) && count($output)) {
+            if (preg_match('/DataPortal.Fetch fehlgeschlagen \(User ([a-zA-Z1-9-_ ]{1,}) does not exist.\)/', $e->getMessage(), $output) && count($output)) {
                 throw new Promidata_Service_Exception_Authentication('Authentication failed: User not found', $e->getCode(), $e);
             }
 
@@ -173,6 +174,10 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
 
                 case 'CustomerNotFound':
                     throw new Promidata_Service_Exception_Customernotfound('Customer not found', $e->getCode(), $e);
+                    break;
+
+                default:
+                    throw new Promidata_Service_Exception_Unknown($e->getMessage(), $e->getCode(), $e);
                     break;
             }
         }

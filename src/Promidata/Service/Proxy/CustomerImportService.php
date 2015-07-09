@@ -11,13 +11,13 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
     /**
      * Importer Identification Names.
      */
-    const ArticleColorSizeImporter = 'EF598DFE-EF5B-4229-B9C9-A5EAE6962DB';
-    const ArticleImporter = '9BCB107F-6355-499D-8227-42D68346B67F';
-    const CustomerImporter = '74690240-6535-4189-989F-7421BD8226AA';
-    const SpecialPriceImporter = 'C0302C42-5020-4C96-AB0E-8B5A03BF7C74';
-    const SupplierImporter = 'D987F41A-77FC-414A-8211-AFAD811DC03F';
-    const IndentImporter = '60C59560-E15D-4ECF-A7E7-86E18F8347C6'; // Order
-    const TenderImporter = '6A80A184-5D49-49D5-B184-E462A3B2ADBA'; // Offer
+    const ArticleColorSizeImporter = 'EF598DFE-EF5B-4229-B9C9-A5EAE6962DBE';
+    const ArticleImporter =          '9BCB107F-6355-499D-8227-42D68346B67F';
+    const CustomerImporter =         '74690240-6535-4189-989F-7421BD8226AA';
+    const SpecialPriceImporter =     'C0302C42-5020-4C96-AB0E-8B5A03BF7C74';
+    const SupplierImporter =         'D987F41A-77FC-414A-8211-AFAD811DC03F';
+    const IndentImporter =           '60C59560-E15D-4ECF-A7E7-86E18F8347C6'; // Order
+    const TenderImporter =           '6A80A184-5D49-49D5-B184-E462A3B2ADBA'; // Offer
 
     /**
      * Database Identifier (is not used, but must be valid).
@@ -75,6 +75,7 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
         $wsdl = 'http://promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?wsdl',
         array $options = array()
     ) {
+        // Create stream_context to accept unsigned certificates in PHP >= 5.6.
         $options['stream_context'] = stream_context_create(array(
             'http' => array(
                 'user_agent' => 'PHPSoapClient'
@@ -85,6 +86,7 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
             ),
             'ssl' => array(
                 'verify_peer' => false,
+                'verify_peer_name' => false,
                 'allow_self_signed' => true
             )
         ));
@@ -128,17 +130,30 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
         try {
             return parent::__soapCall($function_name, $arguments, $options, $input_headers, $output_headers);
         } catch (SoapFault $e) {
+            // Custom error handling
 
             // Custom error handling
 
-            switch ($e->getMessage()) {
+            $output = array();
+            if (preg_match('/MyArticleNumber not found: (.*)/', $e->getMessage(), $output) && count($output)) {
+                throw new Promidata_Service_Exception_Articlenotfound('Article not found: '.$output[1], $e->getCode(), $e);
+            }
 
+            switch ($e->getMessage()) {
                 case 'ImportSourceNotFound':
                     throw new Promidata_Service_Exception_Importsourcenotfound('Import source not found', $e->getCode(), $e);
+                    break;
+
+                case 'ArticleWithNumberNotFound':
+                    throw new Promidata_Service_Exception_Articlenotfound('Article not found', $e->getCode(), $e);
+                    break;
+
+                case 'ArticleGroupNotFound':
+                    throw new Promidata_Service_Exception_Articlegroupnotfound('Article group not found', $e->getCode(), $e);;
+                    break;
 
                 default:
-                    var_dump($e);
-                    //throw new Promidata_Service_Exception_Unknown('Unknown error', $e->getCode(), $e);
+                    throw new Promidata_Service_Exception_Unknown($e->getMessage(), $e->getCode(), $e);
                     break;
             }
         }

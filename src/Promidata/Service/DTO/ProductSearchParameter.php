@@ -4,6 +4,10 @@ class Promidata_Service_DTO_ProductSearchParameter
 {
 
     /**
+     * Possible SearchKeys (for 2.11, could be extended at any time):
+     * - Idea
+     * - OwnProductNumber
+     * - ProductGroup
      * @var string $SearchKey
      * @access public
      */
