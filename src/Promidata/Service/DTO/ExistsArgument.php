@@ -11,12 +11,12 @@ class Promidata_Service_DTO_ExistsArgument extends Promidata_Service_DTO_ImportD
 
     /**
      * @param guid $ImporterIdentifier
-     * @param guid $DatabaseIdentifier
-     * @access public
+     * @param $Selector Promidata_Service_DTO_DataSelector
      */
-    public function __construct($ImporterIdentifier, $DatabaseIdentifier)
+    public function __construct($ImporterIdentifier, $Selector)
     {
-        parent::__construct($ImporterIdentifier, $DatabaseIdentifier);
+        parent::__construct($ImporterIdentifier);
+        $this->Selector = $Selector;
     }
 
 }

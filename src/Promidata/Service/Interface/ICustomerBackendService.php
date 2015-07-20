@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * Interface for Promidata PromotionalOffice ClientBackendService/CustomerbackendService.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ */
 interface Promidata_Service_Interface_ICustomerBackendService
 {
     /**
@@ -46,7 +52,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
 
     /**
      * @brief Returns information about a customer
-     * 
+     *
      * @param Promidata_Service_Request_GetCustomerInformation $getCustomerInformationRequest
      * @return Promidata_Service_Response_GetCustomerInformation
      */
@@ -54,7 +60,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
 
     /**
      * @brief Returns a list of customer informations of customers which has changed since given datetime.
-     * 
+     *
      * @param Promidata_Service_Request_GetCustomerInformationList $getCustomerInformationListRequest
      * return Promidata_Service_Response_CustomerInformationList
      */
@@ -62,7 +68,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
 
     /**
      * @brief Returns a list of user informations
-     * 
+     *
      * @param Promidata_Service_Request_GetUserInformation $getUserInformationRequest
      * @return Promidata_Service_Response_GetUserInformation
      */
@@ -70,7 +76,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
 
     /**
      * @brief Returns a price information list for a Customer
-     * 
+     *
      * @param Promidata_Service_Request_GetCustomerPriceList $getCustomerPriceListRequest
      * @return Promidata_Service_Response_GetProductPriceList
      */
@@ -78,7 +84,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
 
     /**
      * @brief Returns a list of possible automatic conditions for the given constellation
-     * 
+     *
      * @param Promidata_Service_Request_GetPossibleAutomaticConditionList $getPossibleAutomaticConditionListRequest
      * @return Promidata_Service_Response_GetPossibleAutomaticConditionList
      */
@@ -86,7 +92,7 @@ interface Promidata_Service_Interface_ICustomerBackendService
 
     /**
      * @brief Returns a list of articlenumbers of products inside a specified product group
-     * 
+     *
      * @param Promidata_Service_Request_GetArticleNumberListByArticleGroup $getArticleNumberListByArticleGroupRequest
      * @return Promidata_Service_Response_GetArticleNumberListByArticleGroup
      */
@@ -98,6 +104,13 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @return Promidata_Service_Response_SearchCustomer
      */
     public function SearchCustomer(Promidata_Service_Request_SearchCustomer $parameters);
+
+    /**
+     * @param Promidata_Service_Request_SearchSupplier $parameters
+     * @access public
+     * @return Promidata_Service_Response_SearchSupplier
+     */
+    public function SearchSupplier(Promidata_Service_Request_SearchSupplier $parameters);
 
     /**
      * @param Promidata_Service_Request_SearchProduct $parameters
@@ -147,4 +160,18 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @return Promidata_Service_Response_GetCollectiveInvoiceList
      */
     public function GetCollectiveInvoiceList(Promidata_Service_Request_GetCollectiveInvoiceList $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetIndentInformation $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetIndentInformation
+     */
+    public function GetIndentInformation(Promidata_Service_Request_GetIndentInformation $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetProductConfiguration $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetProductConfiguration
+     */
+    public function GetProductConfiguration(Promidata_Service_Request_GetProductConfiguration $parameters);
 }

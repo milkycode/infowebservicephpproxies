@@ -1,8 +1,13 @@
 <?php
-
+/**
+ * Interface for Promidata PromotionalOffice CustomerImportService/CustomerImportService.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ */
 interface Promidata_Service_Interface_ICustomerImportService
 {
-
     /**
      * @param Promidata_Service_Request_Import $importRequest
      * @return Promidata_Service_Response_Import
@@ -20,5 +25,4 @@ interface Promidata_Service_Interface_ICustomerImportService
      * @return Promidata_Service_Response_Exists
      */
     public function Exists(Promidata_Service_Request_Exists $existsRequest);
-
 }
