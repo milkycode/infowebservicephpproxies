@@ -11,10 +11,11 @@ class Promidata_Service_DTO_GetIndentInformationParameter
 
     /**
      * @access public
+     * @param string $IndentNumberFull
      */
-    public function __construct()
+    public function __construct($IndentNumberFull = null)
     {
-    
+        $this->IndentNumberFull = $IndentNumberFull;
     }
 
 }

@@ -8,6 +8,8 @@
  */
 class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implements Promidata_Service_Interface_ICustomerBackendService
 {
+    protected $version = '2.11';
+
     /**
      * Classmap.
      * @var array $classmap The defined classes
@@ -66,6 +68,7 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
         'GetPossibleAutomaticConditionList' => 'Promidata_Service_Request_GetPossibleAutomaticConditionList',
         'GetProductConfiguration' => 'Promidata_Service_Request_GetProductConfiguration',
         'GetProductInformation' => 'Promidata_Service_Request_GetProductInformation',
+        'GetProductInformationByProductIdentifier' => 'Promidata_Service_Request_GetProductInformationByProductIdentifier',
         'GetProductPriceList' => 'Promidata_Service_Request_GetProductPriceList',
         'GetProductPrices' => 'Promidata_Service_Request_GetProductPrices',
         'GetUserInformation' => 'Promidata_Service_Request_GetUserInformation',
@@ -90,6 +93,7 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
         'GetPossibleAutomaticConditionListReponse' => 'Promidata_Service_Response_GetPossibleAutomaticConditionList',
         'GetProductConfigurationResponse' => 'Promidata_Service_Response_GetProductConfiguration',
         'GetProductInformationResponse' => 'Promidata_Service_Response_GetProductInformation',
+        'GetProductInformationByProductIdentifierResponse' => 'Promidata_Service_Response_GetProductInformationByProductIdentifier',
         'GetProductPriceListResponse' => 'Promidata_Service_Response_GetProductPriceList',
         'GetProductPricesResponse' => 'Promidata_Service_Response_GetProductPrices',
         'GetUserInformationResponse' => 'Promidata_Service_Response_GetUserInformation',
@@ -113,7 +117,7 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
      * @access public
      */
     public function __construct(
-        $wsdl = 'https://promotionaloffice.cloudapp.net:8181/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl',
+        $wsdl = 'https://promotionaloffice.cloudapp.net/PromotionalOffice/Services/Info/ClientBackendService.svc?singleWsdl',
         array $options = array()
     )
     {
@@ -191,6 +195,11 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
     public function GetProductInformation(Promidata_Service_Request_GetProductInformation $parameters)
     {
         return $this->__soapCall('GetProductInformation', array($parameters));
+    }
+
+    public function GetProductInformationByProductIdentifier(Promidata_Service_Request_GetProductInformationByProductIdentifier $parameters)
+    {
+        return $this->__soapCall('GetProductInformationByProductIdentifier', array($parameters));
     }
 
     public function GetProductPrices(Promidata_Service_Request_GetProductPrices $parameters)
@@ -291,5 +300,14 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
     public function GetProductConfiguration(Promidata_Service_Request_GetProductConfiguration $parameters)
     {
         return $this->__soapCall('GetProductConfiguration', array($parameters));
+    }
+
+    /**
+     * Get the compatible webservice version number.
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
     }
 }

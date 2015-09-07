@@ -22,6 +22,8 @@ include_once('GetProductInformationResponse.php');
 include_once('ProductInformation.php');
 include_once('ProductPriceInformation.php');
 include_once('ProductIdentifier.php');
+include_once('GetProductInformationByProductIdentifier.php');
+include_once('GetProductInformationByProductIdentifierResponse.php');
 include_once('GetProductPrices.php');
 include_once('CustomerIdentifier.php');
 include_once('GetProductPricesResponse.php');
@@ -115,6 +117,8 @@ class CustomerBackendService extends \SoapClient
       'ProductInformation' => '\ProductInformation',
       'ProductPriceInformation' => '\ProductPriceInformation',
       'ProductIdentifier' => '\ProductIdentifier',
+      'GetProductInformationByProductIdentifier' => '\GetProductInformationByProductIdentifier',
+      'GetProductInformationByProductIdentifierResponse' => '\GetProductInformationByProductIdentifierResponse',
       'GetProductPrices' => '\GetProductPrices',
       'CustomerIdentifier' => '\CustomerIdentifier',
       'GetProductPricesResponse' => '\GetProductPricesResponse',
@@ -190,12 +194,12 @@ class CustomerBackendService extends \SoapClient
     public function __construct(array $options = array(), $wsdl = 'https://promotionaloffice.cloudapp.net/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
     {
       foreach (self::$classmap as $key => $value) {
-        if (!isset($options['classmap'][$key])) {
-          $options['classmap'][$key] = $value;
-        }
-      }
-      
-      parent::__construct($wsdl, $options);
+    if (!isset($options['classmap'][$key])) {
+      $options['classmap'][$key] = $value;
+    }
+  }
+  
+  parent::__construct($wsdl, $options);
     }
 
     /**
@@ -216,6 +220,16 @@ class CustomerBackendService extends \SoapClient
     public function GetProductInformation(GetProductInformation $parameters)
     {
       return $this->__soapCall('GetProductInformation', array($parameters));
+    }
+
+    /**
+     * @param GetProductInformationByProductIdentifier $parameters
+     * @access public
+     * @return GetProductInformationByProductIdentifierResponse
+     */
+    public function GetProductInformationByProductIdentifier(GetProductInformationByProductIdentifier $parameters)
+    {
+      return $this->__soapCall('GetProductInformationByProductIdentifier', array($parameters));
     }
 
     /**
