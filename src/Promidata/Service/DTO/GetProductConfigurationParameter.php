@@ -10,6 +10,12 @@ class Promidata_Service_DTO_GetProductConfigurationParameter
     public $OwnArticleNumber = null;
 
     /**
+     * @var guid $ProductIdentifier
+     * @access public
+     */
+    public $ProductIdentifier = null;
+
+    /**
      * @access public
      */
     public function __construct()
