@@ -22,7 +22,7 @@ class Promidata_Service_DTO_ImportFieldDataCollection
 
         $this->ImportFieldDataItem[] = new Promidata_Service_DTO_ImportFieldData(
             $FieldIdentifier,
-            $FieldData,
+            $FieldData.'',
             $Options
         );
     }
@@ -33,7 +33,7 @@ class Promidata_Service_DTO_ImportFieldDataCollection
             $FieldIdentifier,
             $FieldData,
             array(
-                new Promidata_Service_DTO_KeyValuePairOfstringstring("Language", $language)
+                new Promidata_Service_DTO_KeyValuePairOfstringstring('Language', $language)
             ),
             $Length
         );
