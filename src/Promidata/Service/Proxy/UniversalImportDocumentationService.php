@@ -8,6 +8,8 @@
  */
 class Promidata_Service_Proxy_UniversalImportDocumentationService extends SoapClient implements Promidata_Service_Interface_IUniversalImportDocumentationService
 {
+    protected $version = '2.11';
+
     /**
      * Classmap.
      * @var array $classmap The defined classes
@@ -56,5 +58,14 @@ class Promidata_Service_Proxy_UniversalImportDocumentationService extends SoapCl
     public function GetImporterDetail(Promidata_Service_Request_GetImporterDetail $parameters)
     {
         return $this->__soapCall('GetImporterDetail', array($parameters));
+    }
+
+    /**
+     * Get the compatible webservice version number.
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
     }
 }

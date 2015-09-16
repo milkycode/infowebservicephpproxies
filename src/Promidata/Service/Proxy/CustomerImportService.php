@@ -8,16 +8,23 @@
  */
 class Promidata_Service_Proxy_CustomerImportService extends SoapClient implements Promidata_Service_Interface_ICustomerImportService
 {
+    protected $version = '2.11';
+
     /**
      * Importer Identification Names.
      */
-    const ArticleColorSizeImporter = 'EF598DFE-EF5B-4229-B9C9-A5EAE6962DBE';
-    const ArticleImporter =          '9BCB107F-6355-499D-8227-42D68346B67F';
-    const CustomerImporter =         '74690240-6535-4189-989F-7421BD8226AA';
-    const SpecialPriceImporter =     'C0302C42-5020-4C96-AB0E-8B5A03BF7C74';
-    const SupplierImporter =         'D987F41A-77FC-414A-8211-AFAD811DC03F';
-    const IndentImporter =           '60C59560-E15D-4ECF-A7E7-86E18F8347C6'; // Order
-    const TenderImporter =           '6A80A184-5D49-49D5-B184-E462A3B2ADBA'; // Offer
+    const ArticleColorSizeImporter =    'EF598DFE-EF5B-4229-B9C9-A5EAE6962DBE';
+    const ArticleImporter =             '9BCB107F-6355-499D-8227-42D68346B67F';
+    const CollectiveInvoiceImporter =   '8C237660-CCCF-4887-A1B1-78BE83D30DE9';
+    const CustomerImporter =            '74690240-6535-4189-989F-7421BD8226AA';
+    const DeliveryTermImporter =        '0F92C8E6-869F-4D12-BE35-91980DD6EEBC';
+    const DispatchTypeImporter =        '806966CB-77C0-4070-A3b5-D13E27bb9690';
+    const IndentImporter =              '60C59560-E15D-4ECF-A7E7-86E18F8347C6';
+    const PaymentInformationImporter =  '522E9FD7-BCD1-4AA0-AEEF-9EFD1FADFA46';
+    const ShowDescriptionListImporter = 'F5F7DA54-FB87-4B04-97A6-0135058054E5';
+    const SpecialPriceImporter =        'C0302C42-5020-4C96-AB0E-8B5A03BF7C74';
+    const SupplierImporter =            'D987F41A-77FC-414A-8211-AFAD811DC03F';
+    const TenderImporter =              '6A80A184-5D49-49D5-B184-E462A3B2ADBA';
 
     /**
      * Database Identifier (is not used, but must be valid).
@@ -72,7 +79,7 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
      * @access public
      */
     public function __construct(
-        $wsdl = 'http://promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?wsdl',
+        $wsdl = 'http://promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?singleWsdl',
         array $options = array()
     ) {
         // Create stream_context to accept unsigned certificates in PHP >= 5.6.
@@ -104,7 +111,7 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
         parent::__construct($wsdl, $options);
 
         // Set new endpoint location because of php authentication problems on soap 1.2 (php only supports basic with soap).
-		$basic_endpoint = str_replace(array('http:', '?wsdl'), array('https:', ''), $wsdl . '/basic');
+        $basic_endpoint = preg_replace(array('/http:/', '/\?.*/'), array('https:', ''), $wsdl) . '/basic';
 		$this->__setLocation($basic_endpoint);
     }
 
@@ -172,5 +179,14 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
     public function Exists(Promidata_Service_Request_Exists $parameters)
     {
         return $this->__soapCall('Exists', array($parameters));
+    }
+
+    /**
+     * Get the compatible webservice version number.
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->version;
     }
 }
