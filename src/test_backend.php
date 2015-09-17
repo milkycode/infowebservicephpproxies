@@ -1,10 +1,7 @@
 <?php
 /**
  * PromotionalOffice Service - Test Script.
- * @author      Christian Hinz <christian@milkycode.com>
- * @category    Milkycode
- * @package     Promidata_Service
- * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ * @author Christian Hinz <christian@milkycode.com>
  */
 
 error_reporting(E_ALL);

@@ -1,10 +1,7 @@
 <?php
-
 class Promidata_Service_Request_GetProductInformation
 {
-
     /**
-     *
      * @var string $ownArticleNumber
      * @access public
      */
@@ -19,5 +16,4 @@ class Promidata_Service_Request_GetProductInformation
     {
         $this->ownArticleNumber = $ownArticleNumber;
     }
-
 }

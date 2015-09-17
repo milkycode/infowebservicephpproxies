@@ -26,6 +26,14 @@ interface Promidata_Service_Interface_ICustomerBackendService
     public function GetProductInformation(Promidata_Service_Request_GetProductInformation $getProductInformationRequest);
 
     /**
+     * @brief Retrieves a Promidata_Service_Request_GetProductInformationByProductIdentifier.
+     *
+     * @param Promidata_Service_Request_GetProductInformationByProductIdentifier $getProductInformationByProductIdentifierRequest
+     * @return Promidata_Service_Response_GetProductInformationByProductIdentifier
+     */
+    public function GetProductInformationByProductIdentifier(Promidata_Service_Request_GetProductInformationByProductIdentifier $getProductInformationByProductIdentifierRequest);
+
+    /**
      * @brief Returns the price relays of a product for a specific customer.
      * It takes care on special prices for the given customer
      *
