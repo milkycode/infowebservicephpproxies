@@ -18,12 +18,14 @@ class Promidata_Service_DTO_KeyValuePairOfstringstring
     public $value = null;
 
     /**
-     *
+     * @param string $key
+     * @param string $value
      * @access public
      */
-    public function __construct()
+    public function __construct($key = null, $value = null)
     {
-
+        $this->key = $key;
+        $this->value = $value;
     }
 
 }
