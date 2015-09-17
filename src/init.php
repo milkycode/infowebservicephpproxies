@@ -1,10 +1,7 @@
 <?php
 /**
  * PromotionalOffice Service - Autoloader used for non-Zend environments.
- * @author      Christian Hinz <christian@milkycode.com>
- * @category    Milkycode
- * @package     Promidata_Service
- * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ * @author Christian Hinz <christian@milkycode.com>
  */
 function psr0_autoloader($className)
 {
@@ -18,7 +15,7 @@ function psr0_autoloader($className)
     }
     $fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
 
-    require $fileName;
+    require_once $fileName;
 }
 
 spl_autoload_register('psr0_autoloader');
