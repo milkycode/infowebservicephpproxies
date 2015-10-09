@@ -11,6 +11,9 @@ ini_set('display_errors', 1);
 require_once(dirname(__FILE__) . '/init.php');
 
 try {
+    /**
+     * For debugging purpose you can use the 3rd parameter debug = true.
+     */
     $proxy = new Promidata_Service_Proxy_CustomerBackendService();
 
     $logon = $proxy->Logon(

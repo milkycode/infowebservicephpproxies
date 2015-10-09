@@ -1,8 +1,13 @@
 <?php
-
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_DTO_ProductIdentifier
 {
-
     /**
      *
      * @var int $ProductId
@@ -25,12 +30,11 @@ class Promidata_Service_DTO_ProductIdentifier
     public $ProductUniqueId = null;
 
     /**
-     *
+     * @param guid $ProductUniqueId
      * @access public
      */
-    public function __construct($ProductNumber)
+    public function __construct($ProductUniqueId = null)
     {
-        $this->ProductNumber = $ProductNumber;
+        $this->ProductUniqueId = $ProductUniqueId;
     }
-
 }

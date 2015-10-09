@@ -6,10 +6,8 @@
  * @package     Promidata_Service
  * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
  */
-class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implements Promidata_Service_Interface_ICustomerBackendService
+class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_Proxy_AbstractService implements Promidata_Service_Interface_ICustomerBackendService
 {
-    protected $version = '2.11';
-
     /**
      * Classmap.
      * @var array $classmap The defined classes
@@ -114,11 +112,13 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
      * Constructor.
      * @param array $options A array of config values
      * @param string $wsdl The wsdl file to use
+     * @param bool $debug Should we enable stack tracing?
      * @access public
      */
     public function __construct(
         $wsdl = 'https://promotionaloffice.cloudapp.net/PromotionalOffice/Services/Info/ClientBackendService.svc?singleWsdl',
-        array $options = array()
+        array $options = array(),
+        $debug = false
     )
     {
         // Create stream_context to accept unsigned certificates in PHP >= 5.6.
@@ -138,8 +138,11 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
         ));
         $options['cache_wsdl'] = WSDL_CACHE_MEMORY;
         $options['compression'] = SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP;
-//        $options['trace'] = true;
-//        $options['exceptions'] = true;
+
+        if ($debug == true) {
+            $options['trace'] = true;
+            $options['exceptions'] = true;
+        }
 
         foreach (self::$classmap as $key => $value) {
             if (!isset($options['classmap'][$key])) {
@@ -148,43 +151,6 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
         }
 
         parent::__construct($wsdl, $options);
-    }
-
-    public function __soapCall($function_name, $arguments, $options = null, $input_headers = null, &$output_headers = null)
-    {
-        try {
-            return parent::__soapCall($function_name, $arguments, $options, $input_headers, $output_headers);
-        } catch (SoapFault $e) {
-            // Custom error handling
-
-            $output = array();
-            if (preg_match('/DataPortal.Fetch fehlgeschlagen \(User ([a-zA-Z1-9-_ ]{1,}) does not exist.\)/', $e->getMessage(), $output) && count($output)) {
-                throw new Promidata_Service_Exception_Authentication('Authentication failed: User not found', $e->getCode(), $e);
-            }
-
-            switch ($e->getMessage()) {
-                case 'ArticleWithNumberNotFound':
-                    throw new Promidata_Service_Exception_Articlenotfound('Article not found', $e->getCode(), $e);
-                    break;
-
-                case 'ArticleGroupNotFound':
-                    throw new Promidata_Service_Exception_Articlegroupnotfound('Article group not found', $e->getCode(), $e);;
-                    break;
-
-                case 'DataPortal.Fetch fehlgeschlagen (Login_Company_0_not_found)':
-                case 'DataPortal.Fetch fehlgeschlagen (Invalid credentials)':
-                    throw new Promidata_Service_Exception_Authentication('Authentication failed', $e->getCode(), $e);
-                    break;
-
-                case 'CustomerNotFound':
-                    throw new Promidata_Service_Exception_Customernotfound('Customer not found', $e->getCode(), $e);
-                    break;
-
-                default:
-                    throw new Promidata_Service_Exception_Unknown($e->getMessage(), $e->getCode(), $e);
-                    break;
-            }
-        }
     }
 
     public function Logon(Promidata_Service_Request_Logon $parameters)
@@ -300,14 +266,5 @@ class Promidata_Service_Proxy_CustomerBackendService extends SoapClient implemen
     public function GetProductConfiguration(Promidata_Service_Request_GetProductConfiguration $parameters)
     {
         return $this->__soapCall('GetProductConfiguration', array($parameters));
-    }
-
-    /**
-     * Get the compatible webservice version number.
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->version;
     }
 }

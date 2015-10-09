@@ -1,10 +1,14 @@
 <?php
-
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_DTO_CustomerIdentifier
 {
-
     /**
-     *
      * @var int $CustomerId
      * @access public
      */
@@ -17,7 +21,6 @@ class Promidata_Service_DTO_CustomerIdentifier
     public $CustomerIdentifier = null;
 
     /**
-     *
      * @var string $CustomerNumber
      * @access public
      */
@@ -36,7 +39,8 @@ class Promidata_Service_DTO_CustomerIdentifier
     public $ImportSource = null;
 
     /**
-     *
+     * @param guid $CustomerId
+     * @param string $CustomerNumber
      * @access public
      */
     public function __construct($CustomerId = null, $CustomerNumber = null)
@@ -44,5 +48,4 @@ class Promidata_Service_DTO_CustomerIdentifier
         $this->CustomerId = null;
         $this->CustomerNumber = null;
     }
-
 }

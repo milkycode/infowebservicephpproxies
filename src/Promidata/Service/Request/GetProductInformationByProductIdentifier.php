@@ -1,17 +1,24 @@
 <?php
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_Request_GetProductInformationByProductIdentifier
 {
     /**
-     * @var ProductIdentifier $productIdentifier
+     * @var Promidata_Service_DTO_ProductIdentifier $productIdentifier
      * @access public
      */
     public $productIdentifier = null;
 
     /**
-     * @param ProductIdentifier $productIdentifier
+     * @param Promidata_Service_DTO_ProductIdentifier $productIdentifier
      * @access public
      */
-    public function __construct($productIdentifier = null)
+    public function __construct(Promidata_Service_DTO_ProductIdentifier $productIdentifier = null)
     {
       $this->productIdentifier = $productIdentifier;
     }
