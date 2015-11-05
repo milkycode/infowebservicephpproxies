@@ -21,10 +21,82 @@ class Promidata_Service_DTO_ProductInformation
     public $ArticleBaseUnit = null;
 
     /**
+     * @var float $ArticleCollectingCartonDepth
+     * @access public
+     */
+    public $ArticleCollectingCartonDepth = null;
+
+    /**
+     * @var float $ArticleCollectingCartonHeight
+     * @access public
+     */
+    public $ArticleCollectingCartonHeight = null;
+
+    /**
+     * @var float $ArticleCollectingCartonWeight
+     * @access public
+     */
+    public $ArticleCollectingCartonWeight = null;
+
+    /**
+     * @var float $ArticleCollectingCartonWidth
+     * @access public
+     */
+    public $ArticleCollectingCartonWidth = null;
+
+    /**
+     * @var float $ArticleCollectingPackagingUnitAmount
+     * @access public
+     */
+    public $ArticleCollectingPackagingUnitAmount = null;
+
+    /**
+     * @var string $ArticleCollectingPackagingUnitName
+     * @access public
+     */
+    public $ArticleCollectingPackagingUnitName = null;
+
+    /**
+     * @var string $ArticleCountryOfOriginIso
+     * @access public
+     */
+    public $ArticleCountryOfOriginIso = null;
+
+    /**
      * @var Promidata_Service_DTO_ShowDescriptionItem[] $ArticleGroups
      * @access public
      */
     public $ArticleGroups = null;
+
+    /**
+     * @var int $ArticleSingleCartonDepth
+     * @access public
+     */
+    public $ArticleSingleCartonDepth = null;
+
+    /**
+     * @var int $ArticleSingleCartonHeight
+     * @access public
+     */
+    public $ArticleSingleCartonHeight = null;
+
+    /**
+     * @var int $ArticleSingleCartonWeight
+     * @access public
+     */
+    public $ArticleSingleCartonWeight = null;
+
+    /**
+     * @var int $ArticleSingleCartonWidth
+     * @access public
+     */
+    public $ArticleSingleCartonWidth = null;
+
+    /**
+     * @var int $ArticleSinglePackagingUnit
+     * @access public
+     */
+    public $ArticleSinglePackagingUnit = null;
 
     /**
      * @var Promidata_Service_DTO_ArticleTextItem[] $ArticleTexts
@@ -231,6 +303,12 @@ class Promidata_Service_DTO_ProductInformation
     public $BuyingPriceBaseQuantityUnit = null;
 
     /**
+     * @var int $CatalogPage
+     * @access public
+     */
+    public $CatalogPage = null;
+
+    /**
      * @var Promidata_Service_DTO_ColorSizeCombination[] $ColorSizeCombinations
      * @access public
      */
@@ -241,6 +319,42 @@ class Promidata_Service_DTO_ProductInformation
      * @access public
      */
     public $DateInsert = null;
+
+    /**
+     * @var string $DutyNumber
+     * @access public
+     */
+    public $DutyNumber = null;
+
+    /**
+     * @var float $DutyNumberCustomsTariffRate
+     * @access public
+     */
+    public $DutyNumberCustomsTariffRate = null;
+
+    /**
+     * @var string $DutyNumberDescription
+     * @access public
+     */
+    public $DutyNumberDescription = null;
+
+    /**
+     * @var float $DutyNumberMaximumCustomsTariffPrice
+     * @access public
+     */
+    public $DutyNumberMaximumCustomsTariffPrice = null;
+
+    /**
+     * @var float $DutyNumberMinimumCustomsTariffPrice
+     * @access public
+     */
+    public $DutyNumberMinimumCustomsTariffPrice = null;
+
+    /**
+     * @var string $DutyNumberShow
+     * @access public
+     */
+    public $DutyNumberShow = null;
 
     /**
      * @var Promidata_Service_DTO_ShowDescriptionItem[] $Ideas
@@ -255,10 +369,22 @@ class Promidata_Service_DTO_ProductInformation
     public $IdentifierV1 = null;
 
     /**
+     * @var Promidata_Service_DTO_ImportInformation[] $ImportInformations
+     * @access public
+     */
+    public $ImportInformations = null;
+
+    /**
      * @var boolean $IsActive
      * @access public
      */
     public $IsActive = null;
+
+    /**
+     * @var boolean $IsStockArticle
+     * @access public
+     */
+    public $IsStockArticle = null;
 
     /**
      * @var dateTime $LastChanged
@@ -313,6 +439,18 @@ class Promidata_Service_DTO_ProductInformation
      * @access public
      */
     public $PurchaseOrderBaseQuantityUnit = null;
+
+    /**
+     * @var float $SalesTaxPercent
+     * @access public
+     */
+    public $SalesTaxPercent = null;
+
+    /**
+     * @var string $SalesTaxShow
+     * @access public
+     */
+    public $SalesTaxShow = null;
 
     /**
      * @var string $SelfDefined1
@@ -387,35 +525,83 @@ class Promidata_Service_DTO_ProductInformation
     public $WeightValue = null;
 
     /**
+     * @param float $ArticleCollectingCartonDepth
+     * @param float $ArticleCollectingCartonHeight
+     * @param float $ArticleCollectingCartonWeight
+     * @param float $ArticleCollectingCartonWidth
+     * @param float $ArticleCollectingPackagingUnitAmount
+     * @param int $ArticleSingleCartonDepth
+     * @param int $ArticleSingleCartonHeight
+     * @param int $ArticleSingleCartonWeight
+     * @param int $ArticleSingleCartonWidth
+     * @param int $ArticleSinglePackagingUnit
      * @param Promidata_Service_Enum_ArticleType $ArticleType
      * @param float $BuyingPriceBaseQuantity
+     * @param int $CatalogPage
      * @param dateTime $DateInsert
+     * @param float $DutyNumberCustomsTariffRate
+     * @param float $DutyNumberMaximumCustomsTariffPrice
+     * @param float $DutyNumberMinimumCustomsTariffPrice
      * @param boolean $IsActive
+     * @param boolean $IsStockArticle
      * @param dateTime $LastChanged
      * @param float $MinimumPurchaseOrderQuantity
      * @param float $PurchaseOrderBaseQuantity
+     * @param float $SalesTaxPercent
      * @param float $SellingPriceBaseQuantity
      * @param float $WeightValue
      * @access public
      */
     public function __construct(
+        $ArticleCollectingCartonDepth,
+        $ArticleCollectingCartonHeight,
+        $ArticleCollectingCartonWeight,
+        $ArticleCollectingCartonWidth,
+        $ArticleCollectingPackagingUnitAmount,
+        $ArticleSingleCartonDepth,
+        $ArticleSingleCartonHeight,
+        $ArticleSingleCartonWeight,
+        $ArticleSingleCartonWidth,
+        $ArticleSinglePackagingUnit,
         $ArticleType,
         $BuyingPriceBaseQuantity,
+        $CatalogPage,
         $DateInsert,
+        $DutyNumberCustomsTariffRate,
+        $DutyNumberMaximumCustomsTariffPrice,
+        $DutyNumberMinimumCustomsTariffPrice,
         $IsActive,
+        $IsStockArticle,
         $LastChanged,
         $MinimumPurchaseOrderQuantity,
         $PurchaseOrderBaseQuantity,
+        $SalesTaxPercent,
         $SellingPriceBaseQuantity,
         $WeightValue
     ) {
+        $this->ArticleCollectingCartonDepth = $ArticleCollectingCartonDepth;
+        $this->ArticleCollectingCartonHeight = $ArticleCollectingCartonHeight;
+        $this->ArticleCollectingCartonWeight = $ArticleCollectingCartonWeight;
+        $this->ArticleCollectingCartonWidth = $ArticleCollectingCartonWidth;
+        $this->ArticleCollectingPackagingUnitAmount = $ArticleCollectingPackagingUnitAmount;
+        $this->ArticleSingleCartonDepth = $ArticleSingleCartonDepth;
+        $this->ArticleSingleCartonHeight = $ArticleSingleCartonHeight;
+        $this->ArticleSingleCartonWeight = $ArticleSingleCartonWeight;
+        $this->ArticleSingleCartonWidth = $ArticleSingleCartonWidth;
+        $this->ArticleSinglePackagingUnit = $ArticleSinglePackagingUnit;
         $this->ArticleType = $ArticleType;
         $this->BuyingPriceBaseQuantity = $BuyingPriceBaseQuantity;
+        $this->CatalogPage = $CatalogPage;
         $this->DateInsert = $DateInsert;
+        $this->DutyNumberCustomsTariffRate = $DutyNumberCustomsTariffRate;
+        $this->DutyNumberMaximumCustomsTariffPrice = $DutyNumberMaximumCustomsTariffPrice;
+        $this->DutyNumberMinimumCustomsTariffPrice = $DutyNumberMinimumCustomsTariffPrice;
         $this->IsActive = $IsActive;
+        $this->IsStockArticle = $IsStockArticle;
         $this->LastChanged = $LastChanged;
         $this->MinimumPurchaseOrderQuantity = $MinimumPurchaseOrderQuantity;
         $this->PurchaseOrderBaseQuantity = $PurchaseOrderBaseQuantity;
+        $this->SalesTaxPercent = $SalesTaxPercent;
         $this->SellingPriceBaseQuantity = $SellingPriceBaseQuantity;
         $this->WeightValue = $WeightValue;
     }

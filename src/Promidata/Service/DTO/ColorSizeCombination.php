@@ -57,6 +57,12 @@ class Promidata_Service_DTO_ColorSizeCombination
     public $FreeText3 = null;
 
     /**
+     * @var Promidata_Service_DTO_LinkItemV1[] $LinkList
+     * @access public
+     */
+    public $LinkList = null;
+
+    /**
      * @var string $Notice
      * @access public
      */

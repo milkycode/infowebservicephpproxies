@@ -17,14 +17,27 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         // DTO
         'ArticleTextItem' => 'Promidata_Service_DTO_ArticleTextItem',
         'AutomaticCondition' => 'Promidata_Service_DTO_AutomaticCondition',
+        'ChangePurchaseOrderActionParameter' => 'Promidata_Service_DTO_ChangePurchaseOrderActionParameter',
+        'ChangePurchaseOrderActionResult' => 'Promidata_Service_DTO_ChangePurchaseOrderActionResult',
         'ColorSizeCombination' => 'Promidata_Service_DTO_ColorSizeCombination',
+        'ComplexAddress' => 'Promidata_Service_DTO_ComplexAddress',
         'ContactDetail' => 'Promidata_Service_DTO_ContactDetail',
         'ContactPersonInformation' => 'Promidata_Service_DTO_ContactPersonInformation',
+        'CurrencyItem' => 'Promidata_Service_DTO_CurrencyItem',
         'CustomerIdentifier' => 'Promidata_Service_DTO_CustomerIdentifier',
         'CustomerInformation' => 'Promidata_Service_DTO_CustomerInformation',
+        'CustomerSearchParameter' => 'Promidata_Service_DTO_CustomerSearchParameter',
+        'CustomerSearchResult' => 'Promidata_Service_DTO_CustomerSearchResult',
         'ExpectedStockMovement' => 'Promidata_Service_DTO_ExpectedStockMovement',
+        'GetIndentInformationParameter' => 'Promidata_Service_DTO_GetIndentInformationParameter',
         'GetPossibleAutomaticConditionListResult' => 'Promidata_Service_DTO_GetPossibleAutomaticConditionListResult',
         'GetProductConfigurationParameter' => 'Promidata_Service_DTO_GetProductConfigurationParameter',
+        'ImportInformation' => 'Promidata_Service_DTO_ImportInformation',
+        'IndentInformationBettermentItem' => 'Promidata_Service_DTO_IndentInformationBettermentItem',
+        'IndentInformationEventItem' => 'Promidata_Service_DTO_IndentInformationEventItem',
+        'IndentInformationItem' => 'Promidata_Service_DTO_IndentInformationItem',
+        'IndentInformationPositionItem' => 'Promidata_Service_DTO_IndentInformationPositionItem',
+        'LinkItemV1' => 'Promidata_Service_DTO_LinkItemV1',
         'LocalizationItem' => 'Promidata_Service_DTO_LocalizationItem',
         'LocalizedItem' => 'Promidata_Service_DTO_LocalizedItem',
         'PaymentInformation' => 'Promidata_Service_DTO_PaymentInformation',
@@ -33,6 +46,15 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'ProductIdentifier' => 'Promidata_Service_DTO_ProductIdentifier',
         'ProductInformation' => 'Promidata_Service_DTO_ProductInformation',
         'ProductPriceInformation' => 'Promidata_Service_DTO_ProductPriceInformation',
+        'ProductSearchParameter' => 'Promidata_Service_DTO_ProductSearchParameter',
+        'ProductSearchResult' => 'Promidata_Service_DTO_ProductSearchResult',
+        'PurchaseOrderAction' => 'Promidata_Service_DTO_PurchaseOrderAction',
+        'PurchaseOrderBettermentItem' => 'Promidata_Service_DTO_PurchaseOrderBettermentItem',
+        'PurchaseOrderIdentifier' => 'Promidata_Service_DTO_PurchaseOrderIdentifier',
+        'PurchaseOrderInformation' => 'Promidata_Service_DTO_PurchaseOrderInformation',
+        'PurchaseOrderPositionItem' => 'Promidata_Service_DTO_PurchaseOrderPositionItem',
+        'PurchaseOrderSearchParameter' => 'Promidata_Service_DTO_PurchaseOrderSearchParameter',
+        'PurchaseOrderSearchResult' => 'Promidata_Service_DTO_PurchaseOrderSearchResult',
         'ShowDescriptionItem' => 'Promidata_Service_DTO_ShowDescriptionItem',
         'SimpleAddress' => 'Promidata_Service_DTO_SimpleAddress',
         'SupplierSearchParameter' => 'Promidata_Service_DTO_SupplierSearchParameter',
@@ -44,68 +66,70 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'TenderIndentImporterRelayData' => 'Promidata_Service_DTO_TenderIndentImporterRelayData',
         'TranslationItem' => 'Promidata_Service_DTO_TranslationItem',
         'UserInformation' => 'Promidata_Service_DTO_UserInformation',
-        'CustomerSearchParameter' => 'Promidata_Service_DTO_CustomerSearchParameter',
-        'ProductSearchParameter' => 'Promidata_Service_DTO_ProductSearchParameter',
-        'CustomerSearchResult' => 'Promidata_Service_DTO_CustomerSearchResult',
-        'ProductSearchResult' => 'Promidata_Service_DTO_ProductSearchResult',
-        'CurrencyItem' => 'Promidata_Service_DTO_CurrencyItem',
-        'GetIndentInformationParameter' => 'Promidata_Service_DTO_GetIndentInformationParameter',
-        'IndentInformationItem' => 'Promidata_Service_DTO_IndentInformationItem',
-        'IndentInformationEventItem' => 'Promidata_Service_DTO_IndentInformationEventItem',
-        'IndentInformationPositionItem' => 'Promidata_Service_DTO_IndentInformationPositionItem',
-        'IndentInformationBettermentItem' => 'Promidata_Service_DTO_IndentInformationBettermentItem',
 
         // Enum
+        'ArticleLanguageTypeEnum' => 'Promidata_Service_Enum_ArticleLanguageType',
+        'ArticleTypeEnum' => 'Promidata_Service_Enum_ArticleType',
+        'GenderType' => 'Promidata_Service_Enum_GenderType',
+        'ShowDescriptionListTypeEnum' => 'Promidata_Service_Enum_ShowDescriptionListType',
 
         // Request
+        'ChangePurchaseOrderAction' => 'Promidata_Service_Request_ChangePurchaseOrderAction',
         'GetArticleNumberListByArticleGroup' => 'Promidata_Service_Request_GetArticleNumberListByArticleGroup',
+        'GetCollectiveInvoiceList' => 'Promidata_Service_Request_GetCollectiveInvoiceList',
+        'GetCurrencyList' => 'Promidata_Service_Request_GetCurrencyList',
         'GetCustomerInformation' => 'Promidata_Service_Request_GetCustomerInformation',
         'GetCustomerInformationList' => 'Promidata_Service_Request_GetCustomerInformationList',
         'GetCustomerPriceList' => 'Promidata_Service_Request_GetCustomerPriceList',
+        'GetDeliveryTermList' => 'Promidata_Service_Request_GetDeliveryTermList',
+        'GetDispatchTypeList' => 'Promidata_Service_Request_GetDispatchTypeList',
         'GetExpectedStockMovement' => 'Promidata_Service_Request_GetExpectedStockMovement',
+        'GetIndentInformation' => 'Promidata_Service_Request_GetIndentInformation',
+        'GetPaymentInformationList' => 'Promidata_Service_Request_GetPaymentInformationList',
         'GetPossibleAutomaticConditionList' => 'Promidata_Service_Request_GetPossibleAutomaticConditionList',
         'GetProductConfiguration' => 'Promidata_Service_Request_GetProductConfiguration',
         'GetProductInformation' => 'Promidata_Service_Request_GetProductInformation',
         'GetProductInformationByProductIdentifier' => 'Promidata_Service_Request_GetProductInformationByProductIdentifier',
         'GetProductPriceList' => 'Promidata_Service_Request_GetProductPriceList',
         'GetProductPrices' => 'Promidata_Service_Request_GetProductPrices',
+        'GetPurchaseOrderActionList' => 'Promidata_Service_Request_GetPurchaseOrderActionList',
+        'GetPurchaseOrderInformation' => 'Promidata_Service_Request_GetPurchaseOrderInformation',
+        'GetShowDescriptionList' => 'Promidata_Service_Request_GetShowDescriptionList',
         'GetUserInformation' => 'Promidata_Service_Request_GetUserInformation',
         'Logon' => 'Promidata_Service_Request_Logon',
         'SearchCustomer' => 'Promidata_Service_Request_SearchCustomer',
         'SearchProduct' => 'Promidata_Service_Request_SearchProduct',
+        'SearchPurchaseOrder' => 'Promidata_Service_Request_SearchPurchaseOrder',
         'SearchSupplier' => 'Promidata_Service_Request_SearchSupplier',
-        'GetShowDescriptionList' => 'Promidata_Service_Request_GetShowDescriptionList',
-        'GetCurrencyList' => 'Promidata_Service_Request_GetCurrencyList',
-        'GetPaymentInformationList' => 'Promidata_Service_Request_GetPaymentInformationList',
-        'GetDispatchTypeList' => 'Promidata_Service_Request_GetDispatchTypeList',
-        'GetDeliveryTermList' => 'Promidata_Service_Request_GetDeliveryTermList',
-        'GetCollectiveInvoiceList' => 'Promidata_Service_Request_GetCollectiveInvoiceList',
-        'GetIndentInformation' => 'Promidata_Service_Request_GetIndentInformation',
 
         // Response
+        'ChangePurchaseOrderActionResponse' => 'Promidata_Service_Response_ChangePurchaseOrderAction',
         'GetArticleNumberListByArticleGroupResponse' => 'Promidata_Service_Response_GetArticleNumberListByArticleGroup',
+        'GetCollectiveInvoiceListResponse' => 'Promidata_Service_Response_GetCollectiveInvoiceList',
+        'GetCurrencyListResponse' => 'Promidata_Service_Response_GetCurrencyList',
         'GetCustomerInformationResponse' => 'Promidata_Service_Response_GetCustomerInformation',
         'GetCustomerInformationListResponse' => 'Promidata_Service_Response_GetCustomerInformationList',
         'GetCustomerPriceListResponse' => 'Promidata_Service_Response_GetCustomerPriceList',
+        'GetDeliveryTermListResponse' => 'Promidata_Service_Response_GetDeliveryTermList',
+        'GetDispatchTypeListResponse' => 'Promidata_Service_Response_GetDispatchTypeList',
         'GetExpectedStockMovementResponse' => 'Promidata_Service_Response_GetExpectedStockMovement',
+        'GetIndentInformationResponse' => 'Promidata_Service_Response_GetIndentInformation',
+        'GetPaymentInformationListResponse' => 'Promidata_Service_Response_GetPaymentInformationList',
         'GetPossibleAutomaticConditionListReponse' => 'Promidata_Service_Response_GetPossibleAutomaticConditionList',
         'GetProductConfigurationResponse' => 'Promidata_Service_Response_GetProductConfiguration',
         'GetProductInformationResponse' => 'Promidata_Service_Response_GetProductInformation',
         'GetProductInformationByProductIdentifierResponse' => 'Promidata_Service_Response_GetProductInformationByProductIdentifier',
         'GetProductPriceListResponse' => 'Promidata_Service_Response_GetProductPriceList',
         'GetProductPricesResponse' => 'Promidata_Service_Response_GetProductPrices',
+        'GetPurchaseOrderActionListResponse' => 'Promidata_Service_Response_GetPurchaseOrderActionList',
+        'GetPurchaseOrderInformationResponse' => 'Promidata_Service_Response_GetPurchaseOrderInformation',
+        'GetShowDescriptionListResponse' => 'Promidata_Service_Response_GetShowDescriptionList',
         'GetUserInformationResponse' => 'Promidata_Service_Response_GetUserInformation',
         'LogonResponse' => 'Promidata_Service_Response_Logon',
         'SearchCustomerResponse' => 'Promidata_Service_Response_SearchCustomer',
         'SearchProductResponse' => 'Promidata_Service_Response_SearchProduct',
-        'SearchSupplierResponse' => 'Promidata_Service_Response_SearchSupplier',
-        'GetShowDescriptionListResponse' => 'Promidata_Service_Response_GetShowDescriptionList',
-        'GetCurrencyListResponse' => 'Promidata_Service_Response_GetCurrencyList',
-        'GetPaymentInformationListResponse' => 'Promidata_Service_Response_GetPaymentInformationList',
-        'GetDispatchTypeListResponse' => 'Promidata_Service_Response_GetDispatchTypeList',
-        'GetDeliveryTermListResponse' => 'Promidata_Service_Response_GetDeliveryTermList',
-        'GetCollectiveInvoiceListResponse' => 'Promidata_Service_Response_GetCollectiveInvoiceList',
-        'GetIndentInformationResponse' => 'Promidata_Service_Response_GetIndentInformation'
+        'SearchPurchaseOrderResponse' => 'Promidata_Service_Response_SearchPurchaseOrder',
+        'SearchSupplierResponse' => 'Promidata_Service_Response_SearchSupplier'
     );
 
     /**
@@ -266,5 +290,25 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
     public function GetProductConfiguration(Promidata_Service_Request_GetProductConfiguration $parameters)
     {
         return $this->__soapCall('GetProductConfiguration', array($parameters));
+    }
+
+    public function SearchPurchaseOrder(Promidata_Service_Request_SearchPurchaseOrder $parameters)
+    {
+        return $this->__soapCall('SearchPurchaseOrder', array($parameters));
+    }
+
+    public function GetPurchaseOrderInformation(Promidata_Service_Request_GetPurchaseOrderInformation $parameters)
+    {
+        return $this->__soapCall('GetPurchaseOrderInformation', array($parameters));
+    }
+
+    public function ChangePurchaseOrderAction(Promidata_Service_Request_ChangePurchaseOrderAction $parameters)
+    {
+        return $this->__soapCall('ChangePurchaseOrderAction', array($parameters));
+    }
+
+    public function GetPurchaseOrderActionList(Promidata_Service_Request_GetPurchaseOrderActionList $parameters)
+    {
+        return $this->__soapCall('GetPurchaseOrderActionList', array($parameters));
     }
 }

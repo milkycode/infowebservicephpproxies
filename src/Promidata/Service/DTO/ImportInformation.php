@@ -6,25 +6,19 @@
  * @package     Promidata_Service
  * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
  */
-class Promidata_Service_DTO_ProductConfiguration
+class Promidata_Service_DTO_ImportInformation
 {
     /**
-     * @var string $MainOwnArticleNumber
+     * @var string $ExternId
      * @access public
      */
-    public $MainOwnArticleNumber = null;
+    public $ExternId = null;
 
     /**
-     * @var string $MainPurchaseOrderNumber
+     * @var string $ImportSource
      * @access public
      */
-    public $MainPurchaseOrderNumber = null;
-
-    /**
-     * @var Promidata_Service_DTO_ProductConfigurationItem[] $ProductConfigurationItems
-     * @access public
-     */
-    public $ProductConfigurationItems = null;
+    public $ImportSource = null;
 
     /**
      * @access public

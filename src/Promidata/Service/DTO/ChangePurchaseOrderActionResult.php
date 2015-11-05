@@ -6,25 +6,19 @@
  * @package     Promidata_Service
  * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
  */
-class Promidata_Service_DTO_ProductConfiguration
+class Promidata_Service_DTO_ChangePurchaseOrderActionResult
 {
     /**
-     * @var string $MainOwnArticleNumber
+     * @var string $Error
      * @access public
      */
-    public $MainOwnArticleNumber = null;
+    public $Error = null;
 
     /**
-     * @var string $MainPurchaseOrderNumber
+     * @var Promidata_Service_DTO_PurchaseOrderIdentifier $IdentifierV1
      * @access public
      */
-    public $MainPurchaseOrderNumber = null;
-
-    /**
-     * @var Promidata_Service_DTO_ProductConfigurationItem[] $ProductConfigurationItems
-     * @access public
-     */
-    public $ProductConfigurationItems = null;
+    public $IdentifierV1 = null;
 
     /**
      * @access public
