@@ -8,7 +8,7 @@
  */
 abstract class Promidata_Service_Proxy_AbstractService extends SoapClient
 {
-    protected $version = '2.11';
+    protected $version = '2.13';
 
     /**
      * Get the compatible webservice version number.
