@@ -18,7 +18,7 @@ class Promidata_Service_Request_GetPurchaseOrderInformation
      * @param Promidata_Service_DTO_PurchaseOrderIdentifier $identifierV1
      * @access public
      */
-    public function __construct($identifierV1)
+    public function __construct(Promidata_Service_DTO_PurchaseOrderIdentifier $identifierV1)
     {
         $this->identifierV1 = $identifierV1;
     }

@@ -18,7 +18,7 @@ class Promidata_Service_Request_GetCustomerInformation
      * @param Promidata_Service_DTO_CustomerIdentifier $identifierV1
      * @access public
      */
-    public function __construct($identifierV1)
+    public function __construct(Promidata_Service_DTO_CustomerIdentifier $identifierV1)
     {
         $this->identifierV1 = $identifierV1;
     }

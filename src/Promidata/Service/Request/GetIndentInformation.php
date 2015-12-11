@@ -18,7 +18,7 @@ class Promidata_Service_Request_GetIndentInformation
      * @param Promidata_Service_DTO_GetIndentInformationParameter $parameter
      * @access public
      */
-    public function __construct($parameter)
+    public function __construct(Promidata_Service_DTO_GetIndentInformationParameter $parameter)
     {
       $this->parameter = $parameter;
     }

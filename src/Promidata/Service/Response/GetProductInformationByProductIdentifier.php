@@ -9,17 +9,17 @@
 class Promidata_Service_Response_GetProductInformationByProductIdentifier
 {
     /**
-     * @var ProductInformation $GetProductInformationByProductIdentifierResult
+     * @var Promidata_Service_DTO_ProductInformation $GetProductInformationByProductIdentifierResult
      * @access public
      */
     public $GetProductInformationByProductIdentifierResult = null;
 
     /**
-     * @param ProductInformation $GetProductInformationByProductIdentifierResult
+     * @param Promidata_Service_DTO_ProductInformation $GetProductInformationByProductIdentifierResult
      * @access public
      */
     public function __construct($GetProductInformationByProductIdentifierResult)
     {
-      $this->GetProductInformationByProductIdentifierResult = $GetProductInformationByProductIdentifierResult;
+        $this->GetProductInformationByProductIdentifierResult = $GetProductInformationByProductIdentifierResult;
     }
 }

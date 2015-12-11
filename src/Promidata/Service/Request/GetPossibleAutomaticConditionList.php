@@ -25,7 +25,7 @@ class Promidata_Service_Request_GetPossibleAutomaticConditionList
      * @param string[] $possibleDispatchTypes
      * @access public
      */
-    public function __construct($importdata, $possibleDispatchTypes)
+    public function __construct(Promidata_Service_DTO_TenderIndentImporterData $importdata, $possibleDispatchTypes)
     {
         $this->importdata = $importdata;
         $this->possibleDispatchTypes = $possibleDispatchTypes;

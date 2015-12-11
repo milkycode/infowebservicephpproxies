@@ -18,7 +18,7 @@ class Promidata_Service_Request_ChangePurchaseOrderAction
      * @param Promidata_Service_DTO_ChangePurchaseOrderActionParameter $changePurchaseOrderActionParameter
      * @access public
      */
-    public function __construct($changePurchaseOrderActionParameter)
+    public function __construct(Promidata_Service_DTO_ChangePurchaseOrderActionParameter $changePurchaseOrderActionParameter)
     {
         $this->changePurchaseOrderActionParameter = $changePurchaseOrderActionParameter;
     }

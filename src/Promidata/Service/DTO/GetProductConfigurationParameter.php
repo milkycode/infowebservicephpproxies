@@ -21,9 +21,15 @@ class Promidata_Service_DTO_GetProductConfigurationParameter
     public $ProductIdentifier = null;
 
     /**
+     * One of each parameter is enough to identify a product in most cases.
+     * The ProductIdentifier is always unique.
      * @access public
+     * @param string $ProductIdentifier
+     * @param string $OwnArticleNumber
      */
-    public function __construct()
+    public function __construct($ProductIdentifier = null, $OwnArticleNumber = null)
     {
+        $this->ProductIdentifier = $ProductIdentifier;
+        $this->OwnArticleNumber = $OwnArticleNumber;
     }
 }

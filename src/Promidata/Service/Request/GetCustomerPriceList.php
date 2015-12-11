@@ -18,7 +18,7 @@ class Promidata_Service_Request_GetCustomerPriceList
      * @param Promidata_Service_DTO_CustomerIdentifier $identifier
      * @access public
      */
-    public function __construct($identifier)
+    public function __construct(Promidata_Service_DTO_CustomerIdentifier $identifier)
     {
         $this->identifier = $identifier;
     }

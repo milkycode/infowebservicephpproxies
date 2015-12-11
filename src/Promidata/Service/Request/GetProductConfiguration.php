@@ -18,7 +18,7 @@ class Promidata_Service_Request_GetProductConfiguration
      * @param Promidata_Service_DTO_GetProductConfigurationParameter $parameter
      * @access public
      */
-    public function __construct($parameter)
+    public function __construct(Promidata_Service_DTO_GetProductConfigurationParameter $parameter)
     {
       $this->parameter = $parameter;
     }
