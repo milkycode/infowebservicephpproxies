@@ -4,18 +4,6 @@ class ProductConfiguration
 {
 
     /**
-     * @var string $LinkedOwnArticleNumber
-     * @access public
-     */
-    public $LinkedOwnArticleNumber = null;
-
-    /**
-     * @var string $LinkedPurchaseOrderNumber
-     * @access public
-     */
-    public $LinkedPurchaseOrderNumber = null;
-
-    /**
      * @var string $MainOwnArticleNumber
      * @access public
      */
@@ -28,10 +16,10 @@ class ProductConfiguration
     public $MainPurchaseOrderNumber = null;
 
     /**
-     * @var ProductConfigurationItem[] $ProductConfigurationItem
+     * @var ProductConfigurationItem[] $ProductConfigurationItems
      * @access public
      */
-    public $ProductConfigurationItem = null;
+    public $ProductConfigurationItems = null;
 
     /**
      * @access public

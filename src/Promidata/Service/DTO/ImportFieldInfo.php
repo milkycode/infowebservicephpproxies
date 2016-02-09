@@ -1,31 +1,32 @@
 <?php
-
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_DTO_ImportFieldInfo
 {
-
     /**
-     *
      * @var string $Description
      * @access public
      */
     public $Description = null;
 
     /**
-     *
      * @var string $FieldName
      * @access public
      */
     public $FieldName = null;
 
     /**
-     *
      * @var boolean $IsRequired
      * @access public
      */
     public $IsRequired = null;
 
     /**
-     *
      * @param boolean $IsRequired
      * @access public
      */
@@ -33,5 +34,4 @@ class Promidata_Service_DTO_ImportFieldInfo
     {
         $this->IsRequired = $IsRequired;
     }
-
 }

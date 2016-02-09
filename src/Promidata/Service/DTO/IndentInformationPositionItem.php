@@ -1,8 +1,13 @@
 <?php
-
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_DTO_IndentInformationPositionItem
 {
-
     /**
      * @var string $ArticleName
      * @access public
@@ -58,7 +63,7 @@ class Promidata_Service_DTO_IndentInformationPositionItem
     public $IndentConfirmationText = null;
 
     /**
-     * @var IndentInformationBettermentItem[] $IndentInformationBetterments
+     * @var Promidata_Service_DTO_IndentInformationBettermentItem[] $IndentInformationBetterments
      * @access public
      */
     public $IndentInformationBetterments = null;
@@ -133,5 +138,4 @@ class Promidata_Service_DTO_IndentInformationPositionItem
       $this->QuantityAmount = $QuantityAmount;
       $this->QuantityCorrectedAmount = $QuantityCorrectedAmount;
     }
-
 }
