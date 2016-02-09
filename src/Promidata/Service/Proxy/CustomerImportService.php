@@ -2,9 +2,9 @@
 /**
  * Proxy for Promidata PromotionalOffice CustomerImportService/CustomerImportService.
  * @author      Christian Hinz <christian@milkycode.com>
- * @category    Milkycode
+
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+
  */
 class Promidata_Service_Proxy_CustomerImportService extends Promidata_Service_Proxy_AbstractService implements Promidata_Service_Interface_ICustomerImportService
 {
