@@ -9,6 +9,14 @@
 interface Promidata_Service_Interface_ICustomerImportService
 {
     /**
+     * @brief Authenticate with your Promotional Office Login Data.
+     * @detail Needs to be called at first access
+     *
+     * @param Promidata_Service_Request_Logon $logonRequest
+     */
+    public function Logon(Promidata_Service_Request_Logon $logonRequest);
+
+    /**
      * @param Promidata_Service_Request_Import $importRequest
      * @return Promidata_Service_Response_Import
      */

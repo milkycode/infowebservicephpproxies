@@ -1,20 +1,5 @@
 <?php
 
-include_once('ShowDescriptionItem.php');
-include_once('ImportInformation.php');
-include_once('ArticleTextItem.php');
-include_once('ArticleLanguageTypeEnum.php');
-include_once('ArticleTypeEnum.php');
-include_once('ColorSizeCombination.php');
-include_once('TranslationItem.php');
-include_once('ProductConfigurationItem.php');
-include_once('GenderType.php');
-include_once('TenderIndentImporterData.php');
-include_once('TenderIndentImporterAddressData.php');
-include_once('TenderIndentImporterPositionData.php');
-include_once('TenderIndentImporterBettermentData.php');
-include_once('TenderIndentImporterRelayData.php');
-include_once('ShowDescriptionListTypeEnum.php');
 include_once('Logon.php');
 include_once('LogonResponse.php');
 include_once('GetProductInformation.php');
@@ -90,6 +75,40 @@ include_once('GetProductConfiguration.php');
 include_once('GetProductConfigurationParameter.php');
 include_once('GetProductConfigurationResponse.php');
 include_once('ProductConfiguration.php');
+include_once('SearchPurchaseOrder.php');
+include_once('PurchaseOrderSearchParameter.php');
+include_once('SearchPurchaseOrderResponse.php');
+include_once('PurchaseOrderSearchResult.php');
+include_once('GetPurchaseOrderInformation.php');
+include_once('PurchaseOrderIdentifier.php');
+include_once('GetPurchaseOrderInformationResponse.php');
+include_once('PurchaseOrderInformation.php');
+include_once('ComplexAddress.php');
+include_once('PurchaseOrderPositionItem.php');
+include_once('PurchaseOrderBettermentItem.php');
+include_once('ChangePurchaseOrderAction.php');
+include_once('ChangePurchaseOrderActionParameter.php');
+include_once('ChangePurchaseOrderActionResponse.php');
+include_once('ChangePurchaseOrderActionResult.php');
+include_once('GetPurchaseOrderActionList.php');
+include_once('GetPurchaseOrderActionListResponse.php');
+include_once('PurchaseOrderAction.php');
+include_once('ShowDescriptionItem.php');
+include_once('ImportInformation.php');
+include_once('ArticleTextItem.php');
+include_once('ArticleLanguageTypeEnum.php');
+include_once('ArticleTypeEnum.php');
+include_once('ColorSizeCombination.php');
+include_once('TranslationItem.php');
+include_once('LinkItemV1.php');
+include_once('ProductConfigurationItem.php');
+include_once('GenderType.php');
+include_once('TenderIndentImporterData.php');
+include_once('TenderIndentImporterAddressData.php');
+include_once('TenderIndentImporterPositionData.php');
+include_once('TenderIndentImporterBettermentData.php');
+include_once('TenderIndentImporterRelayData.php');
+include_once('ShowDescriptionListTypeEnum.php');
 
 class CustomerBackendService extends \SoapClient
 {
@@ -99,17 +118,6 @@ class CustomerBackendService extends \SoapClient
      * @access private
      */
     private static $classmap = array(
-      'ShowDescriptionItem' => '\ShowDescriptionItem',
-      'ImportInformation' => '\ImportInformation',
-      'ArticleTextItem' => '\ArticleTextItem',
-      'ColorSizeCombination' => '\ColorSizeCombination',
-      'TranslationItem' => '\TranslationItem',
-      'ProductConfigurationItem' => '\ProductConfigurationItem',
-      'TenderIndentImporterData' => '\TenderIndentImporterData',
-      'TenderIndentImporterAddressData' => '\TenderIndentImporterAddressData',
-      'TenderIndentImporterPositionData' => '\TenderIndentImporterPositionData',
-      'TenderIndentImporterBettermentData' => '\TenderIndentImporterBettermentData',
-      'TenderIndentImporterRelayData' => '\TenderIndentImporterRelayData',
       'Logon' => '\Logon',
       'LogonResponse' => '\LogonResponse',
       'GetProductInformation' => '\GetProductInformation',
@@ -184,7 +192,37 @@ class CustomerBackendService extends \SoapClient
       'GetProductConfiguration' => '\GetProductConfiguration',
       'GetProductConfigurationParameter' => '\GetProductConfigurationParameter',
       'GetProductConfigurationResponse' => '\GetProductConfigurationResponse',
-      'ProductConfiguration' => '\ProductConfiguration');
+      'ProductConfiguration' => '\ProductConfiguration',
+      'SearchPurchaseOrder' => '\SearchPurchaseOrder',
+      'PurchaseOrderSearchParameter' => '\PurchaseOrderSearchParameter',
+      'SearchPurchaseOrderResponse' => '\SearchPurchaseOrderResponse',
+      'PurchaseOrderSearchResult' => '\PurchaseOrderSearchResult',
+      'GetPurchaseOrderInformation' => '\GetPurchaseOrderInformation',
+      'PurchaseOrderIdentifier' => '\PurchaseOrderIdentifier',
+      'GetPurchaseOrderInformationResponse' => '\GetPurchaseOrderInformationResponse',
+      'PurchaseOrderInformation' => '\PurchaseOrderInformation',
+      'ComplexAddress' => '\ComplexAddress',
+      'PurchaseOrderPositionItem' => '\PurchaseOrderPositionItem',
+      'PurchaseOrderBettermentItem' => '\PurchaseOrderBettermentItem',
+      'ChangePurchaseOrderAction' => '\ChangePurchaseOrderAction',
+      'ChangePurchaseOrderActionParameter' => '\ChangePurchaseOrderActionParameter',
+      'ChangePurchaseOrderActionResponse' => '\ChangePurchaseOrderActionResponse',
+      'ChangePurchaseOrderActionResult' => '\ChangePurchaseOrderActionResult',
+      'GetPurchaseOrderActionList' => '\GetPurchaseOrderActionList',
+      'GetPurchaseOrderActionListResponse' => '\GetPurchaseOrderActionListResponse',
+      'PurchaseOrderAction' => '\PurchaseOrderAction',
+      'ShowDescriptionItem' => '\ShowDescriptionItem',
+      'ImportInformation' => '\ImportInformation',
+      'ArticleTextItem' => '\ArticleTextItem',
+      'ColorSizeCombination' => '\ColorSizeCombination',
+      'TranslationItem' => '\TranslationItem',
+      'LinkItemV1' => '\LinkItemV1',
+      'ProductConfigurationItem' => '\ProductConfigurationItem',
+      'TenderIndentImporterData' => '\TenderIndentImporterData',
+      'TenderIndentImporterAddressData' => '\TenderIndentImporterAddressData',
+      'TenderIndentImporterPositionData' => '\TenderIndentImporterPositionData',
+      'TenderIndentImporterBettermentData' => '\TenderIndentImporterBettermentData',
+      'TenderIndentImporterRelayData' => '\TenderIndentImporterRelayData');
 
     /**
      * @param array $options A array of config values
@@ -430,6 +468,46 @@ class CustomerBackendService extends \SoapClient
     public function GetProductConfiguration(GetProductConfiguration $parameters)
     {
       return $this->__soapCall('GetProductConfiguration', array($parameters));
+    }
+
+    /**
+     * @param SearchPurchaseOrder $parameters
+     * @access public
+     * @return SearchPurchaseOrderResponse
+     */
+    public function SearchPurchaseOrder(SearchPurchaseOrder $parameters)
+    {
+      return $this->__soapCall('SearchPurchaseOrder', array($parameters));
+    }
+
+    /**
+     * @param GetPurchaseOrderInformation $parameters
+     * @access public
+     * @return GetPurchaseOrderInformationResponse
+     */
+    public function GetPurchaseOrderInformation(GetPurchaseOrderInformation $parameters)
+    {
+      return $this->__soapCall('GetPurchaseOrderInformation', array($parameters));
+    }
+
+    /**
+     * @param ChangePurchaseOrderAction $parameters
+     * @access public
+     * @return ChangePurchaseOrderActionResponse
+     */
+    public function ChangePurchaseOrderAction(ChangePurchaseOrderAction $parameters)
+    {
+      return $this->__soapCall('ChangePurchaseOrderAction', array($parameters));
+    }
+
+    /**
+     * @param GetPurchaseOrderActionList $parameters
+     * @access public
+     * @return GetPurchaseOrderActionListResponse
+     */
+    public function GetPurchaseOrderActionList(GetPurchaseOrderActionList $parameters)
+    {
+      return $this->__soapCall('GetPurchaseOrderActionList', array($parameters));
     }
 
 }

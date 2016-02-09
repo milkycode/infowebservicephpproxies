@@ -16,6 +16,18 @@ class ProductConfigurationItem
     public $CombinationType = null;
 
     /**
+     * @var string $LinkedOwnArticleNumber
+     * @access public
+     */
+    public $LinkedOwnArticleNumber = null;
+
+    /**
+     * @var string $LinkedPurchaseOrderNumber
+     * @access public
+     */
+    public $LinkedPurchaseOrderNumber = null;
+
+    /**
      * @var string $MainColorKey
      * @access public
      */

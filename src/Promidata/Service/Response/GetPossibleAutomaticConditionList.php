@@ -1,11 +1,16 @@
 <?php
-
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_Response_GetPossibleAutomaticConditionList
 {
-
     /**
      *
-     * @var Promidata_Service_DTO_GetPossibleAutomaticConditionListResult $GetPossiblePromidata_Service_DTO_AutomaticConditionListResult
+     * @var Promidata_Service_DTO_GetPossibleAutomaticConditionListResult $GetPossibleAutomaticConditionListResult
      * @access public
      */
     public $GetPossibleAutomaticConditionListResult = null;
@@ -19,5 +24,4 @@ class Promidata_Service_Response_GetPossibleAutomaticConditionList
     {
         $this->GetPossibleAutomaticConditionListResult = $GetPossibleAutomaticConditionListResult;
     }
-
 }

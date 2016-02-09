@@ -52,6 +52,12 @@ class ColorSizeCombination
     public $FreeText3 = null;
 
     /**
+     * @var LinkItemV1[] $LinkList
+     * @access public
+     */
+    public $LinkList = null;
+
+    /**
      * @var string $Notice
      * @access public
      */

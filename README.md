@@ -5,7 +5,7 @@ You can also use both services (info and import) with the Logon method of each c
 
 2015 by [milkycode](http://www.milkycode.com)
 
-Compatible with PO: **2.11**
+Compatible with PO: **2.12**
 
 
 

@@ -6,10 +6,8 @@
  * @package     Promidata_Service
  * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
  */
-class Promidata_Service_Proxy_CustomerImportService extends SoapClient implements Promidata_Service_Interface_ICustomerImportService
+class Promidata_Service_Proxy_CustomerImportService extends Promidata_Service_Proxy_AbstractService implements Promidata_Service_Interface_ICustomerImportService
 {
-    protected $version = '2.11';
-
     /**
      * Importer Identification Names.
      */
@@ -37,7 +35,6 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
      * @access private
      */
     private static $classmap = array(
-
         // DTO
         'AdditionalData' => 'Promidata_Service_DTO_AdditionalData',
         'AdditionalDataCollection' => 'Promidata_Service_DTO_AdditionalDataCollection',
@@ -73,14 +70,15 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
 
     /**
      * Constructor.
-     * @param array $options A array of config values
      * @param string $wsdl The wsdl file to use
-     * @param array $options
+     * @param array $options A array of config values
+     * @param bool $debug Should we enable stack tracing?
      * @access public
      */
     public function __construct(
         $wsdl = 'http://promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?singleWsdl',
-        array $options = array()
+        array $options = array(),
+        $debug = false
     ) {
         // Create stream_context to accept unsigned certificates in PHP >= 5.6.
         $options['stream_context'] = stream_context_create(array(
@@ -99,8 +97,11 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
         ));
         $options['cache_wsdl'] = WSDL_CACHE_MEMORY;
         $options['compression'] = SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP;
-//        $options['trace'] = true;
-//        $options['exceptions'] = true;
+
+        if ($debug == true) {
+            $options['trace'] = true;
+            $options['exceptions'] = true;
+        }
 
         foreach (self::$classmap as $key => $value) {
             if (!isset($options['classmap'][$key])) {
@@ -132,40 +133,6 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
 		$this->__setSoapHeaders($headers);
     }
 
-    public function __soapCall($function_name, $arguments, $options = null, $input_headers = null, &$output_headers = null)
-    {
-        try {
-            return parent::__soapCall($function_name, $arguments, $options, $input_headers, $output_headers);
-        } catch (SoapFault $e) {
-            // Custom error handling
-
-            // Custom error handling
-
-            $output = array();
-            if (preg_match('/MyArticleNumber not found: (.*)/', $e->getMessage(), $output) && count($output)) {
-                throw new Promidata_Service_Exception_Articlenotfound('Article not found: '.$output[1], $e->getCode(), $e);
-            }
-
-            switch ($e->getMessage()) {
-                case 'ImportSourceNotFound':
-                    throw new Promidata_Service_Exception_Importsourcenotfound('Import source not found', $e->getCode(), $e);
-                    break;
-
-                case 'ArticleWithNumberNotFound':
-                    throw new Promidata_Service_Exception_Articlenotfound('Article not found', $e->getCode(), $e);
-                    break;
-
-                case 'ArticleGroupNotFound':
-                    throw new Promidata_Service_Exception_Articlegroupnotfound('Article group not found', $e->getCode(), $e);;
-                    break;
-
-                default:
-                    throw new Promidata_Service_Exception_Unknown($e->getMessage(), $e->getCode(), $e);
-                    break;
-            }
-        }
-    }
-
     public function Import(Promidata_Service_Request_Import $parameters)
     {
         return $this->__soapCall('Import', array($parameters));
@@ -179,14 +146,5 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
     public function Exists(Promidata_Service_Request_Exists $parameters)
     {
         return $this->__soapCall('Exists', array($parameters));
-    }
-
-    /**
-     * Get the compatible webservice version number.
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->version;
     }
 }
