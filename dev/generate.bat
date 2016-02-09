@@ -1,4 +1,4 @@
-echo "milkycode PromotionalOffice PHP Webservice Generator"
+echo "PromotionalOffice PHP Webservice Generator"
 echo "See README.md for additional information."
 
 del /S /F CustomerImportService
