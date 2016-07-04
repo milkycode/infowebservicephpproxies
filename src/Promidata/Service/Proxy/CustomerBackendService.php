@@ -44,6 +44,8 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'PaymentInformation' => 'Promidata_Service_DTO_PaymentInformation',
         'ProductConfiguration' => 'Promidata_Service_DTO_ProductConfiguration',
         'ProductConfigurationItem' => 'Promidata_Service_DTO_ProductConfigurationItem',
+        'ProductConfigurationColorItem' => 'Promidata_Service_DTO_ProductConfigurationColorItem',
+        'ProductConfigurationSizeItem' => 'Promidata_Service_DTO_ProductConfigurationSizeItem',
         'ProductIdentifier' => 'Promidata_Service_DTO_ProductIdentifier',
         'ProductInformation' => 'Promidata_Service_DTO_ProductInformation',
         'ProductPriceInformation' => 'Promidata_Service_DTO_ProductPriceInformation',
