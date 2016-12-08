@@ -7,20 +7,18 @@
  * @package     Promidata_Service
  * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
  */
-class Promidata_Service_DTO_CompositeImportFieldInfo extends Promidata_Service_DTO_ImportFieldInfo
+class Promidata_Service_DTO_ProductConfigurationSizeItem
 {
     /**
-     * @var Promidata_Service_DTO_ImportFieldInfo[] $CompositeFields
+     * @var string $LinkedSizeCode
      * @access public
      */
-    public $CompositeFields = null;
+    public $LinkedSizeCode = null;
 
     /**
-     * @param boolean $IsRequired
      * @access public
      */
-    public function __construct($IsRequired)
+    public function __construct()
     {
-        parent::__construct($IsRequired);
     }
 }

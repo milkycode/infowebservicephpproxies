@@ -2,9 +2,10 @@
 /**
  * Proxy for Promidata PromotionalOffice ClientBackendService/CustomerbackendService.
  * @author      Christian Hinz <christian@milkycode.com>
+ * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_Proxy_AbstractService implements Promidata_Service_Interface_ICustomerBackendService
 {
@@ -43,6 +44,8 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'PaymentInformation' => 'Promidata_Service_DTO_PaymentInformation',
         'ProductConfiguration' => 'Promidata_Service_DTO_ProductConfiguration',
         'ProductConfigurationItem' => 'Promidata_Service_DTO_ProductConfigurationItem',
+        'ProductConfigurationColorItem' => 'Promidata_Service_DTO_ProductConfigurationColorItem',
+        'ProductConfigurationSizeItem' => 'Promidata_Service_DTO_ProductConfigurationSizeItem',
         'ProductIdentifier' => 'Promidata_Service_DTO_ProductIdentifier',
         'ProductInformation' => 'Promidata_Service_DTO_ProductInformation',
         'ProductPriceInformation' => 'Promidata_Service_DTO_ProductPriceInformation',

@@ -2,9 +2,10 @@
 /**
  * Interface for Promidata PromotionalOffice ClientBackendService/CustomerbackendService.
  * @author      Christian Hinz <christian@milkycode.com>
+ * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
  */
 interface Promidata_Service_Interface_ICustomerBackendService
 {

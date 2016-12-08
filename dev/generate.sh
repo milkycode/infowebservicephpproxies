@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "milkycode PromotionalOffice PHP Webservice Generator"
+echo "PromotionalOffice PHP Webservice Generator"
 echo "See README.md for additional information."
 
 if [ -z "$1" ]; then
