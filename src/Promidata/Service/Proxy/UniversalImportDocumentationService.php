@@ -37,22 +37,44 @@ class Promidata_Service_Proxy_UniversalImportDocumentationService extends Promid
      * @access public
      */
     public function __construct(
-        $wsdl = 'http://promotionaloffice.cloudapp.net:8080/PromotionalOffice/Services/UniversalImporter/UniversalImporterDocumentationService.svc?wsdl',
+        $wsdl = 'http://promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/UniversalImporterDocumentationService.svc?singleWsdl',
         array $options = array(),
         $debug = false
     ) {
-        foreach (self::$classmap as $key => $value) {
-            if (!isset($options['classmap'][$key])) {
-                $options['classmap'][$key] = $value;
-            }
-        }
+        // Create stream_context to accept unsigned certificates in PHP >= 5.6.
+        $options['stream_context'] = stream_context_create(array(
+            'http' => array(
+                'user_agent' => 'PHPSoapClient'
+            ),
+            'https' => array(
+                'curl_verify_ssl_peer' => false,
+                'curl_verify_ssl_host' => false
+            ),
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        ));
+        $options['cache_wsdl'] = WSDL_CACHE_MEMORY;
+        $options['compression'] = SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP;
 
         if ($debug == true) {
             $options['trace'] = true;
             $options['exceptions'] = true;
         }
 
+        foreach (self::$classmap as $key => $value) {
+            if (!isset($options['classmap'][$key])) {
+                $options['classmap'][$key] = $value;
+            }
+        }
+
         parent::__construct($wsdl, $options);
+
+        // Set new endpoint location because of php authentication problems on soap 1.2 (php only supports basic with soap).
+        $basic_endpoint = preg_replace(array('/http:/', '/\?.*/'), array('http:', ''), $wsdl) . '/basic';
+		$this->__setLocation($basic_endpoint);
     }
 
     public function GetImporter(Promidata_Service_Request_GetImporter $parameters)
