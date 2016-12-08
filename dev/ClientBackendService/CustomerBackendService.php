@@ -75,6 +75,9 @@ include_once('GetProductConfiguration.php');
 include_once('GetProductConfigurationParameter.php');
 include_once('GetProductConfigurationResponse.php');
 include_once('ProductConfiguration.php');
+include_once('ProductConfigurationItem.php');
+include_once('ProductConfigurationColorItem.php');
+include_once('ProductConfigurationSizeItem.php');
 include_once('SearchPurchaseOrder.php');
 include_once('PurchaseOrderSearchParameter.php');
 include_once('SearchPurchaseOrderResponse.php');
@@ -101,7 +104,6 @@ include_once('ArticleTypeEnum.php');
 include_once('ColorSizeCombination.php');
 include_once('TranslationItem.php');
 include_once('LinkItemV1.php');
-include_once('ProductConfigurationItem.php');
 include_once('GenderType.php');
 include_once('TenderIndentImporterData.php');
 include_once('TenderIndentImporterAddressData.php');
@@ -193,6 +195,9 @@ class CustomerBackendService extends \SoapClient
       'GetProductConfigurationParameter' => '\GetProductConfigurationParameter',
       'GetProductConfigurationResponse' => '\GetProductConfigurationResponse',
       'ProductConfiguration' => '\ProductConfiguration',
+      'ProductConfigurationItem' => '\ProductConfigurationItem',
+      'ProductConfigurationColorItem' => '\ProductConfigurationColorItem',
+      'ProductConfigurationSizeItem' => '\ProductConfigurationSizeItem',
       'SearchPurchaseOrder' => '\SearchPurchaseOrder',
       'PurchaseOrderSearchParameter' => '\PurchaseOrderSearchParameter',
       'SearchPurchaseOrderResponse' => '\SearchPurchaseOrderResponse',
@@ -217,7 +222,6 @@ class CustomerBackendService extends \SoapClient
       'ColorSizeCombination' => '\ColorSizeCombination',
       'TranslationItem' => '\TranslationItem',
       'LinkItemV1' => '\LinkItemV1',
-      'ProductConfigurationItem' => '\ProductConfigurationItem',
       'TenderIndentImporterData' => '\TenderIndentImporterData',
       'TenderIndentImporterAddressData' => '\TenderIndentImporterAddressData',
       'TenderIndentImporterPositionData' => '\TenderIndentImporterPositionData',
@@ -229,7 +233,7 @@ class CustomerBackendService extends \SoapClient
      * @param string $wsdl The wsdl file to use
      * @access public
      */
-    public function __construct(array $options = array(), $wsdl = 'https://promotionaloffice.cloudapp.net/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
+    public function __construct(array $options = array(), $wsdl = 'https://ec2-52-28-194-243.eu-central-1.compute.amazonaws.com/Promidata/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
     {
       foreach (self::$classmap as $key => $value) {
     if (!isset($options['classmap'][$key])) {

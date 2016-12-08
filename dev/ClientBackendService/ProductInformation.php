@@ -424,6 +424,12 @@ class ProductInformation
     public $PictureUrl = null;
 
     /**
+     * @var guid $ProductIdentifier
+     * @access public
+     */
+    public $ProductIdentifier = null;
+
+    /**
      * @var float $PurchaseOrderBaseQuantity
      * @access public
      */
@@ -541,13 +547,14 @@ class ProductInformation
      * @param boolean $IsStockArticle
      * @param dateTime $LastChanged
      * @param float $MinimumPurchaseOrderQuantity
+     * @param guid $ProductIdentifier
      * @param float $PurchaseOrderBaseQuantity
      * @param float $SalesTaxPercent
      * @param float $SellingPriceBaseQuantity
      * @param float $WeightValue
      * @access public
      */
-    public function __construct($ArticleCollectingCartonDepth, $ArticleCollectingCartonHeight, $ArticleCollectingCartonWeight, $ArticleCollectingCartonWidth, $ArticleCollectingPackagingUnitAmount, $ArticleSingleCartonDepth, $ArticleSingleCartonHeight, $ArticleSingleCartonWeight, $ArticleSingleCartonWidth, $ArticleSinglePackagingUnit, $ArticleType, $BuyingPriceBaseQuantity, $CatalogPage, $DateInsert, $DutyNumberCustomsTariffRate, $DutyNumberMaximumCustomsTariffPrice, $DutyNumberMinimumCustomsTariffPrice, $IsActive, $IsStockArticle, $LastChanged, $MinimumPurchaseOrderQuantity, $PurchaseOrderBaseQuantity, $SalesTaxPercent, $SellingPriceBaseQuantity, $WeightValue)
+    public function __construct($ArticleCollectingCartonDepth, $ArticleCollectingCartonHeight, $ArticleCollectingCartonWeight, $ArticleCollectingCartonWidth, $ArticleCollectingPackagingUnitAmount, $ArticleSingleCartonDepth, $ArticleSingleCartonHeight, $ArticleSingleCartonWeight, $ArticleSingleCartonWidth, $ArticleSinglePackagingUnit, $ArticleType, $BuyingPriceBaseQuantity, $CatalogPage, $DateInsert, $DutyNumberCustomsTariffRate, $DutyNumberMaximumCustomsTariffPrice, $DutyNumberMinimumCustomsTariffPrice, $IsActive, $IsStockArticle, $LastChanged, $MinimumPurchaseOrderQuantity, $ProductIdentifier, $PurchaseOrderBaseQuantity, $SalesTaxPercent, $SellingPriceBaseQuantity, $WeightValue)
     {
       $this->ArticleCollectingCartonDepth = $ArticleCollectingCartonDepth;
       $this->ArticleCollectingCartonHeight = $ArticleCollectingCartonHeight;
@@ -570,6 +577,7 @@ class ProductInformation
       $this->IsStockArticle = $IsStockArticle;
       $this->LastChanged = $LastChanged;
       $this->MinimumPurchaseOrderQuantity = $MinimumPurchaseOrderQuantity;
+      $this->ProductIdentifier = $ProductIdentifier;
       $this->PurchaseOrderBaseQuantity = $PurchaseOrderBaseQuantity;
       $this->SalesTaxPercent = $SalesTaxPercent;
       $this->SellingPriceBaseQuantity = $SellingPriceBaseQuantity;

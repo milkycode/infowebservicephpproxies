@@ -1,10 +1,11 @@
 <?php
- /**
+/**
  * Proxy for Promidata PromotionalOffice.
- *
- * @author      Matthias Kleine <matthias@code-x.de>
  * @author      Christian Hinz <christian@milkycode.com>
+ * @author      Matthias Kleine <matthias@code-x.de>
+ * @category    Milkycode
  * @package     Promidata_Service
+ * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_ProductInformation
 {
@@ -429,6 +430,12 @@ class Promidata_Service_DTO_ProductInformation
     public $PictureUrl = null;
 
     /**
+     * @var guid $ProductIdentifier
+     * @access public
+     */
+    public $ProductIdentifier = null;
+
+    /**
      * @var float $PurchaseOrderBaseQuantity
      * @access public
      */
@@ -546,6 +553,7 @@ class Promidata_Service_DTO_ProductInformation
      * @param boolean $IsStockArticle
      * @param dateTime $LastChanged
      * @param float $MinimumPurchaseOrderQuantity
+     * @param guid $ProductIdentifier
      * @param float $PurchaseOrderBaseQuantity
      * @param float $SalesTaxPercent
      * @param float $SellingPriceBaseQuantity
@@ -574,6 +582,7 @@ class Promidata_Service_DTO_ProductInformation
         $IsStockArticle,
         $LastChanged,
         $MinimumPurchaseOrderQuantity,
+        $ProductIdentifier,
         $PurchaseOrderBaseQuantity,
         $SalesTaxPercent,
         $SellingPriceBaseQuantity,
@@ -600,6 +609,7 @@ class Promidata_Service_DTO_ProductInformation
         $this->IsStockArticle = $IsStockArticle;
         $this->LastChanged = $LastChanged;
         $this->MinimumPurchaseOrderQuantity = $MinimumPurchaseOrderQuantity;
+        $this->ProductIdentifier = $ProductIdentifier;
         $this->PurchaseOrderBaseQuantity = $PurchaseOrderBaseQuantity;
         $this->SalesTaxPercent = $SalesTaxPercent;
         $this->SellingPriceBaseQuantity = $SellingPriceBaseQuantity;
