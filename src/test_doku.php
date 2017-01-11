@@ -22,22 +22,30 @@ try {
 	echo "<tr><th>Name</th><th>ImporterId</th></tr>";
 	foreach ($importerList->GetImporterResult->ImporterDefinition as $importerDefinition) 
 	{ 
-		echo "<tr><td>$importerDefinition->Name</td><td>$importerDefinition->ImporterId</td></tr>";
+		echo "<tr><td><a href='#$importerDefinition->Name'>$importerDefinition->Name</a></td><td>$importerDefinition->ImporterId</td></tr>";
 	}
 	echo "</table>";
 	
 	// Ausgeben aller Importfelder pro Importer
 	foreach ($importerList->GetImporterResult->ImporterDefinition as $importerDefinition) 
 	{ 
-		echo "<br><table border=1>";
-		echo "<tr><th colspan=3 align=left>$importerDefinition->Name</th></tr>";
-		echo "<tr><th>FieldName</th><th>Description</th><th>IsRequired</th></tr>";
+		echo "<br><br><br><table border=1 width=100% id='$importerDefinition->Name'>";
+		echo "<tr><th colspan=2 align=left>$importerDefinition->Name</th><th colspan=1 align=left><a href='#top'>To Top</a></th></tr>";
+		echo "<tr><th width=10%>FieldName</th><th>Description</th><th width=10%>IsRequired</th></tr>";
 		
 		
 		$fieldList = $proxy->GetImporterDetail(new Promidata_Service_Request_GetImporterDetail($importerDefinition->ImporterId));
 		foreach ($fieldList->GetImporterDetailResult->FieldInfos->ImportFieldInfo as $fieldDefinition) 
 		{ 
-			echo "<tr><td>$fieldDefinition->FieldName</td><td>$fieldDefinition->Description</td><td>$fieldDefinition->IsRequired</td></tr>";
+			echo "<tr><td>$fieldDefinition->FieldName</td><td>".nl2br($fieldDefinition->Description)."</td><td>$fieldDefinition->IsRequired</td></tr>";
+			
+			if(property_exists($fieldDefinition, "CompositeFields"))
+			{
+				foreach ($fieldDefinition->CompositeFields->ImportFieldInfo as $innerFieldDefinition) 
+				{ 
+					echo "<tr><td>$fieldDefinition->FieldName.$innerFieldDefinition->FieldName</td><td>".nl2br($innerFieldDefinition->Description)."</td><td>$innerFieldDefinition->IsRequired</td></tr>";
+				}
+			}
 		}
 		
 		echo "</table>";
