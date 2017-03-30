@@ -133,10 +133,10 @@ class Promidata_Service_DTO_IndentInformationPositionItem
      */
     public function __construct($DirectDispatch, $EarlyDeliveryDate, $LatestDeliveryDate, $QuantityAmount, $QuantityCorrectedAmount)
     {
-      $this->DirectDispatch = $DirectDispatch;
-      $this->EarlyDeliveryDate = $EarlyDeliveryDate;
-      $this->LatestDeliveryDate = $LatestDeliveryDate;
-      $this->QuantityAmount = $QuantityAmount;
-      $this->QuantityCorrectedAmount = $QuantityCorrectedAmount;
+        $this->DirectDispatch = $DirectDispatch;
+        $this->EarlyDeliveryDate = $EarlyDeliveryDate;
+        $this->LatestDeliveryDate = $LatestDeliveryDate;
+        $this->QuantityAmount = $QuantityAmount;
+        $this->QuantityCorrectedAmount = $QuantityCorrectedAmount;
     }
 }

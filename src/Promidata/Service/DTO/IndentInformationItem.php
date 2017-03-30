@@ -233,14 +233,14 @@ class Promidata_Service_DTO_IndentInformationItem
      */
     public function __construct($BuyingPrice, $CalculatedSellingPrice, $DateInsert, $DepositManualUnblocked, $IndentNumber, $IsClosed, $SellingPrice, $SollEndDatum, $UpdateTime)
     {
-      $this->BuyingPrice = $BuyingPrice;
-      $this->CalculatedSellingPrice = $CalculatedSellingPrice;
-      $this->DateInsert = $DateInsert;
-      $this->DepositManualUnblocked = $DepositManualUnblocked;
-      $this->IndentNumber = $IndentNumber;
-      $this->IsClosed = $IsClosed;
-      $this->SellingPrice = $SellingPrice;
-      $this->SollEndDatum = $SollEndDatum;
-      $this->UpdateTime = $UpdateTime;
+        $this->BuyingPrice = $BuyingPrice;
+        $this->CalculatedSellingPrice = $CalculatedSellingPrice;
+        $this->DateInsert = $DateInsert;
+        $this->DepositManualUnblocked = $DepositManualUnblocked;
+        $this->IndentNumber = $IndentNumber;
+        $this->IsClosed = $IsClosed;
+        $this->SellingPrice = $SellingPrice;
+        $this->SollEndDatum = $SollEndDatum;
+        $this->UpdateTime = $UpdateTime;
     }
 }

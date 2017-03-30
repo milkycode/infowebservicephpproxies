@@ -106,7 +106,7 @@ class Promidata_Service_DTO_IndentInformationBettermentItem
      */
     public function __construct($DirectDispatch, $QuantityAmount)
     {
-      $this->DirectDispatch = $DirectDispatch;
-      $this->QuantityAmount = $QuantityAmount;
+        $this->DirectDispatch = $DirectDispatch;
+        $this->QuantityAmount = $QuantityAmount;
     }
 }

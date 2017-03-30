@@ -59,8 +59,8 @@ class Promidata_Service_DTO_ProductSearchResult
      */
     public function __construct($ArticleType, $IsActive, $ProductIdentifier)
     {
-      $this->ArticleType = $ArticleType;
-      $this->IsActive = $IsActive;
-      $this->ProductIdentifier = $ProductIdentifier;
+        $this->ArticleType = $ArticleType;
+        $this->IsActive = $IsActive;
+        $this->ProductIdentifier = $ProductIdentifier;
     }
 }

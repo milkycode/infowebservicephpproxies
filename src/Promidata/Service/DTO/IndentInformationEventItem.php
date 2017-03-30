@@ -97,10 +97,10 @@ class Promidata_Service_DTO_IndentInformationEventItem
      */
     public function __construct($EventDateDays, $IsComplete, $IsCurrentEvent, $IsMailEvent, $SortNumber)
     {
-      $this->EventDateDays = $EventDateDays;
-      $this->IsComplete = $IsComplete;
-      $this->IsCurrentEvent = $IsCurrentEvent;
-      $this->IsMailEvent = $IsMailEvent;
-      $this->SortNumber = $SortNumber;
+        $this->EventDateDays = $EventDateDays;
+        $this->IsComplete = $IsComplete;
+        $this->IsCurrentEvent = $IsCurrentEvent;
+        $this->IsMailEvent = $IsMailEvent;
+        $this->SortNumber = $SortNumber;
     }
 }
