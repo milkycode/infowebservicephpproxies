@@ -4,144 +4,144 @@ class TenderIndentImporterAddressData
 {
 
     /**
-     * @var string $AlternativeSalutation
+     * @var string $_x003C_AlternativeSalutation_x003E_k__BackingField
      * @access public
      */
-    public $AlternativeSalutation = null;
+    public $_x003C_AlternativeSalutation_x003E_k__BackingField = null;
 
     /**
-     * @var string $City
+     * @var string $_x003C_City_x003E_k__BackingField
      * @access public
      */
-    public $City = null;
+    public $_x003C_City_x003E_k__BackingField = null;
 
     /**
-     * @var string $CompanyName
+     * @var string $_x003C_CompanyNameAffex_x003E_k__BackingField
      * @access public
      */
-    public $CompanyName = null;
+    public $_x003C_CompanyNameAffex_x003E_k__BackingField = null;
 
     /**
-     * @var string $CompanyNameAffex
+     * @var string $_x003C_CompanyName_x003E_k__BackingField
      * @access public
      */
-    public $CompanyNameAffex = null;
+    public $_x003C_CompanyName_x003E_k__BackingField = null;
 
     /**
-     * @var string $CountryIsoCode
+     * @var string $_x003C_CountryIsoCode_x003E_k__BackingField
      * @access public
      */
-    public $CountryIsoCode = null;
+    public $_x003C_CountryIsoCode_x003E_k__BackingField = null;
 
     /**
-     * @var string $DispatchTip
+     * @var string $_x003C_DispatchTip_x003E_k__BackingField
      * @access public
      */
-    public $DispatchTip = null;
+    public $_x003C_DispatchTip_x003E_k__BackingField = null;
 
     /**
-     * @var string $EMail
+     * @var string $_x003C_EMail_x003E_k__BackingField
      * @access public
      */
-    public $EMail = null;
+    public $_x003C_EMail_x003E_k__BackingField = null;
 
     /**
-     * @var string $FaxNumber
+     * @var string $_x003C_FaxNumber_x003E_k__BackingField
      * @access public
      */
-    public $FaxNumber = null;
+    public $_x003C_FaxNumber_x003E_k__BackingField = null;
 
     /**
-     * @var string $FirstName
+     * @var string $_x003C_FirstName_x003E_k__BackingField
      * @access public
      */
-    public $FirstName = null;
+    public $_x003C_FirstName_x003E_k__BackingField = null;
 
     /**
-     * @var GenderType $Gender
+     * @var GenderType $_x003C_Gender_x003E_k__BackingField
      * @access public
      */
-    public $Gender = null;
+    public $_x003C_Gender_x003E_k__BackingField = null;
 
     /**
-     * @var string $Initial
+     * @var string $_x003C_Initial_x003E_k__BackingField
      * @access public
      */
-    public $Initial = null;
+    public $_x003C_Initial_x003E_k__BackingField = null;
 
     /**
-     * @var string $Language
+     * @var string $_x003C_Language_x003E_k__BackingField
      * @access public
      */
-    public $Language = null;
+    public $_x003C_Language_x003E_k__BackingField = null;
 
     /**
-     * @var string $LastName
+     * @var string $_x003C_LastName_x003E_k__BackingField
      * @access public
      */
-    public $LastName = null;
+    public $_x003C_LastName_x003E_k__BackingField = null;
 
     /**
-     * @var string $Line1
+     * @var string $_x003C_Line1_x003E_k__BackingField
      * @access public
      */
-    public $Line1 = null;
+    public $_x003C_Line1_x003E_k__BackingField = null;
 
     /**
-     * @var string $Line2
+     * @var string $_x003C_Line2_x003E_k__BackingField
      * @access public
      */
-    public $Line2 = null;
+    public $_x003C_Line2_x003E_k__BackingField = null;
 
     /**
-     * @var string $Line3
+     * @var string $_x003C_Line3_x003E_k__BackingField
      * @access public
      */
-    public $Line3 = null;
+    public $_x003C_Line3_x003E_k__BackingField = null;
 
     /**
-     * @var string $PhoneNumber
+     * @var string $_x003C_PhoneNumber_x003E_k__BackingField
      * @access public
      */
-    public $PhoneNumber = null;
+    public $_x003C_PhoneNumber_x003E_k__BackingField = null;
 
     /**
-     * @var string $PostCode
+     * @var string $_x003C_PostCode_x003E_k__BackingField
      * @access public
      */
-    public $PostCode = null;
+    public $_x003C_PostCode_x003E_k__BackingField = null;
 
     /**
-     * @var string $Salutation
+     * @var string $_x003C_Salutation_x003E_k__BackingField
      * @access public
      */
-    public $Salutation = null;
+    public $_x003C_Salutation_x003E_k__BackingField = null;
 
     /**
-     * @var string $Street
+     * @var string $_x003C_StreetNumber_x003E_k__BackingField
      * @access public
      */
-    public $Street = null;
+    public $_x003C_StreetNumber_x003E_k__BackingField = null;
 
     /**
-     * @var string $StreetNumber
+     * @var string $_x003C_Street_x003E_k__BackingField
      * @access public
      */
-    public $StreetNumber = null;
+    public $_x003C_Street_x003E_k__BackingField = null;
 
     /**
-     * @var string $UstId
+     * @var string $_x003C_UstId_x003E_k__BackingField
      * @access public
      */
-    public $UstId = null;
+    public $_x003C_UstId_x003E_k__BackingField = null;
 
     /**
-     * @param GenderType $Gender
+     * @param GenderType $_x003C_Gender_x003E_k__BackingField
      * @access public
      */
-    public function __construct($Gender)
+    public function __construct($_x003C_Gender_x003E_k__BackingField)
     {
-      $this->Gender = $Gender;
+      $this->_x003C_Gender_x003E_k__BackingField = $_x003C_Gender_x003E_k__BackingField;
     }
 
 }

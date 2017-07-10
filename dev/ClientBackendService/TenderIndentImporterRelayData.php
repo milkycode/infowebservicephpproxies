@@ -4,34 +4,34 @@ class TenderIndentImporterRelayData
 {
 
     /**
-     * @var boolean $IsCompletePrice
+     * @var boolean $_x003C_IsCompletePrice_x003E_k__BackingField
      * @access public
      */
-    public $IsCompletePrice = null;
+    public $_x003C_IsCompletePrice_x003E_k__BackingField = null;
 
     /**
-     * @var int $Quantity
+     * @var int $_x003C_Quantity_x003E_k__BackingField
      * @access public
      */
-    public $Quantity = null;
+    public $_x003C_Quantity_x003E_k__BackingField = null;
 
     /**
-     * @var float $SellingPricePerUnit
+     * @var float $_x003C_SellingPricePerUnit_x003E_k__BackingField
      * @access public
      */
-    public $SellingPricePerUnit = null;
+    public $_x003C_SellingPricePerUnit_x003E_k__BackingField = null;
 
     /**
-     * @param boolean $IsCompletePrice
-     * @param int $Quantity
-     * @param float $SellingPricePerUnit
+     * @param boolean $_x003C_IsCompletePrice_x003E_k__BackingField
+     * @param int $_x003C_Quantity_x003E_k__BackingField
+     * @param float $_x003C_SellingPricePerUnit_x003E_k__BackingField
      * @access public
      */
-    public function __construct($IsCompletePrice, $Quantity, $SellingPricePerUnit)
+    public function __construct($_x003C_IsCompletePrice_x003E_k__BackingField, $_x003C_Quantity_x003E_k__BackingField, $_x003C_SellingPricePerUnit_x003E_k__BackingField)
     {
-      $this->IsCompletePrice = $IsCompletePrice;
-      $this->Quantity = $Quantity;
-      $this->SellingPricePerUnit = $SellingPricePerUnit;
+      $this->_x003C_IsCompletePrice_x003E_k__BackingField = $_x003C_IsCompletePrice_x003E_k__BackingField;
+      $this->_x003C_Quantity_x003E_k__BackingField = $_x003C_Quantity_x003E_k__BackingField;
+      $this->_x003C_SellingPricePerUnit_x003E_k__BackingField = $_x003C_SellingPricePerUnit_x003E_k__BackingField;
     }
 
 }

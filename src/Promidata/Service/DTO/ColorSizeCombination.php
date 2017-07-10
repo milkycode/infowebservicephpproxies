@@ -5,10 +5,22 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_ColorSizeCombination
 {
+    /**
+     * @var Promidata_Service_DTO_ArticleDynamicDataItem[] $ArticleDynamicDatas
+     * @access public
+     */
+    public $ArticleDynamicDatas = null;
+
+    /**
+     * @var Promidata_Service_DTO_ArticleDynamicLanguageDataItem[] $ArticleDynamicLanguageDatas
+     * @access public
+     */
+    public $ArticleDynamicLanguageDatas = null;
+
     /**
      * @var Promidata_Service_DTO_ProductPriceInformation[] $BuyingRelays
      * @access public
@@ -58,6 +70,18 @@ class Promidata_Service_DTO_ColorSizeCombination
     public $FreeText3 = null;
 
     /**
+     * @var Promidata_Service_DTO_ImportInformation[] $ImportInformations
+     * @access public
+     */
+    public $ImportInformations = null;
+
+    /**
+     * @var boolean $IsActive
+     * @access public
+     */
+    public $IsActive = null;
+
+    /**
      * @var Promidata_Service_DTO_LinkItemV1[] $LinkList
      * @access public
      */
@@ -68,6 +92,30 @@ class Promidata_Service_DTO_ColorSizeCombination
      * @access public
      */
     public $Notice = null;
+
+    /**
+     * @var string $Option1Key
+     * @access public
+     */
+    public $Option1Key = null;
+
+    /**
+     * @var Promidata_Service_DTO_TranslationItem[] $Option1Names
+     * @access public
+     */
+    public $Option1Names = null;
+
+    /**
+     * @var string $Option2Key
+     * @access public
+     */
+    public $Option2Key = null;
+
+    /**
+     * @var Promidata_Service_DTO_TranslationItem[] $Option2Names
+     * @access public
+     */
+    public $Option2Names = null;
 
     /**
      * @var string $OrderNumberAddition
@@ -94,11 +142,37 @@ class Promidata_Service_DTO_ColorSizeCombination
     public $SizeNames = null;
 
     /**
-     * @param float $CurrentStockPrice
+     * @var boolean $UseOnlyOrderNumberAddition
      * @access public
      */
-    public function __construct($CurrentStockPrice)
+    public $UseOnlyOrderNumberAddition = null;
+
+    /**
+     * @var boolean $UseOnlyOwnArticleNumberAddition
+     * @access public
+     */
+    public $UseOnlyOwnArticleNumberAddition = null;
+
+    /**
+     * @var guid $VariationIdentifier
+     * @access public
+     */
+    public $VariationIdentifier = null;
+
+    /**
+     * @param float $CurrentStockPrice
+     * @param boolean $IsActive
+     * @param boolean $UseOnlyOrderNumberAddition
+     * @param boolean $UseOnlyOwnArticleNumberAddition
+     * @param guid $VariationIdentifier
+     * @access public
+     */
+    public function __construct($CurrentStockPrice, $IsActive, $UseOnlyOrderNumberAddition, $UseOnlyOwnArticleNumberAddition, $VariationIdentifier)
     {
         $this->CurrentStockPrice = $CurrentStockPrice;
+        $this->IsActive = $IsActive;
+        $this->UseOnlyOrderNumberAddition = $UseOnlyOrderNumberAddition;
+        $this->UseOnlyOwnArticleNumberAddition = $UseOnlyOwnArticleNumberAddition;
+        $this->VariationIdentifier = $VariationIdentifier;
     }
 }

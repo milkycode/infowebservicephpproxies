@@ -10,6 +10,12 @@ class ProductConfiguration
     public $MainOwnArticleNumber = null;
 
     /**
+     * @var guid $MainProductIdentifier
+     * @access public
+     */
+    public $MainProductIdentifier = null;
+
+    /**
      * @var string $MainPurchaseOrderNumber
      * @access public
      */
@@ -22,11 +28,12 @@ class ProductConfiguration
     public $ProductConfigurationItems = null;
 
     /**
+     * @param guid $MainProductIdentifier
      * @access public
      */
-    public function __construct()
+    public function __construct($MainProductIdentifier)
     {
-    
+      $this->MainProductIdentifier = $MainProductIdentifier;
     }
 
 }

@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_IndentInformationItem
 {
@@ -20,6 +20,24 @@ class Promidata_Service_DTO_IndentInformationItem
      * @access public
      */
     public $AgentFullName = null;
+
+    /**
+     * @var string $BankAccountBIC
+     * @access public
+     */
+    public $BankAccountBIC = null;
+
+    /**
+     * @var string $BankAccountIBAN
+     * @access public
+     */
+    public $BankAccountIBAN = null;
+
+    /**
+     * @var string $BankAccountOwner
+     * @access public
+     */
+    public $BankAccountOwner = null;
 
     /**
      * @var float $BuyingPrice
@@ -170,6 +188,12 @@ class Promidata_Service_DTO_IndentInformationItem
      * @access public
      */
     public $JobReference = null;
+
+    /**
+     * @var LinkItemV1[] $LinkList
+     * @access public
+     */
+    public $LinkList = null;
 
     /**
      * @var string $PostAdressMail

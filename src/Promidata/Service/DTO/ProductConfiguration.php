@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_ProductConfiguration
 {
@@ -14,6 +14,12 @@ class Promidata_Service_DTO_ProductConfiguration
      * @access public
      */
     public $MainOwnArticleNumber = null;
+
+    /**
+     * @var guid $MainProductIdentifier
+     * @access public
+     */
+    public $MainProductIdentifier = null;
 
     /**
      * @var string $MainPurchaseOrderNumber
@@ -28,9 +34,11 @@ class Promidata_Service_DTO_ProductConfiguration
     public $ProductConfigurationItems = null;
 
     /**
+     * @param guid $MainProductIdentifier
      * @access public
      */
-    public function __construct()
+    public function __construct($MainProductIdentifier)
     {
+        $this->MainProductIdentifier = $MainProductIdentifier;
     }
 }

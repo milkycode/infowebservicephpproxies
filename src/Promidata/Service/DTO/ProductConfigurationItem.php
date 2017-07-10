@@ -5,10 +5,16 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_ProductConfigurationItem
 {
+    /**
+     * @var boolean $AddAsInlineCost
+     * @access public
+     */
+    public $AddAsInlineCost = null;
+
     /**
      * @var int $CombinationNumber
      * @access public
@@ -22,16 +28,34 @@ class Promidata_Service_DTO_ProductConfigurationItem
     public $CombinationType = null;
 
     /**
+     * @var ProductConfigurationColorItem[] $LinkedColorRestrictions
+     * @access public
+     */
+    public $LinkedColorRestrictions = null;
+
+    /**
      * @var string $LinkedOwnArticleNumber
      * @access public
      */
     public $LinkedOwnArticleNumber = null;
 
     /**
+     * @var guid $LinkedProductIdentifier
+     * @access public
+     */
+    public $LinkedProductIdentifier = null;
+
+    /**
      * @var string $LinkedPurchaseOrderNumber
      * @access public
      */
     public $LinkedPurchaseOrderNumber = null;
+
+    /**
+     * @var ProductConfigurationSizeItem[] $LinkedSizeRestrictions
+     * @access public
+     */
+    public $LinkedSizeRestrictions = null;
 
     /**
      * @var string $MainColorKey
@@ -88,6 +112,24 @@ class Promidata_Service_DTO_ProductConfigurationItem
     public $ResultRoundDigits = null;
 
     /**
+     * @var boolean $SetPrintPositionOnlyPriceToOnInsert
+     * @access public
+     */
+    public $SetPrintPositionOnlyPriceToOnInsert = null;
+
+    /**
+     * @var boolean $SetPrintPositionToOnInsert
+     * @access public
+     */
+    public $SetPrintPositionToOnInsert = null;
+
+    /**
+     * @var boolean $SetPrintPriceSummaryToOnInsert
+     * @access public
+     */
+    public $SetPrintPriceSummaryToOnInsert = null;
+
+    /**
      * @var int $SortNumber
      * @access public
      */
@@ -106,6 +148,8 @@ class Promidata_Service_DTO_ProductConfigurationItem
     public $UseSizesFromArticleCombination = null;
 
     /**
+     * @param boolean $AddAsInlineCost
+     * @param guid $LinkedProductIdentifier
      * @param float $QuantityDenominator
      * @param float $QuantityNumerator
      * @param boolean $RestrictedToColorSizeCombination
@@ -113,8 +157,10 @@ class Promidata_Service_DTO_ProductConfigurationItem
      * @param int $SortNumber
      * @access public
      */
-    public function __construct($QuantityDenominator, $QuantityNumerator, $RestrictedToColorSizeCombination, $ResultRoundDigits, $SortNumber)
+    public function __construct($AddAsInlineCost, $LinkedProductIdentifier, $QuantityDenominator, $QuantityNumerator, $RestrictedToColorSizeCombination, $ResultRoundDigits, $SortNumber)
     {
+        $this->AddAsInlineCost = $AddAsInlineCost;
+        $this->LinkedProductIdentifier = $LinkedProductIdentifier;
         $this->QuantityDenominator = $QuantityDenominator;
         $this->QuantityNumerator = $QuantityNumerator;
         $this->RestrictedToColorSizeCombination = $RestrictedToColorSizeCombination;

@@ -5,11 +5,11 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 abstract class Promidata_Service_Proxy_AbstractService extends SoapClient
 {
-    protected $version = '2.13';
+    protected $version = '2.14';
 
     /**
      * Get the compatible webservice version number.
@@ -29,7 +29,7 @@ abstract class Promidata_Service_Proxy_AbstractService extends SoapClient
             $output = array();
 
             if (preg_match('/MyArticleNumber not found: (.*)/', $e->getMessage(), $output) && count($output)) {
-                throw new Promidata_Service_Exception_Articlenotfound('Article not found: '.$output[1], $e->getCode(), $e);
+                throw new Promidata_Service_Exception_Articlenotfound('Article not found: ' . $output[1], $e->getCode(), $e);
             }
 
             if (preg_match('/DataPortal.Fetch fehlgeschlagen \(User ([a-zA-Z1-9-_ ]{1,}) does not exist.\)/', $e->getMessage(), $output) && count($output)) {

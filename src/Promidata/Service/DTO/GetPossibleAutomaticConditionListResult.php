@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_GetPossibleAutomaticConditionListResult
 {
@@ -51,7 +51,8 @@ class Promidata_Service_DTO_GetPossibleAutomaticConditionListResult
         $CalculatedTotalVolume,
         $CalculatedTotalWeight,
         $SaleTaxIsCalculated
-    ) {
+    )
+    {
         $this->CalculatedNumberOfPackages = $CalculatedNumberOfPackages;
         $this->CalculatedTotalVolume = $CalculatedTotalVolume;
         $this->CalculatedTotalWeight = $CalculatedTotalWeight;

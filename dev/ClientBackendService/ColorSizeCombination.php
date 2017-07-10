@@ -4,6 +4,18 @@ class ColorSizeCombination
 {
 
     /**
+     * @var ArticleDynamicDataItem[] $ArticleDynamicDatas
+     * @access public
+     */
+    public $ArticleDynamicDatas = null;
+
+    /**
+     * @var ArticleDynamicLanguageDataItem[] $ArticleDynamicLanguageDatas
+     * @access public
+     */
+    public $ArticleDynamicLanguageDatas = null;
+
+    /**
      * @var ProductPriceInformation[] $BuyingRelays
      * @access public
      */
@@ -52,6 +64,18 @@ class ColorSizeCombination
     public $FreeText3 = null;
 
     /**
+     * @var ImportInformation[] $ImportInformations
+     * @access public
+     */
+    public $ImportInformations = null;
+
+    /**
+     * @var boolean $IsActive
+     * @access public
+     */
+    public $IsActive = null;
+
+    /**
      * @var LinkItemV1[] $LinkList
      * @access public
      */
@@ -62,6 +86,30 @@ class ColorSizeCombination
      * @access public
      */
     public $Notice = null;
+
+    /**
+     * @var string $Option1Key
+     * @access public
+     */
+    public $Option1Key = null;
+
+    /**
+     * @var TranslationItem[] $Option1Names
+     * @access public
+     */
+    public $Option1Names = null;
+
+    /**
+     * @var string $Option2Key
+     * @access public
+     */
+    public $Option2Key = null;
+
+    /**
+     * @var TranslationItem[] $Option2Names
+     * @access public
+     */
+    public $Option2Names = null;
 
     /**
      * @var string $OrderNumberAddition
@@ -88,12 +136,38 @@ class ColorSizeCombination
     public $SizeNames = null;
 
     /**
-     * @param float $CurrentStockPrice
+     * @var boolean $UseOnlyOrderNumberAddition
      * @access public
      */
-    public function __construct($CurrentStockPrice)
+    public $UseOnlyOrderNumberAddition = null;
+
+    /**
+     * @var boolean $UseOnlyOwnArticleNumberAddition
+     * @access public
+     */
+    public $UseOnlyOwnArticleNumberAddition = null;
+
+    /**
+     * @var guid $VariationIdentifier
+     * @access public
+     */
+    public $VariationIdentifier = null;
+
+    /**
+     * @param float $CurrentStockPrice
+     * @param boolean $IsActive
+     * @param boolean $UseOnlyOrderNumberAddition
+     * @param boolean $UseOnlyOwnArticleNumberAddition
+     * @param guid $VariationIdentifier
+     * @access public
+     */
+    public function __construct($CurrentStockPrice, $IsActive, $UseOnlyOrderNumberAddition, $UseOnlyOwnArticleNumberAddition, $VariationIdentifier)
     {
       $this->CurrentStockPrice = $CurrentStockPrice;
+      $this->IsActive = $IsActive;
+      $this->UseOnlyOrderNumberAddition = $UseOnlyOrderNumberAddition;
+      $this->UseOnlyOwnArticleNumberAddition = $UseOnlyOwnArticleNumberAddition;
+      $this->VariationIdentifier = $VariationIdentifier;
     }
 
 }

@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_ProductInformation
 {
@@ -290,6 +290,12 @@ class Promidata_Service_DTO_ProductInformation
      * @access public
      */
     public $ArticleUserDefindedField30 = null;
+
+    /**
+     * @var string $Brand
+     * @access public
+     */
+    public $Brand = null;
 
     /**
      * @var float $BuyingPriceBaseQuantity
@@ -587,7 +593,8 @@ class Promidata_Service_DTO_ProductInformation
         $SalesTaxPercent,
         $SellingPriceBaseQuantity,
         $WeightValue
-    ) {
+    )
+    {
         $this->ArticleCollectingCartonDepth = $ArticleCollectingCartonDepth;
         $this->ArticleCollectingCartonHeight = $ArticleCollectingCartonHeight;
         $this->ArticleCollectingCartonWeight = $ArticleCollectingCartonWeight;

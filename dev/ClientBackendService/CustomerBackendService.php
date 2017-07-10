@@ -96,14 +96,27 @@ include_once('ChangePurchaseOrderActionResult.php');
 include_once('GetPurchaseOrderActionList.php');
 include_once('GetPurchaseOrderActionListResponse.php');
 include_once('PurchaseOrderAction.php');
+include_once('GetOptionList.php');
+include_once('GetOptionListResponse.php');
+include_once('GetOptionTypeList.php');
+include_once('GetOptionTypeListResponse.php');
+include_once('GetSpecialPricesForPriceGroups.php');
+include_once('GetSpecialPricesForPriceGroupsResponse.php');
+include_once('GetSpecialPricesForCustomer.php');
+include_once('GetSpecialPricesForCustomerResponse.php');
 include_once('ShowDescriptionItem.php');
 include_once('ImportInformation.php');
 include_once('ArticleTextItem.php');
 include_once('ArticleLanguageTypeEnum.php');
 include_once('ArticleTypeEnum.php');
 include_once('ColorSizeCombination.php');
+include_once('ArticleDynamicDataItem.php');
+include_once('ArticleDynamicLanguageDataItem.php');
 include_once('TranslationItem.php');
 include_once('LinkItemV1.php');
+include_once('OptionItem.php');
+include_once('OptionTypeItem.php');
+include_once('SpecialPriceItem.php');
 include_once('GenderType.php');
 include_once('TenderIndentImporterData.php');
 include_once('TenderIndentImporterAddressData.php');
@@ -216,12 +229,25 @@ class CustomerBackendService extends \SoapClient
       'GetPurchaseOrderActionList' => '\GetPurchaseOrderActionList',
       'GetPurchaseOrderActionListResponse' => '\GetPurchaseOrderActionListResponse',
       'PurchaseOrderAction' => '\PurchaseOrderAction',
+      'GetOptionList' => '\GetOptionList',
+      'GetOptionList' => '\GetOptionList',
+      'GetOptionTypeList' => '\GetOptionTypeList',
+      'GetOptionTypeList' => '\GetOptionTypeList',
+      'GetSpecialPricesForPriceGroups' => '\GetSpecialPricesForPriceGroups',
+      'GetSpecialPricesForPriceGroupsResponse' => '\GetSpecialPricesForPriceGroupsResponse',
+      'GetSpecialPricesForCustomer' => '\GetSpecialPricesForCustomer',
+      'GetSpecialPricesForCustomer' => '\GetSpecialPricesForCustomer',
       'ShowDescriptionItem' => '\ShowDescriptionItem',
       'ImportInformation' => '\ImportInformation',
       'ArticleTextItem' => '\ArticleTextItem',
       'ColorSizeCombination' => '\ColorSizeCombination',
+      'ArticleDynamicDataItem' => '\ArticleDynamicDataItem',
+      'ArticleDynamicLanguageDataItem' => '\ArticleDynamicLanguageDataItem',
       'TranslationItem' => '\TranslationItem',
       'LinkItemV1' => '\LinkItemV1',
+      'OptionItem' => '\OptionItem',
+      'OptionTypeItem' => '\OptionTypeItem',
+      'SpecialPriceItem' => '\SpecialPriceItem',
       'TenderIndentImporterData' => '\TenderIndentImporterData',
       'TenderIndentImporterAddressData' => '\TenderIndentImporterAddressData',
       'TenderIndentImporterPositionData' => '\TenderIndentImporterPositionData',
@@ -233,14 +259,14 @@ class CustomerBackendService extends \SoapClient
      * @param string $wsdl The wsdl file to use
      * @access public
      */
-    public function __construct(array $options = array(), $wsdl = 'https://ec2-52-28-194-243.eu-central-1.compute.amazonaws.com/Promidata/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
+    public function __construct(array $options = array(), $wsdl = 'https://promotionaloffice.cloudapp.net/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
     {
       foreach (self::$classmap as $key => $value) {
     if (!isset($options['classmap'][$key])) {
       $options['classmap'][$key] = $value;
     }
   }
-  
+
   parent::__construct($wsdl, $options);
     }
 
@@ -512,6 +538,46 @@ class CustomerBackendService extends \SoapClient
     public function GetPurchaseOrderActionList(GetPurchaseOrderActionList $parameters)
     {
       return $this->__soapCall('GetPurchaseOrderActionList', array($parameters));
+    }
+
+    /**
+     * @param GetOptionList $parameters
+     * @access public
+     * @return GetOptionList
+     */
+    public function GetOptionList(GetOptionList $parameters)
+    {
+      return $this->__soapCall('GetOptionList', array($parameters));
+    }
+
+    /**
+     * @param GetOptionTypeList $parameters
+     * @access public
+     * @return GetOptionTypeList
+     */
+    public function GetOptionTypeList(GetOptionTypeList $parameters)
+    {
+      return $this->__soapCall('GetOptionTypeList', array($parameters));
+    }
+
+    /**
+     * @param GetSpecialPricesForPriceGroups $parameters
+     * @access public
+     * @return GetSpecialPricesForPriceGroupsResponse
+     */
+    public function GetSpecialPricesForPriceGroups(GetSpecialPricesForPriceGroups $parameters)
+    {
+      return $this->__soapCall('GetSpecialPricesForPriceGroups', array($parameters));
+    }
+
+    /**
+     * @param GetSpecialPricesForCustomer $parameters
+     * @access public
+     * @return GetSpecialPricesForCustomer
+     */
+    public function GetSpecialPricesForCustomer(GetSpecialPricesForCustomer $parameters)
+    {
+      return $this->__soapCall('GetSpecialPricesForCustomer', array($parameters));
     }
 
 }

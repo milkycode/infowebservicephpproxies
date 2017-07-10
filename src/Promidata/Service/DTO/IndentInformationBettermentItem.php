@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_IndentInformationBettermentItem
 {
@@ -62,6 +62,18 @@ class Promidata_Service_DTO_IndentInformationBettermentItem
      * @access public
      */
     public $IndentConfirmationText = null;
+
+    /**
+     * @var string $Option1IdName
+     * @access public
+     */
+    public $Option1IdName = null;
+
+    /**
+     * @var string $Option2IdName
+     * @access public
+     */
+    public $Option2IdName = null;
 
     /**
      * @var string $OwnArticleNumber
