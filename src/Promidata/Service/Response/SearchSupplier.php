@@ -1,8 +1,14 @@
 <?php
-
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @author      Matthias Kleine <matthias@code-x.de>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_Response_SearchSupplier
 {
-
     /**
      * @var Promidata_Service_DTO_SupplierSearchResult[] $SearchSupplierResult
      * @access public
@@ -15,7 +21,6 @@ class Promidata_Service_Response_SearchSupplier
      */
     public function __construct($SearchSupplierResult)
     {
-      $this->SearchSupplierResult = $SearchSupplierResult;
+        $this->SearchSupplierResult = $SearchSupplierResult;
     }
-
 }

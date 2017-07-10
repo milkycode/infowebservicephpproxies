@@ -4,12 +4,10 @@
  * @author      Christian Hinz <christian@milkycode.com>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
-class Promidata_Service_Proxy_UniversalImportDocumentationService extends SoapClient implements Promidata_Service_Interface_IUniversalImportDocumentationService
+class Promidata_Service_Proxy_UniversalImportDocumentationService extends Promidata_Service_Proxy_AbstractService implements Promidata_Service_Interface_IUniversalImportDocumentationService
 {
-    protected $version = '2.11';
-
     /**
      * Classmap.
      * @var array $classmap The defined classes
@@ -32,19 +30,27 @@ class Promidata_Service_Proxy_UniversalImportDocumentationService extends SoapCl
     );
 
     /**
-     *
-     * @param array $options A array of config values
+     * Constructor.
      * @param string $wsdl The wsdl file to use
+     * @param array $options A array of config values
+     * @param bool $debug Should we enable stack tracing?
      * @access public
      */
     public function __construct(
         $wsdl = 'http://promotionaloffice.cloudapp.net:8080/PromotionalOffice/Services/UniversalImporter/UniversalImporterDocumentationService.svc?wsdl',
-        array $options = array()
-    ) {
+        array $options = array(),
+        $debug = false
+    )
+    {
         foreach (self::$classmap as $key => $value) {
             if (!isset($options['classmap'][$key])) {
                 $options['classmap'][$key] = $value;
             }
+        }
+
+        if ($debug == true) {
+            $options['trace'] = true;
+            $options['exceptions'] = true;
         }
 
         parent::__construct($wsdl, $options);
@@ -58,14 +64,5 @@ class Promidata_Service_Proxy_UniversalImportDocumentationService extends SoapCl
     public function GetImporterDetail(Promidata_Service_Request_GetImporterDetail $parameters)
     {
         return $this->__soapCall('GetImporterDetail', array($parameters));
-    }
-
-    /**
-     * Get the compatible webservice version number.
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->version;
     }
 }

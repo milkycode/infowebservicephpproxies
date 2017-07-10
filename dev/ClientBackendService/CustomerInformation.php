@@ -16,6 +16,24 @@ class CustomerInformation
     public $AgentId = null;
 
     /**
+     * @var string $BankAccountBIC
+     * @access public
+     */
+    public $BankAccountBIC = null;
+
+    /**
+     * @var string $BankAccountIBAN
+     * @access public
+     */
+    public $BankAccountIBAN = null;
+
+    /**
+     * @var string $BankAccountOwner
+     * @access public
+     */
+    public $BankAccountOwner = null;
+
+    /**
      * @var ContactDetail[] $ContactDetails
      * @access public
      */
@@ -134,6 +152,12 @@ class CustomerInformation
      * @access public
      */
     public $Phone = null;
+
+    /**
+     * @var ShowDescriptionItem[] $PriceGroups
+     * @access public
+     */
+    public $PriceGroups = null;
 
     /**
      * @var string $SalesTaxNumber

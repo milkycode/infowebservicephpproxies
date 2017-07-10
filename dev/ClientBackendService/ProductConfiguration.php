@@ -4,22 +4,16 @@ class ProductConfiguration
 {
 
     /**
-     * @var string $LinkedOwnArticleNumber
-     * @access public
-     */
-    public $LinkedOwnArticleNumber = null;
-
-    /**
-     * @var string $LinkedPurchaseOrderNumber
-     * @access public
-     */
-    public $LinkedPurchaseOrderNumber = null;
-
-    /**
      * @var string $MainOwnArticleNumber
      * @access public
      */
     public $MainOwnArticleNumber = null;
+
+    /**
+     * @var guid $MainProductIdentifier
+     * @access public
+     */
+    public $MainProductIdentifier = null;
 
     /**
      * @var string $MainPurchaseOrderNumber
@@ -28,17 +22,18 @@ class ProductConfiguration
     public $MainPurchaseOrderNumber = null;
 
     /**
-     * @var ProductConfigurationItem[] $ProductConfigurationItem
+     * @var ProductConfigurationItem[] $ProductConfigurationItems
      * @access public
      */
-    public $ProductConfigurationItem = null;
+    public $ProductConfigurationItems = null;
 
     /**
+     * @param guid $MainProductIdentifier
      * @access public
      */
-    public function __construct()
+    public function __construct($MainProductIdentifier)
     {
-    
+      $this->MainProductIdentifier = $MainProductIdentifier;
     }
 
 }

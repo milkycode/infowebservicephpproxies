@@ -2,9 +2,10 @@
 /**
  * Interface for Promidata PromotionalOffice ClientBackendService/CustomerbackendService.
  * @author      Christian Hinz <christian@milkycode.com>
+ * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 interface Promidata_Service_Interface_ICustomerBackendService
 {
@@ -182,4 +183,32 @@ interface Promidata_Service_Interface_ICustomerBackendService
      * @return Promidata_Service_Response_GetProductConfiguration
      */
     public function GetProductConfiguration(Promidata_Service_Request_GetProductConfiguration $parameters);
+
+    /**
+     * @param Promidata_Service_Request_SearchPurchaseOrder $parameters
+     * @access public
+     * @return Promidata_Service_Response_SearchPurchaseOrder
+     */
+    public function SearchPurchaseOrder(Promidata_Service_Request_SearchPurchaseOrder $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetPurchaseOrderInformation $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetPurchaseOrderInformation
+     */
+    public function GetPurchaseOrderInformation(Promidata_Service_Request_GetPurchaseOrderInformation $parameters);
+
+    /**
+     * @param Promidata_Service_Request_ChangePurchaseOrderAction $parameters
+     * @access public
+     * @return Promidata_Service_Response_ChangePurchaseOrderAction
+     */
+    public function ChangePurchaseOrderAction(Promidata_Service_Request_ChangePurchaseOrderAction $parameters);
+
+    /**
+     * @param Promidata_Service_Request_GetPurchaseOrderActionList $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetPurchaseOrderActionList
+     */
+    public function GetPurchaseOrderActionList(Promidata_Service_Request_GetPurchaseOrderActionList $parameters);
 }

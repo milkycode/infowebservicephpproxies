@@ -4,132 +4,132 @@ class TenderIndentImporterData
 {
 
     /**
-     * @var guid $AutomaticDeliveryConditionId
+     * @var guid $_x003C_AutomaticDeliveryConditionId_x003E_k__BackingField
      * @access public
      */
-    public $AutomaticDeliveryConditionId = null;
+    public $_x003C_AutomaticDeliveryConditionId_x003E_k__BackingField = null;
 
     /**
-     * @var boolean $AvailabilityCheckEnabled
+     * @var boolean $_x003C_AvailabilityCheckEnabled_x003E_k__BackingField
      * @access public
      */
-    public $AvailabilityCheckEnabled = null;
+    public $_x003C_AvailabilityCheckEnabled_x003E_k__BackingField = null;
 
     /**
-     * @var string $Categorie
+     * @var string $_x003C_Categorie_x003E_k__BackingField
      * @access public
      */
-    public $Categorie = null;
+    public $_x003C_Categorie_x003E_k__BackingField = null;
 
     /**
-     * @var string $CustomerText
+     * @var string $_x003C_CustomerText_x003E_k__BackingField
      * @access public
      */
-    public $CustomerText = null;
+    public $_x003C_CustomerText_x003E_k__BackingField = null;
 
     /**
-     * @var int $DebitorNumber
+     * @var int $_x003C_DebitorNumber_x003E_k__BackingField
      * @access public
      */
-    public $DebitorNumber = null;
+    public $_x003C_DebitorNumber_x003E_k__BackingField = null;
 
     /**
-     * @var TenderIndentImporterAddressData $DeliveryAddress
+     * @var TenderIndentImporterAddressData $_x003C_DeliveryAddress_x003E_k__BackingField
      * @access public
      */
-    public $DeliveryAddress = null;
+    public $_x003C_DeliveryAddress_x003E_k__BackingField = null;
 
     /**
-     * @var string $DeliveryTerm
+     * @var string $_x003C_DeliveryTerm_x003E_k__BackingField
      * @access public
      */
-    public $DeliveryTerm = null;
+    public $_x003C_DeliveryTerm_x003E_k__BackingField = null;
 
     /**
-     * @var string $DispatchType
+     * @var string $_x003C_DispatchType_x003E_k__BackingField
      * @access public
      */
-    public $DispatchType = null;
+    public $_x003C_DispatchType_x003E_k__BackingField = null;
 
     /**
-     * @var string $FooterText
+     * @var string $_x003C_FooterText_x003E_k__BackingField
      * @access public
      */
-    public $FooterText = null;
+    public $_x003C_FooterText_x003E_k__BackingField = null;
 
     /**
-     * @var string $HeaderText
+     * @var string $_x003C_HeaderText_x003E_k__BackingField
      * @access public
      */
-    public $HeaderText = null;
+    public $_x003C_HeaderText_x003E_k__BackingField = null;
 
     /**
-     * @var string $ImportType
+     * @var string $_x003C_ImportTypePrefix_x003E_k__BackingField
      * @access public
      */
-    public $ImportType = null;
+    public $_x003C_ImportTypePrefix_x003E_k__BackingField = null;
 
     /**
-     * @var string $ImportTypePrefix
+     * @var string $_x003C_ImportTypeSuffix_x003E_k__BackingField
      * @access public
      */
-    public $ImportTypePrefix = null;
+    public $_x003C_ImportTypeSuffix_x003E_k__BackingField = null;
 
     /**
-     * @var string $ImportTypeSuffix
+     * @var string $_x003C_ImportType_x003E_k__BackingField
      * @access public
      */
-    public $ImportTypeSuffix = null;
+    public $_x003C_ImportType_x003E_k__BackingField = null;
 
     /**
-     * @var TenderIndentImporterAddressData $InvoiceAddress
+     * @var TenderIndentImporterAddressData $_x003C_InvoiceAddress_x003E_k__BackingField
      * @access public
      */
-    public $InvoiceAddress = null;
+    public $_x003C_InvoiceAddress_x003E_k__BackingField = null;
 
     /**
-     * @var string $Notice
+     * @var string $_x003C_Notice_x003E_k__BackingField
      * @access public
      */
-    public $Notice = null;
+    public $_x003C_Notice_x003E_k__BackingField = null;
 
     /**
-     * @var string[] $PaymentModeList
+     * @var string[] $_x003C_PaymentModeList_x003E_k__BackingField
      * @access public
      */
-    public $PaymentModeList = null;
+    public $_x003C_PaymentModeList_x003E_k__BackingField = null;
 
     /**
-     * @var TenderIndentImporterPositionData[] $PositionList
+     * @var TenderIndentImporterPositionData[] $_x003C_PositionList_x003E_k__BackingField
      * @access public
      */
-    public $PositionList = null;
+    public $_x003C_PositionList_x003E_k__BackingField = null;
 
     /**
-     * @var TenderIndentImporterAddressData $PostAddress
+     * @var TenderIndentImporterAddressData $_x003C_PostAddress_x003E_k__BackingField
      * @access public
      */
-    public $PostAddress = null;
+    public $_x003C_PostAddress_x003E_k__BackingField = null;
 
     /**
-     * @var string $StorageLocation
+     * @var string $_x003C_StorageLocation_x003E_k__BackingField
      * @access public
      */
-    public $StorageLocation = null;
+    public $_x003C_StorageLocation_x003E_k__BackingField = null;
 
     /**
-     * @var string $Warning
+     * @var string $_x003C_Warning_x003E_k__BackingField
      * @access public
      */
-    public $Warning = null;
+    public $_x003C_Warning_x003E_k__BackingField = null;
 
     /**
-     * @param int $DebitorNumber
+     * @param int $_x003C_DebitorNumber_x003E_k__BackingField
      * @access public
      */
-    public function __construct($DebitorNumber)
+    public function __construct($_x003C_DebitorNumber_x003E_k__BackingField)
     {
-      $this->DebitorNumber = $DebitorNumber;
+      $this->_x003C_DebitorNumber_x003E_k__BackingField = $_x003C_DebitorNumber_x003E_k__BackingField;
     }
 
 }

@@ -2,29 +2,28 @@
 /**
  * Proxy for Promidata PromotionalOffice CustomerImportService/CustomerImportService.
  * @author      Christian Hinz <christian@milkycode.com>
+ * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2015 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
-class Promidata_Service_Proxy_CustomerImportService extends SoapClient implements Promidata_Service_Interface_ICustomerImportService
+class Promidata_Service_Proxy_CustomerImportService extends Promidata_Service_Proxy_AbstractService implements Promidata_Service_Interface_ICustomerImportService
 {
-    protected $version = '2.11';
-
     /**
      * Importer Identification Names.
      */
-    const ArticleColorSizeImporter =    'EF598DFE-EF5B-4229-B9C9-A5EAE6962DBE';
-    const ArticleImporter =             '9BCB107F-6355-499D-8227-42D68346B67F';
-    const CollectiveInvoiceImporter =   '8C237660-CCCF-4887-A1B1-78BE83D30DE9';
-    const CustomerImporter =            '74690240-6535-4189-989F-7421BD8226AA';
-    const DeliveryTermImporter =        '0F92C8E6-869F-4D12-BE35-91980DD6EEBC';
-    const DispatchTypeImporter =        '806966CB-77C0-4070-A3b5-D13E27bb9690';
-    const IndentImporter =              '60C59560-E15D-4ECF-A7E7-86E18F8347C6';
-    const PaymentInformationImporter =  '522E9FD7-BCD1-4AA0-AEEF-9EFD1FADFA46';
+    const ArticleColorSizeImporter = 'EF598DFE-EF5B-4229-B9C9-A5EAE6962DBE';
+    const ArticleImporter = '9BCB107F-6355-499D-8227-42D68346B67F';
+    const CollectiveInvoiceImporter = '8C237660-CCCF-4887-A1B1-78BE83D30DE9';
+    const CustomerImporter = '74690240-6535-4189-989F-7421BD8226AA';
+    const DeliveryTermImporter = '0F92C8E6-869F-4D12-BE35-91980DD6EEBC';
+    const DispatchTypeImporter = '806966CB-77C0-4070-A3b5-D13E27bb9690';
+    const IndentImporter = '60C59560-E15D-4ECF-A7E7-86E18F8347C6';
+    const PaymentInformationImporter = '522E9FD7-BCD1-4AA0-AEEF-9EFD1FADFA46';
     const ShowDescriptionListImporter = 'F5F7DA54-FB87-4B04-97A6-0135058054E5';
-    const SpecialPriceImporter =        'C0302C42-5020-4C96-AB0E-8B5A03BF7C74';
-    const SupplierImporter =            'D987F41A-77FC-414A-8211-AFAD811DC03F';
-    const TenderImporter =              '6A80A184-5D49-49D5-B184-E462A3B2ADBA';
+    const SpecialPriceImporter = 'C0302C42-5020-4C96-AB0E-8B5A03BF7C74';
+    const SupplierImporter = 'D987F41A-77FC-414A-8211-AFAD811DC03F';
+    const TenderImporter = '6A80A184-5D49-49D5-B184-E462A3B2ADBA';
 
     /**
      * Database Identifier (is not used, but must be valid).
@@ -37,7 +36,6 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
      * @access private
      */
     private static $classmap = array(
-
         // DTO
         'AdditionalData' => 'Promidata_Service_DTO_AdditionalData',
         'AdditionalDataCollection' => 'Promidata_Service_DTO_AdditionalDataCollection',
@@ -73,15 +71,17 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
 
     /**
      * Constructor.
-     * @param array $options A array of config values
      * @param string $wsdl The wsdl file to use
-     * @param array $options
+     * @param array $options A array of config values
+     * @param bool $debug Should we enable stack tracing?
      * @access public
      */
     public function __construct(
         $wsdl = 'http://promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?singleWsdl',
-        array $options = array()
-    ) {
+        array $options = array(),
+        $debug = false
+    )
+    {
         // Create stream_context to accept unsigned certificates in PHP >= 5.6.
         $options['stream_context'] = stream_context_create(array(
             'http' => array(
@@ -99,8 +99,11 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
         ));
         $options['cache_wsdl'] = WSDL_CACHE_MEMORY;
         $options['compression'] = SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP;
-//        $options['trace'] = true;
-//        $options['exceptions'] = true;
+
+        if ($debug == true) {
+            $options['trace'] = true;
+            $options['exceptions'] = true;
+        }
 
         foreach (self::$classmap as $key => $value) {
             if (!isset($options['classmap'][$key])) {
@@ -112,58 +115,24 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
 
         // Set new endpoint location because of php authentication problems on soap 1.2 (php only supports basic with soap).
         $basic_endpoint = preg_replace(array('/http:/', '/\?.*/'), array('https:', ''), $wsdl) . '/basic';
-		$this->__setLocation($basic_endpoint);
+        $this->__setLocation($basic_endpoint);
     }
 
     public function Logon(Promidata_Service_Request_Logon $user)
     {
-		// Workaround for login (because of basic authentication).
-		$securityNamespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";
-		$headerContent = "<o:Security xmlns:o=\"$securityNamespace\">
+        // Workaround for login (because of basic authentication).
+        $securityNamespace = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd";
+        $headerContent = "<o:Security xmlns:o=\"$securityNamespace\">
 				<o:UsernameToken>
 				<o:Username>$user->companyName\\$user->userName</o:Username>
 				<o:Password>$user->password</o:Password>
 				</o:UsernameToken>
 			</o:Security>";
-		$headerVar = new SoapVar($headerContent, XSD_ANYXML, null, null, null);
-		$headers = array(
-			new SoapHeader($securityNamespace, 'o:Security', $headerVar)
-		);
-		$this->__setSoapHeaders($headers);
-    }
-
-    public function __soapCall($function_name, $arguments, $options = null, $input_headers = null, &$output_headers = null)
-    {
-        try {
-            return parent::__soapCall($function_name, $arguments, $options, $input_headers, $output_headers);
-        } catch (SoapFault $e) {
-            // Custom error handling
-
-            // Custom error handling
-
-            $output = array();
-            if (preg_match('/MyArticleNumber not found: (.*)/', $e->getMessage(), $output) && count($output)) {
-                throw new Promidata_Service_Exception_Articlenotfound('Article not found: '.$output[1], $e->getCode(), $e);
-            }
-
-            switch ($e->getMessage()) {
-                case 'ImportSourceNotFound':
-                    throw new Promidata_Service_Exception_Importsourcenotfound('Import source not found', $e->getCode(), $e);
-                    break;
-
-                case 'ArticleWithNumberNotFound':
-                    throw new Promidata_Service_Exception_Articlenotfound('Article not found', $e->getCode(), $e);
-                    break;
-
-                case 'ArticleGroupNotFound':
-                    throw new Promidata_Service_Exception_Articlegroupnotfound('Article group not found', $e->getCode(), $e);;
-                    break;
-
-                default:
-                    throw new Promidata_Service_Exception_Unknown($e->getMessage(), $e->getCode(), $e);
-                    break;
-            }
-        }
+        $headerVar = new SoapVar($headerContent, XSD_ANYXML, null, null, null);
+        $headers = array(
+            new SoapHeader($securityNamespace, 'o:Security', $headerVar)
+        );
+        $this->__setSoapHeaders($headers);
     }
 
     public function Import(Promidata_Service_Request_Import $parameters)
@@ -179,14 +148,5 @@ class Promidata_Service_Proxy_CustomerImportService extends SoapClient implement
     public function Exists(Promidata_Service_Request_Exists $parameters)
     {
         return $this->__soapCall('Exists', array($parameters));
-    }
-
-    /**
-     * Get the compatible webservice version number.
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->version;
     }
 }

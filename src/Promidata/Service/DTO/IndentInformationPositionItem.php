@@ -1,8 +1,14 @@
 <?php
-
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @author      Matthias Kleine <matthias@code-x.de>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_DTO_IndentInformationPositionItem
 {
-
     /**
      * @var string $ArticleName
      * @access public
@@ -58,7 +64,7 @@ class Promidata_Service_DTO_IndentInformationPositionItem
     public $IndentConfirmationText = null;
 
     /**
-     * @var IndentInformationBettermentItem[] $IndentInformationBetterments
+     * @var Promidata_Service_DTO_IndentInformationBettermentItem[] $IndentInformationBetterments
      * @access public
      */
     public $IndentInformationBetterments = null;
@@ -68,6 +74,18 @@ class Promidata_Service_DTO_IndentInformationPositionItem
      * @access public
      */
     public $LatestDeliveryDate = null;
+
+    /**
+     * @var string $Option1IdName
+     * @access public
+     */
+    public $Option1IdName = null;
+
+    /**
+     * @var string $Option2IdName
+     * @access public
+     */
+    public $Option2IdName = null;
 
     /**
      * @var string $OrderPositionStateName
@@ -127,11 +145,10 @@ class Promidata_Service_DTO_IndentInformationPositionItem
      */
     public function __construct($DirectDispatch, $EarlyDeliveryDate, $LatestDeliveryDate, $QuantityAmount, $QuantityCorrectedAmount)
     {
-      $this->DirectDispatch = $DirectDispatch;
-      $this->EarlyDeliveryDate = $EarlyDeliveryDate;
-      $this->LatestDeliveryDate = $LatestDeliveryDate;
-      $this->QuantityAmount = $QuantityAmount;
-      $this->QuantityCorrectedAmount = $QuantityCorrectedAmount;
+        $this->DirectDispatch = $DirectDispatch;
+        $this->EarlyDeliveryDate = $EarlyDeliveryDate;
+        $this->LatestDeliveryDate = $LatestDeliveryDate;
+        $this->QuantityAmount = $QuantityAmount;
+        $this->QuantityCorrectedAmount = $QuantityCorrectedAmount;
     }
-
 }

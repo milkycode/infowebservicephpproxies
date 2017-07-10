@@ -1,4 +1,12 @@
 <?php
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @author      Matthias Kleine <matthias@code-x.de>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_DTO_AdditionalDataCollection
 {
     /**
@@ -28,7 +36,7 @@ class Promidata_Service_DTO_AdditionalDataCollection
             $Value = substr($Value, 0, (int)$Length);
         }
 
-        $this->AdditionalDataItem[] = new Promidata_Service_DTO_AdditionalData($AdditionalDataKey, $Value.'');
+        $this->AdditionalDataItem[] = new Promidata_Service_DTO_AdditionalData($AdditionalDataKey, $Value . '');
     }
 
     public function Update($AdditionalDataKey = null, $Value = null, $Length = null)

@@ -1,8 +1,14 @@
 <?php
-
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @author      Matthias Kleine <matthias@code-x.de>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_DTO_DataSelector
 {
-
     /**
      * @var string $SelectorType
      * @access public
@@ -16,6 +22,7 @@ class Promidata_Service_DTO_DataSelector
     public $SelectorValues = null;
 
     /**
+     * @param string $SelectorType
      * @access public
      */
     public function __construct($SelectorType)

@@ -3,9 +3,10 @@
 With these PHP proxy classes, you are able to use the Promotional Office Webservice in a very easy way. You can work with objects and you only have to configure the login data and the url of the WSDL file.
 You can also use both services (info and import) with the Logon method of each class.
 
-2015 by [milkycode](http://www.milkycode.com)
+2017 by [milkycode](http://www.milkycode.com)
+2015 by [code-x](http://www.code-x.de)
 
-Compatible with PO: **2.11**
+Compatible with PO: **2.14**
 
 
 
@@ -30,6 +31,11 @@ The phar file is available here: https://github.com/wsdl2phpgenerator/wsdl2phpge
 ./generate.sh <url or ip>
 ```
 
+Or on Windows
+```
+generate.bat
+```
+
 *Do not use absolute urls - url will be completed automatically*
 
 Example output of successful generation:
@@ -50,7 +56,6 @@ by using git status / git diff
 Example output of git status:
 
 ```
-On branch Version_2.9
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -105,7 +110,7 @@ Example:
 - IndentInformationItem.php -> src/Promidata/Service/DTO/IndentInformationItem.php (class: Promidata_Service_DTO_IndentInformationItem)
 - IndentInformationPositionItem.php -> src/Promidata/Service/DTO/IndentInformationPositionItem.php (class: Promidata_Service_DTO_IndentInformationPositionItem)
 
-**Pay attention on the response class - the "Reponse" has been removed**
+**Pay attention on the response class - the "Response" has been removed**
 
 #### Update reference hints
 
@@ -162,5 +167,8 @@ public function GetIndentInformation(Promidata_Service_Request_GetIndentInformat
     return $this->__soapCall('GetIndentInformation', array($parameters));
 }
 ```
+
+#### Change internal ```$version``` in ```Proxy/AbstractService.php```.
+
 
 **Please check reference hints**

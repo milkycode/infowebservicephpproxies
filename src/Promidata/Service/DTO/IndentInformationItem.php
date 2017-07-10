@@ -1,8 +1,14 @@
 <?php
-
+/**
+ * Proxy for Promidata PromotionalOffice.
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @author      Matthias Kleine <matthias@code-x.de>
+ * @category    Milkycode
+ * @package     Promidata_Service
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ */
 class Promidata_Service_DTO_IndentInformationItem
 {
-
     /**
      * @var string $AdministrativUserFullName
      * @access public
@@ -14,6 +20,24 @@ class Promidata_Service_DTO_IndentInformationItem
      * @access public
      */
     public $AgentFullName = null;
+
+    /**
+     * @var string $BankAccountBIC
+     * @access public
+     */
+    public $BankAccountBIC = null;
+
+    /**
+     * @var string $BankAccountIBAN
+     * @access public
+     */
+    public $BankAccountIBAN = null;
+
+    /**
+     * @var string $BankAccountOwner
+     * @access public
+     */
+    public $BankAccountOwner = null;
 
     /**
      * @var float $BuyingPrice
@@ -166,6 +190,12 @@ class Promidata_Service_DTO_IndentInformationItem
     public $JobReference = null;
 
     /**
+     * @var LinkItemV1[] $LinkList
+     * @access public
+     */
+    public $LinkList = null;
+
+    /**
      * @var string $PostAdressMail
      * @access public
      */
@@ -227,15 +257,14 @@ class Promidata_Service_DTO_IndentInformationItem
      */
     public function __construct($BuyingPrice, $CalculatedSellingPrice, $DateInsert, $DepositManualUnblocked, $IndentNumber, $IsClosed, $SellingPrice, $SollEndDatum, $UpdateTime)
     {
-      $this->BuyingPrice = $BuyingPrice;
-      $this->CalculatedSellingPrice = $CalculatedSellingPrice;
-      $this->DateInsert = $DateInsert;
-      $this->DepositManualUnblocked = $DepositManualUnblocked;
-      $this->IndentNumber = $IndentNumber;
-      $this->IsClosed = $IsClosed;
-      $this->SellingPrice = $SellingPrice;
-      $this->SollEndDatum = $SollEndDatum;
-      $this->UpdateTime = $UpdateTime;
+        $this->BuyingPrice = $BuyingPrice;
+        $this->CalculatedSellingPrice = $CalculatedSellingPrice;
+        $this->DateInsert = $DateInsert;
+        $this->DepositManualUnblocked = $DepositManualUnblocked;
+        $this->IndentNumber = $IndentNumber;
+        $this->IsClosed = $IsClosed;
+        $this->SellingPrice = $SellingPrice;
+        $this->SollEndDatum = $SollEndDatum;
+        $this->UpdateTime = $UpdateTime;
     }
-
 }
