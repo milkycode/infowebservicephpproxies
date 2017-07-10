@@ -286,6 +286,12 @@ class ProductInformation
     public $ArticleUserDefindedField30 = null;
 
     /**
+     * @var string $Brand
+     * @access public
+     */
+    public $Brand = null;
+
+    /**
      * @var float $BuyingPriceBaseQuantity
      * @access public
      */

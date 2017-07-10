@@ -58,6 +58,18 @@ class IndentInformationBettermentItem
     public $IndentConfirmationText = null;
 
     /**
+     * @var string $Option1IdName
+     * @access public
+     */
+    public $Option1IdName = null;
+
+    /**
+     * @var string $Option2IdName
+     * @access public
+     */
+    public $Option2IdName = null;
+
+    /**
      * @var string $OwnArticleNumber
      * @access public
      */

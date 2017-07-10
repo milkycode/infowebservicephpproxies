@@ -16,6 +16,24 @@ class IndentInformationItem
     public $AgentFullName = null;
 
     /**
+     * @var string $BankAccountBIC
+     * @access public
+     */
+    public $BankAccountBIC = null;
+
+    /**
+     * @var string $BankAccountIBAN
+     * @access public
+     */
+    public $BankAccountIBAN = null;
+
+    /**
+     * @var string $BankAccountOwner
+     * @access public
+     */
+    public $BankAccountOwner = null;
+
+    /**
      * @var float $BuyingPrice
      * @access public
      */
@@ -164,6 +182,12 @@ class IndentInformationItem
      * @access public
      */
     public $JobReference = null;
+
+    /**
+     * @var LinkItemV1[] $LinkList
+     * @access public
+     */
+    public $LinkList = null;
 
     /**
      * @var string $PostAdressMail

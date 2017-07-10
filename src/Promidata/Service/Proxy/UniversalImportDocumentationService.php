@@ -4,7 +4,7 @@
  * @author      Christian Hinz <christian@milkycode.com>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_Proxy_UniversalImportDocumentationService extends Promidata_Service_Proxy_AbstractService implements Promidata_Service_Interface_IUniversalImportDocumentationService
 {
@@ -40,7 +40,8 @@ class Promidata_Service_Proxy_UniversalImportDocumentationService extends Promid
         $wsdl = 'http://promotionaloffice.cloudapp.net:8080/PromotionalOffice/Services/UniversalImporter/UniversalImporterDocumentationService.svc?wsdl',
         array $options = array(),
         $debug = false
-    ) {
+    )
+    {
         foreach (self::$classmap as $key => $value) {
             if (!isset($options['classmap'][$key])) {
                 $options['classmap'][$key] = $value;

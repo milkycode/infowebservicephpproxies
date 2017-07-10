@@ -4,144 +4,144 @@ class TenderIndentImporterPositionData
 {
 
     /**
-     * @var TenderIndentImporterBettermentData[] $BettermentList
+     * @var TenderIndentImporterBettermentData[] $_x003C_BettermentList_x003E_k__BackingField
      * @access public
      */
-    public $BettermentList = null;
+    public $_x003C_BettermentList_x003E_k__BackingField = null;
 
     /**
-     * @var float $BuyingPricePerUnit
+     * @var float $_x003C_BuyingPricePerUnit_x003E_k__BackingField
      * @access public
      */
-    public $BuyingPricePerUnit = null;
+    public $_x003C_BuyingPricePerUnit_x003E_k__BackingField = null;
 
     /**
-     * @var TenderIndentImporterRelayData[] $BuyingRelayList
+     * @var TenderIndentImporterRelayData[] $_x003C_BuyingRelayList_x003E_k__BackingField
      * @access public
      */
-    public $BuyingRelayList = null;
+    public $_x003C_BuyingRelayList_x003E_k__BackingField = null;
 
     /**
-     * @var string $CustomerArticleDeliverynoteText
+     * @var string $_x003C_CustomerArticleDeliverynoteText_x003E_k__BackingField
      * @access public
      */
-    public $CustomerArticleDeliverynoteText = null;
+    public $_x003C_CustomerArticleDeliverynoteText_x003E_k__BackingField = null;
 
     /**
-     * @var string $CustomerArticleDescription
+     * @var string $_x003C_CustomerArticleDescription_x003E_k__BackingField
      * @access public
      */
-    public $CustomerArticleDescription = null;
+    public $_x003C_CustomerArticleDescription_x003E_k__BackingField = null;
 
     /**
-     * @var string $CustomerArticleIndentText
+     * @var string $_x003C_CustomerArticleIndentText_x003E_k__BackingField
      * @access public
      */
-    public $CustomerArticleIndentText = null;
+    public $_x003C_CustomerArticleIndentText_x003E_k__BackingField = null;
 
     /**
-     * @var string $CustomerArticleName
+     * @var string $_x003C_CustomerArticleName_x003E_k__BackingField
      * @access public
      */
-    public $CustomerArticleName = null;
+    public $_x003C_CustomerArticleName_x003E_k__BackingField = null;
 
     /**
-     * @var string $CustomerArticleTenderText
+     * @var string $_x003C_CustomerArticleTenderText_x003E_k__BackingField
      * @access public
      */
-    public $CustomerArticleTenderText = null;
+    public $_x003C_CustomerArticleTenderText_x003E_k__BackingField = null;
 
     /**
-     * @var string $CustomerArticleTextIntern
+     * @var string $_x003C_CustomerArticleTextIntern_x003E_k__BackingField
      * @access public
      */
-    public $CustomerArticleTextIntern = null;
+    public $_x003C_CustomerArticleTextIntern_x003E_k__BackingField = null;
 
     /**
-     * @var boolean $DirectDispatch
+     * @var boolean $_x003C_DirectDispatch_x003E_k__BackingField
      * @access public
      */
-    public $DirectDispatch = null;
+    public $_x003C_DirectDispatch_x003E_k__BackingField = null;
 
     /**
-     * @var float $Discount
+     * @var float $_x003C_Discount_x003E_k__BackingField
      * @access public
      */
-    public $Discount = null;
+    public $_x003C_Discount_x003E_k__BackingField = null;
 
     /**
-     * @var dateTime $EarliestDeliveryDate
+     * @var dateTime $_x003C_EarliestDeliveryDate_x003E_k__BackingField
      * @access public
      */
-    public $EarliestDeliveryDate = null;
+    public $_x003C_EarliestDeliveryDate_x003E_k__BackingField = null;
 
     /**
-     * @var boolean $IsStockArticle
+     * @var boolean $_x003C_IsStockArticle_x003E_k__BackingField
      * @access public
      */
-    public $IsStockArticle = null;
+    public $_x003C_IsStockArticle_x003E_k__BackingField = null;
 
     /**
-     * @var dateTime $LatestDeliveryDate
+     * @var dateTime $_x003C_LatestDeliveryDate_x003E_k__BackingField
      * @access public
      */
-    public $LatestDeliveryDate = null;
+    public $_x003C_LatestDeliveryDate_x003E_k__BackingField = null;
 
     /**
-     * @var string $MyArticleNumber
+     * @var string $_x003C_MyArticleNumber_x003E_k__BackingField
      * @access public
      */
-    public $MyArticleNumber = null;
+    public $_x003C_MyArticleNumber_x003E_k__BackingField = null;
 
     /**
-     * @var boolean $PrintPosition
+     * @var boolean $_x003C_PrintPosition_x003E_k__BackingField
      * @access public
      */
-    public $PrintPosition = null;
+    public $_x003C_PrintPosition_x003E_k__BackingField = null;
 
     /**
-     * @var boolean $PrintPricePerUnit
+     * @var boolean $_x003C_PrintPricePerUnit_x003E_k__BackingField
      * @access public
      */
-    public $PrintPricePerUnit = null;
+    public $_x003C_PrintPricePerUnit_x003E_k__BackingField = null;
 
     /**
-     * @var float $Quantity
+     * @var string $_x003C_QuantityUnit_x003E_k__BackingField
      * @access public
      */
-    public $Quantity = null;
+    public $_x003C_QuantityUnit_x003E_k__BackingField = null;
 
     /**
-     * @var string $QuantityUnit
+     * @var float $_x003C_Quantity_x003E_k__BackingField
      * @access public
      */
-    public $QuantityUnit = null;
+    public $_x003C_Quantity_x003E_k__BackingField = null;
 
     /**
-     * @var float $SellingPricePerUnit
+     * @var float $_x003C_SellingPricePerUnit_x003E_k__BackingField
      * @access public
      */
-    public $SellingPricePerUnit = null;
+    public $_x003C_SellingPricePerUnit_x003E_k__BackingField = null;
 
     /**
-     * @var TenderIndentImporterRelayData[] $SellingRelayList
+     * @var TenderIndentImporterRelayData[] $_x003C_SellingRelayList_x003E_k__BackingField
      * @access public
      */
-    public $SellingRelayList = null;
+    public $_x003C_SellingRelayList_x003E_k__BackingField = null;
 
     /**
-     * @var string $SupplierName
+     * @var string $_x003C_SupplierName_x003E_k__BackingField
      * @access public
      */
-    public $SupplierName = null;
+    public $_x003C_SupplierName_x003E_k__BackingField = null;
 
     /**
-     * @param float $Quantity
+     * @param float $_x003C_Quantity_x003E_k__BackingField
      * @access public
      */
-    public function __construct($Quantity)
+    public function __construct($_x003C_Quantity_x003E_k__BackingField)
     {
-      $this->Quantity = $Quantity;
+      $this->_x003C_Quantity_x003E_k__BackingField = $_x003C_Quantity_x003E_k__BackingField;
     }
 
 }

@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_Response_GetCurrencyList
 {
@@ -21,6 +21,6 @@ class Promidata_Service_Response_GetCurrencyList
      */
     public function __construct($GetCurrencyListResult)
     {
-      $this->GetCurrencyListResult = $GetCurrencyListResult;
+        $this->GetCurrencyListResult = $GetCurrencyListResult;
     }
 }

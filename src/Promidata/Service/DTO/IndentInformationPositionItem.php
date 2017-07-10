@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_IndentInformationPositionItem
 {
@@ -76,6 +76,18 @@ class Promidata_Service_DTO_IndentInformationPositionItem
     public $LatestDeliveryDate = null;
 
     /**
+     * @var string $Option1IdName
+     * @access public
+     */
+    public $Option1IdName = null;
+
+    /**
+     * @var string $Option2IdName
+     * @access public
+     */
+    public $Option2IdName = null;
+
+    /**
      * @var string $OrderPositionStateName
      * @access public
      */
@@ -133,10 +145,10 @@ class Promidata_Service_DTO_IndentInformationPositionItem
      */
     public function __construct($DirectDispatch, $EarlyDeliveryDate, $LatestDeliveryDate, $QuantityAmount, $QuantityCorrectedAmount)
     {
-      $this->DirectDispatch = $DirectDispatch;
-      $this->EarlyDeliveryDate = $EarlyDeliveryDate;
-      $this->LatestDeliveryDate = $LatestDeliveryDate;
-      $this->QuantityAmount = $QuantityAmount;
-      $this->QuantityCorrectedAmount = $QuantityCorrectedAmount;
+        $this->DirectDispatch = $DirectDispatch;
+        $this->EarlyDeliveryDate = $EarlyDeliveryDate;
+        $this->LatestDeliveryDate = $LatestDeliveryDate;
+        $this->QuantityAmount = $QuantityAmount;
+        $this->QuantityCorrectedAmount = $QuantityCorrectedAmount;
     }
 }

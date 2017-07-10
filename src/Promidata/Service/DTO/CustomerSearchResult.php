@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_CustomerSearchResult
 {
@@ -48,9 +48,9 @@ class Promidata_Service_DTO_CustomerSearchResult
      */
     public function __construct($CustomerIdentifier, $CustomerNumber, $DebitorNumber, $IsActive)
     {
-      $this->CustomerIdentifier = $CustomerIdentifier;
-      $this->CustomerNumber = $CustomerNumber;
-      $this->DebitorNumber = $DebitorNumber;
-      $this->IsActive = $IsActive;
+        $this->CustomerIdentifier = $CustomerIdentifier;
+        $this->CustomerNumber = $CustomerNumber;
+        $this->DebitorNumber = $DebitorNumber;
+        $this->IsActive = $IsActive;
     }
 }

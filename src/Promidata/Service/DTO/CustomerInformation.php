@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_DTO_CustomerInformation
 {
@@ -112,6 +112,12 @@ class Promidata_Service_DTO_CustomerInformation
     public $IdentifierV1 = null;
 
     /**
+     * @var Promidata_Service_DTO_ImportInformation[] $ImportInformations
+     * @access public
+     */
+    public $ImportInformations = null;
+
+    /**
      * @var boolean $IsActive
      * @access public
      */
@@ -152,6 +158,12 @@ class Promidata_Service_DTO_CustomerInformation
      * @access public
      */
     public $Phone = null;
+
+    /**
+     * @var Promidata_Service_DTO_ShowDescriptionItem[] $PriceGroups
+     * @access public
+     */
+    public $PriceGroups = null;
 
     /**
      * @var string $SalesTaxNumber

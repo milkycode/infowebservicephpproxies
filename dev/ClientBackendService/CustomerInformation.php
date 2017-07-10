@@ -154,6 +154,12 @@ class CustomerInformation
     public $Phone = null;
 
     /**
+     * @var ShowDescriptionItem[] $PriceGroups
+     * @access public
+     */
+    public $PriceGroups = null;
+
+    /**
      * @var string $SalesTaxNumber
      * @access public
      */

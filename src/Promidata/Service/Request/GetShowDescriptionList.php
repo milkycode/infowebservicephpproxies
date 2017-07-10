@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2016 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
  */
 class Promidata_Service_Request_GetShowDescriptionList
 {
@@ -21,6 +21,6 @@ class Promidata_Service_Request_GetShowDescriptionList
      */
     public function __construct(Promidata_Service_Enum_ShowDescriptionListType $showDescriptionListTypeEnum)
     {
-      $this->showDescriptionListTypeEnum = $showDescriptionListTypeEnum;
+        $this->showDescriptionListTypeEnum = $showDescriptionListTypeEnum;
     }
 }
