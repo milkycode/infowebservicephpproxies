@@ -21,6 +21,6 @@ class Promidata_Service_Response_SearchCustomer
      */
     public function __construct($SearchCustomerResult)
     {
-      $this->SearchCustomerResult = $SearchCustomerResult;
+        $this->SearchCustomerResult = $SearchCustomerResult;
     }
 }

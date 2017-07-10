@@ -21,6 +21,6 @@ class Promidata_Service_Request_SearchSupplier
      */
     public function __construct($importdata)
     {
-      $this->importdata = $importdata;
+        $this->importdata = $importdata;
     }
 }

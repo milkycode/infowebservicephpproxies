@@ -21,6 +21,6 @@ class Promidata_Service_Request_GetProductInformationByProductIdentifier
      */
     public function __construct(Promidata_Service_DTO_ProductIdentifier $productIdentifier = null)
     {
-      $this->productIdentifier = $productIdentifier;
+        $this->productIdentifier = $productIdentifier;
     }
 }

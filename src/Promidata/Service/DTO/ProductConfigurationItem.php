@@ -115,10 +115,10 @@ class Promidata_Service_DTO_ProductConfigurationItem
      */
     public function __construct($QuantityDenominator, $QuantityNumerator, $RestrictedToColorSizeCombination, $ResultRoundDigits, $SortNumber)
     {
-      $this->QuantityDenominator = $QuantityDenominator;
-      $this->QuantityNumerator = $QuantityNumerator;
-      $this->RestrictedToColorSizeCombination = $RestrictedToColorSizeCombination;
-      $this->ResultRoundDigits = $ResultRoundDigits;
-      $this->SortNumber = $SortNumber;
+        $this->QuantityDenominator = $QuantityDenominator;
+        $this->QuantityNumerator = $QuantityNumerator;
+        $this->RestrictedToColorSizeCombination = $RestrictedToColorSizeCombination;
+        $this->ResultRoundDigits = $ResultRoundDigits;
+        $this->SortNumber = $SortNumber;
     }
 }
