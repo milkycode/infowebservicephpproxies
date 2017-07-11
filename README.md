@@ -3,12 +3,25 @@
 With these PHP proxy classes, you are able to use the Promotional Office Webservice in a very easy way. You can work with objects and you only have to configure the login data and the url of the WSDL file.
 You can also use both services (info and import) with the Logon method of each class.
 
-2017 by [milkycode](http://www.milkycode.com)
-2015 by [code-x](http://www.code-x.de)
+2015-2017 by [milkycode](http://www.milkycode.com)
+Base codebase and idea 2015 by [code-x](http://www.code-x.de)
 
 Compatible with PO: **2.14**
 
 
+
+## Documentation
+
+A PHP implementation of the documentation service is also available. Just run the ```test_doku.php``` in your browser.
+Currently it will show all methods and fields of the import service.
+
+## Installation
+
+If you are using a Zend based project the class structure already fits. You only need to copy the ```Promidata``` folder to your project. Otherwise you can use the autoloader from the ```init.php``` file.
+
+## Tests and implementation
+
+For testing we included three test files (test_backend.php, test_doku.php and test_import.php) to test the different services. You can use them as an example for your own integration.
 
 ## Development
 
@@ -110,7 +123,7 @@ Example:
 - IndentInformationItem.php -> src/Promidata/Service/DTO/IndentInformationItem.php (class: Promidata_Service_DTO_IndentInformationItem)
 - IndentInformationPositionItem.php -> src/Promidata/Service/DTO/IndentInformationPositionItem.php (class: Promidata_Service_DTO_IndentInformationPositionItem)
 
-**Pay attention on the response class - the "Response" has been removed**
+**Pay attention on the response class - the text "Response" has been removed from file name**
 
 #### Update reference hints
 
