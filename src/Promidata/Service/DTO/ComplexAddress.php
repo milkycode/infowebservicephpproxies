@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
 class Promidata_Service_DTO_ComplexAddress
 {
@@ -91,7 +91,7 @@ class Promidata_Service_DTO_ComplexAddress
      * @var string $PostCode
      * @access public
      */
-    public $PostCode = null;
+    public $PostCode = null;ote
 
     /**
      * @var string $Salutation
