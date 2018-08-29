@@ -68,15 +68,18 @@ include_once('GetIndentInformation.php');
 include_once('GetIndentInformationParameter.php');
 include_once('GetIndentInformationResponse.php');
 include_once('IndentInformationItem.php');
+include_once('ComplexAddress.php');
 include_once('IndentInformationEventItem.php');
 include_once('IndentInformationPositionItem.php');
 include_once('IndentInformationBettermentItem.php');
+include_once('InlineCostInformationIem.php');
 include_once('GetProductConfiguration.php');
 include_once('GetProductConfigurationParameter.php');
 include_once('GetProductConfigurationResponse.php');
 include_once('ProductConfiguration.php');
 include_once('ProductConfigurationItem.php');
 include_once('ProductConfigurationColorItem.php');
+include_once('ProductConfigurationOptionItem.php');
 include_once('ProductConfigurationSizeItem.php');
 include_once('SearchPurchaseOrder.php');
 include_once('PurchaseOrderSearchParameter.php');
@@ -86,7 +89,6 @@ include_once('GetPurchaseOrderInformation.php');
 include_once('PurchaseOrderIdentifier.php');
 include_once('GetPurchaseOrderInformationResponse.php');
 include_once('PurchaseOrderInformation.php');
-include_once('ComplexAddress.php');
 include_once('PurchaseOrderPositionItem.php');
 include_once('PurchaseOrderBettermentItem.php');
 include_once('ChangePurchaseOrderAction.php');
@@ -97,13 +99,38 @@ include_once('GetPurchaseOrderActionList.php');
 include_once('GetPurchaseOrderActionListResponse.php');
 include_once('PurchaseOrderAction.php');
 include_once('GetOptionList.php');
+include_once('GetOptionListParameter.php');
 include_once('GetOptionListResponse.php');
+include_once('GetOptionListResult.php');
 include_once('GetOptionTypeList.php');
 include_once('GetOptionTypeListResponse.php');
 include_once('GetSpecialPricesForPriceGroups.php');
 include_once('GetSpecialPricesForPriceGroupsResponse.php');
 include_once('GetSpecialPricesForCustomer.php');
 include_once('GetSpecialPricesForCustomerResponse.php');
+include_once('GetTenderInformation.php');
+include_once('GetTenderInformationParameter.php');
+include_once('GetTenderInformationResponse.php');
+include_once('TenderInformationItem.php');
+include_once('TenderInformationConvertItem.php');
+include_once('TenderInformationEventItem.php');
+include_once('TenderInformationPositionItem.php');
+include_once('TenderInformationBettermentItem.php');
+include_once('GetSupplierInformation.php');
+include_once('SupplierIdentifier.php');
+include_once('GetSupplierInformationResponse.php');
+include_once('SupplierInformation.php');
+include_once('GetSupplierInformationList.php');
+include_once('GetSupplierInformationListResponse.php');
+include_once('SearchIndent.php');
+include_once('SearchIndentParameter.php');
+include_once('SearchIndentResponse.php');
+include_once('IndentSearchResult.php');
+include_once('GetCurrentStockAmounts.php');
+include_once('GetCurrentStockAmountsParameter.php');
+include_once('GetCurrentStockAmountsResponse.php');
+include_once('GetCurrentStockAmountsResult.php');
+include_once('StockAmountItem.php');
 include_once('ShowDescriptionItem.php');
 include_once('ImportInformation.php');
 include_once('ArticleTextItem.php');
@@ -114,9 +141,12 @@ include_once('ArticleDynamicDataItem.php');
 include_once('ArticleDynamicLanguageDataItem.php');
 include_once('TranslationItem.php');
 include_once('LinkItemV1.php');
+include_once('Variation.php');
 include_once('OptionItem.php');
 include_once('OptionTypeItem.php');
 include_once('SpecialPriceItem.php');
+include_once('IndentStateEnum.php');
+include_once('GeneralStateEnum.php');
 include_once('GenderType.php');
 include_once('TenderIndentImporterData.php');
 include_once('TenderIndentImporterAddressData.php');
@@ -201,15 +231,18 @@ class CustomerBackendService extends \SoapClient
       'GetIndentInformationParameter' => '\GetIndentInformationParameter',
       'GetIndentInformationResponse' => '\GetIndentInformationResponse',
       'IndentInformationItem' => '\IndentInformationItem',
+      'ComplexAddress' => '\ComplexAddress',
       'IndentInformationEventItem' => '\IndentInformationEventItem',
       'IndentInformationPositionItem' => '\IndentInformationPositionItem',
       'IndentInformationBettermentItem' => '\IndentInformationBettermentItem',
+      'InlineCostInformationIem' => '\InlineCostInformationIem',
       'GetProductConfiguration' => '\GetProductConfiguration',
       'GetProductConfigurationParameter' => '\GetProductConfigurationParameter',
       'GetProductConfigurationResponse' => '\GetProductConfigurationResponse',
       'ProductConfiguration' => '\ProductConfiguration',
       'ProductConfigurationItem' => '\ProductConfigurationItem',
       'ProductConfigurationColorItem' => '\ProductConfigurationColorItem',
+      'ProductConfigurationOptionItem' => '\ProductConfigurationOptionItem',
       'ProductConfigurationSizeItem' => '\ProductConfigurationSizeItem',
       'SearchPurchaseOrder' => '\SearchPurchaseOrder',
       'PurchaseOrderSearchParameter' => '\PurchaseOrderSearchParameter',
@@ -219,7 +252,6 @@ class CustomerBackendService extends \SoapClient
       'PurchaseOrderIdentifier' => '\PurchaseOrderIdentifier',
       'GetPurchaseOrderInformationResponse' => '\GetPurchaseOrderInformationResponse',
       'PurchaseOrderInformation' => '\PurchaseOrderInformation',
-      'ComplexAddress' => '\ComplexAddress',
       'PurchaseOrderPositionItem' => '\PurchaseOrderPositionItem',
       'PurchaseOrderBettermentItem' => '\PurchaseOrderBettermentItem',
       'ChangePurchaseOrderAction' => '\ChangePurchaseOrderAction',
@@ -230,13 +262,38 @@ class CustomerBackendService extends \SoapClient
       'GetPurchaseOrderActionListResponse' => '\GetPurchaseOrderActionListResponse',
       'PurchaseOrderAction' => '\PurchaseOrderAction',
       'GetOptionList' => '\GetOptionList',
-      'GetOptionList' => '\GetOptionList',
+      'GetOptionListParameter' => '\GetOptionListParameter',
+      'GetOptionListResponse' => '\GetOptionListResponse',
+      'GetOptionListResult' => '\GetOptionListResult',
       'GetOptionTypeList' => '\GetOptionTypeList',
-      'GetOptionTypeList' => '\GetOptionTypeList',
+      'GetOptionTypeListResponse' => '\GetOptionTypeListResponse',
       'GetSpecialPricesForPriceGroups' => '\GetSpecialPricesForPriceGroups',
       'GetSpecialPricesForPriceGroupsResponse' => '\GetSpecialPricesForPriceGroupsResponse',
       'GetSpecialPricesForCustomer' => '\GetSpecialPricesForCustomer',
-      'GetSpecialPricesForCustomer' => '\GetSpecialPricesForCustomer',
+      'GetSpecialPricesForCustomerResponse' => '\GetSpecialPricesForCustomerResponse',
+      'GetTenderInformation' => '\GetTenderInformation',
+      'GetTenderInformationParameter' => '\GetTenderInformationParameter',
+      'GetTenderInformationResponse' => '\GetTenderInformationResponse',
+      'TenderInformationItem' => '\TenderInformationItem',
+      'TenderInformationConvertItem' => '\TenderInformationConvertItem',
+      'TenderInformationEventItem' => '\TenderInformationEventItem',
+      'TenderInformationPositionItem' => '\TenderInformationPositionItem',
+      'TenderInformationBettermentItem' => '\TenderInformationBettermentItem',
+      'GetSupplierInformation' => '\GetSupplierInformation',
+      'SupplierIdentifier' => '\SupplierIdentifier',
+      'GetSupplierInformation' => '\GetSupplierInformation',
+      'SupplierInformation' => '\SupplierInformation',
+      'GetSupplierInformationList' => '\GetSupplierInformationList',
+      'GetSupplierInformationList' => '\GetSupplierInformationList',
+      'SearchIndent' => '\SearchIndent',
+      'SearchIndentParameter' => '\SearchIndentParameter',
+      'SearchIndent' => '\SearchIndent',
+      'IndentSearchResult' => '\IndentSearchResult',
+      'GetCurrentStockAmounts' => '\GetCurrentStockAmounts',
+      'GetCurrentStockAmountsParameter' => '\GetCurrentStockAmountsParameter',
+      'GetCurrentStockAmountsResponse' => '\GetCurrentStockAmountsResponse',
+      'GetCurrentStockAmountsResult' => '\GetCurrentStockAmountsResult',
+      'StockAmountItem' => '\StockAmountItem',
       'ShowDescriptionItem' => '\ShowDescriptionItem',
       'ImportInformation' => '\ImportInformation',
       'ArticleTextItem' => '\ArticleTextItem',
@@ -245,6 +302,7 @@ class CustomerBackendService extends \SoapClient
       'ArticleDynamicLanguageDataItem' => '\ArticleDynamicLanguageDataItem',
       'TranslationItem' => '\TranslationItem',
       'LinkItemV1' => '\LinkItemV1',
+      'Variation' => '\Variation',
       'OptionItem' => '\OptionItem',
       'OptionTypeItem' => '\OptionTypeItem',
       'SpecialPriceItem' => '\SpecialPriceItem',
@@ -543,7 +601,7 @@ class CustomerBackendService extends \SoapClient
     /**
      * @param GetOptionList $parameters
      * @access public
-     * @return GetOptionList
+     * @return GetOptionListResponse
      */
     public function GetOptionList(GetOptionList $parameters)
     {
@@ -553,7 +611,7 @@ class CustomerBackendService extends \SoapClient
     /**
      * @param GetOptionTypeList $parameters
      * @access public
-     * @return GetOptionTypeList
+     * @return GetOptionTypeListResponse
      */
     public function GetOptionTypeList(GetOptionTypeList $parameters)
     {
@@ -573,11 +631,61 @@ class CustomerBackendService extends \SoapClient
     /**
      * @param GetSpecialPricesForCustomer $parameters
      * @access public
-     * @return GetSpecialPricesForCustomer
+     * @return GetSpecialPricesForCustomerResponse
      */
     public function GetSpecialPricesForCustomer(GetSpecialPricesForCustomer $parameters)
     {
       return $this->__soapCall('GetSpecialPricesForCustomer', array($parameters));
+    }
+
+    /**
+     * @param GetTenderInformation $parameters
+     * @access public
+     * @return GetTenderInformationResponse
+     */
+    public function GetTenderInformation(GetTenderInformation $parameters)
+    {
+      return $this->__soapCall('GetTenderInformation', array($parameters));
+    }
+
+    /**
+     * @param GetSupplierInformation $parameters
+     * @access public
+     * @return GetSupplierInformation
+     */
+    public function GetSupplierInformation(GetSupplierInformation $parameters)
+    {
+      return $this->__soapCall('GetSupplierInformation', array($parameters));
+    }
+
+    /**
+     * @param GetSupplierInformationList $parameters
+     * @access public
+     * @return GetSupplierInformationList
+     */
+    public function GetSupplierInformationList(GetSupplierInformationList $parameters)
+    {
+      return $this->__soapCall('GetSupplierInformationList', array($parameters));
+    }
+
+    /**
+     * @param SearchIndent $parameters
+     * @access public
+     * @return SearchIndent
+     */
+    public function SearchIndent(SearchIndent $parameters)
+    {
+      return $this->__soapCall('SearchIndent', array($parameters));
+    }
+
+    /**
+     * @param GetCurrentStockAmounts $parameters
+     * @access public
+     * @return GetCurrentStockAmountsResponse
+     */
+    public function GetCurrentStockAmounts(GetCurrentStockAmounts $parameters)
+    {
+      return $this->__soapCall('GetCurrentStockAmounts', array($parameters));
     }
 
 }

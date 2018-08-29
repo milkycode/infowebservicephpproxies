@@ -76,6 +76,12 @@ class IndentInformationItem
     public $DateOfLastDeliverNoteToCustomer = null;
 
     /**
+     * @var int $DebitorNumber
+     * @access public
+     */
+    public $DebitorNumber = null;
+
+    /**
      * @var boolean $DepositBlocked
      * @access public
      */
@@ -86,6 +92,12 @@ class IndentInformationItem
      * @access public
      */
     public $DepositManualUnblocked = null;
+
+    /**
+     * @var ComplexAddress $DispatchAddress
+     * @access public
+     */
+    public $DispatchAddress = null;
 
     /**
      * @var string $DispatchType
@@ -172,6 +184,12 @@ class IndentInformationItem
     public $IndentUserEventName = null;
 
     /**
+     * @var ComplexAddress $InvoiceAddress
+     * @access public
+     */
+    public $InvoiceAddress = null;
+
+    /**
      * @var boolean $IsClosed
      * @access public
      */
@@ -188,6 +206,12 @@ class IndentInformationItem
      * @access public
      */
     public $LinkList = null;
+
+    /**
+     * @var ComplexAddress $PostAddress
+     * @access public
+     */
+    public $PostAddress = null;
 
     /**
      * @var string $PostAdressMail
@@ -241,6 +265,7 @@ class IndentInformationItem
      * @param float $BuyingPrice
      * @param float $CalculatedSellingPrice
      * @param dateTime $DateInsert
+     * @param int $DebitorNumber
      * @param boolean $DepositManualUnblocked
      * @param int $IndentNumber
      * @param boolean $IsClosed
@@ -249,11 +274,12 @@ class IndentInformationItem
      * @param dateTime $UpdateTime
      * @access public
      */
-    public function __construct($BuyingPrice, $CalculatedSellingPrice, $DateInsert, $DepositManualUnblocked, $IndentNumber, $IsClosed, $SellingPrice, $SollEndDatum, $UpdateTime)
+    public function __construct($BuyingPrice, $CalculatedSellingPrice, $DateInsert, $DebitorNumber, $DepositManualUnblocked, $IndentNumber, $IsClosed, $SellingPrice, $SollEndDatum, $UpdateTime)
     {
       $this->BuyingPrice = $BuyingPrice;
       $this->CalculatedSellingPrice = $CalculatedSellingPrice;
       $this->DateInsert = $DateInsert;
+      $this->DebitorNumber = $DebitorNumber;
       $this->DepositManualUnblocked = $DepositManualUnblocked;
       $this->IndentNumber = $IndentNumber;
       $this->IsClosed = $IsClosed;

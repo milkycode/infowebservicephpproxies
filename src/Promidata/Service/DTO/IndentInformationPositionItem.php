@@ -5,10 +5,16 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
 class Promidata_Service_DTO_IndentInformationPositionItem
 {
+    /**
+     * @var string $ArticleDescription
+     * @access public
+     */
+    public $ArticleDescription = null;
+
     /**
      * @var string $ArticleName
      * @access public
@@ -20,6 +26,12 @@ class Promidata_Service_DTO_IndentInformationPositionItem
      * @access public
      */
     public $ArticleOrderNumber = null;
+
+    /**
+     * @var string $ArticleTextIntern
+     * @access public
+     */
+    public $ArticleTextIntern = null;
 
     /**
      * @var string $CalculatedPositionStateName
@@ -70,22 +82,40 @@ class Promidata_Service_DTO_IndentInformationPositionItem
     public $IndentInformationBetterments = null;
 
     /**
+     * @var Promidata_Service_DTO_InlineCostInformationIem[] $IndentInlineCostInformations
+     * @access public
+     */
+    public $IndentInlineCostInformations = null;
+
+    /**
      * @var dateTime $LatestDeliveryDate
      * @access public
      */
     public $LatestDeliveryDate = null;
 
     /**
-     * @var string $Option1IdName
+     * @var string $Option1Key
      * @access public
      */
-    public $Option1IdName = null;
+    public $Option1Key = null;
 
     /**
-     * @var string $Option2IdName
+     * @var string $Option1Name
      * @access public
      */
-    public $Option2IdName = null;
+    public $Option1Name = null;
+
+    /**
+     * @var string $Option2Key
+     * @access public
+     */
+    public $Option2Key = null;
+
+    /**
+     * @var string $Option2Name
+     * @access public
+     */
+    public $Option2Name = null;
 
     /**
      * @var string $OrderPositionStateName

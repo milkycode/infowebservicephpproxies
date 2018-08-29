@@ -22,6 +22,12 @@ class IndentInformationBettermentItem
     public $ArticleOrderNumber = null;
 
     /**
+     * @var string $ArticleTextIntern
+     * @access public
+     */
+    public $ArticleTextIntern = null;
+
+    /**
      * @var string $BettermentDeliveredStateName
      * @access public
      */
@@ -58,16 +64,34 @@ class IndentInformationBettermentItem
     public $IndentConfirmationText = null;
 
     /**
-     * @var string $Option1IdName
+     * @var InlineCostInformationIem[] $IndentInlineCostInformations
      * @access public
      */
-    public $Option1IdName = null;
+    public $IndentInlineCostInformations = null;
 
     /**
-     * @var string $Option2IdName
+     * @var string $Option1Key
      * @access public
      */
-    public $Option2IdName = null;
+    public $Option1Key = null;
+
+    /**
+     * @var string $Option1Name
+     * @access public
+     */
+    public $Option1Name = null;
+
+    /**
+     * @var string $Option2Key
+     * @access public
+     */
+    public $Option2Key = null;
+
+    /**
+     * @var string $Option2Name
+     * @access public
+     */
+    public $Option2Name = null;
 
     /**
      * @var string $OwnArticleNumber

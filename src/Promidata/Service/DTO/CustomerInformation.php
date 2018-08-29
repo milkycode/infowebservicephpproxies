@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
 class Promidata_Service_DTO_CustomerInformation
 {
@@ -68,6 +68,18 @@ class Promidata_Service_DTO_CustomerInformation
      * @access public
      */
     public $CurrencyName = null;
+
+    /**
+     * @var dateTime $DateInsert
+     * @access public
+     */
+    public $DateInsert = null;
+
+    /**
+     * @var dateTime $DateUpdate
+     * @access public
+     */
+    public $DateUpdate = null;
 
     /**
      * @var int $DebitorNumber
@@ -204,14 +216,18 @@ class Promidata_Service_DTO_CustomerInformation
     /**
      * @param int $AgentId
      * @param float $CreditLimitUsed
+     * @param dateTime $DateInsert
+     * @param dateTime $DateUpdate
      * @param int $DebitorNumber
      * @param boolean $IsActive
      * @access public
      */
-    public function __construct($AgentId, $CreditLimitUsed, $DebitorNumber, $IsActive)
+    public function __construct($AgentId, $CreditLimitUsed, $DateInsert, $DateUpdate, $DebitorNumber, $IsActive)
     {
         $this->AgentId = $AgentId;
         $this->CreditLimitUsed = $CreditLimitUsed;
+        $this->DateInsert = $DateInsert;
+        $this->DateUpdate = $DateUpdate;
         $this->DebitorNumber = $DebitorNumber;
         $this->IsActive = $IsActive;
     }

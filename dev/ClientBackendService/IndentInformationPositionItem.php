@@ -4,6 +4,12 @@ class IndentInformationPositionItem
 {
 
     /**
+     * @var string $ArticleDescription
+     * @access public
+     */
+    public $ArticleDescription = null;
+
+    /**
      * @var string $ArticleName
      * @access public
      */
@@ -14,6 +20,12 @@ class IndentInformationPositionItem
      * @access public
      */
     public $ArticleOrderNumber = null;
+
+    /**
+     * @var string $ArticleTextIntern
+     * @access public
+     */
+    public $ArticleTextIntern = null;
 
     /**
      * @var string $CalculatedPositionStateName
@@ -64,22 +76,40 @@ class IndentInformationPositionItem
     public $IndentInformationBetterments = null;
 
     /**
+     * @var InlineCostInformationIem[] $IndentInlineCostInformations
+     * @access public
+     */
+    public $IndentInlineCostInformations = null;
+
+    /**
      * @var dateTime $LatestDeliveryDate
      * @access public
      */
     public $LatestDeliveryDate = null;
 
     /**
-     * @var string $Option1IdName
+     * @var string $Option1Key
      * @access public
      */
-    public $Option1IdName = null;
+    public $Option1Key = null;
 
     /**
-     * @var string $Option2IdName
+     * @var string $Option1Name
      * @access public
      */
-    public $Option2IdName = null;
+    public $Option1Name = null;
+
+    /**
+     * @var string $Option2Key
+     * @access public
+     */
+    public $Option2Key = null;
+
+    /**
+     * @var string $Option2Name
+     * @access public
+     */
+    public $Option2Name = null;
 
     /**
      * @var string $OrderPositionStateName

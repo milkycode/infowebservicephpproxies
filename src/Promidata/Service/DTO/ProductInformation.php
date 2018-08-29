@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
 class Promidata_Service_DTO_ProductInformation
 {
@@ -518,6 +518,12 @@ class Promidata_Service_DTO_ProductInformation
      * @access public
      */
     public $SupplierName = null;
+
+    /**
+     * @var Promidata_Service_DTO_Variation[] $Variations
+     * @access public
+     */
+    public $Variations = null;
 
     /**
      * @var string $Warning

@@ -28,6 +28,18 @@ class ProductConfigurationItem
     public $LinkedColorRestrictions = null;
 
     /**
+     * @var ProductConfigurationOptionItem[] $LinkedOption1Restrictions
+     * @access public
+     */
+    public $LinkedOption1Restrictions = null;
+
+    /**
+     * @var ProductConfigurationOptionItem[] $LinkedOption2Restrictions
+     * @access public
+     */
+    public $LinkedOption2Restrictions = null;
+
+    /**
      * @var string $LinkedOwnArticleNumber
      * @access public
      */
@@ -100,6 +112,12 @@ class ProductConfigurationItem
     public $RestrictedToColorSizeCombination = null;
 
     /**
+     * @var boolean $RestrictedToVariation
+     * @access public
+     */
+    public $RestrictedToVariation = null;
+
+    /**
      * @var int $ResultRoundDigits
      * @access public
      */
@@ -136,6 +154,18 @@ class ProductConfigurationItem
     public $UseColorsFromArticleCombination = null;
 
     /**
+     * @var int $UseOption1FromArticleCombination
+     * @access public
+     */
+    public $UseOption1FromArticleCombination = null;
+
+    /**
+     * @var int $UseOption2FromArticleCombination
+     * @access public
+     */
+    public $UseOption2FromArticleCombination = null;
+
+    /**
      * @var int $UseSizesFromArticleCombination
      * @access public
      */
@@ -147,17 +177,19 @@ class ProductConfigurationItem
      * @param float $QuantityDenominator
      * @param float $QuantityNumerator
      * @param boolean $RestrictedToColorSizeCombination
+     * @param boolean $RestrictedToVariation
      * @param int $ResultRoundDigits
      * @param int $SortNumber
      * @access public
      */
-    public function __construct($AddAsInlineCost, $LinkedProductIdentifier, $QuantityDenominator, $QuantityNumerator, $RestrictedToColorSizeCombination, $ResultRoundDigits, $SortNumber)
+    public function __construct($AddAsInlineCost, $LinkedProductIdentifier, $QuantityDenominator, $QuantityNumerator, $RestrictedToColorSizeCombination, $RestrictedToVariation, $ResultRoundDigits, $SortNumber)
     {
       $this->AddAsInlineCost = $AddAsInlineCost;
       $this->LinkedProductIdentifier = $LinkedProductIdentifier;
       $this->QuantityDenominator = $QuantityDenominator;
       $this->QuantityNumerator = $QuantityNumerator;
       $this->RestrictedToColorSizeCombination = $RestrictedToColorSizeCombination;
+      $this->RestrictedToVariation = $RestrictedToVariation;
       $this->ResultRoundDigits = $ResultRoundDigits;
       $this->SortNumber = $SortNumber;
     }

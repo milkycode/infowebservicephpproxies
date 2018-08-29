@@ -514,6 +514,12 @@ class ProductInformation
     public $SupplierName = null;
 
     /**
+     * @var Variation[] $Variations
+     * @access public
+     */
+    public $Variations = null;
+
+    /**
      * @var string $Warning
      * @access public
      */

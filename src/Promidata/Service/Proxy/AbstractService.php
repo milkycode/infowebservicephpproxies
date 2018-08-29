@@ -2,14 +2,13 @@
 /**
  * Proxy for Promidata PromotionalOffice.
  * @author      Christian Hinz <christian@milkycode.com>
- * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
 abstract class Promidata_Service_Proxy_AbstractService extends SoapClient
 {
-    protected $version = '2.14';
+    protected $version = '2.16.2';
 
     /**
      * Get the compatible webservice version number.
@@ -20,7 +19,22 @@ abstract class Promidata_Service_Proxy_AbstractService extends SoapClient
         return $this->version;
     }
 
-    public function __soapCall($function_name, $arguments, $options = null, $input_headers = null, &$output_headers = null)
+    /**
+     * Extended soapCall with custom error handling.
+     * @param string $function_name
+     * @param array $arguments
+     * @param array|null $options
+     * @param null $input_headers
+     * @param array|null $output_headers
+     * @return mixed
+     * @throws Promidata_Service_Exception_Articlegroupnotfound
+     * @throws Promidata_Service_Exception_Articlenotfound
+     * @throws Promidata_Service_Exception_Authentication
+     * @throws Promidata_Service_Exception_Customernotfound
+     * @throws Promidata_Service_Exception_Importsourcenotfound
+     * @throws Promidata_Service_Exception_Unknown
+     */
+    public function __soapCall($function_name, array $arguments, array $options = null, $input_headers = null, array &$output_headers = null)
     {
         try {
             return parent::__soapCall($function_name, $arguments, $options, $input_headers, $output_headers);

@@ -5,18 +5,18 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
 class Promidata_Service_Response_GetOptionList
 {
     /**
-     * @var Promidata_Service_DTO_OptionItem[] $GetOptionListResult
+     * @var Promidata_Service_DTO_GetOptionListResult[] $GetOptionListResult
      * @access public
      */
     public $GetOptionListResult = null;
 
     /**
-     * @param Promidata_Service_DTO_OptionItem[] $GetOptionListResult
+     * @param Promidata_Service_DTO_GetOptionListResult[] $GetOptionListResult
      * @access public
      */
     public function __construct($GetOptionListResult)

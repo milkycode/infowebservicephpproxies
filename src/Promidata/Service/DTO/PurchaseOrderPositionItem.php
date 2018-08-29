@@ -5,7 +5,7 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
 class Promidata_Service_DTO_PurchaseOrderPositionItem
 {
@@ -56,6 +56,18 @@ class Promidata_Service_DTO_PurchaseOrderPositionItem
      * @access public
      */
     public $LatestDeliveryDate = null;
+
+    /**
+     * @var string $Option1Name
+     * @access public
+     */
+    public $Option1Name = null;
+
+    /**
+     * @var string $Option2Name
+     * @access public
+     */
+    public $Option2Name = null;
 
     /**
      * @var float $OrderedQuantity

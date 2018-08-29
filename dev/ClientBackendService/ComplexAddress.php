@@ -88,6 +88,12 @@ class ComplexAddress
     public $PostCode = null;
 
     /**
+     * @var string $SalesTax
+     * @access public
+     */
+    public $SalesTax = null;
+
+    /**
      * @var string $Salutation
      * @access public
      */

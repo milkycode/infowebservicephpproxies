@@ -5,12 +5,12 @@
  * @author      Matthias Kleine <matthias@code-x.de>
  * @category    Milkycode
  * @package     Promidata_Service
- * @copyright   Copyright (c) 2017 milkycode UG (http://www.milkycode.com)
+ * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
 class Promidata_Service_Exception_Importsourcenotfound extends Promidata_Service_Exception
 {
-    public function __construct()
+    public function __construct($message = '', $code = 0, Exception $previous = null)
     {
-        parent::__construct();
+        parent::__construct($message, $code, $previous);
     }
 }
