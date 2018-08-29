@@ -4,13 +4,13 @@ class GetOptionListResponse
 {
 
     /**
-     * @var OptionItem[] $GetOptionListResult
+     * @var GetOptionListResult $GetOptionListResult
      * @access public
      */
     public $GetOptionListResult = null;
 
     /**
-     * @param OptionItem[] $GetOptionListResult
+     * @param GetOptionListResult $GetOptionListResult
      * @access public
      */
     public function __construct($GetOptionListResult)

@@ -520,6 +520,12 @@ class Promidata_Service_DTO_ProductInformation
     public $SupplierName = null;
 
     /**
+     * @var Promidata_Service_DTO_Variation[] $Variations
+     * @access public
+     */
+    public $Variations = null;
+
+    /**
      * @var string $Warning
      * @access public
      */

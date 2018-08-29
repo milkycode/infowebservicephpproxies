@@ -38,8 +38,28 @@ class UniversalImportDocumentationService extends \SoapClient
       $options['classmap'][$key] = $value;
     }
   }
-  
+
   parent::__construct($wsdl, $options);
+    }
+
+    /**
+     * @param GetImporter $parameters
+     * @access public
+     * @return GetImporterResponse
+     */
+    public function GetImporter(GetImporter $parameters)
+    {
+      return $this->__soapCall('GetImporter', array($parameters));
+    }
+
+    /**
+     * @param GetImporterDetail $parameters
+     * @access public
+     * @return GetImporterDetailResponse
+     */
+    public function GetImporterDetail(GetImporterDetail $parameters)
+    {
+      return $this->__soapCall('GetImporterDetail', array($parameters));
     }
 
 }

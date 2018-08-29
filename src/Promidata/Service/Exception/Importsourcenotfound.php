@@ -9,8 +9,8 @@
  */
 class Promidata_Service_Exception_Importsourcenotfound extends Promidata_Service_Exception
 {
-    public function __construct()
+    public function __construct($message = '', $code = 0, Exception $previous = null)
     {
-        parent::__construct();
+        parent::__construct($message, $code, $previous);
     }
 }

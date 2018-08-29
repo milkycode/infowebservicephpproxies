@@ -52,6 +52,18 @@ class PurchaseOrderPositionItem
     public $LatestDeliveryDate = null;
 
     /**
+     * @var string $Option1Name
+     * @access public
+     */
+    public $Option1Name = null;
+
+    /**
+     * @var string $Option2Name
+     * @access public
+     */
+    public $Option2Name = null;
+
+    /**
      * @var float $OrderedQuantity
      * @access public
      */

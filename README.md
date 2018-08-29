@@ -3,10 +3,10 @@
 With these PHP proxy classes, you are able to use the Promotional Office Webservice in a very easy way. You can work with objects and you only have to configure the login data and the url of the WSDL file.
 You can also use both services (info and import) with the Logon method of each class.
 
-2015-2017 by [milkycode](http://www.milkycode.com)
-Base codebase and idea 2015 by [code-x](http://www.code-x.de)
+2015-2018 by [milkycode](http://www.milkycode.com)
+Base codebase and idea 2014 by [code-x](http://www.code-x.de)
 
-Compatible with PO: **2.14**
+Compatible with PO: **2.16.2**
 
 
 
@@ -35,6 +35,7 @@ Requirements:
 
 The basic references have been generated with [wsdl2phpgenerator](https://github.com/wsdl2phpgenerator/wsdl2phpgenerator)
 The phar file is available here: https://github.com/wsdl2phpgenerator/wsdl2phpgenerator-cli
+Maybe in the future we could use https://github.com/WsdlToPhp/PackageGenerator as both other tools are not maintained anymore.
 
 **1. Switch to the dev directory**
 

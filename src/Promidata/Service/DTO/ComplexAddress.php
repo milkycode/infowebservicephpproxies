@@ -91,7 +91,13 @@ class Promidata_Service_DTO_ComplexAddress
      * @var string $PostCode
      * @access public
      */
-    public $PostCode = null;ote
+    public $PostCode = null;
+
+    /**
+     * @var string $SalesTax
+     * @access public
+     */
+    public $SalesTax = null;
 
     /**
      * @var string $Salutation

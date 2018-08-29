@@ -10,9 +10,17 @@
 class Promidata_Service_Request_GetOptionList
 {
     /**
+     * @var Promidata_Service_DTO_GetOptionListParameter $parameter
      * @access public
      */
-    public function __construct()
+    public $parameter = null;
+
+    /**
+     * @param Promidata_Service_DTO_GetOptionListParameter $parameter
+     * @access public
+     */
+    public function __construct($parameter)
     {
+        $this->parameter = $parameter;
     }
 }

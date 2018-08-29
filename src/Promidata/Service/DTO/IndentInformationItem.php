@@ -82,6 +82,12 @@ class Promidata_Service_DTO_IndentInformationItem
     public $DateOfLastDeliverNoteToCustomer = null;
 
     /**
+     * @var int $DebitorNumber
+     * @access public
+     */
+    public $DebitorNumber = null;
+
+    /**
      * @var boolean $DepositBlocked
      * @access public
      */
@@ -92,6 +98,12 @@ class Promidata_Service_DTO_IndentInformationItem
      * @access public
      */
     public $DepositManualUnblocked = null;
+
+    /**
+     * @var Promidata_Service_DTO_ComplexAddress $DispatchAddress
+     * @access public
+     */
+    public $DispatchAddress = null;
 
     /**
      * @var string $DispatchType
@@ -178,6 +190,12 @@ class Promidata_Service_DTO_IndentInformationItem
     public $IndentUserEventName = null;
 
     /**
+     * @var Promidata_Service_DTO_ComplexAddress $InvoiceAddress
+     * @access public
+     */
+    public $InvoiceAddress = null;
+
+    /**
      * @var boolean $IsClosed
      * @access public
      */
@@ -194,6 +212,12 @@ class Promidata_Service_DTO_IndentInformationItem
      * @access public
      */
     public $LinkList = null;
+
+    /**
+     * @var Promidata_Service_DTO_ComplexAddress $PostAddress
+     * @access public
+     */
+    public $PostAddress = null;
 
     /**
      * @var string $PostAdressMail
@@ -247,6 +271,7 @@ class Promidata_Service_DTO_IndentInformationItem
      * @param float $BuyingPrice
      * @param float $CalculatedSellingPrice
      * @param dateTime $DateInsert
+     * @param int $DebitorNumber
      * @param boolean $DepositManualUnblocked
      * @param int $IndentNumber
      * @param boolean $IsClosed
@@ -255,11 +280,12 @@ class Promidata_Service_DTO_IndentInformationItem
      * @param dateTime $UpdateTime
      * @access public
      */
-    public function __construct($BuyingPrice, $CalculatedSellingPrice, $DateInsert, $DepositManualUnblocked, $IndentNumber, $IsClosed, $SellingPrice, $SollEndDatum, $UpdateTime)
+    public function __construct($BuyingPrice, $CalculatedSellingPrice, $DateInsert, $DebitorNumber, $DepositManualUnblocked, $IndentNumber, $IsClosed, $SellingPrice, $SollEndDatum, $UpdateTime)
     {
         $this->BuyingPrice = $BuyingPrice;
         $this->CalculatedSellingPrice = $CalculatedSellingPrice;
         $this->DateInsert = $DateInsert;
+        $this->DebitorNumber = $DebitorNumber;
         $this->DepositManualUnblocked = $DepositManualUnblocked;
         $this->IndentNumber = $IndentNumber;
         $this->IsClosed = $IsClosed;

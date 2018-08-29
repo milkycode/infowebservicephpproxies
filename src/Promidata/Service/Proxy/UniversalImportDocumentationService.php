@@ -78,11 +78,23 @@ class Promidata_Service_Proxy_UniversalImportDocumentationService extends Promid
 		$this->__setLocation($basic_endpoint);
     }
 
+    /**
+     * @param Promidata_Service_Request_GetImporter $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetImporter
+     * @throws Exception
+     */
     public function GetImporter(Promidata_Service_Request_GetImporter $parameters)
     {
         return $this->__soapCall('GetImporter', array($parameters));
     }
 
+    /**
+     * @param Promidata_Service_Request_GetImporterDetail $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetImporterDetail
+     * @throws Exception
+     */
     public function GetImporterDetail(Promidata_Service_Request_GetImporterDetail $parameters)
     {
         return $this->__soapCall('GetImporterDetail', array($parameters));

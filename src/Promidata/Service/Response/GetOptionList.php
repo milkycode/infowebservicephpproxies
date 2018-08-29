@@ -10,13 +10,13 @@
 class Promidata_Service_Response_GetOptionList
 {
     /**
-     * @var Promidata_Service_DTO_OptionItem[] $GetOptionListResult
+     * @var Promidata_Service_DTO_GetOptionListResult[] $GetOptionListResult
      * @access public
      */
     public $GetOptionListResult = null;
 
     /**
-     * @param Promidata_Service_DTO_OptionItem[] $GetOptionListResult
+     * @param Promidata_Service_DTO_GetOptionListResult[] $GetOptionListResult
      * @access public
      */
     public function __construct($GetOptionListResult)
