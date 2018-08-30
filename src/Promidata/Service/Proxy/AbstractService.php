@@ -34,7 +34,7 @@ abstract class Promidata_Service_Proxy_AbstractService extends SoapClient
      * @throws Promidata_Service_Exception_Importsourcenotfound
      * @throws Promidata_Service_Exception_Unknown
      */
-    public function __soapCall($function_name, array $arguments, array $options = null, $input_headers = null, array &$output_headers = null)
+    public function __soapCall($function_name, $arguments, $options = null, $input_headers = null, &$output_headers = null)
     {
         try {
             return parent::__soapCall($function_name, $arguments, $options, $input_headers, $output_headers);
