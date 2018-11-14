@@ -42,7 +42,11 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'GetPossibleAutomaticConditionListResult' => 'Promidata_Service_DTO_GetPossibleAutomaticConditionListResult',
         'GetProductConfigurationParameter' => 'Promidata_Service_DTO_GetProductConfigurationParameter',
         'GetTenderInformationParameter' => 'Promidata_Service_DTO_GetTenderInformationParameter',
+        'GetWebServiceCreationRequestParameter' => 'Promidata_Service_DTO_GetWebServiceCreationRequestParameter',
+        'GetWebServiceCreationRequestResult' => 'Promidata_Service_DTO_GetWebServiceCreationRequestResult',
         'ImportInformation' => 'Promidata_Service_DTO_ImportInformation',
+        'ImportWebServiceCreationRequestParameter' => 'Promidata_Service_DTO_ImportWebServiceCreationRequestParameter',
+        'ImportWebServiceCreationRequestResult' => 'Promidata_Service_DTO_ImportWebServiceCreationRequestResult',
         'IndentInformationBettermentItem' => 'Promidata_Service_DTO_IndentInformationBettermentItem',
         'IndentInformationEventItem' => 'Promidata_Service_DTO_IndentInformationEventItem',
         'IndentInformationItem' => 'Promidata_Service_DTO_IndentInformationItem',
@@ -134,6 +138,8 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'GetSupplierInformationList' => 'Promidata_Service_Request_GetSupplierInformationList',
         'GetTenderInformation' => 'Promidata_Service_Request_GetTenderInformation',
         'GetUserInformation' => 'Promidata_Service_Request_GetUserInformation',
+        'GetWebServiceCreationRequest' => 'Promidata_Service_Request_GetWebServiceCreation',
+        'ImportWebServiceCreationRequest' => 'Promidata_Service_Request_ImportWebServiceCreation',
         'Logon' => 'Promidata_Service_Request_Logon',
         'SearchCustomer' => 'Promidata_Service_Request_SearchCustomer',
         'SearchIndent' => 'Promidata_Service_Request_SearchIndent',
@@ -172,6 +178,8 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'GetSupplierInformationListResponse' => 'Promidata_Service_Response_GetSupplierInformationList',
         'GetTenderInformationResponse' => 'Promidata_Service_Response_GetTenderInformation',
         'GetUserInformationResponse' => 'Promidata_Service_Response_GetUserInformation',
+        'GetWebServiceCreationRequestResponse' => 'Promidata_Service_Response_GetWebServiceCreationRequest',
+        'ImportWebServiceCreationRequestResponse' => 'Promidata_Service_Response_ImportWebServiceCreationRequest',
         'LogonResponse' => 'Promidata_Service_Response_Logon',
         'SearchCustomerResponse' => 'Promidata_Service_Response_SearchCustomer',
         'SearchIndentResponse' => 'Promidata_Service_Response_SearchIndent',
@@ -619,5 +627,27 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
     public function GetCurrentStockAmounts(Promidata_Service_Request_GetCurrentStockAmounts $parameters)
     {
         return $this->__soapCall('GetCurrentStockAmounts', array($parameters));
+    }
+
+    /**
+     * @param Promidata_Service_Request_ImportWebServiceCreation $parameters
+     * @access public
+     * @return Promidata_Service_Response_ImportWebServiceCreationRequest
+     * @throws Promidata_Service_Exception
+     */
+    public function ImportWebServiceCreationRequest(Promidata_Service_Request_ImportWebServiceCreation $parameters)
+    {
+        return $this->__soapCall('ImportWebServiceCreationRequest', array($parameters));
+    }
+
+    /**
+     * @param Promidata_Service_Request_GetWebServiceCreation $parameters
+     * @access public
+     * @return Promidata_Service_Response_GetWebServiceCreationRequest
+     * @throws Promidata_Service_Exception
+     */
+    public function GetWebServiceCreationRequest(Promidata_Service_Request_GetWebServiceCreation $parameters)
+    {
+        return $this->__soapCall('GetWebServiceCreationRequest', array($parameters));
     }
 }

@@ -82,6 +82,156 @@ class IndentInformationPositionItem
     public $IndentInlineCostInformations = null;
 
     /**
+     * @var string $IndentStateOverviewCustomerDefinedField1
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField1 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField10
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField10 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField11
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField11 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField12
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField12 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField13
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField13 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField14
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField14 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField15
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField15 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField16
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField16 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField17
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField17 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField18
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField18 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField19
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField19 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField2
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField2 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField20
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField20 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField21
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField21 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField22
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField22 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField23
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField23 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField24
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField24 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField25
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField25 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField3
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField3 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField4
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField4 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField5
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField5 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField6
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField6 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField7
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField7 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField8
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField8 = null;
+
+    /**
+     * @var string $IndentStateOverviewCustomerDefinedField9
+     * @access public
+     */
+    public $IndentStateOverviewCustomerDefinedField9 = null;
+
+    /**
      * @var dateTime $LatestDeliveryDate
      * @access public
      */

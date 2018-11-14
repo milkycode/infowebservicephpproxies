@@ -47,10 +47,10 @@ class Promidata_Service_DTO_GetPossibleAutomaticConditionListResult
      * @access public
      */
     public function __construct(
-        $CalculatedNumberOfPackages,
-        $CalculatedTotalVolume,
-        $CalculatedTotalWeight,
-        $SaleTaxIsCalculated
+        $CalculatedNumberOfPackages = null,
+        $CalculatedTotalVolume = null,
+        $CalculatedTotalWeight = null,
+        $SaleTaxIsCalculated = null
     )
     {
         $this->CalculatedNumberOfPackages = $CalculatedNumberOfPackages;

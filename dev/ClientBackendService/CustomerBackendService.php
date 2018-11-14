@@ -131,6 +131,14 @@ include_once('GetCurrentStockAmountsParameter.php');
 include_once('GetCurrentStockAmountsResponse.php');
 include_once('GetCurrentStockAmountsResult.php');
 include_once('StockAmountItem.php');
+include_once('ImportWebServiceCreationRequest.php');
+include_once('ImportWebServiceCreationRequestParameter.php');
+include_once('ImportWebServiceCreationRequestResponse.php');
+include_once('ImportWebServiceCreationRequestResult.php');
+include_once('GetWebServiceCreationRequest.php');
+include_once('GetWebServiceCreationRequestParameter.php');
+include_once('GetWebServiceCreationRequestResponse.php');
+include_once('GetWebServiceCreationRequestResult.php');
 include_once('ShowDescriptionItem.php');
 include_once('ImportInformation.php');
 include_once('ArticleTextItem.php');
@@ -281,19 +289,27 @@ class CustomerBackendService extends \SoapClient
       'TenderInformationBettermentItem' => '\TenderInformationBettermentItem',
       'GetSupplierInformation' => '\GetSupplierInformation',
       'SupplierIdentifier' => '\SupplierIdentifier',
-      'GetSupplierInformation' => '\GetSupplierInformation',
+      'GetSupplierInformationResponse' => '\GetSupplierInformationResponse',
       'SupplierInformation' => '\SupplierInformation',
       'GetSupplierInformationList' => '\GetSupplierInformationList',
-      'GetSupplierInformationList' => '\GetSupplierInformationList',
+      'GetSupplierInformationListResponse' => '\GetSupplierInformationListResponse',
       'SearchIndent' => '\SearchIndent',
       'SearchIndentParameter' => '\SearchIndentParameter',
-      'SearchIndent' => '\SearchIndent',
+      'SearchIndentResponse' => '\SearchIndentResponse',
       'IndentSearchResult' => '\IndentSearchResult',
       'GetCurrentStockAmounts' => '\GetCurrentStockAmounts',
       'GetCurrentStockAmountsParameter' => '\GetCurrentStockAmountsParameter',
       'GetCurrentStockAmountsResponse' => '\GetCurrentStockAmountsResponse',
       'GetCurrentStockAmountsResult' => '\GetCurrentStockAmountsResult',
       'StockAmountItem' => '\StockAmountItem',
+      'ImportWebServiceCreationRequest' => '\ImportWebServiceCreationRequest',
+      'ImportWebServiceCreationRequestParameter' => '\ImportWebServiceCreationRequestParameter',
+      'ImportWebServiceCreationRequest' => '\ImportWebServiceCreationRequest',
+      'ImportWebServiceCreationRequestResult' => '\ImportWebServiceCreationRequestResult',
+      'GetWebServiceCreationRequest' => '\GetWebServiceCreationRequest',
+      'GetWebServiceCreationRequestParameter' => '\GetWebServiceCreationRequestParameter',
+      'GetWebServiceCreationRequest' => '\GetWebServiceCreationRequest',
+      'GetWebServiceCreationRequestResult' => '\GetWebServiceCreationRequestResult',
       'ShowDescriptionItem' => '\ShowDescriptionItem',
       'ImportInformation' => '\ImportInformation',
       'ArticleTextItem' => '\ArticleTextItem',
@@ -317,7 +333,7 @@ class CustomerBackendService extends \SoapClient
      * @param string $wsdl The wsdl file to use
      * @access public
      */
-    public function __construct(array $options = array(), $wsdl = 'https://promotionaloffice.cloudapp.net/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
+    public function __construct(array $options = array(), $wsdl = 'https://po-test1.promidata.com/Promidata/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
     {
       foreach (self::$classmap as $key => $value) {
     if (!isset($options['classmap'][$key])) {
@@ -651,7 +667,7 @@ class CustomerBackendService extends \SoapClient
     /**
      * @param GetSupplierInformation $parameters
      * @access public
-     * @return GetSupplierInformation
+     * @return GetSupplierInformationResponse
      */
     public function GetSupplierInformation(GetSupplierInformation $parameters)
     {
@@ -661,7 +677,7 @@ class CustomerBackendService extends \SoapClient
     /**
      * @param GetSupplierInformationList $parameters
      * @access public
-     * @return GetSupplierInformationList
+     * @return GetSupplierInformationListResponse
      */
     public function GetSupplierInformationList(GetSupplierInformationList $parameters)
     {
@@ -671,7 +687,7 @@ class CustomerBackendService extends \SoapClient
     /**
      * @param SearchIndent $parameters
      * @access public
-     * @return SearchIndent
+     * @return SearchIndentResponse
      */
     public function SearchIndent(SearchIndent $parameters)
     {
@@ -686,6 +702,26 @@ class CustomerBackendService extends \SoapClient
     public function GetCurrentStockAmounts(GetCurrentStockAmounts $parameters)
     {
       return $this->__soapCall('GetCurrentStockAmounts', array($parameters));
+    }
+
+    /**
+     * @param ImportWebServiceCreationRequest $parameters
+     * @access public
+     * @return ImportWebServiceCreationRequest
+     */
+    public function ImportWebServiceCreationRequest(ImportWebServiceCreationRequest $parameters)
+    {
+      return $this->__soapCall('ImportWebServiceCreationRequest', array($parameters));
+    }
+
+    /**
+     * @param GetWebServiceCreationRequest $parameters
+     * @access public
+     * @return GetWebServiceCreationRequest
+     */
+    public function GetWebServiceCreationRequest(GetWebServiceCreationRequest $parameters)
+    {
+      return $this->__soapCall('GetWebServiceCreationRequest', array($parameters));
     }
 
 }

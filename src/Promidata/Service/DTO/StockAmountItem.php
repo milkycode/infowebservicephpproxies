@@ -75,7 +75,7 @@ class Promidata_Service_DTO_StockAmountItem
      * @param guid $VariationIdentifier
      * @access public
      */
-    public function __construct($HasBetterment, $ProductIdentifier, $StockAmountTotalAmount, $VariationIdentifier)
+    public function __construct($HasBetterment = null, $ProductIdentifier = null, $StockAmountTotalAmount = null, $VariationIdentifier = null)
     {
         $this->HasBetterment = $HasBetterment;
         $this->ProductIdentifier = $ProductIdentifier;

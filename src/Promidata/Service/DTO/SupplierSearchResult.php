@@ -39,7 +39,7 @@ class Promidata_Service_DTO_SupplierSearchResult
      * @param guid $SupplierIdentifier
      * @access public
      */
-    public function __construct($CreditorNumber, $IsActive, $SupplierIdentifier)
+    public function __construct($CreditorNumber = null, $IsActive = null, $SupplierIdentifier = null)
     {
         $this->CreditorNumber = $CreditorNumber;
         $this->IsActive = $IsActive;

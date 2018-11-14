@@ -24,7 +24,7 @@ class Promidata_Service_DTO_GetOptionListResult
      * @param int $TotalOptionCount
      * @access public
      */
-    public function __construct($TotalOptionCount)
+    public function __construct($TotalOptionCount = null)
     {
         $this->TotalOptionCount = $TotalOptionCount;
     }

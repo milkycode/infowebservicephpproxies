@@ -6,20 +6,20 @@
  * @package     Promidata_Service
  * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
-class Promidata_Service_DTO_GetTenderInformationParameter
+class Promidata_Service_Request_GetWebServiceCreation
 {
     /**
-     * @var string $TenderNumberFull
+     * @var Promidata_Service_DTO_GetWebServiceCreationRequestParameter $parameter
      * @access public
      */
-    public $TenderNumberFull = null;
+    public $parameter = null;
 
     /**
-     * @var string $TenderNumberFull
+     * @param Promidata_Service_DTO_GetWebServiceCreationRequestParameter $parameter
      * @access public
      */
-    public function __construct($TenderNumberFull = null)
+    public function __construct($parameter = null)
     {
-        $this->TenderNumberFull = $TenderNumberFull;
+        $this->parameter = $parameter;
     }
 }
