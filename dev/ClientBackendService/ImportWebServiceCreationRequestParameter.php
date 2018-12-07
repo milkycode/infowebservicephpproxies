@@ -10,6 +10,12 @@ class ImportWebServiceCreationRequestParameter
     public $JsonContent = null;
 
     /**
+     * @var string $RequestType
+     * @access public
+     */
+    public $RequestType = null;
+
+    /**
      * @var string $SourceName
      * @access public
      */

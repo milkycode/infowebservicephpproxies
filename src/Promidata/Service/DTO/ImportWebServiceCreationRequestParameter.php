@@ -15,19 +15,27 @@ class Promidata_Service_DTO_ImportWebServiceCreationRequestParameter
     public $JsonContent = null;
 
     /**
+     * @var string $RequestType
+     * @access public
+     */
+    public $RequestType = null;
+
+    /**
      * @var string $SourceName
      * @access public
      */
     public $SourceName = null;
 
     /**
-     * @var string $SourceName
-     * @var string $JsonContent
+     * @var string $JsonContent Your JSON data.
+     * @var string $SourceName Custom description only for your reference.
+     * @var string $RequestType Indent or Tender.
      * @access public
      */
-    public function __construct($SourceName = null, $JsonContent = null)
+    public function __construct($JsonContent = null, $SourceName = null, $RequestType = 'Indent')
     {
         $this->SourceName = $SourceName;
         $this->JsonContent = $JsonContent;
+        $this->RequestType = $RequestType;
     }
 }

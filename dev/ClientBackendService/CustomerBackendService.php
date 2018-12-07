@@ -304,11 +304,11 @@ class CustomerBackendService extends \SoapClient
       'StockAmountItem' => '\StockAmountItem',
       'ImportWebServiceCreationRequest' => '\ImportWebServiceCreationRequest',
       'ImportWebServiceCreationRequestParameter' => '\ImportWebServiceCreationRequestParameter',
-      'ImportWebServiceCreationRequest' => '\ImportWebServiceCreationRequest',
+      'ImportWebServiceCreationRequestResponse' => '\ImportWebServiceCreationRequestResponse',
       'ImportWebServiceCreationRequestResult' => '\ImportWebServiceCreationRequestResult',
       'GetWebServiceCreationRequest' => '\GetWebServiceCreationRequest',
       'GetWebServiceCreationRequestParameter' => '\GetWebServiceCreationRequestParameter',
-      'GetWebServiceCreationRequest' => '\GetWebServiceCreationRequest',
+      'GetWebServiceCreationRequestResponse' => '\GetWebServiceCreationRequestResponse',
       'GetWebServiceCreationRequestResult' => '\GetWebServiceCreationRequestResult',
       'ShowDescriptionItem' => '\ShowDescriptionItem',
       'ImportInformation' => '\ImportInformation',
@@ -340,7 +340,7 @@ class CustomerBackendService extends \SoapClient
       $options['classmap'][$key] = $value;
     }
   }
-
+  
   parent::__construct($wsdl, $options);
     }
 
@@ -707,7 +707,7 @@ class CustomerBackendService extends \SoapClient
     /**
      * @param ImportWebServiceCreationRequest $parameters
      * @access public
-     * @return ImportWebServiceCreationRequest
+     * @return ImportWebServiceCreationRequestResponse
      */
     public function ImportWebServiceCreationRequest(ImportWebServiceCreationRequest $parameters)
     {
@@ -717,7 +717,7 @@ class CustomerBackendService extends \SoapClient
     /**
      * @param GetWebServiceCreationRequest $parameters
      * @access public
-     * @return GetWebServiceCreationRequest
+     * @return GetWebServiceCreationRequestResponse
      */
     public function GetWebServiceCreationRequest(GetWebServiceCreationRequest $parameters)
     {

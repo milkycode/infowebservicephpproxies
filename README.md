@@ -50,6 +50,8 @@ Or on Windows
 generate.bat
 ```
 
+You could also use the beta versions of the generate script to get the latest proxy versions for the upcoming PO release with ```generate_beta``` scripts.
+
 *Do not use absolute urls - url will be completed automatically*
 
 Example output of successful generation:

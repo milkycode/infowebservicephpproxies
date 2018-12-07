@@ -9,7 +9,7 @@ if [ -z "$1" ]; then
 else
     echo "CustomerImportService..."
     rm -rf ./CustomerImportService/
-    php wsdl2phpgenerator-2.5.5.phar -i http://$1/Promidata/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?wsdl -o ./CustomerImportService/
+    php wsdl2phpgenerator-2.5.5.phar -i https://$1/Promidata/PromotionalOffice/Services/UniversalImporter/CustomerImportService.svc?wsdl -o ./CustomerImportService/
 
     echo "ClientBackendService..."
     rm -rf ./ClientBackendService/

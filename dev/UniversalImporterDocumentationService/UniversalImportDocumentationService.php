@@ -31,14 +31,14 @@ class UniversalImportDocumentationService extends \SoapClient
      * @param string $wsdl The wsdl file to use
      * @access public
      */
-    public function __construct(array $options = array(), $wsdl = 'http://promotionaloffice.cloudapp.net/PromotionalOffice/Services/UniversalImporter/UniversalImporterDocumentationService.svc?wsdl')
+    public function __construct(array $options = array(), $wsdl = 'http://po-test1.promidata.com/Promidata/PromotionalOffice/Services/UniversalImporter/UniversalImporterDocumentationService.svc?singleWsdl')
     {
       foreach (self::$classmap as $key => $value) {
     if (!isset($options['classmap'][$key])) {
       $options['classmap'][$key] = $value;
     }
   }
-
+  
   parent::__construct($wsdl, $options);
     }
 
