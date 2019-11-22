@@ -33,6 +33,12 @@ class Promidata_Service_DTO_IndentSearchResult
     public $IndentDeliveredState = null;
 
     /**
+     * @var Promidata_Service_Enum_IndentState $IndentDeliverableState
+     * @access public
+     */
+    public $IndentDeliverableState = null;
+
+    /**
      * @var int $IndentNumber
      * @access public
      */
@@ -71,6 +77,7 @@ class Promidata_Service_DTO_IndentSearchResult
     /**
      * @param Promidata_Service_Enum_IndentState $IndentCalculatedState
      * @param Promidata_Service_Enum_IndentState $IndentDelivarableState
+     * @param Promidata_Service_Enum_IndentState $IndentDeliverableState
      * @param Promidata_Service_Enum_IndentState $IndentDeliveredState
      * @param int $IndentNumber
      * @param Promidata_Service_Enum_IndentState $IndentOrderedState
@@ -78,10 +85,11 @@ class Promidata_Service_DTO_IndentSearchResult
      * @param boolean $IsClosed
      * @access public
      */
-    public function __construct($IndentCalculatedState, $IndentDelivarableState, $IndentDeliveredState, $IndentNumber, $IndentOrderedState, $IndentPrintedState, $IsClosed)
+    public function __construct($IndentCalculatedState, $IndentDelivarableState, $IndentDeliverableState, $IndentDeliveredState, $IndentNumber, $IndentOrderedState, $IndentPrintedState, $IsClosed)
     {
         $this->IndentCalculatedState = $IndentCalculatedState;
         $this->IndentDelivarableState = $IndentDelivarableState;
+        $this->IndentDeliverableState = $IndentDeliverableState;
         $this->IndentDeliveredState = $IndentDeliveredState;
         $this->IndentNumber = $IndentNumber;
         $this->IndentOrderedState = $IndentOrderedState;

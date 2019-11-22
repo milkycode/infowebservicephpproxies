@@ -33,6 +33,24 @@ class Promidata_Service_DTO_InlineCostInformationIem
     public $ArticleTextIntern = null;
 
     /**
+     * @var float $BuyingPriceBaseQuantity
+     * @access public
+     */
+    public $BuyingPriceBaseQuantity = null;
+
+    /**
+     * @var string $BuyingPriceBaseQuantityUnit
+     * @access public
+     */
+    public $BuyingPriceBaseQuantityUnit = null;
+
+    /**
+     * @var float $BuyingPricePosition
+     * @access public
+     */
+    public $BuyingPricePosition = null;
+
+    /**
      * @var string $IndentConfirmationText
      * @access public
      */
@@ -81,11 +99,37 @@ class Promidata_Service_DTO_InlineCostInformationIem
     public $QuantityUnit = null;
 
     /**
-     * @param float $QuantityAmount
+     * @var float $SellingPriceBaseQuantity
      * @access public
      */
-    public function __construct($QuantityAmount)
+    public $SellingPriceBaseQuantity = null;
+
+    /**
+     * @var string $SellingPriceBaseQuantityUnit
+     * @access public
+     */
+    public $SellingPriceBaseQuantityUnit = null;
+
+    /**
+     * @var float $SellingPricePosition
+     * @access public
+     */
+    public $SellingPricePosition = null;
+
+    /**
+     * @param float $BuyingPriceBaseQuantity
+     * @param float $BuyingPricePosition
+     * @param float $QuantityAmount
+     * @param float $SellingPriceBaseQuantity
+     * @param float $SellingPricePosition
+     * @access public
+     */
+    public function __construct($BuyingPriceBaseQuantity, $BuyingPricePosition, $QuantityAmount, $SellingPriceBaseQuantity, $SellingPricePosition)
     {
+        $this->BuyingPriceBaseQuantity = $BuyingPriceBaseQuantity;
+        $this->BuyingPricePosition = $BuyingPricePosition;
         $this->QuantityAmount = $QuantityAmount;
+        $this->SellingPriceBaseQuantity = $SellingPriceBaseQuantity;
+        $this->SellingPricePosition = $SellingPricePosition;
     }
 }

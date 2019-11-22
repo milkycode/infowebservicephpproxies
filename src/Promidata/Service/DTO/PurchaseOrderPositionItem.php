@@ -94,6 +94,12 @@ class Promidata_Service_DTO_PurchaseOrderPositionItem
     public $PurchaseOrderBetterments = null;
 
     /**
+     * @var Promidata_Service_DTO_PurchaseOrderPositionReason[] $PurchaseOrderPositionReasons
+     * @access public
+     */
+    public $PurchaseOrderPositionReasons = null;
+
+    /**
      * @var string $SizeName
      * @access public
      */

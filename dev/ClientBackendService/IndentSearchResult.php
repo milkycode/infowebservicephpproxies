@@ -22,6 +22,12 @@ class IndentSearchResult
     public $IndentDelivarableState = null;
 
     /**
+     * @var IndentStateEnum $IndentDeliverableState
+     * @access public
+     */
+    public $IndentDeliverableState = null;
+
+    /**
      * @var IndentStateEnum $IndentDeliveredState
      * @access public
      */
@@ -66,6 +72,7 @@ class IndentSearchResult
     /**
      * @param IndentStateEnum $IndentCalculatedState
      * @param IndentStateEnum $IndentDelivarableState
+     * @param IndentStateEnum $IndentDeliverableState
      * @param IndentStateEnum $IndentDeliveredState
      * @param int $IndentNumber
      * @param IndentStateEnum $IndentOrderedState
@@ -73,10 +80,11 @@ class IndentSearchResult
      * @param boolean $IsClosed
      * @access public
      */
-    public function __construct($IndentCalculatedState, $IndentDelivarableState, $IndentDeliveredState, $IndentNumber, $IndentOrderedState, $IndentPrintedState, $IsClosed)
+    public function __construct($IndentCalculatedState, $IndentDelivarableState, $IndentDeliverableState, $IndentDeliveredState, $IndentNumber, $IndentOrderedState, $IndentPrintedState, $IsClosed)
     {
       $this->IndentCalculatedState = $IndentCalculatedState;
       $this->IndentDelivarableState = $IndentDelivarableState;
+      $this->IndentDeliverableState = $IndentDeliverableState;
       $this->IndentDeliveredState = $IndentDeliveredState;
       $this->IndentNumber = $IndentNumber;
       $this->IndentOrderedState = $IndentOrderedState;

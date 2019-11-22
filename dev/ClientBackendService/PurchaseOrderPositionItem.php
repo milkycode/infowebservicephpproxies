@@ -88,6 +88,12 @@ class PurchaseOrderPositionItem
     public $PurchaseOrderBetterments = null;
 
     /**
+     * @var PurchaseOrderPositionReason[] $PurchaseOrderPositionReasons
+     * @access public
+     */
+    public $PurchaseOrderPositionReasons = null;
+
+    /**
      * @var string $SizeName
      * @access public
      */

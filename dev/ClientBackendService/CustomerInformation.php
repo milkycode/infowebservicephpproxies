@@ -4,6 +4,12 @@ class CustomerInformation
 {
 
     /**
+     * @var SimpleAddress[] $Addresses
+     * @access public
+     */
+    public $Addresses = null;
+
+    /**
      * @var SimpleAddress[] $Adresses
      * @access public
      */

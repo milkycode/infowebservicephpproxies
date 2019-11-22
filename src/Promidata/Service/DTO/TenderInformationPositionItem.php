@@ -33,6 +33,24 @@ class Promidata_Service_DTO_TenderInformationPositionItem
     public $ArticleTextIntern = null;
 
     /**
+     * @var float $BuyingPriceBaseQuantity
+     * @access public
+     */
+    public $BuyingPriceBaseQuantity = null;
+
+    /**
+     * @var string $BuyingPriceBaseQuantityUnit
+     * @access public
+     */
+    public $BuyingPriceBaseQuantityUnit = null;
+
+    /**
+     * @var float $BuyingPricePosition
+     * @access public
+     */
+    public $BuyingPricePosition = null;
+
+    /**
      * @var string $ColorName
      * @access public
      */
@@ -99,6 +117,24 @@ class Promidata_Service_DTO_TenderInformationPositionItem
     public $QuantityUnit = null;
 
     /**
+     * @var float $SellingPriceBaseQuantity
+     * @access public
+     */
+    public $SellingPriceBaseQuantity = null;
+
+    /**
+     * @var string $SellingPriceBaseQuantityUnit
+     * @access public
+     */
+    public $SellingPriceBaseQuantityUnit = null;
+
+    /**
+     * @var float $SellingPricePosition
+     * @access public
+     */
+    public $SellingPricePosition = null;
+
+    /**
      * @var string $SizeName
      * @access public
      */
@@ -129,17 +165,25 @@ class Promidata_Service_DTO_TenderInformationPositionItem
     public $TenderInlineCostInformations = null;
 
     /**
+     * @param float $BuyingPriceBaseQuantity
+     * @param float $BuyingPricePosition
      * @param boolean $DirectDispatch
      * @param dateTime $EarlyDeliveryDate
      * @param dateTime $LatestDeliveryDate
      * @param float $QuantityAmount
+     * @param float $SellingPriceBaseQuantity
+     * @param float $SellingPricePosition
      * @access public
      */
-    public function __construct($DirectDispatch, $EarlyDeliveryDate, $LatestDeliveryDate, $QuantityAmount)
+    public function __construct($BuyingPriceBaseQuantity, $BuyingPricePosition, $DirectDispatch, $EarlyDeliveryDate, $LatestDeliveryDate, $QuantityAmount, $SellingPriceBaseQuantity, $SellingPricePosition)
     {
+        $this->BuyingPriceBaseQuantity = $BuyingPriceBaseQuantity;
+        $this->BuyingPricePosition = $BuyingPricePosition;
         $this->DirectDispatch = $DirectDispatch;
         $this->EarlyDeliveryDate = $EarlyDeliveryDate;
         $this->LatestDeliveryDate = $LatestDeliveryDate;
         $this->QuantityAmount = $QuantityAmount;
+        $this->SellingPriceBaseQuantity = $SellingPriceBaseQuantity;
+        $this->SellingPricePosition = $SellingPricePosition;
     }
 }

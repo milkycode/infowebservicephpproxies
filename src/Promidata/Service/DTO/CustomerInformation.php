@@ -10,6 +10,12 @@
 class Promidata_Service_DTO_CustomerInformation
 {
     /**
+     * @var Promidata_Service_DTO_SimpleAddress[] $Addresses
+     * @access public
+     */
+    public $Addresses = null;
+
+    /**
      * @var Promidata_Service_DTO_SimpleAddress[] $Adresses
      * @access public
      */

@@ -1,7 +1,8 @@
 <?php
 /**
  * PromotionalOffice Service - Autoloader used for non-Zend environments.
- * @author Christian Hinz <christian@milkycode.com>
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
 function psr0_autoloader($className)
 {

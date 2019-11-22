@@ -147,6 +147,12 @@ class Promidata_Service_DTO_TenderInformationItem
     public $SollEndDatum = null;
 
     /**
+     * @var string $TenderAdministrativeUserFullName
+     * @access public
+     */
+    public $TenderAdministrativeUserFullName = null;
+
+    /**
      * @var string $TenderCategories
      * @access public
      */

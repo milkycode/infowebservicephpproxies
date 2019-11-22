@@ -64,6 +64,12 @@ class Promidata_Service_DTO_IndentInformationItem
     public $CreatorFullName = null;
 
     /**
+     * @var string $CustomerAdministrativeUserFullName
+     * @access public
+     */
+    public $CustomerAdministrativeUserFullName = null;
+
+    /**
      * @var string $CustomerText
      * @access public
      */
@@ -112,6 +118,18 @@ class Promidata_Service_DTO_IndentInformationItem
     public $DispatchType = null;
 
     /**
+     * @var string $FirstCreatorFullName
+     * @access public
+     */
+    public $FirstCreatorFullName = null;
+
+    /**
+     * @var string $IndentAdministrativeUserFullName
+     * @access public
+     */
+    public $IndentAdministrativeUserFullName = null;
+
+    /**
      * @var string $IndentCalculatedPositionStateName
      * @access public
      */
@@ -124,16 +142,40 @@ class Promidata_Service_DTO_IndentInformationItem
     public $IndentCategories = null;
 
     /**
+     * @var string $IndentCategory
+     * @access public
+     */
+    public $IndentCategory = null;
+
+    /**
      * @var string $IndentDeliveredPositionStateName
      * @access public
      */
     public $IndentDeliveredPositionStateName = null;
 
     /**
+     * @var string $IndentDeliveredStateName
+     * @access public
+     */
+    public $IndentDeliveredStateName = null;
+
+    /**
      * @var string $IndentDeliveryPositionStateName
      * @access public
      */
     public $IndentDeliveryPositionStateName = null;
+
+    /**
+     * @var string $IndentDeliveryStateName
+     * @access public
+     */
+    public $IndentDeliveryStateName = null;
+
+    /**
+     * @var string $IndentGeneralStateName
+     * @access public
+     */
+    public $IndentGeneralStateName = null;
 
     /**
      * @var string $IndentGeneralStatusName
@@ -152,6 +194,12 @@ class Promidata_Service_DTO_IndentInformationItem
      * @access public
      */
     public $IndentInformationPositions = null;
+
+    /**
+     * @var string $IndentInvoicedStateName
+     * @access public
+     */
+    public $IndentInvoicedStateName = null;
 
     /**
      * @var int $IndentNumber
@@ -184,10 +232,22 @@ class Promidata_Service_DTO_IndentInformationItem
     public $IndentOrderPositionStateName = null;
 
     /**
+     * @var string $IndentOrderStateName
+     * @access public
+     */
+    public $IndentOrderStateName = null;
+
+    /**
      * @var string $IndentUserEventName
      * @access public
      */
     public $IndentUserEventName = null;
+
+    /**
+     * @var dateTime $IndentUserEventTargetDate
+     * @access public
+     */
+    public $IndentUserEventTargetDate = null;
 
     /**
      * @var Promidata_Service_DTO_ComplexAddress $InvoiceAddress

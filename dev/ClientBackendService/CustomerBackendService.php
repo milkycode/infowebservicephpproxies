@@ -91,6 +91,7 @@ include_once('GetPurchaseOrderInformationResponse.php');
 include_once('PurchaseOrderInformation.php');
 include_once('PurchaseOrderPositionItem.php');
 include_once('PurchaseOrderBettermentItem.php');
+include_once('PurchaseOrderPositionReason.php');
 include_once('ChangePurchaseOrderAction.php');
 include_once('ChangePurchaseOrderActionParameter.php');
 include_once('ChangePurchaseOrderActionResponse.php');
@@ -262,6 +263,7 @@ class CustomerBackendService extends \SoapClient
       'PurchaseOrderInformation' => '\PurchaseOrderInformation',
       'PurchaseOrderPositionItem' => '\PurchaseOrderPositionItem',
       'PurchaseOrderBettermentItem' => '\PurchaseOrderBettermentItem',
+      'PurchaseOrderPositionReason' => '\PurchaseOrderPositionReason',
       'ChangePurchaseOrderAction' => '\ChangePurchaseOrderAction',
       'ChangePurchaseOrderActionParameter' => '\ChangePurchaseOrderActionParameter',
       'ChangePurchaseOrderActionResponse' => '\ChangePurchaseOrderActionResponse',
@@ -333,7 +335,7 @@ class CustomerBackendService extends \SoapClient
      * @param string $wsdl The wsdl file to use
      * @access public
      */
-    public function __construct(array $options = array(), $wsdl = 'https://po-test1.promidata.com/Promidata/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
+    public function __construct(array $options = array(), $wsdl = 'https://datacenter1-webservice.promidata.com/PromotionalOffice/Services/Info/ClientBackendService.svc?wsdl')
     {
       foreach (self::$classmap as $key => $value) {
     if (!isset($options['classmap'][$key])) {

@@ -28,6 +28,24 @@ class IndentInformationPositionItem
     public $ArticleTextIntern = null;
 
     /**
+     * @var float $BuyingPriceBaseQuantity
+     * @access public
+     */
+    public $BuyingPriceBaseQuantity = null;
+
+    /**
+     * @var string $BuyingPriceBaseQuantityUnit
+     * @access public
+     */
+    public $BuyingPriceBaseQuantityUnit = null;
+
+    /**
+     * @var float $BuyingPricePosition
+     * @access public
+     */
+    public $BuyingPricePosition = null;
+
+    /**
      * @var string $CalculatedPositionStateName
      * @access public
      */
@@ -80,6 +98,12 @@ class IndentInformationPositionItem
      * @access public
      */
     public $IndentInlineCostInformations = null;
+
+    /**
+     * @var guid $IndentPositionIdentifier
+     * @access public
+     */
+    public $IndentPositionIdentifier = null;
 
     /**
      * @var string $IndentStateOverviewCustomerDefinedField1
@@ -298,6 +322,24 @@ class IndentInformationPositionItem
     public $QuantityUnit = null;
 
     /**
+     * @var float $SellingPriceBaseQuantity
+     * @access public
+     */
+    public $SellingPriceBaseQuantity = null;
+
+    /**
+     * @var string $SellingPriceBaseQuantityUnit
+     * @access public
+     */
+    public $SellingPriceBaseQuantityUnit = null;
+
+    /**
+     * @var float $SellingPricePosition
+     * @access public
+     */
+    public $SellingPricePosition = null;
+
+    /**
      * @var string $SizeName
      * @access public
      */
@@ -310,20 +352,36 @@ class IndentInformationPositionItem
     public $SupplierName = null;
 
     /**
+     * @var string $SupplierNameAffex
+     * @access public
+     */
+    public $SupplierNameAffex = null;
+
+    /**
+     * @param float $BuyingPriceBaseQuantity
+     * @param float $BuyingPricePosition
      * @param boolean $DirectDispatch
      * @param dateTime $EarlyDeliveryDate
+     * @param guid $IndentPositionIdentifier
      * @param dateTime $LatestDeliveryDate
      * @param float $QuantityAmount
      * @param float $QuantityCorrectedAmount
+     * @param float $SellingPriceBaseQuantity
+     * @param float $SellingPricePosition
      * @access public
      */
-    public function __construct($DirectDispatch, $EarlyDeliveryDate, $LatestDeliveryDate, $QuantityAmount, $QuantityCorrectedAmount)
+    public function __construct($BuyingPriceBaseQuantity, $BuyingPricePosition, $DirectDispatch, $EarlyDeliveryDate, $IndentPositionIdentifier, $LatestDeliveryDate, $QuantityAmount, $QuantityCorrectedAmount, $SellingPriceBaseQuantity, $SellingPricePosition)
     {
+      $this->BuyingPriceBaseQuantity = $BuyingPriceBaseQuantity;
+      $this->BuyingPricePosition = $BuyingPricePosition;
       $this->DirectDispatch = $DirectDispatch;
       $this->EarlyDeliveryDate = $EarlyDeliveryDate;
+      $this->IndentPositionIdentifier = $IndentPositionIdentifier;
       $this->LatestDeliveryDate = $LatestDeliveryDate;
       $this->QuantityAmount = $QuantityAmount;
       $this->QuantityCorrectedAmount = $QuantityCorrectedAmount;
+      $this->SellingPriceBaseQuantity = $SellingPriceBaseQuantity;
+      $this->SellingPricePosition = $SellingPricePosition;
     }
 
 }

@@ -71,6 +71,7 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
         'ProductSearchResult' => 'Promidata_Service_DTO_ProductSearchResult',
         'PurchaseOrderAction' => 'Promidata_Service_DTO_PurchaseOrderAction',
         'PurchaseOrderBettermentItem' => 'Promidata_Service_DTO_PurchaseOrderBettermentItem',
+        'PurchaseOrderPositionReason' => 'Promidata_Service_DTO_PurchaseOrderPositionReason',
         'PurchaseOrderIdentifier' => 'Promidata_Service_DTO_PurchaseOrderIdentifier',
         'PurchaseOrderInformation' => 'Promidata_Service_DTO_PurchaseOrderInformation',
         'PurchaseOrderPositionItem' => 'Promidata_Service_DTO_PurchaseOrderPositionItem',
@@ -194,6 +195,7 @@ class Promidata_Service_Proxy_CustomerBackendService extends Promidata_Service_P
      * @param string $wsdl The wsdl file to use
      * @param bool $debug Should we enable stack tracing?
      * @access public
+     * @throws Exception
      */
     public function __construct(
         $wsdl = 'https://promotionaloffice.cloudapp.net/PromotionalOffice/Services/Info/ClientBackendService.svc?singleWsdl',

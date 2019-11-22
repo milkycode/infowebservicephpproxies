@@ -34,6 +34,12 @@ class Promidata_Service_DTO_ComplexAddress
     public $CountryName = null;
 
     /**
+     * @var string $DeliveryNotice
+     * @access public
+     */
+    public $DeliveryNotice = null;
+
+    /**
      * @var string $FirstName
      * @access public
      */

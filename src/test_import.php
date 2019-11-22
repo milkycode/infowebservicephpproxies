@@ -1,7 +1,8 @@
 <?php
 /**
  * PromotionalOffice Service - Test Script.
- * @author Christian Hinz <christian@milkycode.com>
+ * @author      Christian Hinz <christian@milkycode.com>
+ * @copyright   Copyright (c) 2018 milkycode GmbH (https://www.milkycode.com)
  */
 
 error_reporting(E_ALL);

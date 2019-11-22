@@ -33,6 +33,24 @@ class Promidata_Service_DTO_TenderInformationBettermentItem
     public $ArticleTextIntern = null;
 
     /**
+     * @var float $BuyingPriceBaseQuantity
+     * @access public
+     */
+    public $BuyingPriceBaseQuantity = null;
+
+    /**
+     * @var string $BuyingPriceBaseQuantityUnit
+     * @access public
+     */
+    public $BuyingPriceBaseQuantityUnit = null;
+
+    /**
+     * @var float $BuyingPricePosition
+     * @access public
+     */
+    public $BuyingPricePosition = null;
+
+    /**
      * @var string $ColorName
      * @access public
      */
@@ -87,6 +105,24 @@ class Promidata_Service_DTO_TenderInformationBettermentItem
     public $QuantityUnit = null;
 
     /**
+     * @var float $SellingPriceBaseQuantity
+     * @access public
+     */
+    public $SellingPriceBaseQuantity = null;
+
+    /**
+     * @var string $SellingPriceBaseQuantityUnit
+     * @access public
+     */
+    public $SellingPriceBaseQuantityUnit = null;
+
+    /**
+     * @var float $SellingPricePosition
+     * @access public
+     */
+    public $SellingPricePosition = null;
+
+    /**
      * @var string $SizeName
      * @access public
      */
@@ -117,13 +153,21 @@ class Promidata_Service_DTO_TenderInformationBettermentItem
     public $TenderInlineCostInformations = null;
 
     /**
+     * @param float $BuyingPriceBaseQuantity
+     * @param float $BuyingPricePosition
      * @param boolean $DirectDispatch
      * @param float $QuantityAmount
+     * @param float $SellingPriceBaseQuantity
+     * @param float $SellingPricePosition
      * @access public
      */
-    public function __construct($DirectDispatch, $QuantityAmount)
+    public function __construct($BuyingPriceBaseQuantity, $BuyingPricePosition, $DirectDispatch, $QuantityAmount, $SellingPriceBaseQuantity, $SellingPricePosition)
     {
+        $this->BuyingPriceBaseQuantity = $BuyingPriceBaseQuantity;
+        $this->BuyingPricePosition = $BuyingPricePosition;
         $this->DirectDispatch = $DirectDispatch;
         $this->QuantityAmount = $QuantityAmount;
+        $this->SellingPriceBaseQuantity = $SellingPriceBaseQuantity;
+        $this->SellingPricePosition = $SellingPricePosition;
     }
 }

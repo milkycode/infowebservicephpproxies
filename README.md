@@ -1,12 +1,12 @@
-# PromotionalOffice WebservicePhpProxies Documentation
+# PromotionalOffice Webservice PHP Proxies Documentation
 
 With these PHP proxy classes, you are able to use the Promotional Office Webservice in a very easy way. You can work with objects and you only have to configure the login data and the url of the WSDL file.
 You can also use both services (info and import) with the Logon method of each class.
 
-2015-2018 by [milkycode](http://www.milkycode.com)
+2015-2019 by [milkycode](http://www.milkycode.com)
 Base codebase and idea 2014 by [code-x](http://www.code-x.de)
 
-Compatible with PO: **2.17.0**
+Compatible with PO: **2.18.0**
 
 
 
@@ -25,7 +25,7 @@ For testing we included three test files (test_backend.php, test_doku.php and te
 
 ## Development
 
-### Updating the references for new versions
+### Updating the references for new versions (if you want to update by yourself and know what your're doing)
 
 Requirements:
 
